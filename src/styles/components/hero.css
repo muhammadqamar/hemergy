@@ -1,0 +1,42 @@
+.hero-container {
+  @apply w-full bg-[#4E62EE] h-auto relative;
+}
+
+.hero-wrapper {
+  @apply max-w-[1440px] flex items-start  gap-16 md:gap-7 justify-between mx-auto pt-[131px] px-[24px] md:px-[40px] lg:pl-[80px] lg:pr-[25px] pb-[250px] flex-col lg:flex-row lg:pb-[200px] xl:pb-[130px];
+}
+
+.hero-content {
+  @apply mt-0 lg:mt-[50px] flex-shrink-0;
+}
+
+@media (min-width: 992px) {
+  .hero-content {
+    width: clamp(426px, 40vw, 632px);
+  }
+}
+
+.main-heading {
+  @apply font-Poppins font-semibold text-[28px] md:text-[42px] lg:text-[64px] leading-[34px] md:leading-[52px] lg:leading-[76px] text-white mb-4 md:mb-8;
+}
+
+.sub-heading {
+  @apply font-Poppins font-normal text-[18px] md:text-[24px] lg:text-[28px] leading-[28px] md:leading-[32px] lg:leading-[42px] text-herotext;
+}
+
+.hero-banner-img .hero-banner {
+  @apply w-auto h-auto;
+}
+
+.sub-heading.about-w {
+  @apply flex items-center gap-2 sm:gap-4 my-4 sm:my-[36px];
+}
+
+.sub-heading.about-w span {
+  @apply flex items-center gap-[8px] font-semibold text-white font-Poppins;
+}
+
+.hero-wather-img {
+  @apply w-full h-[233px] bg-repeat bg-center bg-auto absolute bottom-0;
+  background-image: url("/images/white-wather.png");
+}

@@ -1,0 +1,14 @@
+.btn {
+  @apply w-max flex items-center justify-center bg-[#F9705A] rounded-xl text-white;
+}
+
+.btn.Primary {
+  @apply font-medium text-[24px] leading-8 px-[24px] py-[10px] font-Poppins;
+}
+.btn.secondary {
+  @apply font-medium text-[16px] leading-6 px-[16px] py-[8px] font-Inter;
+}
+
+.btn-w {
+  @apply w-full flex items-center justify-center font-Inter bg-[#6B7EFD] rounded-xl text-white p-[8px] font-medium text-[16px] leading-6;
+}
