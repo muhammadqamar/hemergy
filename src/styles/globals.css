@@ -10,3 +10,4 @@ font-family: 'Poppins', sans-serif; */
 @import "./layoyt";
 @import "./typography";
 @import "./components";
+@import "./authentications";

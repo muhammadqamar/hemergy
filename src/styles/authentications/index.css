@@ -1,0 +1,74 @@
+.authentications-section {
+  @apply w-full h-[100vh] bg-textcolor relative;
+}
+
+.authentications-section .auth-header {
+  @apply flex items-center justify-center pt-11;
+}
+
+.authentications-section .auth-container {
+  @apply max-w-[1440px] mx-auto flex items-center justify-center pt-[103px];
+  gap: clamp(28px, 40vw, 225px);
+}
+
+.authentications-section .auth-wather {
+  @apply w-full h-[233px] bg-repeat bg-center bg-auto absolute bottom-0;
+  background-image: url("/images/auth-bg.png");
+}
+
+/* slider */
+.register-slider {
+  @apply w-[432px];
+}
+.register-slider .register-slider-card {
+  @apply font-Poppins w-full text-center text-white;
+}
+.register-slider .register-slider-card .r-card-img {
+  @apply w-[200px] h-[200px] bg-[#6B7EFD] rounded-[200px] flex items-center justify-center overflow-hidden mx-auto mb-6;
+}
+
+.register-slider .register-slider-card .r-card-img img {
+  @apply w-auto h-auto;
+}
+
+.register-slider .register-slider-card .slider-step {
+  @apply font-semibold text-2xl  mb-2;
+}
+
+.register-slider .register-slider-card .slider-heading {
+  @apply font-semibold text-4xl mb-6;
+}
+.register-slider .register-slider-card .slider-para {
+  @apply font-Inter font-normal text-base;
+}
+.register-slider .slick-dots {
+  @apply flex items-center justify-center gap-[10px] mt-6 !important;
+}
+
+.register-slider .slick-dots li button::before {
+  content: inherit !important;
+}
+.register-slider .slick-dots li button {
+  @apply p-0 m-0;
+}
+
+.register-slider .slick-dots li.slick-active {
+  @apply bg-white;
+}
+
+.register-slider .slick-dots li {
+  @apply w-3 h-3 bg-[#92A0FF] rounded-[200px] m-0;
+}
+
+.text-xl {
+  @apply font-Poppins font-semibold text-4xl leading-[42px];
+}
+.text-lg {
+  @apply font-Poppins font-semibold text-xl;
+}
+.text-sm {
+  @apply font-Inter font-normal text-base;
+}
+.text-x-sm {
+  @apply font-Inter font-normal text-xs leading-[14px];
+}

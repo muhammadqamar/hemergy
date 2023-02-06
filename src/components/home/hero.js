@@ -18,12 +18,15 @@ const Hero = () => {
             <span className="wind">
               <Image src="/images/air.svg" width={32} height={32} alt="wind" /> Wind
             </span>
-            <span className="sun">
-              <Image src="/images/clear_day_w.svg" width={32} height={32} alt="wind" /> Sun
-            </span>
-            <span className="bio">
-              <Image src="/images/humidity_low.svg" width={32} height={32} alt="wind" /> Biomass
-            </span>
+            {/*<span className="sun">
+                <Image src="/images/clear_day_w.svg" width={32} height={32} alt="wind" /> Sun
+              </span>
+          
+      
+              <span className="bio">
+                <Image src="/images/humidity_low.svg" width={32} height={32} alt="wind" /> Biomass
+              </span>
+  */}
           </h3>
 
           <Link href="" className="btn Primary">

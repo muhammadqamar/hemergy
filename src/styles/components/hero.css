@@ -77,8 +77,3 @@
     top: 225px;
   }
 }
-
-.sub-heading.about-w span.wind,
-.sub-heading.about-w span.sun {
-  @apply hidden;
-}
