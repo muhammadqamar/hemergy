@@ -19,7 +19,8 @@ const Index = () => {
       <div className="contribution-card">
         <div className="contribution-rate">
           <h3 className="rate-price">
-            {moco}<sup>€</sup>
+            {moco}
+            <sup>€</sup>
           </h3>
 
           <h5 className="rate-lemet">/ m</h5>
@@ -29,12 +30,14 @@ const Index = () => {
         <div className="contribution-slide">
           <input
             type="range"
-
             min="10"
             max="300"
             step="5"
             defaultValue={10}
             onChange={(e) => setmoco(e.target.value)}
+            style={{
+              backgroundSize: `  ${(moco / 300) * 100}%   , ${((300 - moco) / 300) * 100}% `,
+            }}
           />
         </div>
       </div>

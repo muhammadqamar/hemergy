@@ -15,8 +15,14 @@ const Hero = () => {
           </h3>
           <h3 className="sub-heading about-w">
             See what you earn from
-            <span>
+            <span className="wind">
               <Image src="/images/air.svg" width={32} height={32} alt="wind" /> Wind
+            </span>
+            <span className="sun">
+              <Image src="/images/clear_day_w.svg" width={32} height={32} alt="wind" /> Sun
+            </span>
+            <span className="bio">
+              <Image src="/images/humidity_low.svg" width={32} height={32} alt="wind" /> Biomass
             </span>
           </h3>
 
@@ -26,7 +32,9 @@ const Hero = () => {
         </div>
 
         <div className="hero-banner-img">
-          <img src="/images/hero-banner.png" className="hero-banner" alt="banner" />
+          <img src="/images/hero-start.png" className="hero-start" alt="banner" />
+          <img src="/images/hero-wather-bg.png" className="hero-wather" alt="banner" />
+          <img src="/images/hero-user-card.png" className="hero-user-card" alt="banner" />
         </div>
       </div>
       <div className="hero-wather-img" />

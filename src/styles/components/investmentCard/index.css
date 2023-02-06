@@ -16,3 +16,20 @@
 .investment-card .invest-about .investment-para {
   @apply font-normal text-base text-textcolor w-full sm:w-[333px];
 }
+
+.investment-card input[type="range"] {
+  @apply w-full h-3 bg-[#6b7efd] rounded-[200px] bg-no-repeat;
+  -webkit-appearance: none;
+  background-image: linear-gradient(#3ccd87, #3ccd87);
+  /* background-size: 50% 100%; */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply w-[34px] h-[34px] rounded-[50%] bg-[#6b7efd] cursor-ew-resize;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  @apply border-none bg-[transparent] shadow-[none];
+  -webkit-appearance: none;
+}
