@@ -10,7 +10,9 @@ const Contribution = () => {
       </div>
       <p className="contribution-heading">Contribution</p>
 
-      <div className="contribution-slide"></div>
+      <div className="contribution-slide">
+      <input type="range" />
+      </div>
     </div>
   );
 };
