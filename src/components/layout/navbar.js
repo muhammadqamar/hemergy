@@ -27,7 +27,7 @@ const Navbar = () => {
             Sign in
           </Link>
 
-          <Link href="" className="btn secondary">
+          <Link href="/onborading" className="btn secondary">
             Get started
           </Link>
         </div>

@@ -27,7 +27,7 @@ const RegisterSlider = () => {
   const settings = {
     arrows: false,
     dots: true,
-    autoplay: false,
+    autoplay: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,

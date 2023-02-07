@@ -1,5 +1,5 @@
 .authentications-section {
-  @apply w-full h-[100vh] bg-textcolor relative;
+  @apply w-full min-h-[100vh] bg-textcolor relative;
 }
 
 .authentications-section .auth-header {
@@ -7,8 +7,7 @@
 }
 
 .authentications-section .auth-container {
-  @apply max-w-[1440px] mx-auto flex items-center justify-center pt-[103px];
-  gap: clamp(28px, 40vw, 225px);
+  @apply max-w-[1440px] gap-48 lg:gap-10 laptop:gap-[225px] mx-auto flex flex-wrap justify-center py-[103px] px-6;
 }
 
 .authentications-section .auth-wather {
@@ -18,10 +17,10 @@
 
 /* slider */
 .register-slider {
-  @apply w-[432px];
+  @apply w-full sm:w-[432px] relative z-[1];
 }
 .register-slider .register-slider-card {
-  @apply font-Poppins w-full text-center text-white;
+  @apply font-Poppins w-full text-center text-white pt-6;
 }
 .register-slider .register-slider-card .r-card-img {
   @apply w-[200px] h-[200px] bg-[#6B7EFD] rounded-[200px] flex items-center justify-center overflow-hidden mx-auto mb-6;
@@ -60,15 +59,82 @@
   @apply w-3 h-3 bg-[#92A0FF] rounded-[200px] m-0;
 }
 
-.text-xl {
-  @apply font-Poppins font-semibold text-4xl leading-[42px];
+.center-text {
+  @apply text-center;
 }
-.text-lg {
-  @apply font-Poppins font-semibold text-xl;
+
+.text-weight-medium {
+  @apply font-medium !important;
 }
-.text-sm {
-  @apply font-Inter font-normal text-base;
+.p-xl {
+  @apply font-Poppins font-semibold text-4xl leading-[42px] text-textblack;
 }
-.text-x-sm {
-  @apply font-Inter font-normal text-xs leading-[14px];
+.p-lg {
+  @apply font-Poppins font-semibold text-xl text-textblack;
+}
+.p-sm {
+  @apply font-Inter font-normal text-base text-textblack;
+}
+.p-x-sm {
+  @apply font-Inter font-normal text-xs leading-[14px] text-textblack;
+}
+.error {
+  @apply text-[red] !important;
+}
+
+.p-link {
+  @apply text-textcolor;
+}
+
+/* registrations  */
+.registration-box {
+  @apply relative z-[1] w-[480px] h-auto flex flex-col gap-6 pt-12 px-4 md:px-8 pb-6 bg-white rounded-3xl shadow-lgshadow text-textblack;
+}
+.form-cantainer {
+  @apply flex flex-col gap-6;
+}
+.input-box {
+  @apply w-full flex flex-col gap-1;
+}
+
+.input-box .input-field {
+  @apply w-full  flex items-center justify-between gap-2 rounded-xl text-textblack bg-garbg px-3 py-2;
+}
+
+.input-box .input-field .input {
+  @apply border-none outline-none w-full h-6 p-0 m-0 bg-garbg;
+}
+
+.checkbox {
+  @apply w-6 h-6;
+}
+
+.flex-box {
+  @apply flex items-center justify-between;
+}
+
+.d-column {
+  @apply flex-col;
+}
+
+.gap-lg {
+  @apply gap-6;
+}
+.gap-sm {
+  @apply gap-4;
+}
+.gap-x-sm {
+  @apply gap-2;
+}
+
+.pointer {
+  @apply cursor-pointer;
+}
+
+.divider {
+  @apply w-full h-[1px] bg-[#D9DBEE];
+}
+
+.inbox-img {
+  @apply w-[200px] h-[200px] mx-auto bg-[#D6DBFF] rounded-[50%] justify-center overflow-hidden;
 }
