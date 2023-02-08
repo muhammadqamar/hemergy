@@ -20,6 +20,9 @@
 .p-x-sm {
   @apply font-Inter font-normal text-xs leading-[14px] text-textblack;
 }
+.p-xs {
+  @apply font-Inter font-normal text-[10px]  leading-[12px] text-textblack;
+}
 .error {
   @apply text-[red] !important;
 }

@@ -1,16 +1,16 @@
 .btn {
-  @apply w-max flex items-center justify-center bg-[#F9705A] rounded-xl text-white;
+  @apply w-max flex items-center justify-center bg-[#F9705A] rounded-xl text-white whitespace-pre;
 }
 
 .Primary {
-  @apply font-medium text-[24px] leading-8 px-[24px] py-[10px] font-Poppins;
+  @apply font-medium text-2xl  px-6 py-[10px] font-Poppins;
 }
 .secondary {
-  @apply font-medium text-[16px] leading-6 px-[16px] py-[8px] font-Inter;
+  @apply font-medium text-base px-4 py-2 font-Inter;
 }
 
 .btn-w {
-  @apply w-full flex items-center justify-center font-Inter bg-[#6B7EFD] rounded-xl text-white p-[8px] font-medium text-[16px] leading-6;
+  @apply w-full flex items-center justify-center font-Inter bg-[#6B7EFD] rounded-xl text-white p-2 font-medium text-base whitespace-pre;
 }
 
 .blue {
@@ -18,7 +18,7 @@
 }
 
 .btn-border {
-  @apply w-full border border-solid  border-textcolor rounded-xl bg-white text-textcolor !important;
+  @apply w-full border border-solid  border-textcolor rounded-xl bg-white text-textcolor whitespace-pre !important;
 }
 
 .fit-width {

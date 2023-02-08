@@ -17,11 +17,16 @@ module.exports = {
       cardbg: "#EFF1FF",
       garbg: "#F4F4FA",
       btncolor: "#F9705A",
+      red600: "#EC5942",
+      gray800: "#6B6D88",
+      gray900: "#595C77",
+      green500: "#3CCD87",
     },
     boxShadow: {
       mainshadow: "37px 49px 0px rgba(0, 17, 141, 0.1)",
       smallshadow: "11px 12px 0px rgba(0, 17, 141, 0.1)",
       lgshadow: "0px 44px 44px rgba(35, 37, 55, 0.2)",
+      mdshadow: "23px 27px 0px rgba(0, 17, 141, 0.1)",
     },
     fontFamily: {
       Inter: "Inter, sans-serif",

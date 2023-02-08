@@ -1,0 +1,3 @@
+.card-area {
+  @apply w-auto min-h-screen rounded-tr-[60px] rounded-br-[60px] bg-cardbg;
+}
