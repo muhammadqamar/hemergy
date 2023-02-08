@@ -58,55 +58,12 @@
 .register-slider .slick-dots li {
   @apply w-3 h-3 bg-[#92A0FF] rounded-[200px] m-0;
 }
-
-.center-text {
-  @apply text-center;
-}
-
-.text-weight-medium {
-  @apply font-medium !important;
-}
-.p-xl {
-  @apply font-Poppins font-semibold text-4xl leading-[42px] text-textblack;
-}
-.p-lg {
-  @apply font-Poppins font-semibold text-xl text-textblack;
-}
-.p-sm {
-  @apply font-Inter font-normal text-base text-textblack;
-}
-.p-x-sm {
-  @apply font-Inter font-normal text-xs leading-[14px] text-textblack;
-}
-.error {
-  @apply text-[red] !important;
-}
-
-.p-link {
-  @apply text-textcolor;
-}
-
 /* registrations  */
 .registration-box {
   @apply relative z-[1] w-[480px] h-auto flex flex-col gap-6 pt-12 px-4 md:px-8 pb-6 bg-white rounded-3xl shadow-lgshadow text-textblack;
 }
 .form-cantainer {
   @apply flex flex-col gap-6;
-}
-.input-box {
-  @apply w-full flex flex-col gap-1;
-}
-
-.input-box .input-field {
-  @apply w-full  flex items-center justify-between gap-2 rounded-xl text-textblack bg-garbg px-3 py-2;
-}
-
-.input-box .input-field .input {
-  @apply border-none outline-none w-full h-6 p-0 m-0 bg-garbg;
-}
-
-.checkbox {
-  @apply w-6 h-6;
 }
 
 .flex-box {
@@ -125,14 +82,6 @@
 }
 .gap-x-sm {
   @apply gap-2;
-}
-
-.pointer {
-  @apply cursor-pointer;
-}
-
-.divider {
-  @apply w-full h-[1px] bg-[#D9DBEE];
 }
 
 .inbox-img {

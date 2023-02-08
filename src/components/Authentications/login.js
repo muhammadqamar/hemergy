@@ -2,12 +2,12 @@ import { Formik, Field } from "formik";
 import Image from "next/image";
 import Link from "next/link";
 
-const SignUp = ({ setRegisterState }) => {
+const SignIn = () => {
   return (
     <div className="registration-box">
       <h3 className="p-xl center-text">Sign up to Hemergy</h3>
       <Formik
-        initialValues={{ email: "", checked: [] }}
+        initialValues={{ email: "", password: "", checked: [] }}
         validate={(values) => {
           const errors = {};
           if (!values.email) {
@@ -16,10 +16,16 @@ const SignUp = ({ setRegisterState }) => {
             errors.email = "Invalid email address";
           }
 
+          if (!values.password) {
+            errors.password = "Required";
+          }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setRegisterState(true);
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
         }}
       >
         {({
@@ -47,6 +53,26 @@ const SignUp = ({ setRegisterState }) => {
                 />
               </div>
               <p className="error p-x-sm"> {errors.email && touched.email && errors.email}</p>
+            </div>
+
+            <div className="input-box">
+              <label className="p-sm text-weight-medium">Password</label>
+              <div className="input-field">
+                <input
+                  className="input p-sm"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.password}
+                />
+                <div className="pointer"></div>
+                <Image src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+              </div>
+              <p className="error p-x-sm">
+                {errors.password && touched.password && errors.password}
+              </p>
             </div>
 
             <div className="flex-box">
@@ -77,9 +103,9 @@ const SignUp = ({ setRegisterState }) => {
             </button>
 
             <p className=" center-text p-sm" style={{ marginBottom: "24px" }}>
-              Already a member?&nbsp;
-              <Link href="/login" className="text-weight-medium text-textcolor">
-                Sign in
+              Create a new Account &nbsp;
+              <Link href="/register" className="text-weight-medium text-textcolor">
+                Sign up
               </Link>
             </p>
           </form>
@@ -89,4 +115,4 @@ const SignUp = ({ setRegisterState }) => {
   );
 };
 
-export default SignUp;
+export default SignIn;

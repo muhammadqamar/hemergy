@@ -1,0 +1,37 @@
+.center-text {
+  @apply text-center;
+}
+
+.text-weight-medium {
+  @apply font-medium !important;
+}
+.p-xl {
+  @apply font-Poppins font-semibold text-4xl leading-[42px] text-textblack;
+}
+.p-lg {
+  @apply font-Poppins font-semibold text-xl text-textblack;
+}
+.p-sm {
+  @apply font-Inter font-normal text-base text-textblack;
+}
+.p-sm-semi {
+  @apply font-Inter font-semibold text-sm text-textblack;
+}
+.p-x-sm {
+  @apply font-Inter font-normal text-xs leading-[14px] text-textblack;
+}
+.error {
+  @apply text-[red] !important;
+}
+
+.p-link {
+  @apply text-textcolor;
+}
+
+.pointer {
+  @apply cursor-pointer;
+}
+
+.divider {
+  @apply w-full h-[1px] bg-[#D9DBEE];
+}

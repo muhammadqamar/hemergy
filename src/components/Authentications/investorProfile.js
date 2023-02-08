@@ -1,6 +1,7 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
-const InvestorProfile = () => {
+import Link from "next/link";
+const InvestorProfile = ({ setStep }) => {
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -12,16 +13,10 @@ const InvestorProfile = () => {
         validate={(values) => {
           const errors = {};
 
-          // if (!values.password) {
-          //   errors.password = "Required";
-          // }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          setStep(3);
         }}
       >
         {({
@@ -127,7 +122,11 @@ const InvestorProfile = () => {
             </div>
 
             <div className="flex-box gap-4">
-              <button className="flex-box fit-width gap-x-sm btn-border secondary justify-center">
+              <button
+                onClick={() => setStep(1)}
+                type="button"
+                className="flex-box  gap-x-sm btn-border secondary justify-center"
+              >
                 Back
               </button>
               <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
@@ -135,7 +134,9 @@ const InvestorProfile = () => {
               </button>
             </div>
 
-            <p className="p-sm text-textcolor text-center font-medium">Skip for now</p>
+            <Link href="" className="p-sm text-textcolor text-center font-medium">
+              Skip for now
+            </Link>
           </form>
         )}
       </Formik>

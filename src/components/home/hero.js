@@ -1,7 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [upDate, setUpDate] = useState("");
+
+  console.log(upDate);
+
+  useEffect(() => {
+    const intervil = setInterval(() => {
+      const data = ["wind", "sun", "bio"];
+      // i = (i + 1) % data.length;
+
+      setUpDate(data);
+    }, 2000);
+    return () => clearInterval(intervil);
+  }, [upDate]);
+
   return (
     <div className="hero-container ">
       <div className="hero-wrapper">

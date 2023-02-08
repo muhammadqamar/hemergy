@@ -1,7 +1,7 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
 
-const LogIn = () => {
+const Verification = ({ setStep }) => {
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -30,10 +30,7 @@ const LogIn = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          setStep(2);
         }}
       >
         {({
@@ -137,9 +134,7 @@ const LogIn = () => {
               <p className="error p-x-sm">{errors.address && touched.address && errors.address}</p>
             </div>
 
-            <p className="p-sm text-weight-medium" style={{ color: "#4E62EE" }}>
-              Enter address manually
-            </p>
+            <p className="p-sm text-weight-medium text-textcolor">Enter address manually</p>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
               Next
@@ -151,4 +146,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Verification;

@@ -7,8 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 export default function App({ Component, pageProps }) {
   const routes = useRouter();
 
-  console.log(routes);
-
   return (
     <>
       <Head>

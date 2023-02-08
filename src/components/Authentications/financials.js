@@ -1,7 +1,7 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
 
-const Financials = () => {
+const Financials = ({ setStep }) => {
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -87,7 +87,11 @@ const Financials = () => {
             </div>
 
             <div className="flex-box gap-4">
-              <button className="flex-box fit-width gap-x-sm btn-border secondary justify-center">
+              <button
+                onClick={() => setStep(2)}
+                type="button"
+                className="flex-box gap-x-sm btn-border secondary justify-center"
+              >
                 Back
               </button>
               <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
