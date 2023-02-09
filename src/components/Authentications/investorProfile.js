@@ -1,7 +1,10 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
 import Link from "next/link";
-const InvestorProfile = ({ setStep }) => {
+import axios from 'axios';
+import {  toast } from 'react-toastify';
+
+const InvestorProfile = ({ setStep, userDetail }) => {
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -9,14 +12,39 @@ const InvestorProfile = ({ setStep }) => {
         <h3 className="p-xl center-text">Investor profile</h3>
       </div>
       <Formik
-        initialValues={{ checked: [] }}
+        initialValues={{
+          ['Are you an accredited investor?']: false,
+          ['Are you familiar with cryptocurrencies?']: false,
+          ['toggDo you have knowledge about finance / financial products?']: false
+        }}
         validate={(values) => {
           const errors = {};
 
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setStep(3);
+        onSubmit={async (values, { setSubmitting }) => {
+
+          const result = Object.keys(values).map(data => {
+            return ({
+              question: data,
+              answer: values[data]
+            })
+          })
+          console.log(result)
+          try {
+            const updateUser = await axios.put(
+              `http://localhost:4000/api/user/questionair`,
+              { questions:result, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
+            );
+            setSubmitting(false)
+
+            if (updateUser?.data?.userFound) {
+              setStep(3)
+            }
+          } catch (error) {
+            setSubmitting(false)
+          }
+          // setStep(3);
         }}
       >
         {({
@@ -37,10 +65,10 @@ const InvestorProfile = ({ setStep }) => {
                   for="Toggle4"
                   className="w-[76px] inline-flex items-center gap-1 rounded-2xl p-1 cursor-pointer bg-garbg text-garbg"
                 >
-                  <Field id="Toggle4" type="checkbox" name="toggle" className="hidden peer" />
+                  <Field id="Toggle4" type="checkbox" name="Are you familiar with cryptocurrencies?" className="hidden peer" />
                   <span className="w-8 h-8  p-[6px] rounded-xl bg-garbg peer-checked:bg-btncolor">
                     <Image
-                      src={values.toggle === true ? "/images/check-w.svg" : "/images/check-b.svg"}
+                      src={values['Are you familiar with cryptocurrencies?'] === true ? "/images/check-w.svg" : "/images/check-b.svg"}
                       alt="close"
                       width={20}
                       height={20}
@@ -48,7 +76,7 @@ const InvestorProfile = ({ setStep }) => {
                   </span>
                   <span className=" w-8 h-8  p-[6px] rounded-xl bg-btncolor peer-checked:bg-garbg">
                     <Image
-                      src={values.toggle === false ? "/images/close-w.svg" : "/images/close-b.svg"}
+                      src={values['Are you familiar with cryptocurrencies?'] === false ? "/images/close-w.svg" : "/images/close-b.svg"}
                       alt="close"
                       width={20}
                       height={20}
@@ -63,10 +91,10 @@ const InvestorProfile = ({ setStep }) => {
                   for="Toggle5"
                   className="w-[76px] inline-flex items-center gap-1 rounded-2xl p-1 cursor-pointer bg-garbg text-garbg"
                 >
-                  <Field id="Toggle5" type="checkbox" name="toggle1" className="hidden peer" />
+                  <Field id="Toggle5" type="checkbox" name="Are you an accredited investor?" className="hidden peer" />
                   <span className="w-8 h-8  p-[6px] rounded-xl bg-garbg peer-checked:bg-btncolor">
                     <Image
-                      src={values.toggle1 === true ? "/images/check-w.svg" : "/images/check-b.svg"}
+                      src={values['Are you an accredited investor?'] === true ? "/images/check-w.svg" : "/images/check-b.svg"}
                       alt="close"
                       width={20}
                       height={20}
@@ -74,7 +102,7 @@ const InvestorProfile = ({ setStep }) => {
                   </span>
                   <span className=" w-8 h-8  p-[6px] rounded-xl bg-btncolor peer-checked:bg-garbg">
                     <Image
-                      src={values.toggle1 === false ? "/images/close-w.svg" : "/images/close-b.svg"}
+                      src={values['Are you an accredited investor?'] === false ? "/images/close-w.svg" : "/images/close-b.svg"}
                       alt="close"
                       width={20}
                       height={20}
@@ -91,10 +119,10 @@ const InvestorProfile = ({ setStep }) => {
                   for="Toggle6"
                   className="w-[76px] inline-flex items-center gap-1 rounded-2xl p-1 cursor-pointer bg-garbg text-garbg"
                 >
-                  <Field id="Toggle6" type="checkbox" name="toggle2" className="hidden peer" />
+                  <Field id="Toggle6" type="checkbox" name="toggDo you have knowledge about finance / financial products?le2" className="hidden peer" />
                   <span className="w-8 h-8  p-[6px] rounded-xl bg-garbg peer-checked:bg-btncolor">
                     <Image
-                      src={values.toggle2 === true ? "/images/check-w.svg" : "/images/check-b.svg"}
+                      src={values['Do you have knowledge about finance / financial products?'] === true ? "/images/check-w.svg" : "/images/check-b.svg"}
                       alt="close"
                       width={20}
                       height={20}
@@ -102,7 +130,7 @@ const InvestorProfile = ({ setStep }) => {
                   </span>
                   <span className=" w-8 h-8  p-[6px] rounded-xl bg-btncolor peer-checked:bg-garbg">
                     <Image
-                      src={values.toggle2 === false ? "/images/close-w.svg" : "/images/close-b.svg"}
+                      src={values['Do you have knowledge about finance / financial products?'] === false ? "/images/close-w.svg" : "/images/close-b.svg"}
                       alt="close"
                       width={20}
                       height={20}
@@ -112,7 +140,7 @@ const InvestorProfile = ({ setStep }) => {
               </div>
             </div>
 
-            <div className="flex-box d-column gap-x-sm items-start">
+            <div className="items-start flex-box d-column gap-x-sm">
               <h6 className="p-sm text-weight-medium ">Why are we asking?</h6>
               <h3 className="p-sm ">
                 There are different investment rules associated with accredited investors and
@@ -121,20 +149,20 @@ const InvestorProfile = ({ setStep }) => {
               </h3>
             </div>
 
-            <div className="flex-box gap-4">
+            <div className="gap-4 flex-box">
               <button
                 onClick={() => setStep(1)}
                 type="button"
-                className="flex-box  gap-x-sm btn-border secondary justify-center"
+                className="justify-center flex-box gap-x-sm btn-border secondary"
               >
                 Back
               </button>
               <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-                Next
+              {isSubmitting ? '.....' : 'Next'}
               </button>
             </div>
 
-            <Link href="" className="p-sm text-textcolor text-center font-medium">
+            <Link href="" className="font-medium text-center p-sm text-textcolor">
               Skip for now
             </Link>
           </form>

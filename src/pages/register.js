@@ -2,10 +2,11 @@ import Image from "next/image";
 import RegisterSlider from "@/components/Authentications/registerSlider";
 import SignUp from "@/components/Authentications/signUp";
 import InBox from "@/components/Authentications/inBox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Register = () => {
+const Register = ({query}) => {
   const [registerState, setRegisterState] = useState(false);
+
 
   return (
     <div className="authentications-section">
@@ -15,7 +16,7 @@ const Register = () => {
 
       <div className="auth-container">
         <RegisterSlider />
-        {registerState ? (
+        {query?.success ? (
           <InBox setRegisterState={setRegisterState} />
         ) : (
           <SignUp setRegisterState={setRegisterState} />
@@ -28,3 +29,11 @@ const Register = () => {
 };
 
 export default Register;
+
+export const getServerSideProps = (context) => {
+  return {
+    props: {
+      query: context?.query,
+    },
+  };
+};

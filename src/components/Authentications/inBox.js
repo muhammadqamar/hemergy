@@ -12,16 +12,15 @@ const InBox = ({ setRegisterState = { setRegisterState } }) => {
       </p>
       <div className="flex-box d-column gap-sm">
         <button className="btn secondary blue">Resend email</button>
-        <button
-          onClick={() => {
-            setRegisterState(false);
-          }}
+        <Link href="/register"><button
+
           className=" btn-border secondary"
         >
           Sign up with a different email
         </button>
+        </Link>
       </div>
-      <p className=" center-text p-sm mb-6">
+      <p className="mb-6  center-text p-sm">
         Already a member?&nbsp;
         <Link href="/login" className="text-textcolor text-weight-medium">
           Sign in

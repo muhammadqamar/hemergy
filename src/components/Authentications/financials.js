@@ -1,7 +1,9 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
+import axios from 'axios';
+import {  toast } from 'react-toastify';
 
-const Financials = ({ setStep }) => {
+const Financials = ({ setStep, userDetail }) => {
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -22,11 +24,20 @@ const Financials = ({ setStep }) => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={async (values, { setSubmitting }) => {
+          try {
+            const updateUser = await axios.put(
+              `http://localhost:4000/api/user/financials`,
+              { ...values, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
+            );
+            setSubmitting(false)
+            console.log(updateUser)
+            if (updateUser?.data?.userFound) {
+              setStep(2)
+            }
+          } catch (error) {
+            setSubmitting(false)
+          }
         }}
       >
         {({
@@ -48,7 +59,7 @@ const Financials = ({ setStep }) => {
                 <input
                   className="input p-sm"
                   placeholder="0.00"
-                  type="number"
+                  type="text"
                   name="annualTurnover"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -70,7 +81,7 @@ const Financials = ({ setStep }) => {
                 <input
                   className="input p-sm"
                   placeholder="0.00"
-                  type="number"
+                  type="text"
                   name="disposableIncome"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -86,20 +97,20 @@ const Financials = ({ setStep }) => {
               </p>
             </div>
 
-            <div className="flex-box gap-4">
+            <div className="gap-4 flex-box">
               <button
                 onClick={() => setStep(2)}
                 type="button"
-                className="flex-box gap-x-sm btn-border secondary justify-center"
+                className="justify-center flex-box gap-x-sm btn-border secondary"
               >
                 Back
               </button>
               <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-                Done
+              {isSubmitting ? '.....' : 'Done'}
               </button>
             </div>
 
-            <p className="p-sm text-textcolor text-center font-medium">Skip for now</p>
+            <p className="font-medium text-center p-sm text-textcolor">Skip for now</p>
           </form>
         )}
       </Formik>

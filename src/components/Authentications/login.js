@@ -97,7 +97,7 @@ const SignIn = () => {
               <div className="divider" />
             </div>
 
-            <button className="flex-box fit-width gap-x-sm btn-border secondary">
+            <button type="button" className="flex-box fit-width gap-x-sm btn-border secondary" onClick={()=>window.location = `http://localhost:4000/api/auth/google-login`}>
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
               Sign up with Google
             </button>
