@@ -1,20 +1,34 @@
 import React, {useState} from 'react'
 import {ethers} from 'ethers'
+import axios from 'axios';
 
-
-const WalletCard = () => {
-
-	const [errorMessage, setErrorMessage] = useState(null);
-	const [defaultAccount, setDefaultAccount] = useState(null);
-	const [userBalance, setUserBalance] = useState(null);
-	const [connButtonText, setConnButtonText] = useState('Connect Wallet');
+const WalletCard = (props) => {
+   const {userDetail, setConnButtonText,connButtonText, setErrorMessage,setDefaultAccount,setUserBalance, errorMessage} = props
 
 	const connectWalletHandler = () => {
 		if (window.ethereum && window.ethereum.isMetaMask) {
 			console.log('MetaMask Here!');
 
 			window.ethereum.request({ method: 'eth_requestAccounts'})
-			.then(result => {
+			.then(async (result) => {
+                console.log(result)
+                var resulter = []
+                if(userDetail?.user?.wallets) {
+                    resulter =[...userDetail?.user?.wallets,{provide:'Metamusk', value:result[0]}]
+                } else {
+                    resulter =[{provider:'MetaMask', value:result[0]}]
+                }
+               // try {
+                    const updateWallet = await axios.post(
+                      `http://localhost:4000/api/user/wallet`,
+                      { wallet : resulter, email: userDetail?.email || 'muhammadqamar111@gmail.com'  }
+                    );
+
+
+
+                //   } catch (error) {
+
+                //   }
 				accountChangedHandler(result[0]);
 				setConnButtonText('Wallet Connected');
 				getAccountBalance(result[0]);
@@ -62,7 +76,7 @@ const WalletCard = () => {
 	return (
 		<div className='p-2 border-1 rounded-2 border-text'>
 		<h4> {"Connection to MetaMask"} </h4>
-			<button onClick={connectWalletHandler}>{connButtonText}</button>
+			<button type="button" onClick={connectWalletHandler}>{connButtonText}</button>
 			{/* <div className='accountDisplay'>
 				<h3>Address: {defaultAccount}</h3>
 			</div>

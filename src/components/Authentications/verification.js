@@ -3,6 +3,8 @@ import Image from "next/image";
 import axios from 'axios';
 
 const Verification = ({ userDetail, setStep }) => {
+
+
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">

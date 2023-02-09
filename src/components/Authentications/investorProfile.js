@@ -3,8 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
 import ConnectWallet from '@/components/connectWallet';
+import { useState } from "react";
 
 const InvestorProfile = ({ setStep, userDetail }) => {
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [defaultAccount, setDefaultAccount] = useState(null);
+  const [userBalance, setUserBalance] = useState(null);
+  const [connButtonText, setConnButtonText] = useState('Connect Wallet');
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -34,7 +39,7 @@ const InvestorProfile = ({ setStep, userDetail }) => {
           try {
             const updateUser = await axios.put(
               `http://localhost:4000/api/user/questionair`,
-              { questions:result, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
+              { questions: result, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
             );
             setSubmitting(false)
 
@@ -84,7 +89,15 @@ const InvestorProfile = ({ setStep, userDetail }) => {
                   </span>
                 </label>
               </div>
-              { values['Are you familiar with cryptocurrencies?'] && <ConnectWallet />}
+              {values['Are you familiar with cryptocurrencies?'] && <ConnectWallet
+                setConnButtonText={setConnButtonText}
+
+                setErrorMessage={setErrorMessage}
+                setDefaultAccount={setDefaultAccount}
+                setUserBalance={setUserBalance}
+                errorMessage={errorMessage}
+                connButtonText={connButtonText}
+                userDetail={userDetail} />}
 
 
               <div className="flex-box gap-lg">
@@ -160,7 +173,7 @@ const InvestorProfile = ({ setStep, userDetail }) => {
                 Back
               </button>
               <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? '.....' : 'Next'}
+                {isSubmitting ? '.....' : 'Next'}
               </button>
             </div>
 
