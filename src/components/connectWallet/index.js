@@ -39,10 +39,10 @@ const WalletCard = () => {
 	const getAccountBalance = (account) => {
 		window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']})
 		.then(balance => {
-			setUserBalance(ethers.utils.formatEther(balance));
+			setUserBalance(ethers.utils?.formatEther(balance));
 		})
 		.catch(error => {
-			setErrorMessage(error.message);
+			//setErrorMessage(error.message);
 		});
 	};
 
@@ -63,13 +63,16 @@ const WalletCard = () => {
 		<div className='p-2 border-1 rounded-2 border-text'>
 		<h4> {"Connection to MetaMask"} </h4>
 			<button onClick={connectWalletHandler}>{connButtonText}</button>
-			<div className='accountDisplay'>
+			{/* <div className='accountDisplay'>
 				<h3>Address: {defaultAccount}</h3>
 			</div>
 			<div className='balanceDisplay'>
 				<h3>Balance: {userBalance}</h3>
-			</div>
-			{errorMessage}
+			</div> */}
+            {/* {
+                defaultAccount && 'wallet connected successfully'
+            } */}
+			{errorMessage && <p>{errorMessage}</p>}
 		</div>
 	);
 }
