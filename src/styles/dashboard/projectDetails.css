@@ -1,0 +1,19 @@
+.dashboard-container {
+  @apply w-auto h-screen py-8 pr-8  pl-24 bg-cardbg;
+}
+
+.project-detail {
+  @apply w-auto h-[869px] flex rounded-[40px] bg-white shadow-mdshadow overflow-hidden;
+}
+
+.project-detail .detail-img {
+  @apply w-[352px] h-full p-4 relative;
+}
+
+.project-detail .detail-img .detail-banner-img {
+  @apply w-full h-full object-cover absolute top-0 left-0;
+}
+
+.project-detail .project-detail-about {
+  @apply p-8;
+}
