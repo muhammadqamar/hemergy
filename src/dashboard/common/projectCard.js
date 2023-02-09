@@ -3,19 +3,21 @@ import Image from "next/image";
 const ProjectCard = () => {
   return (
     <div className="project-card-box">
-      <div className="card-head-img">
+      <div className="card-head-img ">
         <img src="/images/card.png" alt="img" className="card-bg-img" />
-        <div className="wather-labels">
-          <img src="/images/hot.svg" alt="logo" width={20} height={20} />
-          <p className="p-sm-semi  text-white">Hot</p>
-        </div>
-        <div className="terms-sheet-labels">
-          <img src="/images/download.svg" alt="logo" width={20} height={20} />
-          <p className="p-sm-semi  text-white">Terms sheet</p>
-        </div>
-        <div className="ratio-labels">
-          <img src="/images/Polygon.svg" alt="logo" width={10} height={10} />
-          <p className="p-sm-semi  text-white">657.4</p>
+        <div className="w-full flex-box">
+          <div className="labels-frame wather-labels">
+            <Image src="/images/hot.svg" alt="logo" width={20} height={20} />
+            <p className="p-sm-semi  text-white">Hot</p>
+          </div>
+          <div className=" labels-frame terms-sheet-labels">
+            <Image src="/images/download.svg" alt="logo" width={20} height={20} />
+            <p className="p-sm-semi  text-white">Terms sheet</p>
+          </div>
+          <div className=" labels-frame ratio-labels">
+            <Image src="/images/Polygon.svg" alt="logo" width={10} height={10} />
+            <p className="p-sm-semi  text-white">657.4</p>
+          </div>
         </div>
       </div>
       <div className="project-card-about">
@@ -52,26 +54,26 @@ const ProjectCard = () => {
             </div>
           </div>
         </div>
-        <div className="usdc-earned-box">
+        {/*<div className="usdc-earned-box">
           <Image src="/images/payments.svg" alt="USDC" width={32} height={32} />
           <div className="usdc-earnes">
             <h4 className="p-xl font-semibold text-textcolor ">234</h4>
             <h5 className="p-x-sm font-semibold text-textcolor">USDC Earned</h5>
             <p className="p-xs text-gray900">Since 13 Jan 2023</p>
           </div>
-        </div>
+  </div>*/}
 
         <div className="flex-box gap-2">
           <button className="btn secondary w-full text-textcolor bg-cardbg ">Details</button>
           <button className="btn secondary w-full text-textcolor bg-cardbg ">Invest</button>
         </div>
 
-        <div className="flex-box gap-2">
+        {/*<div className="flex-box gap-2">
           <button className="btn secondary w-full text-textcolor bg-cardbg ">
             Matures: 01/02/24
           </button>
           <button className="btn secondary w-full text-white bg-green500 ">Buy more</button>
-        </div>
+</div>*/}
       </div>
     </div>
   );

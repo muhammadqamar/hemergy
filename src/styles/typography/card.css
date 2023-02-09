@@ -2,21 +2,32 @@
   @apply w-[400px] h-auto bg-white shadow-mdshadow rounded-[20px] overflow-hidden;
 }
 .card-head-img {
-  @apply w-full h-[372px] flex items-start justify-between p-4 relative;
+  @apply w-full h-[372px] flex flex-col items-start justify-between p-4 relative;
 }
 
 .card-head-img .card-bg-img {
   @apply w-full h-full absolute top-0 left-0 object-cover;
 }
 
-.wather-labels {
-  @apply relative flex items-center justify-between gap-2 px-2 py-1 rounded-lg bg-red600;
+.labels-frame {
+  @apply relative flex items-center justify-between gap-2 px-2 py-1 rounded-lg;
 }
-.terms-sheet-labels {
-  @apply relative flex items-center justify-between gap-1 px-4 py-[6px] rounded-xl bg-textblack;
+.labels-frame.wather-labels {
+  @apply bg-red600;
 }
-.ratio-labels {
-  @apply relative flex items-center justify-between gap-1 px-2 py-1 rounded-lg bg-textcolor;
+.labels-frame.terms-sheet-labels {
+  @apply gap-1 px-4 py-[6px] rounded-xl bg-textblack;
+}
+.labels-frame.ratio-labels {
+  @apply gap-1  bg-textcolor;
+}
+
+.labels-frame.asset-lable {
+  @apply bg-textblack;
+}
+
+.labels-frame.trending-labels {
+  @apply bg-green500;
 }
 
 .project-card-about {
@@ -53,4 +64,20 @@
 
 .usdc-earned-box .usdc-earnes {
   @apply flex flex-col gap-1 text-center justify-center items-center;
+}
+
+.loaction-card {
+  @apply w-[266px] h-auto bg-white rounded-[20px] overflow-hidden;
+}
+
+.loaction-card-about {
+  @apply flex flex-col gap-4 p-4;
+}
+
+.loaction-user {
+  @apply flex items-center gap-2;
+}
+
+.loaction-user .loaction-user-img {
+  @apply w-[40px] h-[40px] rounded-xl object-contain;
 }

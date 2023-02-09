@@ -1,13 +1,14 @@
 import SideBar from "@/dashboard/sideBar";
-import Card from "@/dashboard/common/projectCard";
+import CardArea from "@/dashboard/common/cardArea";
+import LocationCard from "@/dashboard/common/locationCard";
 
 const Dashboard = () => {
   return (
     <div className=" relative">
       <SideBar />
-
-      <div className="ml-24">
-        <Card />
+      <div className="flex-box">
+        <CardArea />
+        <LocationCard />
       </div>
     </div>
   );
