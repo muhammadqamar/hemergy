@@ -1,7 +1,8 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
+import axios from 'axios';
 
-const Verification = ({ setStep }) => {
+const Verification = ({ userDetail, setStep }) => {
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -29,9 +30,21 @@ const Verification = ({ setStep }) => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setStep(2);
-        }}
+        onSubmit={async (values, { setSubmitting }) => {
+          try {
+            const updateUser = await axios.put(
+              `http://localhost:4000/api/user/updateuser`,
+              { ...values, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
+            );
+            setSubmitting(false)
+            console.log(updateUser)
+            if (updateUser?.data?.userFound) {
+              setStep(2)
+            }
+          } catch (error) {
+            setSubmitting(false)
+          }
+       }}
       >
         {({
           values,
@@ -44,7 +57,7 @@ const Verification = ({ setStep }) => {
           /* and other goodies */
         }) => (
           <form className="form-cantainer" onSubmit={handleSubmit}>
-            <div className="flex-box gap-sm flex-col sm:flex-row">
+            <div className="flex-col flex-box gap-sm sm:flex-row">
               <div className="input-box">
                 <label className="p-sm text-weight-medium">First name</label>
                 <div className="input-field">
@@ -137,7 +150,7 @@ const Verification = ({ setStep }) => {
             <p className="p-sm text-weight-medium text-textcolor">Enter address manually</p>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              Next
+              {isSubmitting ? '.....' : 'Next'}
             </button>
           </form>
         )}

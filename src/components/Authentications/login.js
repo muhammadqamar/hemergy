@@ -1,11 +1,12 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
 import Link from "next/link";
+import axios from 'axios';
 
 const SignIn = () => {
   return (
     <div className="registration-box">
-      <h3 className="p-xl center-text">Sign up to Hemergy</h3>
+      <h3 className="p-xl center-text">Sign In to Hemergy</h3>
       <Formik
         initialValues={{ email: "", password: "", checked: [] }}
         validate={(values) => {
@@ -21,11 +22,20 @@ const SignIn = () => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={async (values, { setSubmitting }) => {
+          try {
+            const updateUser = await axios.post(
+              `http://localhost:4000/api/auth/login`,
+              values
+            );
+            setSubmitting(false)
+
+            // if (updateUser?.data?.userFound) {
+            //   setStep(3)
+            // }
+          } catch (error) {
+            setSubmitting(false)
+          }
         }}
       >
         {({
@@ -88,7 +98,7 @@ const SignIn = () => {
             </div>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              Sign up
+            {isSubmitting ? '.....' : 'Sign In'}
             </button>
 
             <div className="flex-box gap-x-sm">
@@ -97,9 +107,9 @@ const SignIn = () => {
               <div className="divider" />
             </div>
 
-            <button className="flex-box fit-width gap-x-sm btn-border secondary">
+            <button type="button" className="flex-box fit-width gap-x-sm btn-border secondary" onClick={()=>window.location = `http://localhost:4000/api/auth/google-login`}>
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
-              Sign up with Google
+              Sign In with Google
             </button>
 
             <p className=" center-text p-sm" style={{ marginBottom: "24px" }}>

@@ -1,13 +1,14 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
 import Link from "next/link";
+import axios from 'axios';
 
 const SignUp = ({ setRegisterState }) => {
   return (
     <div className="registration-box">
       <h3 className="p-xl center-text">Sign up to Hemergy</h3>
       <Formik
-        initialValues={{ email: "", checked: [] }}
+        initialValues={{ email: "" }}
         validate={(values) => {
           const errors = {};
           if (!values.email) {
@@ -18,8 +19,23 @@ const SignUp = ({ setRegisterState }) => {
 
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setRegisterState(true);
+        onSubmit={async(values, { setSubmitting }) => {
+          try {
+            const register = await axios.post(
+              `http://localhost:4000/api/auth/register`,
+              values
+            );
+            setSubmitting(false)
+            if(register?.data?.success) {
+              setRegisterState(true)
+            }
+
+            // if (updateUser?.data?.userFound) {
+            //   setStep(3)
+            // }
+          } catch (error) {
+            setSubmitting(false)
+          }
         }}
       >
         {({
@@ -62,7 +78,7 @@ const SignUp = ({ setRegisterState }) => {
             </div>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              Sign up
+            {isSubmitting ? '.....' : 'Sign up'}
             </button>
 
             <div className="flex-box gap-x-sm">
