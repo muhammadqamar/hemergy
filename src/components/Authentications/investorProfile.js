@@ -2,7 +2,7 @@ import { Formik, Field } from "formik";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
-import {  toast } from 'react-toastify';
+import ConnectWallet from '@/components/connectWallet';
 
 const InvestorProfile = ({ setStep, userDetail }) => {
   return (
@@ -84,6 +84,8 @@ const InvestorProfile = ({ setStep, userDetail }) => {
                   </span>
                 </label>
               </div>
+              { values['Are you familiar with cryptocurrencies?'] && <ConnectWallet />}
+
 
               <div className="flex-box gap-lg">
                 <p className="p-sm text-weight-medium">Are you an accredited investor?</p>

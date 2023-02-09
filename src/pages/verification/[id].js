@@ -8,7 +8,7 @@ import axios from 'axios';
 import {  toast } from 'react-toastify';
 
 const Verification = ({ params }) => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
   const [loader, setLoading] = useState(true)
   const [userDetail, setUserDetail] = useState()
   useEffect(() => {
@@ -75,7 +75,7 @@ const Verification = ({ params }) => {
         <RegisterSlider />
         {step === 1 && <VerificationBox userDetail={userDetail} setStep={setStep} />}
         {step === 2 && <InvestorProfile userDetail={userDetail} setStep={setStep} />}
-        {step === 3 && <Financials setStep={setStep} />}
+        {step === 3 && <Financials userDetail={userDetail} setStep={setStep} />}
       </div>}
 
       <div className="auth-wather" />
