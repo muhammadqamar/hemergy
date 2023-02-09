@@ -27,6 +27,7 @@ module.exports = {
       smallshadow: "11px 12px 0px rgba(0, 17, 141, 0.1)",
       lgshadow: "0px 44px 44px rgba(35, 37, 55, 0.2)",
       mdshadow: "23px 27px 0px rgba(0, 17, 141, 0.1)",
+      smshadow: "0 10px 7px -3px rgb(0, 0, 0 ,0.1), 0 4px 6px 7px rgb(0, 0, 0 , 0.1)",
     },
     fontFamily: {
       Inter: "Inter, sans-serif",
