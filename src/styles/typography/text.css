@@ -5,6 +5,10 @@
 .text-weight-medium {
   @apply font-medium !important;
 }
+
+.p-2xl {
+  @apply font-Poppins font-semibold text-8xl text-white;
+}
 .p-xl {
   @apply font-Poppins font-semibold text-4xl leading-[42px] text-textblack;
 }
