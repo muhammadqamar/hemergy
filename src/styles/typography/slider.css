@@ -42,14 +42,14 @@
 }
 
 .register-slider .slick-dots li {
-  @apply w-3 h-3 bg-[#92A0FF] rounded-[200px] m-0;
+  @apply w-3 h-3  bg-[#D9DBEE] rounded-[200px] m-0;
 }
 
 .project-slider .slick-dots li.slick-active {
   @apply bg-textcolor;
 }
 .project-slider .slick-dots li {
-  @apply w-3 h-3 bg-[#D9DBEE] rounded-[200px] m-0;
+  @apply w-3 h-3 bg-[#92A0FF] rounded-[200px] m-0;
 }
 
 .project-slider {
