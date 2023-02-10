@@ -1,77 +1,34 @@
-import React, {useState} from 'react'
-import {ethers} from 'ethers'
+import Web3 from "web3";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import { ethers } from "ethers";
 
-
-const WalletCard = () => {
-
-	const [errorMessage, setErrorMessage] = useState(null);
-	const [defaultAccount, setDefaultAccount] = useState(null);
-	const [userBalance, setUserBalance] = useState(null);
-	const [connButtonText, setConnButtonText] = useState('Connect Wallet');
-
-	const connectWalletHandler = () => {
-		if (window.ethereum && window.ethereum.isMetaMask) {
-			console.log('MetaMask Here!');
-
-			window.ethereum.request({ method: 'eth_requestAccounts'})
-			.then(result => {
-				accountChangedHandler(result[0]);
-				setConnButtonText('Wallet Connected');
-				getAccountBalance(result[0]);
-			})
-			.catch(error => {
-				setErrorMessage(error.message);
-
-			});
-
-		} else {
-			console.log('Need to install MetaMask');
-			setErrorMessage('Please install MetaMask browser extension to interact');
-		}
-	}
-
-	// update account, will cause component re-render
-	const accountChangedHandler = (newAccount) => {
-		setDefaultAccount(newAccount);
-		getAccountBalance(newAccount.toString());
-	}
-
-	const getAccountBalance = (account) => {
-		window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']})
-		.then(balance => {
-			setUserBalance(ethers.utils.formatEther(balance));
-		})
-		.catch(error => {
-			setErrorMessage(error.message);
-		});
-	};
-
-	const chainChangedHandler = () => {
-		// reload the page to avoid any errors with chain change mid use of application
-		window.location.reload();
-	}
-   if(typeof window !== 'undefined' ) {
-	// listen for account changes
-	window.ethereum?.on('accountsChanged', accountChangedHandler);
-
-	window.ethereum?.on('chainChanged', chainChangedHandler);
-
-   }
-
-
+export default function test() {
 	return (
-		<div className='walletCard'>
-		<h4> {"Connection to MetaMask using window.ethereum methods"} </h4>
-			<button onClick={connectWalletHandler}>{connButtonText}</button>
-			<div className='accountDisplay'>
-				<h3>Address: {defaultAccount}</h3>
-			</div>
-			<div className='balanceDisplay'>
-				<h3>Balance: {userBalance}</h3>
-			</div>
-			{errorMessage}
-		</div>
+		<button onClick={async () => {
+			const providerOptions = {
+				walletconnect: {
+
+					package: WalletConnectProvider,
+					options: {
+						infuraId: "INFURA_ID" // required
+					}
+				}
+			};
+
+
+
+			  const web3Modal = new Web3Modal({
+				network: "mainnet", // optional
+				cacheProvider: true, // optional
+				providerOptions // required
+			  });
+
+			  const instance = await web3Modal.connect();
+
+			  const provider = new ethers.providers.Web3Provider(instance);
+		}}>
+			connect
+		</button>
 	);
 }
-
-export default WalletCard;

@@ -36,7 +36,7 @@ const Verification = ({ userDetail, setStep }) => {
           try {
             const updateUser = await axios.put(
               `http://localhost:4000/api/user/updateuser`,
-              { ...values, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
+              { ...values, email: userDetail?.email  }
             );
             setSubmitting(false)
             console.log(updateUser)

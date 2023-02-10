@@ -32,20 +32,26 @@ const InvestorProfile = ({ setStep, userDetail }) => {
           const result = Object.keys(values).map(data => {
             return ({
               question: data,
-              answer: values[data]
+              selectedAnswers: values[data]
             })
           })
           console.log(result)
           try {
             const updateUser = await axios.put(
               `http://localhost:4000/api/user/questionair`,
-              { questions: result, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
+              { questions: result, email: userDetail?.email  }
             );
             setSubmitting(false)
 
             if (updateUser?.data?.userFound) {
-              setStep(3)
+              if(values['Are you familiar with cryptocurrencies?']) {
+                setStep(4)
+              } else {
+                setStep(3)
+              }
+
             }
+
           } catch (error) {
             setSubmitting(false)
           }
@@ -89,7 +95,7 @@ const InvestorProfile = ({ setStep, userDetail }) => {
                   </span>
                 </label>
               </div>
-              {values['Are you familiar with cryptocurrencies?'] && <ConnectWallet
+              {/* {values['Are you familiar with cryptocurrencies?'] && <ConnectWallet
                 setConnButtonText={setConnButtonText}
 
                 setErrorMessage={setErrorMessage}
@@ -97,7 +103,7 @@ const InvestorProfile = ({ setStep, userDetail }) => {
                 setUserBalance={setUserBalance}
                 errorMessage={errorMessage}
                 connButtonText={connButtonText}
-                userDetail={userDetail} />}
+                userDetail={userDetail} />} */}
 
 
               <div className="flex-box gap-lg">
@@ -134,7 +140,7 @@ const InvestorProfile = ({ setStep, userDetail }) => {
                   for="Toggle6"
                   className="w-[76px] inline-flex items-center gap-1 rounded-2xl p-1 cursor-pointer bg-garbg text-garbg"
                 >
-                  <Field id="Toggle6" type="checkbox" name="toggDo you have knowledge about finance / financial products?le2" className="hidden peer" />
+                  <Field id="Toggle6" type="checkbox" name="toggDo you have knowledge about finance / financial products?" className="hidden peer" />
                   <span className="w-8 h-8  p-[6px] rounded-xl bg-garbg peer-checked:bg-btncolor">
                     <Image
                       src={values['Do you have knowledge about finance / financial products?'] === true ? "/images/check-w.svg" : "/images/check-b.svg"}
