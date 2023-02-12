@@ -6,7 +6,7 @@ const Index = () => {
     <div className="dashboard-container">
       <div className="project-detail">
         <div className="detail-img">
-          <img src="/images/card.png" alt="detail" className="detail-banner-img" />
+          <img src="/images/dummy.png" alt="detail" className="detail-banner-img" />
           <div className="w-full flex-box">
             <div className="labels-frame wather-labels">
               <Image src="/images/hot.svg" alt="logo" width={20} height={20} />

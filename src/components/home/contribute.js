@@ -1,5 +1,4 @@
 import Image from "next/image";
-import InvestmentCard from "./InvestmentCard";
 
 const contribute = [
   {
@@ -41,9 +40,7 @@ const Contribute = () => {
           ))}
         </div>
       </div>
-      <div className="invest-calcu">
-        <InvestmentCard />
-      </div>
+
       <div className="wather-haf-white-bg" />
     </div>
   );

@@ -14,10 +14,10 @@
 }
 
 .investment-card .invest-about .investment-para {
-  @apply font-normal text-base text-textcolor w-full sm:w-[333px];
+  @apply font-normal text-base text-textcolor w-full;
 }
 
-.investment-card input[type="range"] {
+input[type="range"] {
   @apply w-full h-3 bg-[#6b7efd] rounded-[200px] bg-no-repeat;
   -webkit-appearance: none;
   background-image: linear-gradient(#3ccd87, #3ccd87);

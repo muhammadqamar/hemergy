@@ -35,3 +35,26 @@
 .tokens-wrapper {
   @apply w-[344px] flex-shrink-0 bg-blue700 p-8 rounded-[40px];
 }
+
+.available-token {
+  @apply flex items-center justify-center gap-2;
+}
+
+.power-box {
+  @apply px-[11px] py-6 flex items-center flex-col gap-2 bg-blue600 rounded-xl;
+}
+
+.year-box {
+  @apply w-full p-6 bg-blue400 rounded-xl;
+}
+
+.year-range input[type="range"] {
+  @apply bg-textcolor;
+}
+
+.year-range input[type="range"]::-webkit-slider-thumb {
+  @apply bg-textcolor;
+}
+.what-token {
+  @apply w-full p-4  bg-blue900 rounded-xl;
+}
