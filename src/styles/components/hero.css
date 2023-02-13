@@ -6,13 +6,6 @@
   @apply max-w-[1440px] flex items-start  gap-16 md:gap-7 justify-between mx-auto pt-[131px] px-[24px] md:px-[40px] lg:pl-[80px] lg:pr-[25px] pb-[250px] flex-col lg:flex-row lg:pb-[200px] xl:pb-[130px];
 }
 
-.hero-container-about {
-  @apply w-full bg-[#4E62EE] relative  flex items-center justify-center;
-}
-.hero-wrapper-about {
-  @apply max-w-[1440px] h-[930px]  flex  items-center justify-center text-center;
-}
-
 .hero-content {
   @apply mt-0 lg:mt-[50px] flex-shrink-0;
 }

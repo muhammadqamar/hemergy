@@ -3,16 +3,14 @@ import React from 'react';
 
 const Impact = () => {
   return (
-    <section className='w-full h-auto pt-[160px] "'>
-      <div className="max-w-[1440px] mx-auto">
-        <h2 className="font-semibold text-[48px] leading-[62px]  m-0 text-textcolor">
-          Your impact
-        </h2>
-        <div className="flex items-center mt-[52px]">
+    <section className="about-impact-section  ">
+      <div className="about-impact-div ">
+        <h2 className="about-impact-header ">Your impact</h2>
+        <div className="about-impact-body-div ">
           {/* Left side Images */}
-          <div className="">
+          <div className="about-impact-left">
             <Image src={'/images/about_1.png'} width={480} height={480} />
-            <div className="flex">
+            <div className="image-list">
               <Image src={'/images/about_2.png'} width={108} height={80} />
               <Image src={'/images/about_3.png'} width={108} height={80} />
               <Image src={'/images/about_4.png'} width={108} height={80} />
@@ -20,13 +18,13 @@ const Impact = () => {
             </div>
           </div>
           {/* Right Text */}
-          <div className="ml-[64px]">
-            <h3 className="font-semibold text-[64px] leading-[77px]  m-0 text-textcolor">
+          <div className="about-impact-right">
+            <h3 className="about-impact-right-header ">
               Community
               <br />
               conservation
             </h3>
-            <p className="font-normal  text-xl leading-[30px]  m-0 text-textcolor max-w-[480px]">
+            <p className="about-impact-right-prep ">
               We create opportunities to protect biodiversity and make local
               communities participate as much as possible in local projects.
               This generates work and shared trust in the future.
@@ -34,6 +32,7 @@ const Impact = () => {
           </div>
         </div>
       </div>
+      <div className="about-impact-wather-bg" />
     </section>
   );
 };
