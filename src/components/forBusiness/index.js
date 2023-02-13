@@ -1,7 +1,6 @@
 import HeroBanner from "@/utils/heroBanner";
 import Contribute from "./contribute";
-import CalculatorSection from "./calculatorSection";
-import PlanetToday from "./planetToday";
+import DemoCard from "@/utils/demoCard";
 
 const Index = () => {
   return (
@@ -15,8 +14,15 @@ const Index = () => {
         para3="Reach your ESG goals by issuing and distributing connected financial products on-chain"
       />
       <Contribute />
-      <CalculatorSection />
-      <PlanetToday />
+
+      <div className="calculator-main-section">
+        <DemoCard
+          showIcon
+          heading="Want to use our api?"
+          desc="We provide a white label solution to businesses who want to develop and market their own financial products"
+          btnText="Book a demo"
+        />
+      </div>
     </div>
   );
 };

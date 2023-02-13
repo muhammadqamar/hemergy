@@ -2,19 +2,29 @@ import Image from "next/image";
 
 const contribute = [
   {
-    img: "/images/pan_tool_alt.svg",
-    heading: "Varied",
-    para: "Browse a selection of renewable energy projects to invest in, both locally and abroad",
-  },
-  {
-    img: "/images/query_stats.svg",
-    heading: "Transparent",
-    para: "See exactly how your investment is going, and where the returns are from - no greenwashing!",
+    img: "/images/auto_fix.svg",
+    heading: "Simple",
+    para: "An end-to-end solution offering an API bridge: easily manage projects, assets, issuers and investors!",
   },
   {
     img: "/images/verified_user.svg",
-    heading: "Protected",
-    para: "Your investment is fully reversible if the project doesn’t start - invest with peace of mind",
+    heading: "Certified",
+    para: "Access to real renewable assets, proving revenue origin and ESG impact of your financial products.",
+  },
+  {
+    img: "/images/thumb_up_off.svg",
+    heading: "Compliant",
+    para: "Screening procedures & flexible investment rules. Choose custodians and payment gateways",
+  },
+  {
+    img: "/images/gesture_black_24dp1.svg",
+    heading: "Flexible",
+    para: " A comprehensive, flexible solution - adaptable to meet requirements across different jurisdictions.",
+  },
+  {
+    img: "/images/diversity_2.svg",
+    heading: "Network",
+    para: "Benefit from new interoperable channels on web3 maximizing distribution capabilities",
   },
 ];
 
@@ -23,12 +33,14 @@ const Contribute = () => {
     <div className="contribute-main">
       <div className="contribute-section">
         <div className="contribute-heading">
-          <img src="/images/contribute-left.png" alt="heart-1" className="heart-1" />
+          {/* <img src="/images/contribute-left.png" alt="heart-1" className="heart-1" /> */}
           <h2 className="con-heading">
-            <strong>Contribute</strong> to the energy reansition while <strong>doing good</strong>{" "}
-            in local communities and abroad
+            <strong>All energies, all connected</strong>
+            <br />
+            Cutting edge integrations ensuring compliant & transparent investments in your own
+            platform
           </h2>
-          <img src="/images/contribute-right.png" alt="heart-2" className="heart-2" />
+          {/* <img src="/images/contribute-right.png" alt="heart-2" className="heart-2" /> */}
         </div>
         <div className="contribute-cards">
           {contribute.map((item, index) => (
