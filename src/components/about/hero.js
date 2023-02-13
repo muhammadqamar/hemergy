@@ -11,11 +11,9 @@ const Hero = () => {
             About
             <br /> Hemergy
           </h1>
-          <p className="font-normal text-[21px] leading-[30px]  m-0 text-white font-Poppins">
-            All about us
-          </p>
-          <div className="flex items-center justify-center mt-4">
-            <div className="rounded-full bg-btncolor w-10 h-10 flex items-center justify-center">
+          <p className="about-hero-prep">All about us</p>
+          <div className="about-hero-us">
+            <div className="hero-us-img">
               <Image
                 src="/images/map/expand_more.svg"
                 width={24}

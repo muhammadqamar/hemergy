@@ -3,6 +3,33 @@ import Link from 'next/link';
 import React from 'react';
 import TeamCard from './TeamCard';
 import Slider from 'react-slick';
+const data = [
+  {
+    title: 'Ahmed Belabdia',
+    desg: 'Founder',
+    detail: 'Former engineer at Natixis Payments',
+    image: '/images/about_team_1.svg',
+  },
+  {
+    title: 'Ahmed Belabdia',
+    desg: 'Founder',
+    detail:
+      'It is a long established fact that a reader will be distracted by...',
+    image: '/images/about_team (1).svg',
+  },
+  {
+    title: 'Ahmed Belabdia',
+    desg: 'Adviser',
+    detail: 'Former engineer at Natixis Payments',
+    image: '/images/about_team (2).svg',
+  },
+  {
+    title: 'Ahmed Belabdia',
+    desg: 'Adviser',
+    detail: 'Former engineer at Natixis Payments',
+    image: '/images/about_team (3).svg',
+  },
+];
 const AboutTeam = () => {
   const settings = {
     // className: "center",
@@ -21,52 +48,39 @@ const AboutTeam = () => {
     variableWidth: true,
   };
   return (
-    <section className="pt-[160px]">
-      <div className="api-card-box">
-        {/* <Image src="/images/code.svg" alt="" width={51} height={51} /> */}
-        <h1 className="api-heading">
-          Start investing in the <br /> future of our planet today!
-        </h1>
-        <p className="api-about">
-          No hidden fees, just transparent projects. Contribute to the energy
-          revolution
-        </p>
+    <section className="about-team-section ">
+      <div className="about-team-board ">
+        <div className="api-card-box">
+          <h1 className="api-heading">
+            Start investing in the <br /> future of our planet today!
+          </h1>
+          <p className="api-about">
+            No hidden fees, just transparent projects.
+            <br /> Contribute to the energy revolution
+          </p>
 
-        <Link href="" className="btn Primary">
-          Get started
-        </Link>
+          <Link href="" className="btn Primary">
+            Get started
+          </Link>
+        </div>
       </div>
 
-      <div className="text-center mt-[160px] ">
-        <h3 className=" font-semibold text-[48px] m-0 text-textcolor">
-          The team
-        </h3>
-        <div>
+      <div className="about-team-div ">
+        <h3 className="about-team-title ">The team</h3>
+        <div className="pb-[12px]">
           <Slider {...settings}>
-            <div>
-              <TeamCard />
-            </div>
-            <div>
-              <TeamCard />
-            </div>
-            <div>
-              <TeamCard />
-            </div>
-            <div>
-              <TeamCard />
-            </div>
-            <div>
-              <TeamCard />
-            </div>
-            <div>
-              <TeamCard />
-            </div>
-            <div>
-              <TeamCard />
-            </div>
+            {data?.map((team) => {
+              return (
+                <div className="pb-[60px]">
+                  <TeamCard team={team} />
+                </div>
+              );
+            })}
           </Slider>
         </div>
       </div>
+
+      {/* <div className="about-team-wather-bg" /> */}
     </section>
   );
 };
