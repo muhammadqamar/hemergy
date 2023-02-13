@@ -1,10 +1,15 @@
-import { useRouter } from "next/router";
 import Head from "next/head";
-import { ToastContainer, toast } from 'react-toastify';
+
+import { useRouter } from "next/router";
+import { ToastContainer } from 'react-toastify';
+import { store } from '@/store/store'
+import { Provider } from 'react-redux'
+
 import "@/styles/globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'react-toastify/dist/ReactToastify.css';
+
 
 
 import { EthereumClient, modalConnectors, walletConnectProvider } from '@web3modal/ethereum'
@@ -63,9 +68,12 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ToastContainer />
       {ready ? (
+
+        <Provider  store={store}>
         <WagmiConfig client={wagmiClient}>
           <Component {...pageProps} />
         </WagmiConfig>
+        </Provider>
       ) : null}
 
       <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />

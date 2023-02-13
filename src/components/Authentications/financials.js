@@ -2,8 +2,10 @@ import { Formik, Field } from "formik";
 import Image from "next/image";
 import axios from 'axios';
 import {  toast } from 'react-toastify';
+import { useRouter } from 'next/router'
 
 const Financials = ({ setStep, userDetail }) => {
+  const router = useRouter()
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -33,7 +35,7 @@ const Financials = ({ setStep, userDetail }) => {
             setSubmitting(false)
             console.log(updateUser)
             if (updateUser?.data?.userFound) {
-              setStep(2)
+              router.push('/projects')
             }
           } catch (error) {
             setSubmitting(false)

@@ -1,17 +1,24 @@
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import {  toast } from 'react-toastify';
 import Image from "next/image";
+import { useSelector, useDispatch } from 'react-redux'
+
+
 import RegisterSlider from "@/components/Authentications/registerSlider";
 import VerificationBox from "@/components/Authentications/verification";
 import InvestorProfile from "@/components/Authentications/investorProfile";
 import Financials from "@/components/Authentications/financials";
 import WalletOption from "@/components/Authentications/walletOption";
-import { useEffect, useState } from "react";
-import axios from 'axios';
-import {  toast } from 'react-toastify';
+import EmailVerify from "@/components/Authentications/emailVerify";
+
+import {addUser} from "@/store/reducer/user";
 
 const Verification = ({ params }) => {
   const [step, setStep] = useState(1);
   const [loader, setLoading] = useState(true)
   const [userDetail, setUserDetail] = useState()
+  const dispatch =  useDispatch()
 
   useEffect(() => {
 
@@ -37,6 +44,7 @@ const Verification = ({ params }) => {
           }
         );
         setUserDetail(response?.data?.user)
+        dispatch(addUser(response?.data?.user))
         if (response?.data?.user?.platform === "custom") {
           setLoading(false);
           router.push("/account");
@@ -80,6 +88,7 @@ const Verification = ({ params }) => {
         {step === 3 && <Financials userDetail={userDetail} setStep={setStep} />}
         {step===4 && <WalletOption userDetail={userDetail} setStep={setStep} /> }
       </div>}
+      {/* <EmailVerify/> */}
 
       <div className="auth-wather" />
     </div>

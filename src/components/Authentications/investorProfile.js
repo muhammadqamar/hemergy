@@ -140,7 +140,7 @@ const InvestorProfile = ({ setStep, userDetail }) => {
                   for="Toggle6"
                   className="w-[76px] inline-flex items-center gap-1 rounded-2xl p-1 cursor-pointer bg-garbg text-garbg"
                 >
-                  <Field id="Toggle6" type="checkbox" name="toggDo you have knowledge about finance / financial products?" className="hidden peer" />
+                  <Field id="Toggle6" type="checkbox" name="Do you have knowledge about finance / financial products?" className="hidden peer" />
                   <span className="w-8 h-8  p-[6px] rounded-xl bg-garbg peer-checked:bg-btncolor">
                     <Image
                       src={values['Do you have knowledge about finance / financial products?'] === true ? "/images/check-w.svg" : "/images/check-b.svg"}
