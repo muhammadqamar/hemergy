@@ -1,0 +1,145 @@
+/* Hero Section */
+.hero-container-hiw {
+    @apply w-full bg-[#4E62EE] relative  flex items-center justify-center;
+}
+.hero-wrapper-hiw {
+    @apply max-w-[1440px] h-[930px]  flex  items-center justify-center text-center;
+}
+
+.hero-wrapper-hiw .hiw-hero-prep {
+    @apply font-normal text-[21px] leading-[30px]  m-0 text-white font-Poppins;
+}
+.hero-wrapper-hiw .hiw-hero-us {
+    @apply flex items-center justify-center mt-4;
+}
+.hero-wrapper-hiw .hiw-hero-us .hero-us-img {
+    @apply rounded-full bg-btncolor w-10 h-10 flex items-center justify-center;
+}
+
+/*Discoverd  */
+
+.hiw-discoverd-section {
+    @apply relative h-auto w-full;
+}
+.hiw-discoverd-div {
+    @apply max-w-[1440px] mx-auto;
+}
+.hiw-discoverd-transparent-div {
+    @apply pb-[478px] flex flex-col items-center text-center;
+}
+.transparent-heading {
+    @apply mt-10 font-semibold text-[48px] m-0 text-textcolor;
+}
+.transparent-detail {
+    @apply mt-6 font-normal text-[24px] m-0 text-textcolor;
+}
+
+/* PopularProject */
+.hiw-pp-section {
+    @apply bg-[#D6DBFF] pb-[384px] relative;
+}
+.hiw-pp-div {
+    @apply absolute z-[1]  top-[-314px] px-6 w-full;
+}
+.hiw-pp-header {
+    @apply pt-[160px];
+}
+.hiw-pp-header-detail {
+    @apply text-center;
+}
+.header-title {
+    @apply font-semibold text-[48px] m-0 text-textcolor;
+}
+.header-detail {
+    @apply font-normal text-[20px] m-0 text-textcolor;
+}
+.hiw-pp-list {
+    @apply mt-12;
+}
+.hiw-pp-list-options {
+    @apply pb-[12px];
+}
+
+/* FAQs */
+.hiw-faqs-section {
+    @apply w-full h-auto mt-[-180px] pb-[160px];
+}
+
+.hiw-faqs-div {
+    @apply max-w-[1440px] mx-auto;
+}
+.hiw-faqs-detail {
+    @apply flex flex-col items-center;
+}
+.hiw-faqs-heading {
+    @apply font-semibold text-[48px] leading-[72px]  m-0 text-textcolor;
+}
+.hiw-faqs-list {
+    @apply mt-8 flex flex-col gap-4;
+}
+
+/* FAQsTab */
+
+.faqs-tabs-section {
+    @apply w-[592px] border-2 border-[#D6DBFF] bg-white shadow-smallshadow sm:shadow-mainshadow rounded-[20px] p-6;
+}
+.faqs-tabs-header {
+    @apply flex items-center justify-between cursor-pointer;
+}
+.faqs-tabs-heading {
+    @apply font-semibold text-[20px] m-0 text-textcolor;
+}
+.faqs-tabs-detail {
+    @apply mt-4;
+}
+.faqs-tabs-prep {
+    @apply font-normal text-[16px] m-0 text-textcolor;
+}
+
+/* wather */
+.hiw-wather-img {
+    @apply w-full h-[233px] bg-repeat bg-center bg-auto absolute bottom-0;
+    background-image: url("/images/white-wather.png");
+}
+.discover__section {
+    background: url("../../../public/images/curvearr.svg") no-repeat;
+    background-position: 92% 88%;
+}
+.discover__slider .slick-arrow.slick-prev {
+    left: -3%;
+    background: #6b7efd;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    transform: rotate(180deg);
+}
+.discover__slider .slick-arrow.slick-prev::before {
+    line-height: 0px;
+    content: url("../../../public/images/keyboard_arrow_right.svg");
+}
+.discover__slider .slick-arrow.slick-next {
+    border-radius: 50px;
+    background: #6b7efd;
+    height: 40px;
+    width: 40px;
+    right: 0%;
+}
+.discover__slider .slick-arrow.slick-next::before {
+    line-height: 0px;
+    content: url("../../../public/images/keyboard_arrow_right.svg");
+}
+
+.discover__slider .slick-dots li button:before {
+    background-color: #d6dbff;
+    content: "";
+    border-radius: 50px;
+    height: 12px;
+    width: 12px;
+}
+.discover__slider .slick-dots .slick-active button:before {
+    background: #4e62ee;
+    content: "";
+    border-radius: 50px;
+    height: 12px;
+    width: 12px;
+}
