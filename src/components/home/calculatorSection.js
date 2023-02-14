@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProjectCard from "./projectCard";
+import ProjectCard from "@/utils/projectCard";
 import Slider from "react-slick";
 import InvestmentCard from "./InvestmentCard";
 
@@ -13,6 +13,12 @@ const CalculatorSection = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
+  };
+  const user = {
+    name: "John Wick",
+    designation: "Project Manager",
+    bio: "",
+    avatar: "/images/user.png",
   };
 
   return (
@@ -48,25 +54,79 @@ const CalculatorSection = () => {
           <div className="popular-project-slider mb-[104px]">
             <Slider {...settings}>
               <div>
-                <ProjectCard />
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
               </div>
               <div>
-                <ProjectCard />
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
               </div>
               <div>
-                <ProjectCard />
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
               </div>
               <div>
-                <ProjectCard />
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
               </div>
               <div>
-                <ProjectCard />
-              </div>
-              <div>
-                <ProjectCard />
-              </div>
-              <div>
-                <ProjectCard />
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
               </div>
             </Slider>
           </div>

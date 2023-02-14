@@ -3,7 +3,6 @@ import FundingDate from "./fundingDate";
 import UserCard from "./userCard";
 import InvestmentCalculator from "@/dashboard/projectDetails/tokens";
 import ProjectGallerySlider from "./gallerSlider";
-
 export default function ProjectDetailSection() {
   return (
     <div className="project-detail-page hero-container ">
