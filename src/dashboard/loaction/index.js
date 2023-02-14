@@ -45,13 +45,18 @@ const Index = () => {
           </div>
         </div>
         <div className="map-cards">
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
+          <LocationCard
+           hemrgyIcon="/images/air.svg"
+           bio=""
+           user={t=""}
+           viewDetailbtn
+           trending
+           stock
+           hemergyType="Solar asset name"
+           name="Project Name"
+
+          />
+
         </div>
       </div>
     </div>

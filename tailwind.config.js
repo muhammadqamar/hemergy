@@ -26,6 +26,7 @@ module.exports = {
       gray800: '#6B6D88',
       gray900: '#595C77',
       green500: '#3CCD87',
+      white500: '#D6DBFF'
     },
     boxShadow: {
       mainshadow: '37px 49px 0px rgba(0, 17, 141, 0.1)',
