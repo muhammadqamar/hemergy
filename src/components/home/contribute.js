@@ -1,4 +1,4 @@
-import Image from "next/image";
+import HemergyConributeCard from "@/utils/HemergyContributeCard";
 
 const contribute = [
   {
@@ -32,11 +32,12 @@ const Contribute = () => {
         </div>
         <div className="contribute-cards">
           {contribute.map((item, index) => (
-            <div key={index} className="contribute-card">
-              <Image src={item.img} alt="pan" width={52} height={52} />
-              <h3 className="con-card-heading">{item.heading}</h3>
-              <p className="con-card-para">{item.para}</p>
-            </div>
+            <HemergyConributeCard
+              key={index}
+              icon={item.img}
+              title={item.heading}
+              desc={item.para}
+            />
           ))}
         </div>
       </div>

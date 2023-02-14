@@ -45,51 +45,41 @@ const CalculatorSection = () => {
               </strong>
             </p>
           </div>
-          <Slider {...settings}>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-            <div>
-              <ProjectCard />
-            </div>
-          </Slider>
+          <div className="popular-project-slider mb-[104px]">
+            <Slider {...settings}>
+              <div>
+                <ProjectCard />
+              </div>
+              <div>
+                <ProjectCard />
+              </div>
+              <div>
+                <ProjectCard />
+              </div>
+              <div>
+                <ProjectCard />
+              </div>
+              <div>
+                <ProjectCard />
+              </div>
+              <div>
+                <ProjectCard />
+              </div>
+              <div>
+                <ProjectCard />
+              </div>
+            </Slider>
+          </div>
+          <div className="planet-about">
+            <h1 className="planet-heading">Start investing in the future of our planet today!</h1>
+            <p className="planet-para">
+              No hidden fees, just transparent projects. Contribute to the energy revolution
+            </p>
+            <Link href="" className="btn Primary">
+              Get started
+            </Link>
+          </div>
+          <div className="wather-haf-white-bg" />
         </div>
       </div>
     </>

@@ -55,7 +55,7 @@ const Hero = () => {
           <img src="/images/hero-user-card.png" className="hero-user-card" alt="banner" />
         </div>
       </div>
-      <div className="hero-wather-img" />
+      <div className="white-wather-bg" />
     </div>
   );
 };
