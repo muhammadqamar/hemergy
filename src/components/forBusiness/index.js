@@ -5,13 +5,15 @@ import DemoCard from "@/utils/demoCard";
 const Index = () => {
   return (
     <div>
-      {/* <Hero /> */}
       <HeroBanner
         heroTitle="Swift set-up & ESG compliant"
+        btnText="Book a demo"
         para1="Build your sustainable digital"
         boldPara="crowdfunding"
         para2="in days"
         para3="Reach your ESG goals by issuing and distributing connected financial products on-chain"
+        bannerImg1="/images/Layer_1.svg"
+        bannerImg2="/images/hero-user-card.png"
       />
       <Contribute />
 
