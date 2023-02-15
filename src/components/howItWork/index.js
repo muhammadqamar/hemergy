@@ -1,8 +1,8 @@
-import Discoverd from "./Discoverd";
-import FAQs from "./FAQs";
-import HeroBanner from "@/utils/heroBanner";
-import PopularProject from "./PopularProject";
-import DemoCard from "@/utils/demoCard";
+import Discoverd from './Discoverd';
+import FAQs from './FAQs';
+import HeroBanner from '@/utils/heroBanner';
+import PopularProject from './PopularProject';
+import DemoCard from '@/utils/demoCard';
 
 const Index = () => {
   return (
