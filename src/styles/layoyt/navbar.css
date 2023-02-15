@@ -32,5 +32,5 @@
   @apply absolute top-[125%] left-[50%]  w-6 h-2 rounded-2xl bg-green400;
 }
 .nav-reginter {
-  @apply hidden lg:flex items-center gap-[24px] font-Inter;
+  @apply flex items-center gap-[24px] font-Inter;
 }
