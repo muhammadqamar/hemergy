@@ -1,23 +1,16 @@
-import Link from "next/link";
 import InvestingTab from "./investingTab";
 import ApiCard from "../apiCard";
 
 const Index = () => {
   return (
     <div className="planet-today-sectiion">
-      <div className="planet-about">
-        <h1 className="planet-heading">Start investing in the future of our planet today!</h1>
-        <p className="planet-para">
-          No hidden fees, just transparent projects. Contribute to the energy revolution
-        </p>
-        <Link href="" className="btn Primary">
-          Get started
-        </Link>
+      <div className="w-full z-[1] left-0 absolute mt-[-140px]">
+        <InvestingTab />
       </div>
-
-      <InvestingTab />
-
-      <ApiCard />
+      <div className=" w-full left-0 bottom-[-70px] absolute">
+        <ApiCard />
+      </div>
+      <div className="white-wather-bg" />
     </div>
   );
 };

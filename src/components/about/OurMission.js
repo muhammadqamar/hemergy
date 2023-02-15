@@ -5,6 +5,13 @@ const OurMission = () => {
   return (
     <section className="about-our-mission-section">
       <div className="about-our-mission-div">
+        <div>
+          <img
+            src="/images/about_out_mission (2).svg"
+            alt="heart-1"
+            className="heart-1"
+          />
+        </div>
         <div className="about-our-mission-detail">
           <h2 className="detail-header ">Our mission</h2>
           <p className="detail-prep">
@@ -25,11 +32,18 @@ const OurMission = () => {
             solutions that put trust, transparency and efficiency at the heart
             of our solutions.
           </p>
+          <div className="mt-12 flex justify-center">
+            <Link href="" className="btn Primary">
+              Get started
+            </Link>
+          </div>
         </div>
-        <div className="mt-12">
-          <Link href="" className="btn Primary">
-            Get started
-          </Link>
+        <div>
+          <img
+            src="/images/about_out_mission (1).svg"
+            alt="heart-2"
+            className="heart-2"
+          />
         </div>
       </div>
     </section>

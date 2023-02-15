@@ -18,8 +18,8 @@ const CalculatorSection = () => {
     name: "John Wick",
     designation: "Project Manager",
     bio: "",
-    avatar: "/images/user.png"
-  }
+    avatar: "/images/user.png",
+  };
 
   return (
     <>
@@ -51,68 +51,95 @@ const CalculatorSection = () => {
               </strong>
             </p>
           </div>
-          <Slider {...settings}>
-            <div>
-              <ProjectCard
-                hemergyIcon="/images/air.svg"
-                bio="It is a long established fact that a reader will be distracted."
-                user={user}
-                viewDetailbtn
-                trending
-                stockdirection="up"
-                stock="675.5"
-                hemergyType="Solar asset name"
-                name="Project Name"
-                hideThumbnail
-                bg="bg-textcolor"
-              />
-            </div>
-            <div>
-              <ProjectCard
-                hemergyIcon="/images/air.svg"
-                bio="It is a long established fact that a reader will be distracted."
-                user={user}
-                viewDetailbtn
-                trending
-                stockdirection="up"
-                stock="675.5"
-                hemergyType="Solar asset name"
-                name="Project Name"
-                hideThumbnail
-                bg="bg-textcolor"
-              />
-            </div>
-            <div>
-              <ProjectCard
-                hemergyIcon="/images/air.svg"
-                bio="It is a long established fact that a reader will be distracted."
-                user={user}
-                viewDetailbtn
-                trending
-                stockdirection="up"
-                stock="675.5"
-                hemergyType="Solar asset name"
-                name="Project Name"
-                hideThumbnail
-                bg="bg-textcolor"
-              />
-            </div>
-            <div>
-              <ProjectCard
-                hemergyIcon="/images/air.svg"
-                bio="It is a long established fact that a reader will be distracted."
-                user={user}
-                viewDetailbtn
-                trending
-                stockdirection="up"
-                stock="675.5"
-                hemergyType="Solar asset name"
-                name="Project Name"
-                hideThumbnail
-                bg="bg-textcolor"
-              />
-            </div>
-          </Slider>
+          <div className="popular-project-slider mb-[104px]">
+            <Slider {...settings}>
+              <div>
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
+              </div>
+              <div>
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
+              </div>
+              <div>
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
+              </div>
+              <div>
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
+              </div>
+              <div>
+                <ProjectCard
+                  hemergyIcon="/images/air.svg"
+                  bio="It is a long established fact that a reader will be distracted."
+                  user={user}
+                  viewDetailbtn
+                  trending
+                  stockdirection="up"
+                  stock="675.5"
+                  hemergyType="Solar asset name"
+                  name="Project Name"
+                  hideThumbnail
+                  bg="bg-textcolor"
+                />
+              </div>
+            </Slider>
+          </div>
+          <div className="planet-about">
+            <h1 className="planet-heading">Start investing in the future of our planet today!</h1>
+            <p className="planet-para">
+              No hidden fees, just transparent projects. Contribute to the energy revolution
+            </p>
+            <Link href="" className="btn Primary">
+              Get started
+            </Link>
+          </div>
+          <div className="wather-haf-white-bg" />
         </div>
       </div>
     </>

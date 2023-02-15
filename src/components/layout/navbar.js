@@ -21,6 +21,9 @@ const Navbar = () => {
           <Link href="" className="nav-link">
             For Businesses
           </Link>
+          <Link href="" className="nav-link">
+            Get in touch
+          </Link>
         </div>
         <div className="nav-reginter">
           <Link href="" className="nav-link">
