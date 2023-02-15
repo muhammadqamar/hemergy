@@ -67,7 +67,7 @@ const AboutTeam = () => {
 
       <div className="about-team-div ">
         <h3 className="about-team-title ">The team</h3>
-        <div className="pb-[12px]">
+        <div className="pb-[140px]">
           <Slider {...settings}>
             {data?.map((team) => {
               return (
@@ -80,7 +80,7 @@ const AboutTeam = () => {
         </div>
       </div>
 
-      {/* <div className="about-team-wather-bg" /> */}
+      <div className="white-wather-bg" />
     </section>
   );
 };
