@@ -30,6 +30,7 @@ const Verification = ({ userDetail, setStep }) => {
           if (!values.address) {
             errors.address = "Required";
           }
+
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
@@ -152,7 +153,7 @@ const Verification = ({ userDetail, setStep }) => {
             <p className="p-sm text-weight-medium text-textcolor">Enter address manually</p>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? '.....' : 'Next'}
+              {isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} />  : 'Next'}
             </button>
           </form>
         )}

@@ -1,10 +1,23 @@
+import {useState} from 'react'
 import { Formik, Field } from "formik";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import InBox from "@/components/Authentications/inBox";
+import { useSelector, useDispatch } from "react-redux";
+import {addUser} from "@/store/reducer/user";
+import { useRouter } from 'next/router'
+
 
 const SignIn = () => {
+  const [startCheckingState,setStartCheckingState ] = useState(false)
+  const user = useSelector(state=>state.user)
+  const [showPass, setShowPass] = useState(false)
+  const dispatch= useDispatch()
+  const router = useRouter()
   return (
+    user?.isVerified || !startCheckingState ?
     <div className="registration-box">
       <h3 className="p-xl center-text">Sign In to Hemergy</h3>
       <Formik
@@ -24,17 +37,37 @@ const SignIn = () => {
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            const updateUser = await axios.post(
+            const userFound = await axios.post(
               `http://localhost:4000/api/auth/login`,
               values
             );
             setSubmitting(false)
 
-            // if (updateUser?.data?.userFound) {
-            //   setStep(3)
-            // }
+            dispatch(addUser(userFound?.data?.user))
+            if (userFound?.data?.user?.isVerified) {
+               if(userFound?.data?.user?.firstName){
+                router.push('/projects')
+               } else {
+                router.push('/on-boarding')
+               }
+
+            } else {
+              setStartCheckingState(true)
+            }
+
           } catch (error) {
             setSubmitting(false)
+            console.log(error)
+            toast.error(error?.response?.data?.status || error.message, {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
           }
         }}
       >
@@ -48,12 +81,13 @@ const SignIn = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
+
           <form className="form-cantainer" onSubmit={handleSubmit}>
             <div className="input-box">
               <label className="p-sm text-weight-medium">Email</label>
               <div className="input-field">
                 <input
-                  placeholder="Emain"
+                  placeholder="Email"
                   className="input p-sm"
                   type="email"
                   name="email"
@@ -71,14 +105,14 @@ const SignIn = () => {
                 <input
                   className="input p-sm"
                   placeholder="Password"
-                  type="password"
+                  type={showPass ? "text":"password"}
                   name="password"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
                 />
                 <div className="pointer"></div>
-                <Image src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+                <Image onClick={()=>{setShowPass(!showPass)}} src="/images/visibility.svg" alt="visibility" width={20} height={20} />
               </div>
               <p className="error p-x-sm">
                 {errors.password && touched.password && errors.password}
@@ -92,14 +126,17 @@ const SignIn = () => {
                   <p className="p-sm">Remember me</p>
                 </label>
               </div>
-              <Link href="" className="p-sm text-weight-medium p-link">
+              <Link onClick={()=>{
+
+              }} href="/forgot-password" className="p-sm text-weight-medium p-link">
                 Forgot password?
               </Link>
             </div>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? '.....' : 'Sign In'}
+              {isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} /> : 'Sign In'}
             </button>
+
 
             <div className="flex-box gap-x-sm">
               <div className="divider" />
@@ -107,7 +144,7 @@ const SignIn = () => {
               <div className="divider" />
             </div>
 
-            <button type="button" className="flex-box fit-width gap-x-sm btn-border secondary" onClick={()=>window.location = `http://localhost:4000/api/auth/google-login`}>
+            <button type="button" className="flex-box fit-width gap-x-sm btn-border secondary" onClick={() => window.location = `http://localhost:4000/api/auth/google-login`}>
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
               Sign In with Google
             </button>
@@ -121,7 +158,7 @@ const SignIn = () => {
           </form>
         )}
       </Formik>
-    </div>
+    </div>:<InBox />
   );
 };
 
