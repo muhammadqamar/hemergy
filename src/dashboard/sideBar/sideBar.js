@@ -7,7 +7,9 @@ const SideBar = () => {
   const currentRoute = router.pathname;
   return (
     <div className="flex-box flex-col side-nav-bar">
-      <Image src="/images/logo_cue.svg" alt="logo" width={32} height={32} />
+      <Link href="/">
+        <Image src="/images/logo_cue.svg" alt="logo" width={32} height={32} />
+      </Link>
       <div className="flex-box flex-col gap-4 ">
         <Link
           href="/projects"

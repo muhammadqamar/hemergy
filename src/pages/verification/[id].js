@@ -2,44 +2,36 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import { useSelector, useDispatch } from 'react-redux'
-import { useRouter } from 'next/router'
-
+import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 
 import EmailVerify from "@/components/Authentications/emailVerify";
 
 import { addUser } from "@/store/reducer/user";
+import Link from "next/link";
 
 const Verification = ({ params }) => {
-
-  const [loader, setLoading] = useState(true)
-  const [userDetail, setUserDetail] = useState()
-  const dispatch = useDispatch()
-  const router = useRouter()
+  const [loader, setLoading] = useState(true);
+  const [userDetail, setUserDetail] = useState();
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
-
-
     (async () => {
       try {
         setLoading(true);
 
         if (params?.id) {
-
-          let response = await axios.post(
-            `http://localhost:4000/api/auth/verify/account`,
-            {
-              code: params?.id
-            }
-          );
-          setUserDetail(response?.data?.user)
-          dispatch(addUser(response?.data?.user))
+          let response = await axios.post(`http://localhost:4000/api/auth/verify/account`, {
+            code: params?.id,
+          });
+          setUserDetail(response?.data?.user);
+          dispatch(addUser(response?.data?.user));
           if (response?.data?.user?.platform === "custom") {
             setLoading(false);
             localStorage.setItem("hemergy-email", response?.data?.user?.email);
-            router.push('/login')
+            router.push("/login");
           }
-
         }
       } catch (error) {
         setLoading(false);
@@ -57,18 +49,13 @@ const Verification = ({ params }) => {
 
         console.log(error);
       }
-
-
-    })()
-
-
-  }, [])
+    })();
+  }, []);
   return (
     <div className="authentications-section">
-      <div className="auth-header">
+      <Link href="/" className="auth-header">
         <Image src="/images/hemergy-logo.svg" width={150} height={32} alt="logo" />
-      </div>
-
+      </Link>
 
       <EmailVerify loader={loader} />
 

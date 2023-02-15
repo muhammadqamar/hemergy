@@ -8,9 +8,9 @@ const Navbar = () => {
   return (
     <div className="nav-container">
       <div className="main-nav-wrapper">
-        <div className="nav-logo">
+        <Link href="/" className="nav-logo">
           <Image src="/images/hemergy-logo.svg" alt="hemergy logo" width={150} height={32} />
-        </div>
+        </Link>
         <div className="nav-links-box">
           <Link
             href="/how-it-work"
@@ -18,21 +18,36 @@ const Navbar = () => {
           >
             How it works
           </Link>
-          <Link href="" className="nav-link">
+          <Link
+            href="/about"
+            className={currentRoute === `/about` ? `nav-link active-link` : `nav-link`}
+          >
             About
           </Link>
-          <Link href="" className="nav-link">
+          <Link
+            href="/for-investors"
+            className={currentRoute === `/for-investors` ? `nav-link active-link` : `nav-link`}
+          >
             For Investors
           </Link>
-          <Link href="" className="nav-link">
+          <Link
+            href="/for-business"
+            className={currentRoute === `/for-business` ? `nav-link active-link` : `nav-link`}
+          >
             For Businesses
           </Link>
-          <Link href="" className="nav-link">
+          <Link
+            href="/contact-us"
+            className={currentRoute === `/contact-us` ? `nav-link active-link` : `nav-link`}
+          >
             Get in touch
           </Link>
         </div>
         <div className="nav-reginter">
-          <Link href="" className="nav-link">
+          <Link
+            href="/login"
+            className={currentRoute === `/login` ? `nav-link active-link` : `nav-link`}
+          >
             Sign in
           </Link>
 

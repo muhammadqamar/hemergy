@@ -4,24 +4,24 @@ import Link from "next/link";
 const pages = [
   {
     name: "How it works",
-    path: "",
+    path: "/how-it-work",
   },
   {
     name: "About",
-    path: "",
+    path: "/about",
   },
   {
     name: "Projects",
-    path: "",
+    path: "/projects",
   },
   {
     name: "For Businesses",
-    path: "",
+    path: "/for-business",
   },
 
   {
     name: "Get in touch",
-    path: "",
+    path: "/contact-us",
   },
 ];
 
@@ -41,9 +41,9 @@ const Footer = () => {
         ))}
       </div>
       <p className="footer-text mb-6">© Hemergy. All rights reserved.</p>
-      <div className="flex-box justify-center">
+      <Link href="/" className="flex-box justify-center">
         <Image src="/images/logo_cue.svg" alt="icon" width={32} height={32} />
-      </div>
+      </Link>
     </div>
   );
 };

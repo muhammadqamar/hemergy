@@ -35,39 +35,6 @@ const impactdata = [
     // image: 'about_5.png',
     image: "testing/test (4).jpg",
   },
-  {
-    id: 5,
-    title: "Community conservation",
-    detail: `We create opportunities to protect biodiversity and make local
-    communities participate as much as possible in local projects.
-    `,
-    // image: 'about_2.png',
-    image: "testing/test (1).jpg",
-  },
-  {
-    id: 6,
-    title: "Community ",
-    detail: `
-    This generates work and shared trust in the future.`,
-    // image: 'about_3.png',
-    image: "testing/test (2).jpg",
-  },
-  {
-    id: 7,
-    title: "Community conservation",
-    detail: `We create opportunities to protect biodiversity and make local
-    communities participate as much as possible in local projects.
-   `,
-    image: "testing/test (3).jpg",
-  },
-  {
-    id: 8,
-    title: "Community ",
-    detail: `
-    This generates work and shared trust in the future.`,
-    // image: 'about_5.png',
-    image: "testing/test (4).jpg",
-  },
 ];
 const Impact = () => {
   const [impactDetail, setImpactDetail] = useState(1);

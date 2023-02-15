@@ -15,7 +15,12 @@
 }
 
 .nav-link {
-  @apply font-medium text-[16px] leading-6 text-white font-Inter;
+  @apply font-medium text-[16px] leading-6 text-white font-Inter relative;
+}
+.nav-link:hover::before {
+  content: "";
+  transform: translate(-50%, -50%);
+  @apply absolute top-[125%] left-[50%]  w-6 h-2 rounded-2xl bg-green400;
 }
 
 .nav-link.active-link {
@@ -23,7 +28,8 @@
 }
 .nav-link.active-link::before {
   content: "";
-  @apply absolute bottom-0 w-6 h-2 rounded-full bg-green400;
+  transform: translate(-50%, -50%);
+  @apply absolute top-[125%] left-[50%]  w-6 h-2 rounded-2xl bg-green400;
 }
 .nav-reginter {
   @apply hidden lg:flex items-center gap-[24px] font-Inter;

@@ -20,7 +20,7 @@ const HeroBanner = ({
   return (
     <div className="hero-container ">
       <div
-        className={`hero-wrapper ${heroTitle2 && `justify-center text-center`}  ${
+        className={`hero-wrapper ${heroTitle2 && `justify-center text-center px-6`}  ${
           paddingBottom && `pb-[220px]`
         }`}
       >
