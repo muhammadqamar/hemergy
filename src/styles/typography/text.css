@@ -7,7 +7,7 @@
 }
 
 .p-2xl {
-  @apply font-Poppins font-semibold text-8xl text-white;
+  @apply font-Poppins font-semibold text-[40px] leading-[48px] md:text-8xl text-white;
 }
 .p-xl {
   @apply font-Poppins font-semibold text-4xl leading-[42px] text-textblack;

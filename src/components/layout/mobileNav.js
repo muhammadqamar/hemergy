@@ -1,8 +1,12 @@
 import Link from "next/link";
 
-const MobileNav = ({ currentRoute }) => {
+const MobileNav = ({ currentRoute, menu }) => {
   return (
-    <section className="w-full bg-textcolor rounded-br-3xl shadow-mdshadow rounded-bl-3xl px-12 py-6 block lg:hidden">
+    <section
+      className={`w-full bg-textcolor rounded-br-3xl shadow-mdshadow rounded-bl-3xl px-12 py-6 absolute top-[80px] left-0 z-[5] ${
+        menu === true ? `block` : ` hidden`
+      }`}
+    >
       <div className="flex flex-col gap-2 items-start pb-6">
         <Link
           href="/how-it-work"

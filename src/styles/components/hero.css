@@ -1,16 +1,16 @@
 .hero-container {
-  @apply w-full bg-[#4E62EE]  min-h-screen relative;
+  @apply w-full bg-[#4E62EE] min-h-[auto]  md:min-h-screen relative;
 }
 
 .hero-wrapper {
-  @apply max-w-[1440px] flex items-start  gap-16 md:gap-7 justify-between mx-auto pt-[131px] px-[24px] md:px-[40px] lg:pl-[80px] lg:pr-[25px] pb-[250px] flex-col lg:flex-row lg:pb-[200px] xl:pb-[130px];
+  @apply max-w-[1440px] relative z-[1] flex items-start  gap-16 md:gap-7 justify-between mx-auto md:pt-[131px] px-[24px] md:px-[40px] lg:pl-[80px] lg:pr-[25px]  md:pb-[250px] flex-col lg:flex-row lg:pb-[200px] xl:pb-[130px];
 }
 
 .hero-container-about {
   @apply w-full bg-[#4E62EE] relative  flex items-center justify-center;
 }
 .hero-wrapper-about {
-  @apply max-w-[1440px] h-[930px]  flex  items-center justify-center text-center;
+  @apply max-w-[1440px] h-[930px] relative z-[1] flex items-center justify-center text-center;
 }
 .hero-investors-wrapper {
   @apply max-w-[1440px] flex items-start  gap-16 md:gap-7 justify-center mx-auto pt-[131px] px-[24px] md:px-[40px] lg:pl-[80px] lg:pr-[25px] pb-[250px] flex-col lg:flex-row lg:pb-[200px] xl:pb-[450px];
@@ -32,28 +32,23 @@
 }
 
 .main-heading {
-  @apply font-Poppins font-semibold text-[28px] md:text-[42px] lg:text-[64px] leading-[34px] md:leading-[52px] lg:leading-[76px] text-white mb-4 md:mb-8;
+  @apply font-Poppins font-semibold text-[40px] lg:text-[64px] leading-[48px] lg:leading-[76px] text-white mb-8;
 }
 
 .sub-heading {
-  @apply font-Poppins font-normal text-[18px] md:text-[24px] lg:text-[28px] leading-[28px] md:leading-[32px] lg:leading-[42px] text-herotext;
+  @apply font-Poppins font-normal text-[20px] lg:text-[28px] leading-[30px] lg:leading-[42px] text-herotext;
 }
 
 .sub-heading.about-w {
-  @apply flex items-center gap-2 sm:gap-4 my-4 sm:my-[36px];
+  @apply flex items-center flex-wrap gap-4 mt-8 mb-[82px]  lg:my-[36px];
 }
 
 .sub-heading.about-w span {
-  @apply flex items-center gap-[8px] font-semibold text-white font-Poppins;
-}
-
-.hero-wather-img {
-  @apply w-full h-[233px] bg-repeat bg-center bg-auto absolute bottom-0;
-  background-image: url("/images/white-wather.png");
+  @apply flex items-center  gap-2 font-semibold text-white font-Poppins;
 }
 
 .hero-banner-img {
-  @apply relative w-full md:w-[638px] h-[669px];
+  @apply relative w-full md:w-[638px] h-[669px] hidden md:block;
 }
 
 .hero-banner-img .hero-start {

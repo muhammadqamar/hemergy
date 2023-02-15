@@ -20,11 +20,11 @@ const HeroBanner = ({
   return (
     <div className="hero-container ">
       <div
-        className={`hero-wrapper ${heroTitle2 && `justify-center text-center px-6`}  ${
-          paddingBottom && `pb-[220px]`
-        }`}
+        className={`hero-wrapper pt-[208px] md:pt-[131px] pb-0 ${
+          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[170px]`
+        }  ${paddingBottom && `pb-[220px]`}`}
       >
-        <div className="hero-content">
+        <div className="hero-content mx-auto">
           {heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
           {heroTitle2 && (
             <div className="mb-4 mx-auto max-w-[592px] ">

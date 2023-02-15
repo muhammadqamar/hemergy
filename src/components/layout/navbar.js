@@ -7,8 +7,8 @@ import { useState } from "react";
 const Navbar = () => {
   const router = useRouter();
   const [menu, setMenu] = useState(false);
-
   const currentRoute = router.pathname;
+
   return (
     <>
       <div className="nav-container">
@@ -60,17 +60,31 @@ const Navbar = () => {
               Sign in
             </Link>
 
-            <Link href="/register" className="btn secondary">
+            <Link href="/register" className={menu === true ? "hidden" : "btn secondary"}>
               Get started
             </Link>
 
-            <button className=" lg:hidden block">
-              <Image src="/images/menu.svg" alt="" width={20} height={20} />
+            <button
+              onClick={() => {
+                if (menu === false) {
+                  setMenu(true);
+                } else {
+                  setMenu(false);
+                }
+              }}
+              className=" lg:hidden block"
+            >
+              <Image
+                src={menu === true ? "/images/close.svg" : "/images/menu.svg"}
+                alt=""
+                width={20}
+                height={20}
+              />
             </button>
           </div>
         </div>
       </div>
-      <MobileNav currentRoute={currentRoute} />
+      <MobileNav menu={menu} currentRoute={currentRoute} />
     </>
   );
 };
