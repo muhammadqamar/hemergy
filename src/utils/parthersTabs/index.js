@@ -34,7 +34,7 @@ const user = [
   },
 ];
 
-const InvestingTab = () => {
+const Index = () => {
   const [openTab, setOpenTab] = useState(0);
 
   return (
@@ -68,4 +68,4 @@ const InvestingTab = () => {
   );
 };
 
-export default InvestingTab;
+export default Index;

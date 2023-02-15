@@ -1,3 +1,4 @@
+import DemoCard from "@/utils/demoCard";
 import HemergyConributeCard from "@/utils/HemergyContributeCard";
 
 const contribute = [
@@ -30,17 +31,17 @@ const contribute = [
 
 const Contribute = () => {
   return (
-    <div className="contribute-main">
+    <div className="contribute-main pb-[494px]">
       <div className="contribute-section">
-        <div className="contribute-heading">
-          {/* <img src="/images/contribute-left.png" alt="heart-1" className="heart-1" /> */}
-          <h2 className="con-heading">
-            <strong>All energies, all connected</strong>
-            <br />
+        <div className="flex text-center flex-col items-center mb-[64px]">
+          <img src="/images/charger.svg" alt="charger" className="w-[96px] h-[96px] mb-10" />
+          <h2 className="text-5xl font-semibold leading-[72px] text-textcolor mb-6">
+            All energies, <br /> all connected
+          </h2>
+          <p className=" max-w-[456px] p-md font-normal leading-[36px] text-textcolor">
             Cutting edge integrations ensuring compliant & transparent investments in your own
             platform
-          </h2>
-          {/* <img src="/images/contribute-right.png" alt="heart-2" className="heart-2" /> */}
+          </p>
         </div>
         <div className="contribute-cards">
           {contribute.map((item, index) => (
@@ -52,6 +53,15 @@ const Contribute = () => {
             />
           ))}
         </div>
+      </div>
+
+      <div className="w-full absolute left-0 bottom-[-91px]">
+        <DemoCard
+          showIcon
+          heading="Want to use our api?"
+          desc="We provide a white label solution to businesses who want to develop and market their own financial products"
+          btnText="Book a demo"
+        />
       </div>
 
       <div className="wather-haf-white-bg" />

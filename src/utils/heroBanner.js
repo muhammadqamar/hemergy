@@ -15,15 +15,20 @@ const HeroBanner = ({
   heroTitle2,
   btnLabel,
   btnIcon,
+  paddingBottom,
 }) => {
   return (
     <div className="hero-container ">
-      <div className={`hero-wrapper ${heroTitle2 && `justify-center text-center`} `}>
+      <div
+        className={`hero-wrapper ${heroTitle2 && `justify-center text-center`}  ${
+          paddingBottom && `pb-[220px]`
+        }`}
+      >
         <div className="hero-content">
           {heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
           {heroTitle2 && (
             <div className="mb-4 mx-auto max-w-[592px] ">
-              <h3 className="p-xl-semi font-medium text-white ">{pageName}</h3>
+              {pageName && <h3 className="p-xl-semi font-medium text-white ">{pageName}</h3>}
               <h1 className="p-2xl  my-4">{heroTitle2}</h1>
               <span className="p-lg font-normal text-white opacity-80">{btnLabel}</span>
             </div>

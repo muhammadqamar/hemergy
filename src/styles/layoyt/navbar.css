@@ -18,6 +18,13 @@
   @apply font-medium text-[16px] leading-6 text-white font-Inter;
 }
 
+.nav-link.active-link {
+  @apply relative;
+}
+.nav-link.active-link::before {
+  content: "";
+  @apply absolute bottom-0 w-6 h-2 rounded-full bg-green400;
+}
 .nav-reginter {
   @apply hidden lg:flex items-center gap-[24px] font-Inter;
 }

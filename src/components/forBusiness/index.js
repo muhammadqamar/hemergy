@@ -1,29 +1,30 @@
 import HeroBanner from "@/utils/heroBanner";
+import PartnersTab from "@/utils/parthersTabs";
 import Contribute from "./contribute";
-import DemoCard from "@/utils/demoCard";
 
 const Index = () => {
   return (
     <div>
       <HeroBanner
-        heroTitle="Swift set-up & ESG compliant"
+        heroTitle="Integrate with connected finance for sustainability"
         btnText="Book a demo"
         para1="Build your sustainable digital"
-        boldPara="crowdfunding"
+        boldPara="crowdfunding platform"
         para2="in days"
         para3="Reach your ESG goals by issuing and distributing connected financial products on-chain"
         bannerImg1="/images/Layer_1.svg"
         bannerImg2="/images/hero-user-card.png"
+        paddingBottom
       />
       <Contribute />
 
-      <div className="calculator-main-section">
-        <DemoCard
-          showIcon
-          heading="Want to use our api?"
-          desc="We provide a white label solution to businesses who want to develop and market their own financial products"
-          btnText="Book a demo"
-        />
+      <div className="calculator-main-section pt-[251px] pb-[374px] ">
+        <h1 className="text-5xl font-semibold leading-[62px] text-textcolor text-center mb-20">
+          Hear from our partners
+        </h1>
+
+        <PartnersTab />
+        <div className="white-wather-bg" />
       </div>
     </div>
   );

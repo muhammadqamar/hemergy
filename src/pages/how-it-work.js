@@ -1,5 +1,5 @@
-import Layout from '@/components/layout';
-import HowItWorkPage from '@/components/how-it-work';
+import Layout from "@/components/layout";
+import HowItWorkPage from "@/components/howItWork";
 
 export default function HowItWork() {
   return (
