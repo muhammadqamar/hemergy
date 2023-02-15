@@ -16,7 +16,7 @@
   @apply flex flex-wrap gap-[15.5px];
 }
 .investor-project-cards {
-  @apply max-w-[1440px] mx-auto px-[136px] flex items-center justify-center flex-wrap gap-[15.5px] absolute top-[-447px];
+  @apply max-w-[1440px] mx-auto px-[136px] flex items-center justify-center flex-wrap gap-[15.5px];
 }
 
 .map-opction {

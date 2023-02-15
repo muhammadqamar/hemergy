@@ -2,7 +2,7 @@
   @apply w-full h-auto bg-[#D6DBFF] relative pt-[609px] px-[24px] pb-[270px];
 }
 .inestor-proj-main-section {
-  @apply w-full h-[601px] bg-[#D6DBFF] relative  pb-[270px];
+  @apply w-full  bg-[#D6DBFF] relative  pb-[726px];
 }
 .calculator-main-section .work-section {
   @apply max-w-[821px] mx-auto  text-center font-Poppins;

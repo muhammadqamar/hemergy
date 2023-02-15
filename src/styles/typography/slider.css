@@ -67,3 +67,41 @@
 .popular-project-slider .slick-slider .slick-list {
   @apply pb-14 !important;
 }
+
+.hiw-pp-list-options .slick-slider .slick-list {
+  @apply pb-12 !important;
+}
+
+.hemergy-project-gallery-slider .slick-slider .slick-arrow {
+  @apply w-10 h-10 rounded-[50%] bg-blue400 p-2;
+}
+
+.hemergy-project-gallery-slider .slick-slider .slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  @apply opacity-80;
+}
+
+.hemergy-project-gallery-slider .slick-slider .slick-prev:before,
+.slick-next:before {
+  @apply w-6 h-6 top-2 left-2 bg-no-repeat bg-auto bg-center absolute !important;
+  content: "" !important;
+  background-image: url("/images/keyboard_arrow_right.svg");
+}
+
+.hemergy-project-gallery-slider .slick-slider .slick-next:before {
+  background-image: url("/images/keyboard_arrow_right.svg");
+}
+.hemergy-project-gallery-slider .slick-slider .slick-prev:before {
+  @apply rotate-180;
+  background-image: url("/images/keyboard_arrow_right.svg");
+}
+
+.hemergy-project-gallery-slider .slick-slider .slick-prev {
+  @apply left-7 z-[2];
+}
+
+.hemergy-project-gallery-slider .slick-slider .slick-next {
+  @apply right-7;
+}

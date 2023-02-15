@@ -53,81 +53,25 @@ const CalculatorSection = () => {
           </div>
           <div className="popular-project-slider mb-[104px]">
             <Slider {...settings}>
-              <div>
-                <ProjectCard
-                  hemergyIcon="/images/air.svg"
-                  bio="It is a long established fact that a reader will be distracted."
-                  user={user}
-                  viewDetailbtn
-                  trending
-                  stockdirection="up"
-                  stock="675.5"
-                  hemergyType="Solar asset name"
-                  name="Project Name"
-                  hideThumbnail
-                  bg="bg-textcolor"
-                />
-              </div>
-              <div>
-                <ProjectCard
-                  hemergyIcon="/images/air.svg"
-                  bio="It is a long established fact that a reader will be distracted."
-                  user={user}
-                  viewDetailbtn
-                  trending
-                  stockdirection="up"
-                  stock="675.5"
-                  hemergyType="Solar asset name"
-                  name="Project Name"
-                  hideThumbnail
-                  bg="bg-textcolor"
-                />
-              </div>
-              <div>
-                <ProjectCard
-                  hemergyIcon="/images/air.svg"
-                  bio="It is a long established fact that a reader will be distracted."
-                  user={user}
-                  viewDetailbtn
-                  trending
-                  stockdirection="up"
-                  stock="675.5"
-                  hemergyType="Solar asset name"
-                  name="Project Name"
-                  hideThumbnail
-                  bg="bg-textcolor"
-                />
-              </div>
-              <div>
-                <ProjectCard
-                  hemergyIcon="/images/air.svg"
-                  bio="It is a long established fact that a reader will be distracted."
-                  user={user}
-                  viewDetailbtn
-                  trending
-                  stockdirection="up"
-                  stock="675.5"
-                  hemergyType="Solar asset name"
-                  name="Project Name"
-                  hideThumbnail
-                  bg="bg-textcolor"
-                />
-              </div>
-              <div>
-                <ProjectCard
-                  hemergyIcon="/images/air.svg"
-                  bio="It is a long established fact that a reader will be distracted."
-                  user={user}
-                  viewDetailbtn
-                  trending
-                  stockdirection="up"
-                  stock="675.5"
-                  hemergyType="Solar asset name"
-                  name="Project Name"
-                  hideThumbnail
-                  bg="bg-textcolor"
-                />
-              </div>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team) => {
+                return (
+                  <div className="px-[15px]">
+                    <ProjectCard
+                      hemergyIcon="/images/air.svg"
+                      bio="It is a long established fact that a reader will be distracted."
+                      user={user}
+                      viewDetailbtn
+                      trending
+                      stockdirection="up"
+                      stock="675.5"
+                      hemergyType="Solar asset name"
+                      name="Project Name"
+                      hideThumbnail
+                      bg="bg-textcolor"
+                    />
+                  </div>
+                );
+              })}
             </Slider>
           </div>
           <div className="planet-about">

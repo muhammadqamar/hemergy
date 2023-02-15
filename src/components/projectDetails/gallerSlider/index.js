@@ -3,9 +3,9 @@ import Slider from "react-slick";
 
 const CardDetail = ({ bgimg, trending, stock, stockdirection }) => {
   return (
-    <div className="h-[320px]">
+    <div className="h-[320px] ">
       <div
-        style={{ background: `url('${bgimg}')` }}
+        style={{ backgroundImage: `url('${bgimg}')` }}
         className="relative w-full h-full bg-no-repeat bg-cover bg-position-center"
       >
         {trending && (

@@ -1,68 +1,65 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
-import {  toast } from 'react-toastify';
+import axios from "axios";
+import { toast } from "react-toastify";
 import Image from "next/image";
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 
-import RegisterSlider from "@/components/Authentications/registerSlider";
-import VerificationBox from "@/components/Authentications/verification";
-import InvestorProfile from "@/components/Authentications/investorProfile";
-import Financials from "@/components/Authentications/financials";
-import WalletOption from "@/components/Authentications/walletOption";
+
 import EmailVerify from "@/components/Authentications/emailVerify";
 
-import {addUser} from "@/store/reducer/user";
+import { addUser } from "@/store/reducer/user";
 
 const Verification = ({ params }) => {
-  const [step, setStep] = useState(1);
+
   const [loader, setLoading] = useState(true)
   const [userDetail, setUserDetail] = useState()
-  const dispatch =  useDispatch()
+  const dispatch = useDispatch()
   const router = useRouter()
 
   useEffect(() => {
 
-   (async()=>{
-    try {
-     setLoading(true);
 
-      if (params?.id) {
+    (async () => {
+      try {
+        setLoading(true);
 
-        let response = await axios.post(
-          `http://localhost:4000/api/auth/verify/account`,
-          {
-            code:params?.id
+        if (params?.id) {
+
+          let response = await axios.post(
+            `http://localhost:4000/api/auth/verify/account`,
+            {
+              code: params?.id
+            }
+          );
+          setUserDetail(response?.data?.user)
+          dispatch(addUser(response?.data?.user))
+          if (response?.data?.user?.platform === "custom") {
+            setLoading(false);
+            localStorage.setItem("hemergy-email", response?.data?.user?.email);
+            router.push('/login')
           }
-        );
-        setUserDetail(response?.data?.user)
-        dispatch(addUser(response?.data?.user))
-        if (response?.data?.user?.platform === "custom") {
-          setLoading(false);
-          localStorage.setItem("hemergy-email", response?.data?.user?.email);
-          router.push('/login')
+
         }
+      } catch (error) {
+        setLoading(false);
 
-      }
-    } catch (error) {
-      setLoading(false);
-
-      toast.error(error?.response?.data?.status || error.message, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+        toast.error(error?.response?.data?.status || error.message, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
         });
 
-      console.log(error);
-    }
+        console.log(error);
+      }
 
 
-   })()
+    })()
 
 
   }, [])
@@ -73,7 +70,7 @@ const Verification = ({ params }) => {
       </div>
 
 
-      <EmailVerify loader={loader}/>
+      <EmailVerify loader={loader} />
 
       <div className="auth-wather" />
     </div>
@@ -81,7 +78,6 @@ const Verification = ({ params }) => {
 };
 
 export default Verification;
-
 
 export const getServerSideProps = (context) => {
   return {

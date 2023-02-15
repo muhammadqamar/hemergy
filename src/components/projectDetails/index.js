@@ -3,10 +3,20 @@ import FundingDate from "./fundingDate";
 import UserCard from "./userCard";
 import InvestmentCalculator from "@/dashboard/projectDetails/tokens";
 import ProjectGallerySlider from "./gallerSlider";
+import Image from "next/image";
+import Link from "next/link";
 export default function ProjectDetailSection() {
   return (
-    <div className="project-detail-page hero-container ">
-      <div className="bg-white  max-w-[880px] m-auto mt-[185px]">
+    <div className="project-detail-page hero-container  pt-[185px]">
+      <Link href="" className="flex items-center w-[174px] mx-auto justify-center gap-2 mb-[30px]">
+        <img
+          src="/images/keyboard_arrow_right.svg"
+          alt="arrow"
+          className="w-5 h-5 object-scale-down rotate-180"
+        />
+        <h6 className="p-sm font-medium text-white">Back to all projects</h6>
+      </Link>
+      <div className="bg-white rounded-[40px] overflow-hidden max-w-[880px] m-auto ">
         <div className="project-detail-page">
           <div className="slider">
             <ProjectGallerySlider />

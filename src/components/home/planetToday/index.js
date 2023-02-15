@@ -1,5 +1,5 @@
 import InvestingTab from "./investingTab";
-import ApiCard from "../apiCard";
+import DemoCard from "@/utils/demoCard";
 
 const Index = () => {
   return (
@@ -8,7 +8,12 @@ const Index = () => {
         <InvestingTab />
       </div>
       <div className=" w-full left-0 bottom-[-70px] absolute">
-        <ApiCard />
+        <DemoCard
+          showIcon
+          heading="Want to use our api?"
+          desc="We provide a white label solution to businesses who want to develop and market their own financial products"
+          btnText="Book a demo"
+        />
       </div>
       <div className="white-wather-bg" />
     </div>
