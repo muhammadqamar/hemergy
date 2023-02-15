@@ -5,8 +5,10 @@ import InBox from "@/components/Authentications/inBox";
 import { useEffect, useState } from "react";
 
 
+
 const Register = ({query}) => {
-  const [registerState, setRegisterState] = useState(false);
+  const [registerState, setRegisterState] = useState('');
+
 
 
   return (
@@ -17,8 +19,8 @@ const Register = ({query}) => {
 
       <div className="auth-container">
         <RegisterSlider />
-        {query?.success || registerState ? (
-          <InBox setRegisterState={setRegisterState} />
+        {query?.success || !!registerState ? (
+          <InBox setRegisterState={setRegisterState} registerState={registerState} />
         ) : (
           <SignUp setRegisterState={setRegisterState} />
         )}

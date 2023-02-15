@@ -48,7 +48,7 @@ const Index = () => {
           <LocationCard
            hemrgyIcon="/images/air.svg"
            bio=""
-           user={t=""}
+
            viewDetailbtn
            trending
            stock
