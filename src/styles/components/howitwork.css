@@ -78,7 +78,7 @@
 /* FAQsTab */
 
 .faqs-tabs-section {
-  @apply w-[592px] border-2 border-[#D6DBFF] bg-white shadow-smallshadow sm:shadow-mainshadow rounded-[20px] p-6;
+  @apply max-w-[592px] border-2 border-[#D6DBFF] bg-white shadow-smallshadow sm:shadow-mainshadow rounded-[20px] p-6;
 }
 .faqs-tabs-header {
   @apply flex items-center justify-between cursor-pointer;
