@@ -36,7 +36,7 @@ const SignUp = ({ setRegisterState }) => {
             );
             setSubmitting(false)
             if(register?.data?.success) {
-              setRegisterState(values.email)
+              setRegisterState(values)
             }
 
             // if (updateUser?.data?.userFound) {

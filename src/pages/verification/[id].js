@@ -42,11 +42,7 @@ const Verification = ({ params }) => {
           localStorage.setItem("hemergy-email", response?.data?.user?.email);
           router.push('/login')
         }
-        // else {
-        //   setLoading(false);
-        //   toast.dismiss()
-        //   //dispatch(verifyYourAccount(response?.data, router, redirectVal));
-        // }
+
       }
     } catch (error) {
       setLoading(false);
@@ -61,16 +57,7 @@ const Verification = ({ params }) => {
         progress: undefined,
         theme: "light",
         });
-      // dispatch(
-      //   setAlert({ message: error?.message, type: "error", time: 1000 })
-      // );
-      // dispatch(
-      //   setAlert({
-      //     message: error?.response?.data?.status,
-      //     type: "error",
-      //     time: 1000,
-      //   })
-      // );
+
       console.log(error);
     }
 
@@ -85,13 +72,7 @@ const Verification = ({ params }) => {
         <Image src="/images/hemergy-logo.svg" width={150} height={32} alt="logo" />
       </div>
 
-     {/* {!loader && <div className="auth-container">
-        <RegisterSlider />
-        {step === 1 && <VerificationBox userDetail={userDetail} setStep={setStep} />}
-        {step === 2 && <InvestorProfile userDetail={userDetail} setStep={setStep}  />}
-        {step === 3 && <Financials userDetail={userDetail} setStep={setStep} />}
-        {step===4 && <WalletOption userDetail={userDetail} setStep={setStep} /> }
-      </div>} */}
+
       <EmailVerify loader={loader}/>
 
       <div className="auth-wather" />

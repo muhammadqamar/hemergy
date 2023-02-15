@@ -22,7 +22,7 @@ const Register = ({query}) => {
         {query?.success || !!registerState ? (
           <InBox setRegisterState={setRegisterState} registerState={registerState} />
         ) : (
-          <SignUp setRegisterState={setRegisterState} />
+          <SignUp setRegisterState={setRegisterState}   />
         )}
       </div>
 

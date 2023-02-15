@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 const SignIn = () => {
   const [startCheckingState,setStartCheckingState ] = useState(false)
   const user = useSelector(state=>state.user)
+  const [showPass, setShowPass] = useState(false)
   const dispatch= useDispatch()
   const router = useRouter()
   return (
@@ -86,7 +87,7 @@ const SignIn = () => {
               <label className="p-sm text-weight-medium">Email</label>
               <div className="input-field">
                 <input
-                  placeholder="Emain"
+                  placeholder="Email"
                   className="input p-sm"
                   type="email"
                   name="email"
@@ -104,14 +105,14 @@ const SignIn = () => {
                 <input
                   className="input p-sm"
                   placeholder="Password"
-                  type="password"
+                  type={showPass ? "text":"password"}
                   name="password"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
                 />
                 <div className="pointer"></div>
-                <Image src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+                <Image onClick={()=>{setShowPass(!showPass)}} src="/images/visibility.svg" alt="visibility" width={20} height={20} />
               </div>
               <p className="error p-x-sm">
                 {errors.password && touched.password && errors.password}
@@ -125,7 +126,9 @@ const SignIn = () => {
                   <p className="p-sm">Remember me</p>
                 </label>
               </div>
-              <Link href="" className="p-sm text-weight-medium p-link">
+              <Link onClick={()=>{
+
+              }} href="/forgot-password" className="p-sm text-weight-medium p-link">
                 Forgot password?
               </Link>
             </div>
