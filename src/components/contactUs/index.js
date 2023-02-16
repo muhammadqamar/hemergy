@@ -12,7 +12,7 @@ const Index = () => {
             Get in touch today
           </p>
           <div className="flex items-center justify-center mt-4">
-            <div className="rounded-full bg-btncolor w-10 h-10 flex items-center justify-center">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-btncolor">
               <Image src="/images/map/expand_more.svg" width={24} height={24} alt="show more" />
             </div>
           </div>
@@ -27,7 +27,7 @@ const Index = () => {
           <ContactForm />
         </div>
         <div className="contact-right-content">
-          <h3 className="find-heading whitespace-pre">Or find us here:</h3>
+          <h3 className="whitespace-pre find-heading">Or find us here:</h3>
           <div className="find-flx-bx">
             <Image src="/images/wtsup-logo.png" alt="" width={40} height={40} />
             <p className="find-sub-heading">+12 3456 7890</p>
