@@ -2,8 +2,8 @@
   @apply w-full bg-[#4E62EE] min-h-[auto]  md:min-h-screen relative;
 }
 
-.hero-wrapper {
-  @apply max-w-[1440px] relative z-[1] flex items-start  gap-16 md:gap-7 justify-between mx-auto md:pt-[131px] px-[24px] md:px-[40px] lg:pl-[80px] lg:pr-[25px]  md:pb-[250px] flex-col lg:flex-row lg:pb-[200px] xl:pb-[130px];
+.home-hero-wrapper {
+  @apply max-w-[1440px] relative z-[1] flex items-start  gap-16 md:gap-7 justify-between mx-auto md:pt-[131px] px-[24px] md:px-[40px] lg:pl-[80px] lg:pr-[25px]   flex-col lg:flex-row;
 }
 
 .hero-container-about {
@@ -36,7 +36,7 @@
 }
 
 .sub-heading {
-  @apply font-Poppins font-normal text-[20px] lg:text-[28px] leading-[30px] lg:leading-[42px] text-herotext;
+  @apply font-Poppins font-normal  text-[20px] lg:text-[24px] leading-[30px] lg:leading-[36px] text-herotext;
 }
 
 .sub-heading.about-w {
@@ -86,4 +86,9 @@
   100% {
     top: 225px;
   }
+}
+
+.hero-banners {
+  @apply h-auto;
+  width: clamp(200px, 45vw, 675px);
 }

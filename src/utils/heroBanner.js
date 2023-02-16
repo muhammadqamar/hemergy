@@ -8,9 +8,7 @@ const HeroBanner = ({
   para2,
   btnText,
   aniWind,
-  bannerStar,
   bannerImg1,
-  bannerImg2,
   pageName,
   heroTitle2,
   btnLabel,
@@ -20,8 +18,8 @@ const HeroBanner = ({
   return (
     <div className="hero-container ">
       <div
-        className={`hero-wrapper pt-[208px] md:pt-[131px] pb-0 ${
-          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[170px]`
+        className={`home-hero-wrapper pt-[208px] md:pt-[131px]  ${
+          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[379px]`
         }  ${paddingBottom && `pb-[220px]`}`}
       >
         <div className="hero-content mx-auto">
@@ -55,18 +53,17 @@ const HeroBanner = ({
               )}
             </h3>
           )}
-          <Link href="" className={`btn Primary ${btnIcon && `p-2 rounded-[50%] mx-auto`}`}>
+          <Link href="" className={`btn Primary ${btnIcon && `icon-btn`}`}>
             {btnText}
             {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
           </Link>
         </div>
-        {bannerImg1 && (
-          <div className="hero-banner-img">
+        {bannerImg1 && <img src={bannerImg1} className="hero-banners" alt="banner" />}
+        {/* <div className="hero-banner-img">
             {bannerStar && <img src={bannerStar} className="hero-start" alt="banner" />}
             <img src={bannerImg1} className="hero-wather" alt="banner" />
             <img src={bannerImg2} className="hero-user-card" alt="banner" />
-          </div>
-        )}
+        </div>*/}
       </div>
       <div className="white-wather-bg" />
     </div>
