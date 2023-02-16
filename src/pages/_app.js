@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import { hotjar } from 'react-hotjar'
 import { useRouter } from "next/router";
 import { ToastContainer } from 'react-toastify';
 import { store } from '@/store/store'
@@ -55,6 +55,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     setReady(true)
+    hotjar.initialize(3369122, 6)
   }, [])
 
   return (
