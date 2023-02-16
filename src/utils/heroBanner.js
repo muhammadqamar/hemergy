@@ -19,7 +19,7 @@ const HeroBanner = ({
     <div className="hero-container ">
       <div
         className={`hero-wrapper pt-[208px] md:pt-[131px] pb-0 ${
-          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[170px]`
+          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[379px]`
         }  ${paddingBottom && `pb-[220px]`}`}
       >
         <div className="hero-content mx-auto">
@@ -53,7 +53,7 @@ const HeroBanner = ({
               )}
             </h3>
           )}
-          <Link href="" className={`btn Primary ${btnIcon && `p-2 rounded-[50%] mx-auto`}`}>
+          <Link href="" className={`btn Primary ${btnIcon && `icon-btn`}`}>
             {btnText}
             {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
           </Link>

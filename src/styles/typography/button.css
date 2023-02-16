@@ -24,3 +24,7 @@
 .fit-width {
   @apply w-fit mx-auto !important;
 }
+
+.icon-btn {
+  @apply p-2 rounded-[50%] mx-auto;
+}
