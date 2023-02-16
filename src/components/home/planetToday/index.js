@@ -4,10 +4,10 @@ import DemoCard from "@/utils/demoCard";
 const Index = () => {
   return (
     <div className="planet-today-sectiion">
-      <div className="w-full z-[1] left-0 absolute mt-[-140px]">
+      <div className="w-full z-[1] left-0 relative md:absolute pt-[14px] md:pt-0 mt-0 md:mt-[-140px] ">
         <PartnersTab />
       </div>
-      <div className=" w-full left-0 bottom-[-70px] absolute">
+      <div className=" w-full left-0 bottom-[-70px] absolute hidden md:block">
         <DemoCard
           showIcon
           heading="Want to use our api?"

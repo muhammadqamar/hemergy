@@ -11,9 +11,9 @@ const MobileNav = ({ currentRoute, menu }) => {
         <Link
           href="/how-it-work"
           className={
-            currentRoute === `/how-it-work `
-              ? `p-sm text-white  font-medium px-4 py-2 bg-blue600 rounded-xl`
-              : `p-sm text-white font-medium px-4 py-2`
+            currentRoute === `/how-it-work`
+              ? `p-sm mobile-tab active-mobile-tab`
+              : `p-sm mobile-tab`
           }
         >
           How it works
@@ -29,14 +29,14 @@ const MobileNav = ({ currentRoute, menu }) => {
           About
         </Link>
         <Link
-          href="/for-investors"
+          href="/for-investors-projects"
           className={
-            currentRoute === `/for-investors`
+            currentRoute === `/for-investors-projects`
               ? `p-sm text-white font-medium px-4 py-2 bg-blue600 rounded-xl`
               : `p-sm text-white font-medium px-4 py-2`
           }
         >
-          For Investors
+          Projects
         </Link>
         <Link
           href="/for-business"

@@ -30,10 +30,12 @@ const Navbar = () => {
               About
             </Link>
             <Link
-              href="/for-investors"
-              className={currentRoute === `/for-investors` ? `nav-link active-link` : `nav-link`}
+              href="/for-investors-projects"
+              className={
+                currentRoute === `/for-investors-projects` ? `nav-link active-link` : `nav-link`
+              }
             >
-              For Investors
+              Projects
             </Link>
             <Link
               href="/for-business"

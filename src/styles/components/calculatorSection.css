@@ -1,14 +1,14 @@
 .calculator-main-section {
-  @apply w-full h-auto bg-[#D6DBFF] relative pt-[609px] px-[24px] pb-[270px];
+  @apply w-full h-auto bg-[#D6DBFF] relative pt-[609px] px-0 md:px-[24px] pb-8 md:pb-[270px];
 }
 .inestor-proj-main-section {
   @apply w-full  bg-[#D6DBFF] relative  pb-[726px];
 }
 .calculator-main-section .work-section {
-  @apply max-w-[821px] mx-auto  text-center font-Poppins;
+  @apply max-w-[821px] mx-auto relative z-[1] text-center font-Poppins;
 }
 .calculator-main-section .work-section .work-heading {
-  @apply font-semibold text-[28px] md:text-[32px] lg:text-[48px] leading-[34px] md:leading-[48px] mb-[24px] text-textcolor;
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] mb-[24px] text-textcolor;
 }
 .work-logos {
   @apply flex gap-9 md:gap-10 items-center flex-wrap lg:flex-nowrap justify-center;
@@ -18,14 +18,14 @@
 }
 
 .popular-project-section {
-  @apply w-full text-center h-[500px] pb-[301px] md:h-auto relative;
+  @apply w-full text-center  pb-[49px] md:pb-[301px] h-auto relative;
 }
 .popular-project-section .popular-about {
-  @apply w-full sm:w-[442px] mx-auto mb-[48px] font-Poppins;
+  @apply w-full sm:w-[442px] px-6 md:px-0 mx-auto mb-[48px] font-Poppins;
 }
 
 .popular-heading {
-  @apply font-semibold text-[28px] md:text-[32px] lg:text-[48px] leading-[34px] md:leading-[48px] lg:leading-[72px] mb-[12px] text-textcolor;
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] md:leading-[72px] mb-[12px] text-textcolor;
 }
 .popular-para {
   @apply font-normal text-[20px] leading-[30px] text-textcolor;

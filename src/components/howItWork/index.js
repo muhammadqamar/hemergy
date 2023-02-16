@@ -1,8 +1,8 @@
-import Discoverd from './Discoverd';
-import FAQs from './FAQs';
-import HeroBanner from '@/utils/heroBanner';
-import PopularProject from './PopularProject';
-import DemoCard from '@/utils/demoCard';
+import Discoverd from "./Discoverd";
+import FAQs from "./FAQs";
+import HeroBanner from "@/utils/heroBanner";
+import PopularProject from "./PopularProject";
+import DemoCard from "@/utils/demoCard";
 
 const Index = () => {
   return (
@@ -19,8 +19,8 @@ const Index = () => {
         <div className="mb-[160px]">
           <DemoCard
             showIcon
-            heading="Start investing in the future of our planet today!"
-            desc="No hidden fees, just transparent projects. Contribute to the energy revolution"
+            heading="Want to use our api?"
+            desc="We provide a white label solution to businesses who want to develop and market their own financial products"
             btnText="Book a demo"
           />
         </div>

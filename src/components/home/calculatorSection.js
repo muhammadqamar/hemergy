@@ -30,18 +30,34 @@ const CalculatorSection = () => {
         {/** we works */}
         <div className="work-section">
           <h2 className="work-heading">We work with</h2>
-          <div className="work-logos">
+          <div className="work-logos hidden lg:flex">
             <img src="/images/work_1.png" alt="logo" className="companys-logo" />
             <img src="/images/work_2.png" alt="logo" className="companys-logo" />
             <img src="/images/work_3.png" alt="logo" className="companys-logo" />
             <img src="/images/work_4.png" alt="logo" className="companys-logo" />
+          </div>
+          <div className="lg:hidden block">
+            <Slider {...settings}>
+              <div className="px-5">
+                <img src="/images/work_1.png" alt="logo" className="companys-logo" />
+              </div>
+              <div className="px-5">
+                <img src="/images/work_2.png" alt="logo" className="companys-logo" />
+              </div>
+              <div className="px-5">
+                <img src="/images/work_3.png" alt="logo" className="companys-logo" />
+              </div>
+              <div className="px-5">
+                <img src="/images/work_4.png" alt="logo" className="companys-logo" />
+              </div>
+            </Slider>
           </div>
         </div>
         <div className="white-wather-bg" />
       </div>
       <div>
         {/** projects */}
-        <div className="popular-project-section">
+        <div className="popular-project-section pt-[98px] md:pt-0">
           <div className="popular-about">
             <h1 className="popular-heading">Popular projects</h1>
             <p className="popular-para">
@@ -51,7 +67,7 @@ const CalculatorSection = () => {
               </strong>
             </p>
           </div>
-          <div className="popular-project-slider mb-[104px]">
+          <div className="popular-project-slider mb-[95px] md:mb-[104px]">
             <Slider {...settings}>
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team) => {
                 return (

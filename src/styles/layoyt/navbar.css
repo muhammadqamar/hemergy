@@ -7,7 +7,7 @@
 }
 
 .nav-logo {
-  @apply w-auto h-auto;
+  @apply w-[122px] md:w-auto h-auto;
 }
 
 .nav-links-box {
@@ -32,5 +32,13 @@
   @apply absolute top-[125%] left-[50%]  w-6 h-2 rounded-2xl bg-green400;
 }
 .nav-reginter {
-  @apply flex items-center gap-[24px] font-Inter;
+  @apply flex items-center gap-[14px] lg:gap-6 font-Inter;
+}
+
+.mobile-tab {
+  @apply text-white font-medium px-4 py-2;
+}
+
+.mobile-tab.active-mobile-tab {
+  @apply bg-blue600 rounded-xl;
 }

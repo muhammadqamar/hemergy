@@ -10,14 +10,16 @@
 }
 
 .heart-1 {
-  @apply w-[366px] h-fit object-contain;
+  @apply w-auto h-fit object-contain;
 }
 .heart-2 {
-  @apply w-[343px] h-fit object-contain ml-auto;
+  @apply w-auto h-fit object-contain;
 }
 
 .con-heading {
-  @apply w-[314px] md:w-[647px] flex-shrink-0 text-textcolor font-normal text-[32px] lg:text-[40px] leading-[48px] lg:leading-[60px] text-center;
+  @apply flex-shrink-0 text-textcolor font-normal text-[32px] lg:text-[40px] leading-[48px] lg:leading-[60px] text-center;
+  width: clamp(314px, 50vw, 647px);
+  /* max-w-[314px] md:max-w-[647px] */
 }
 
 .contribute-cards {

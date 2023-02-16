@@ -44,7 +44,8 @@ const Index = () => {
       <div className="earning-card">
         <div className="earning-in-yr">
           <h3 className="earning-price">
-            {Math.round(237.152 * moco)} <sup>€</sup>
+            {Math.round(237.152 * moco)}
+            <sup>€</sup>
           </h3>
           <h5 className="yr-earning">in 20 yr</h5>
         </div>

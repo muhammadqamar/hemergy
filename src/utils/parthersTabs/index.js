@@ -39,31 +39,34 @@ const Index = () => {
 
   return (
     <div className="investing-tab-section">
-      {user.map((item, index) => (
-        <div key={index}>
-          <div className="user-tabs">
-            <div
-              onClick={() => setOpenTab(index)}
-              className={openTab === index ? "user-tab-card active" : "user-tab-card"}
-            >
-              <img src="/images/user.png" alt="user" className="user-img" />
-              <div className="user-detail">
-                <h4 className="user-tab-name">{item.userName}</h4>
-                <h5 className="user-tab-cate">{item.userCat}</h5>
-              </div>
+      <div className="user-tabs">
+        {user.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => setOpenTab(index)}
+            className={openTab === index ? "user-tab-card active" : "user-tab-card"}
+          >
+            <img src="/images/user.png" alt="user" className="user-img" />
+            <div className="user-detail">
+              <h4 className="user-tab-name">{item.userName}</h4>
+              <h5 className="user-tab-cate">{item.userCat}</h5>
             </div>
           </div>
-          {openTab === index && (
-            <div className="user-tab-about">
+        ))}
+      </div>
+      {user.map((item, index) => {
+        return (
+          openTab === index && (
+            <div key={index} className="user-tab-about">
               <h2 className="tab-about-heading">{item.aboutHeading}</h2>
               <Image src="/images/star.svg" alt="" width={80} height={16} />
               <p className="user-tab-about-para">
                 {item.aboutPara1} <br /> <br /> {item.aboutPara2}
               </p>
             </div>
-          )}
-        </div>
-      ))}
+          )
+        );
+      })}
     </div>
   );
 };

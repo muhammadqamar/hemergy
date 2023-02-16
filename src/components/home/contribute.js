@@ -7,6 +7,7 @@ const contribute = [
     para: "Browse a selection of renewable energy projects to invest in, both locally and abroad",
   },
   {
+    id: 2,
     img: "/images/query_stats.svg",
     heading: "Transparent",
     para: "See exactly how your investment is going, and where the returns are from - no greenwashing!",
@@ -25,7 +26,7 @@ const Contribute = () => {
         <div className="contribute-heading">
           <img src="/images/contribute-left.png" alt="heart-1" className="heart-1" />
           <h2 className="con-heading">
-            <strong>Contribute</strong> to the energy reansition while <strong>doing good</strong>{" "}
+            <strong>Contribute </strong>to the energy transition while<strong> doing good </strong>
             in local communities and abroad
           </h2>
           <img src="/images/contribute-right.png" alt="heart-2" className="heart-2" />
@@ -33,6 +34,7 @@ const Contribute = () => {
         <div className="contribute-cards">
           {contribute.map((item, index) => (
             <HemergyConributeCard
+              id={item.id}
               key={index}
               icon={item.img}
               title={item.heading}

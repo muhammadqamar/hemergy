@@ -26,9 +26,11 @@ const PopularProject = () => {
     <div className=" hiw-pp-section ">
       <div className="hiw-pp-div">
         <DemoCard
-          heading={"Start investing in the future of our planet today!"}
-          desc={`No hidden fees, just transparent projects. Contribute to the energy revolution`}
-          btnText={"Get started"}
+          heading="Start investing in the 
+          future of our planet today!"
+          desc="No hidden fees, just transparent projects.
+          Contribute to the energy revolution"
+          btnText="Get started"
         />
       </div>
       <div className="hiw-pp-header ">
@@ -36,7 +38,11 @@ const PopularProject = () => {
         <div className="hiw-pp-header-detail ">
           <h2 className="header-title ">Popular projects</h2>
           <p className="header-detail ">
-            A selection of the types of projects you can <br /> get involved in today! See all
+            A selection of the types of projects you can <br /> get involved in today!
+            <Link href="">
+              {" "}
+              <strong> See all</strong>
+            </Link>
           </p>
         </div>
         {/* List */}

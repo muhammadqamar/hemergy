@@ -3,7 +3,7 @@
 @import "./avoided.css";
 
 .investment-card {
-  @apply font-Poppins w-full sm:w-[459px]  mx-auto h-auto p-[24px] flex flex-col items-center text-center gap-6 rounded-3xl bg-[#EFF1FF] shadow-smallshadow sm:shadow-mainshadow;
+  @apply font-Poppins w-full sm:w-[459px]  mx-auto h-auto p-4 md:p-6 flex flex-col items-center text-center gap-6 rounded-3xl bg-[#EFF1FF] shadow-smallshadow sm:shadow-mainshadow;
 }
 .investment-card .invest-about {
   @apply flex flex-col gap-3 items-center py-[8px];

@@ -31,9 +31,11 @@ const Footer = () => {
       <div className="flex items-center justify-center gap-6">
         <Image src="/images/f-twitter.svg" alt="icon" width={44} height={44} />
         <Image src="/images/f-medium.svg" alt="icon" width={44} height={44} />
-        <Image src="/images/f-in.svg" alt="icon" width={44} height={44} />
+        <div className="hidden sm:block">
+          <Image src="/images/f-in.svg" alt="icon" width={44} height={44} />
+        </div>
       </div>
-      <div className="flex items-center justify-center flex-wrap gap-8 text-textcolor my-8">
+      <div className="flex items-center justify-center flex-wrap gap-6 sm:gap-8 text-textcolor my-8">
         {pages.map((item, index) => (
           <Link key={index} href={item.path} className="p-sm font-medium text-textcolor">
             {item.name}
