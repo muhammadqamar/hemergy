@@ -18,7 +18,7 @@ const HeroBanner = ({
   return (
     <div className="hero-container ">
       <div
-        className={`hero-wrapper pt-[208px] md:pt-[131px] pb-0 ${
+        className={`hero-wrapper pt-[208px] md:pt-[131px]  ${
           heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[379px]`
         }  ${paddingBottom && `pb-[220px]`}`}
       >
@@ -58,7 +58,7 @@ const HeroBanner = ({
             {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
           </Link>
         </div>
-        {bannerImg1 && <Image src={bannerImg1} width={674} height={654} alt="banner" />}
+        {bannerImg1 && <img src={bannerImg1} className="hero-banners" alt="banner" />}
         {/* <div className="hero-banner-img">
             {bannerStar && <img src={bannerStar} className="hero-start" alt="banner" />}
             <img src={bannerImg1} className="hero-wather" alt="banner" />
