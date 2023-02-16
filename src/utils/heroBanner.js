@@ -18,7 +18,7 @@ const HeroBanner = ({
   return (
     <div className="hero-container ">
       <div
-        className={`hero-wrapper pt-[208px] md:pt-[131px]  ${
+        className={`home-hero-wrapper pt-[208px] md:pt-[131px]  ${
           heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[379px]`
         }  ${paddingBottom && `pb-[220px]`}`}
       >
