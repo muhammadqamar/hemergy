@@ -8,9 +8,7 @@ const HeroBanner = ({
   para2,
   btnText,
   aniWind,
-  bannerStar,
   bannerImg1,
-  bannerImg2,
   pageName,
   heroTitle2,
   btnLabel,
@@ -60,13 +58,12 @@ const HeroBanner = ({
             {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
           </Link>
         </div>
-        {bannerImg1 && (
-          <div className="hero-banner-img">
+        {bannerImg1 && <Image src={bannerImg1} width={674} height={654} alt="banner" />}
+        {/* <div className="hero-banner-img">
             {bannerStar && <img src={bannerStar} className="hero-start" alt="banner" />}
             <img src={bannerImg1} className="hero-wather" alt="banner" />
             <img src={bannerImg2} className="hero-user-card" alt="banner" />
-          </div>
-        )}
+        </div>*/}
       </div>
       <div className="white-wather-bg" />
     </div>

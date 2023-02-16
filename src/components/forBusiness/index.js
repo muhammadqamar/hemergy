@@ -12,8 +12,7 @@ const Index = () => {
         boldPara="crowdfunding platform"
         para2="in days"
         para3="Reach your ESG goals by issuing and distributing connected financial products on-chain"
-        bannerImg1="/images/Layer_1.svg"
-        bannerImg2="/images/hero-user-card.png"
+        bannerImg1="/images/business-banner.png"
         paddingBottom
       />
       <Contribute />
