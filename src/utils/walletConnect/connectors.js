@@ -2,7 +2,7 @@ import { WagmiConfig, createClient, configureChains, mainnet } from 'wagmi'
 
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
-import { SequenceConnector } from '@0xsequence/wagmi-connector'
+// import { SequenceConnector } from '@0xsequence/wagmi-connector'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
