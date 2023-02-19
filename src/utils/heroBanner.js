@@ -8,7 +8,6 @@ const HeroBanner = ({
   boldPara,
   para2,
   btnText,
-  aniWind,
   bannerImg1,
   pageName,
   heroTitle2,
@@ -16,19 +15,20 @@ const HeroBanner = ({
   btnIcon,
   paddingBottom,
   home,
+  weather,
 }) => {
-  const [activeHemergy, setActiveHemergy] = useState('sun')
-  useEffect(()=>{
-   setTimeout(()=>{
-     if(activeHemergy==='sun') {
-      setActiveHemergy('biomass')
-     } else if(activeHemergy === 'biomass') {
-      setActiveHemergy('wind')
-     } else {
-      setActiveHemergy('sun')
-     }
-   },[3000])
-  },[activeHemergy])
+  const [activeHemergy, setActiveHemergy] = useState("sun");
+  useEffect(() => {
+    setTimeout(() => {
+      if (activeHemergy === "sun") {
+        setActiveHemergy("biomass");
+      } else if (activeHemergy === "biomass") {
+        setActiveHemergy("wind");
+      } else {
+        setActiveHemergy("sun");
+      }
+    }, [3000]);
+  }, [activeHemergy]);
   return (
     <div className="hero-container ">
       <div
@@ -60,25 +60,29 @@ const HeroBanner = ({
           {para3 && (
             <h3 className="block sub-heading about-w sm:flex">
               {para3}
-              {activeHemergy == 'wind' &&
-                <span className="wind ">
-                  <Image src="/images/air.svg" width={32} height={32} alt="wind" /> Wind
-                </span>
-              }
-              {activeHemergy == 'sun' &&
-                <span className="sun">
-                  <Image src="/images/clear_day_w.svg" width={32} height={32} alt="wind" /> Sun
-                </span>
-              }
-              {activeHemergy == 'biomass' &&
-                <span className="bio">
-                  <Image src="/images/humidity_low.svg" width={32} height={32} alt="wind" /> Biomass
-                </span>
-              }
-
+              {weather && (
+                <div>
+                  {activeHemergy == "wind" && (
+                    <span className="wind ">
+                      <Image src="/images/air.svg" width={32} height={32} alt="wind" /> Wind
+                    </span>
+                  )}
+                  {activeHemergy == "sun" && (
+                    <span className="sun">
+                      <Image src="/images/clear_day_w.svg" width={32} height={32} alt="wind" /> Sun
+                    </span>
+                  )}
+                  {activeHemergy == "biomass" && (
+                    <span className="bio">
+                      <Image src="/images/humidity_low.svg" width={32} height={32} alt="wind" />{" "}
+                      Biomass
+                    </span>
+                  )}
+                </div>
+              )}
             </h3>
           )}
-          <Link href="" className={`btn Primary ${btnIcon && `icon-btn`}`}>
+          <Link href="" className={`btn Primary w-max bg-btncolor ${btnIcon && `icon-btn`}`}>
             {btnText}
             {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
           </Link>

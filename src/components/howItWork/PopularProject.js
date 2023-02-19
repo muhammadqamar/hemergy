@@ -54,6 +54,7 @@ const PopularProject = () => {
                 return (
                   <div className="px-[12px]">
                     <ProjectCard
+                      shadow="mainshadow"
                       hemergyIcon="/images/air.svg"
                       bio="It is a long established fact that a reader will be distracted."
                       user={user}
@@ -71,7 +72,7 @@ const PopularProject = () => {
               })}
             </Slider>
           </div>
-          <Link href="" className="btn fit-width gap-2 secondary btn-border hidden lg:block">
+          <Link href="" className="btn fit-width gap-2 secondary btn-border hide">
             All projects
             <Image src="/images/arrow_right.svg" alt="arrow_right" width={20} height={20} />
           </Link>

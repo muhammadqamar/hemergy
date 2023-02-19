@@ -73,6 +73,7 @@ const CalculatorSection = () => {
                 return (
                   <div className="px-[15px]">
                     <ProjectCard
+                      shadow="mainshadow"
                       hemergyIcon="/images/air.svg"
                       bio="It is a long established fact that a reader will be distracted."
                       user={user}

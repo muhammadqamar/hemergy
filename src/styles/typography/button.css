@@ -1,5 +1,5 @@
 .btn {
-  @apply w-max flex items-center justify-center bg-[#F9705A] rounded-xl text-white whitespace-pre;
+  @apply w-max flex items-center justify-center bg-btncolor rounded-xl text-white whitespace-pre;
 }
 
 .Primary {
@@ -27,4 +27,7 @@
 
 .icon-btn {
   @apply p-2 rounded-[50%] mx-auto;
+}
+.hide {
+  @apply hidden lg:flex !important;
 }

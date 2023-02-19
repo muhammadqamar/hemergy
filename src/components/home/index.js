@@ -14,7 +14,7 @@ const Index = () => {
         boldPara="renewable energies"
         para2="investment platform"
         para3="See what you earn from"
-        aniWind
+        weather
         bannerImg1="/images/home-banner.png"
       />
       <Contribute />

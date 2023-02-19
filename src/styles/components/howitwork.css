@@ -36,7 +36,7 @@
 
 /* PopularProject */
 .hiw-pp-section {
-  @apply bg-[#D6DBFF] pb-[903px] lg:pb-[384px] pt-[327px] lg:pt-0 relative;
+  @apply bg-[#D6DBFF] pb-[970px] lg:pb-[384px] pt-[327px] lg:pt-0 relative;
 }
 .hiw-pp-div {
   @apply px-6 pt-0 lg:pt-[442px] w-full top-[-285px] lg:top-0 absolute lg:relative;
@@ -69,7 +69,7 @@
   @apply flex flex-col items-center;
 }
 .hiw-faqs-heading {
-  @apply font-semibold text-[48px] leading-[72px]  m-0 text-textcolor;
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] md:leading-[72px]  m-0 text-textcolor;
 }
 .hiw-faqs-list {
   @apply mt-8 flex flex-col gap-4;

@@ -96,7 +96,7 @@ export default function ProjectCard(props) {
         )}
         {viewDetailbtn && (
           <button
-            className={`w-full btn secondary ${
+            className={`w-full rounded-xl secondary ${
               bg ? "bg-blue400 text-white" : "bg-cardbg text-textcolor"
             } `}
           >
