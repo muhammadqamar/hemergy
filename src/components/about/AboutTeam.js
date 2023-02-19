@@ -52,7 +52,7 @@ const AboutTeam = () => {
 
       <div className="about-team-div ">
         <h3 className="about-team-title ">The team</h3>
-        <div className="pb-[140px]">
+        <div className="team-slider pb-0 md:pb-[140px]">
           <Slider {...settings}>
             {data?.map((team) => {
               return (

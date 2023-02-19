@@ -36,8 +36,3 @@
 .con-card-para {
   @apply font-normal text-[20px] leading-[30px] text-textcolor m-0;
 }
-
-.wather-haf-white-bg {
-  @apply w-full h-[93px] md:h-[233px] bg-repeat bg-center bg-cover md:bg-auto absolute left-0 bottom-[-3px];
-  background-image: url("/images/Intersect2.svg");
-}

@@ -13,8 +13,13 @@ const ProjectCardThumbnail = ({
   return (
     <div className={h ? "h-[162px]" : "h-[280px]"}>
       <div
-        style={{ background: `url('${bgimg}')` }}
-        className="relative w-full h-full bg-no-repeat bg-cover bg-position-center"
+        style={{
+          background: `url('${bgimg}')`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="relative w-full h-full "
       >
         {trending && (
           <div

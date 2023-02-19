@@ -7,6 +7,7 @@ const Index = () => {
   return (
     <div>
       <HeroBanner
+        home
         heroTitle="Invest in the future of our planet"
         btnText="Get started"
         para1="Hemergy is a cutting-edge"

@@ -33,7 +33,7 @@
 }
 
 .tokens-wrapper {
-  @apply w-[344px] flex-shrink-0 bg-blue700 p-8 rounded-[40px];
+  @apply w-[344px] flex-shrink-0 bg-blue700 pt-6 px-2 pb-2 sm:p-8 rounded-3xl md:rounded-[40px];
 }
 
 .available-token {
@@ -41,7 +41,7 @@
 }
 
 .power-box {
-  @apply px-[11px] py-6 flex items-center flex-col gap-2 bg-blue600 rounded-xl;
+  @apply px-[11px] w-[50%] py-6 flex items-center flex-col gap-2 bg-blue600 rounded-xl;
 }
 
 .year-box {

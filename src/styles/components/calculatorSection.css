@@ -2,7 +2,17 @@
   @apply w-full h-auto bg-[#D6DBFF] relative pt-[609px] px-0 md:px-[24px] pb-8 md:pb-[270px];
 }
 .inestor-proj-main-section {
-  @apply w-full  bg-[#D6DBFF] relative  pb-[726px];
+  @apply w-full  bg-[#D6DBFF] relative  pb-[835px];
+}
+@media (min-width: 974px) and (max-width: 1305px) {
+  .inestor-proj-main-section {
+    padding-bottom: 1250px;
+  }
+}
+@media (max-width: 974px) {
+  .inestor-proj-main-section {
+    padding-bottom: 1585px;
+  }
 }
 .calculator-main-section .work-section {
   @apply max-w-[821px] mx-auto relative z-[1] text-center font-Poppins;
@@ -29,9 +39,4 @@
 }
 .popular-para {
   @apply font-normal text-[20px] leading-[30px] text-textcolor;
-}
-
-.white-wather-bg {
-  @apply w-full h-[93px] md:h-[233px] bg-repeat bg-center bg-cover md:bg-auto absolute left-0 bottom-[-3px];
-  background-image: url("/images/Intersect4.svg");
 }

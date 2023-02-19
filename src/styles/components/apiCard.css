@@ -1,9 +1,9 @@
 .api-card-box {
-  @apply w-full relative z-[1] md:w-[735px] flex flex-col items-center h-auto mx-auto pt-[56px] px-[24px] md:px-20 pb-[48px] text-center bg-cardbg rounded-3xl shadow-smallshadow sm:shadow-mainshadow;
+  @apply w-full relative z-[1] md:w-[735px] flex flex-col items-center h-auto mx-auto  px-6 md:px-20  text-center bg-cardbg rounded-3xl shadow-smallshadow sm:shadow-mainshadow;
 }
 
 .api-heading {
-  @apply font-semibold text-[28px] lg:text-[40px] leading-[32px] lg:leading-[48px] text-textcolor my-[24px];
+  @apply font-semibold text-[32px] lg:text-[40px] leading-[48px] text-textcolor mb-6;
 }
 
 .api-about {

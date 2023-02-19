@@ -71,13 +71,13 @@ const PopularProject = () => {
               })}
             </Slider>
           </div>
-          <Link href="" className="btn fit-width gap-2 secondary btn-border">
+          <Link href="" className="btn fit-width gap-2 secondary btn-border hidden lg:block">
             All projects
             <Image src="/images/arrow_right.svg" alt="arrow_right" width={20} height={20} />
           </Link>
         </div>
       </div>
-      <div className="hiw-wather-img" />
+      <div className="white-wather-bg" />
     </div>
   );
 };

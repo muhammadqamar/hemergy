@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import React, { useState } from 'react';
+import Image from "next/image";
+import React, { useState } from "react";
 
 const FAQsTab = ({ title, description }) => {
   const [showDetail, setShowDetail] = useState(false);
@@ -15,9 +15,7 @@ const FAQsTab = ({ title, description }) => {
         <h3 className="faqs-tabs-heading ">{title}</h3>
         {/* fa_un_expand_more.svg */}
         <Image
-          src={`/images/${
-            showDetail ? 'fa_expand_less' : 'fa_un_expand_more'
-          }.svg`}
+          src={`/images/${showDetail ? "fa_expand_less" : "fa_un_expand_more"}.svg`}
           width={20}
           height={20}
         />

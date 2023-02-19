@@ -1,6 +1,7 @@
 @import "./navbar.css";
 @import "./footer.css";
 @import "./sideBar.css";
+@import "./bgImage.css";
 
 * {
   @apply box-border m-0 p-0;

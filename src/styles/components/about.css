@@ -17,17 +17,22 @@
 }
 
 /* Our Mission */
-.about-our-mission-section {
-  @apply w-full h-auto pt-[50px];
+.about-our-mission-div {
+  @apply max-w-[1440px] mx-auto font-Poppins flex items-center justify-center pt-0 md:pt-[50px] overflow-hidden;
 }
-.about-our-mission-section .about-our-mission-div {
-  @apply max-w-[1440px] mx-auto font-Poppins flex items-center justify-evenly;
+
+@media (min-width: 499px) {
+  .about-our-mission-div {
+    gap: clamp(1px, 6vw, 105px);
+  }
 }
-.about-our-mission-section .about-our-mission-div .about-our-mission-detail {
-  @apply sm:w-[442px] text-center;
+
+.about-our-mission-div .about-our-mission-detail {
+  @apply text-center flex-shrink-0;
+  width: clamp(300px, 50vw, 442px);
 }
 .about-our-mission-detail .detail-header {
-  @apply font-semibold text-[48px] leading-[62px]  m-0 text-textcolor;
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] md:leading-[62px]  m-0 text-textcolor;
 }
 .about-our-mission-detail .detail-prep {
   @apply mt-4 font-normal text-xl   m-0 text-textcolor;
@@ -35,17 +40,17 @@
 
 /*Impact  */
 .about-impact-section {
-  @apply w-full h-auto pt-[160px] pb-[400px] relative;
+  @apply w-full h-auto pt-[92px] md:pt-[160px] pb-[400px] relative;
 }
 .about-impact-section .about-impact-div {
-  @apply max-w-[1440px] mx-auto p-10;
+  @apply max-w-[1440px] mx-auto px-6 md:p-10;
 }
 .about-impact-section .about-impact-div .about-impact-header {
-  @apply font-semibold text-[48px] leading-[62px]  m-0 text-textcolor;
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] md:leading-[62px]  m-0 text-textcolor;
 }
 .about-impact-body-div {
   /* @apply flex items-center mt-[52px] flex-col lg:flex-row sm:flex-col; */
-  @apply mt-[52px];
+  @apply mt-5 md:mt-[52px];
 }
 .about-impact-left {
   @apply flex items-center flex-col lg:flex-row;
@@ -61,10 +66,10 @@
 }
 
 .about-impact-body-div .about-impact-right {
-  @apply w-[480px] sm:ml-[64px];
+  @apply w-full md:w-[480px] sm:ml-[64px];
 }
 .about-impact-right .about-impact-right-header {
-  @apply font-semibold text-[40px] sm:text-[64px] leading-[40px] sm:leading-[77px]  m-0 text-textcolor mt-3 sm:mt-0;
+  @apply font-semibold text-[32px] md:text-[64px] leading-[48px] md:leading-[77px]  m-0 text-textcolor mt-3 sm:mt-0;
 }
 .about-impact-right .about-impact-right-prep {
   @apply font-normal  text-xl leading-[30px]  m-0 text-textcolor max-w-[480px];
@@ -85,7 +90,7 @@
   @apply text-center mt-[16px] pb-[160px];
 }
 .about-team-title {
-  @apply font-semibold text-[48px] m-0 text-textcolor mb-[76px];
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] md:leading-[62px] m-0 text-textcolor mb-8 md:mb-[76px];
 }
 
 /* Team Card */

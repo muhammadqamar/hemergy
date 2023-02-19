@@ -15,8 +15,8 @@ const Index = () => {
       />
       <Discoverd />
       <PopularProject />
-      <div className="pt-[480px]">
-        <div className="mb-[160px]">
+      <div className="pt-0 px-6 lg:px-0 lg:pt-[480px] w-full relative  mt-[-290px] lg:mt-0">
+        <div className="mb-[160px] hidden lg:block">
           <DemoCard
             showIcon
             heading="Want to use our api?"
