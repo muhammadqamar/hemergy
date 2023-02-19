@@ -2,7 +2,7 @@
   @apply w-full h-auto relative pt-[130px] md:pt-0 pb-[452px];
 }
 .contribute-section {
-  @apply max-w-[1440px] mx-auto pt-[14px] px-[24px] md:px-[35px] font-Poppins overflow-hidden;
+  @apply max-w-[1440px] mx-auto pt-[14px] pl-6 pr-8 md:px-[35px] font-Poppins overflow-hidden;
 }
 
 .contribute-heading {
@@ -19,7 +19,6 @@
 .con-heading {
   @apply flex-shrink-0 text-textcolor font-normal text-[32px] lg:text-[40px] leading-[48px] lg:leading-[60px] text-center;
   width: clamp(314px, 50vw, 647px);
-  /* max-w-[314px] md:max-w-[647px] */
 }
 
 .contribute-cards {

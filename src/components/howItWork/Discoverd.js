@@ -52,7 +52,7 @@ const Discoverd = () => {
                 <Image className="object-contain" width={520} height={346} src={items.img} />
                 <div className="text-center w-[296px] ">
                   <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">{items.heading}</h2>
-                  <p className="p-lg font-normal text-textcolor">{items.desc}</p>
+                  <p className="p-lg text-weight-normal text-textcolor">{items.desc}</p>
                 </div>
               </div>
             ))}
@@ -67,7 +67,7 @@ const Discoverd = () => {
                   </div>
                   <div className="text-center w-[296px] mx-auto mt-8">
                     <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">{items.heading}</h2>
-                    <p className="p-lg font-normal text-textcolor">{items.desc}</p>
+                    <p className="p-lg text-weight-normal text-textcolor">{items.desc}</p>
                   </div>
                 </div>
               ))}

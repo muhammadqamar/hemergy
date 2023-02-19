@@ -21,7 +21,7 @@
   @apply font-semibold text-[32px] md:text-[48px] leading-[48px] mb-[24px] text-textcolor;
 }
 .work-logos {
-  @apply flex gap-9 md:gap-10 items-center flex-wrap lg:flex-nowrap justify-center;
+  @apply lg:flex hidden gap-10 items-center  justify-center;
 }
 .work-logos .companys-logo {
   @apply w-auto h-auto object-contain;

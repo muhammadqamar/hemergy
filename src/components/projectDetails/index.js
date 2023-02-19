@@ -127,7 +127,7 @@ export default function ProjectDetailSection() {
                     name="Project Name"
                     hideThumbnail
                     bg="bg-textcolor"
-                    shadow="mdshadow"
+                    Shadow="37px 49px 0px rgba(0, 17, 141, 0.1)"
                   />
                 </div>
               );

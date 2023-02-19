@@ -18,7 +18,7 @@
 
 /* Our Mission */
 .about-our-mission-div {
-  @apply max-w-[1440px] mx-auto font-Poppins flex items-center justify-center pt-0 md:pt-[50px] overflow-hidden;
+  @apply max-w-[1440px] mx-auto font-Poppins flex items-center justify-center pr-11 md:pr-0 pt-0 md:pt-[50px] overflow-hidden;
 }
 
 @media (min-width: 499px) {

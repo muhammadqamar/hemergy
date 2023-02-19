@@ -54,7 +54,7 @@ const PopularProject = () => {
                 return (
                   <div className="px-[12px]">
                     <ProjectCard
-                      shadow="mainshadow"
+                      Shadow="37px 49px 0px rgba(0, 17, 141, 0.1)"
                       hemergyIcon="/images/air.svg"
                       bio="It is a long established fact that a reader will be distracted."
                       user={user}

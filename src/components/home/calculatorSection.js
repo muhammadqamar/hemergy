@@ -23,14 +23,14 @@ const CalculatorSection = () => {
 
   return (
     <>
-      <div className="calculator-main-section pt-[609px] px-0 md:px-[24px] pb-8 md:pb-[270px]">
+      <div className="calculator-main-section pt-[609px] px-0 md:px-6 pb-8 md:pb-[270px]">
         <div className="invest-calcu">
           <InvestmentCard />
         </div>
         {/** we works */}
         <div className="work-section">
           <h2 className="work-heading">We work with</h2>
-          <div className="work-logos hidden lg:flex">
+          <div className="work-logos ">
             <img src="/images/work_1.png" alt="logo" className="companys-logo" />
             <img src="/images/work_2.png" alt="logo" className="companys-logo" />
             <img src="/images/work_3.png" alt="logo" className="companys-logo" />
@@ -73,7 +73,7 @@ const CalculatorSection = () => {
                 return (
                   <div className="px-[15px]">
                     <ProjectCard
-                      shadow="mainshadow"
+                      Shadow="37px 49px 0px rgba(0, 17, 141, 0.1)"
                       hemergyIcon="/images/air.svg"
                       bio="It is a long established fact that a reader will be distracted."
                       user={user}
