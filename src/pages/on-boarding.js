@@ -7,10 +7,10 @@ import RegisterSlider from "@/components/Authentications/registerSlider";
 import VerificationBox from "@/components/Authentications/verification";
 import InvestorProfile from "@/components/Authentications/investorProfile";
 import Financials from "@/components/Authentications/financials";
-import WalletOption from "@/components/Authentications/walletOption";
+import WalletOption from "@/utils/walletConnect/connectors";
 
 const Verification = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(4);
   const [loader, setLoading] = useState(true)
   const [userDetail, setUserDetail] = useState()
 

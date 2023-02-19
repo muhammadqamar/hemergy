@@ -40,11 +40,11 @@
 }
 
 .sub-heading.about-w {
-  @apply flex items-center flex-wrap gap-4 mt-8 mb-[82px]  lg:my-[36px];
+  @apply  items-center flex-wrap gap-4 mt-8 mb-[82px]  lg:my-[36px];
 }
 
 .sub-heading.about-w span {
-  @apply flex items-center  gap-2 font-semibold text-white font-Poppins;
+  @apply flex items-center gap-2 font-semibold text-white font-Poppins;
 }
 
 .hero-banner-img {
@@ -55,11 +55,11 @@
   @apply w-full h-auto;
 }
 .hero-banner-img .hero-wather {
-  @apply w-auto h-auto absolute  left-0;
+  @apply absolute left-0 w-auto h-auto;
   animation: wather 7s ease-in-out infinite;
 }
 .hero-banner-img .hero-user-card {
-  @apply h-auto absolute top-0 right-0;
+  @apply absolute top-0 right-0 h-auto;
   width: clamp(200px, 25vw, 345px);
   animation: card 5s ease-in-out 0.5s infinite;
 }
@@ -89,7 +89,7 @@
 }
 
 .hero-banners {
-  @apply h-auto ml-auto hidden md:block;
+  @apply hidden h-auto ml-auto md:block;
 }
 
 @media (min-width: 992px) {
