@@ -23,7 +23,7 @@ const CalculatorSection = () => {
 
   return (
     <>
-      <div className="calculator-main-section">
+      <div className="calculator-main-section pt-[609px] px-0 md:px-[24px] pb-8 md:pb-[270px]">
         <div className="invest-calcu">
           <InvestmentCard />
         </div>

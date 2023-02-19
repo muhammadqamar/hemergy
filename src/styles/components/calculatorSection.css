@@ -1,5 +1,5 @@
 .calculator-main-section {
-  @apply w-full h-auto bg-[#D6DBFF] relative pt-[609px] px-0 md:px-[24px] pb-8 md:pb-[270px];
+  @apply w-full h-auto bg-[#D6DBFF] relative;
 }
 .inestor-proj-main-section {
   @apply w-full  bg-[#D6DBFF] relative  pb-[835px];
