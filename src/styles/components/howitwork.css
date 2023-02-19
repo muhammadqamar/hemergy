@@ -19,7 +19,7 @@
 /*Discoverd  */
 
 .hiw-discoverd-section {
-  @apply relative h-auto w-full;
+  @apply relative h-auto w-full px-6 lg:px-0 mt-[-84px] lg:mt-0;
 }
 .hiw-discoverd-div {
   @apply max-w-[1440px] mx-auto;
@@ -36,13 +36,13 @@
 
 /* PopularProject */
 .hiw-pp-section {
-  @apply bg-[#D6DBFF] pb-[384px] relative;
+  @apply bg-[#D6DBFF] pb-[903px] lg:pb-[384px] pt-[327px] lg:pt-0 relative;
 }
 .hiw-pp-div {
-  @apply px-6 pt-[442px] w-full;
+  @apply px-6 pt-0 lg:pt-[442px] w-full top-[-285px] lg:top-0 absolute lg:relative;
 }
 .hiw-pp-header {
-  @apply absolute left-0 z-[1] w-full pt-[160px];
+  @apply absolute left-0 z-[1] w-full pt-0 lg:pt-[160px];
 }
 .hiw-pp-header-detail {
   @apply text-center;
@@ -59,7 +59,7 @@
 
 /* FAQs */
 .hiw-faqs-section {
-  @apply w-full h-auto  pb-[160px];
+  @apply w-full h-auto pb-16 lg:pb-[160px];
 }
 
 .hiw-faqs-div {
@@ -94,21 +94,13 @@
 }
 
 /* wather */
-.hiw-wather-img {
-  @apply w-full h-[233px] bg-repeat bg-center bg-auto absolute bottom-0;
-  background-image: url("/images/white-wather.png");
-}
-/* .discover__section {
-    background: url("../../../public/images/curvearr.svg") no-repeat;
-    background-position: 92% 88%;
-} */
 .discover__slider .slick-arrow.slick-prev {
-  left: -3%;
+  left: -19px;
   background: #6b7efd;
   height: 40px;
   width: 40px;
   border-radius: 50px;
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
 }
 .discover__slider .slick-arrow.slick-prev::before {
   line-height: 0px;
@@ -119,7 +111,7 @@
   background: #6b7efd;
   height: 40px;
   width: 40px;
-  right: 0%;
+  right: -19px;
 }
 .discover__slider .slick-arrow.slick-next::before {
   line-height: 0px;
@@ -139,4 +131,8 @@
   border-radius: 50px;
   height: 12px;
   width: 12px;
+}
+.discover__slider .slick-arrow.slick-prev,
+.discover__slider .slick-arrow.slick-next {
+  @apply top-[50%] translate-y-0;
 }

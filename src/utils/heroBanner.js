@@ -15,6 +15,7 @@ const HeroBanner = ({
   btnLabel,
   btnIcon,
   paddingBottom,
+  home,
 }) => {
   const [activeHemergy, setActiveHemergy] = useState('sun')
   useEffect(()=>{
@@ -31,11 +32,18 @@ const HeroBanner = ({
   return (
     <div className="hero-container ">
       <div
-        className={`home-hero-wrapper pt-[208px] md:pt-[131px] pb-0 md:pb-[165px] ${heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[379px]`
-          }  ${paddingBottom && `pb-[220px]`}`}
+        className={`home-hero-wrapper pt-[208px] md:pt-[131px] pb-0 md:pb-[165px] ${
+          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[193px] md:pb-[379px]`
+        }  ${paddingBottom && `pb-4 md:pb-[220px]`}`}
       >
-        <div className="hero-content ">
-          {heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
+        <div className={`hero-content ${heroTitle2 && `mx-auto`}`}>
+          {home
+            ? heroTitle && (
+                <h1 className="main-heading">
+                  {heroTitle.slice(0, 14)} <br /> {heroTitle.slice(14)}
+                </h1>
+              )
+            : heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
           {heroTitle2 && (
             <div className="mb-4 mx-auto max-w-[592px] ">
               {pageName && <h3 className="font-medium text-white p-xl-semi ">{pageName}</h3>}

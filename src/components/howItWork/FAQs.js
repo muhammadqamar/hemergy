@@ -35,8 +35,8 @@ const FAQs = () => {
         <div className="hiw-faqs-detail ">
           <h2 className="hiw-faqs-heading ">FAQs</h2>
           <div className="hiw-faqs-list">
-            {faqsData?.map((data) => {
-              return <FAQsTab title={data.title} description={data.description} />;
+            {faqsData?.map((data, index) => {
+              return <FAQsTab key={index} title={data.title} description={data.description} />;
             })}
           </div>
         </div>

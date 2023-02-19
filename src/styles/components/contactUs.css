@@ -1,4 +1,4 @@
- .hero-container {
+.hero-container {
   @apply w-full bg-[#4E62EE] h-auto relative;
 }
 
@@ -7,10 +7,10 @@
 }
 
 .contact-container-about {
-  @apply w-full bg-[#4E62EE] relative  flex items-center justify-center mb-[590px] sm:mb-[380px] md:mb-[280px];
+  @apply w-full bg-[#4E62EE] relative  mb-[590px] sm:mb-[380px] md:mb-[280px];
 }
 .contact-container-about .contact-wrapper-about {
-  @apply max-w-[1440px] h-[930px]  flex  items-start justify-center text-center pt-[157px];
+  @apply max-w-[1440px] h-[930px] mx-auto  flex items-start justify-center text-center pt-[157px];
 }
 .contact-container-about .contact-heading {
   @apply font-Poppins font-semibold text-[40px] md:text-[65px] lg:text-[96px] leading-[36px] md:leading-[90px] lg:leading-[115.2px] text-white mb-4;
@@ -20,7 +20,7 @@
   background-image: url("/images/white-wather.png");
 }
 .contact-container-about .contact-card-box {
-  @apply w-full md:w-[767px] lg:w-[814px] absolute bottom-[-504px] sm:bottom-[-320px] md:bottom-[-180px] z-[1] flex gap-8  flex-col md:flex-row items-start justify-between h-auto mx-auto py-[48px] px-[24px] md:p-[48px]  text-center bg-white rounded-3xl shadow-mdshadow;
+  @apply w-full md:w-[767px] lg:w-[814px]  flex gap-8  flex-col md:flex-row items-start justify-between h-auto mx-auto py-12 px-6 md:p-12  text-center bg-white rounded-3xl shadow-mdshadow;
 }
 .contact-container-about .contact-left-content {
   @apply text-left w-full md:w-[480px];
@@ -42,7 +42,7 @@
   @apply font-Inter font-medium text-[16px] leading-[24px] text-textblack mb-[4px];
 }
 .contact-container-about input {
-  @apply font-Inter bg-garbg w-full md:w-[232px] h-full md:h-[40px] px-[12px] py-[8px] rounded-xl focus:outline-none !important;
+  @apply font-Inter bg-garbg w-full  h-full md:h-[40px] px-[12px] py-[8px] rounded-xl focus:outline-none;
 }
 .contact-container-about .name-input::placeholder {
   color: #000;
@@ -60,7 +60,7 @@
   @apply absolute right-[12px];
 }
 .contact-container-about textarea {
-  @apply focus:outline-none bg-garbg rounded-xl px-[12px] pt-[8px] ;
+  @apply focus:outline-none bg-garbg rounded-xl px-[12px] pt-[8px];
 }
 .contact-container-about .send-btn {
   @apply font-Inter w-full md:w-[100px] h-[40px] flex items-center justify-center gap-[8px] px-[8px] py-[16px] bg-textcolor text-white rounded-xl opacity-50 !important;

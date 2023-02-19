@@ -34,11 +34,15 @@ const Contribute = () => {
     <div className="contribute-main pb-[494px]">
       <div className="contribute-section">
         <div className="flex text-center flex-col items-center mb-[64px]">
-          <img src="/images/charger.svg" alt="charger" className="w-[96px] h-[96px] mb-10" />
-          <h2 className="text-5xl font-semibold leading-[72px] text-textcolor mb-6">
+          <img
+            src="/images/charger.svg"
+            alt="charger"
+            className="w-12 sm:w-[96px] h-12 sm:h-[96px] mb-6 sm:mb-10"
+          />
+          <h2 className="text-[32px] md:text-5xl font-semibold leading-[48px] md:leading-[72px] text-textcolor mb-6">
             All energies, <br /> all connected
           </h2>
-          <p className=" max-w-[456px] p-md font-normal leading-[36px] text-textcolor">
+          <p className=" max-w-[456px] text-[20px] md:p-md font-normal leading-[30px] md:leading-[36px] text-textcolor">
             Cutting edge integrations ensuring compliant & transparent investments in your own
             platform
           </p>
@@ -55,7 +59,7 @@ const Contribute = () => {
         </div>
       </div>
 
-      <div className="w-full absolute left-0 bottom-[-91px]">
+      <div className="w-full absolute px-6 left-0 bottom-[-91px]">
         <DemoCard
           showIcon
           heading="Want to use our api?"

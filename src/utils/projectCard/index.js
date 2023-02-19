@@ -15,9 +15,12 @@ export default function ProjectCard(props) {
     name,
     hideThumbnail,
     bg,
+    shadow,
   } = props;
   return (
-    <div className="hemergy-project-card rounded-[20px] shadow-mainshadow overflow-hidden text-left">
+    <div
+      className={`hemergy-project-card rounded-[20px]  overflow-hidden text-left shadow-${shadow} `}
+    >
       {!hideThumbnail && (
         <ProjectCardThumbnail
           h="280px"

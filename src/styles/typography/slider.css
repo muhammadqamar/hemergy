@@ -66,6 +66,9 @@
 .popular-project-slider .slick-slider {
   @apply h-[314px] md:h-auto;
 }
+.team-slider .slick-slider {
+  @apply h-[380px] md:h-auto;
+}
 
 .popular-project-slider .slick-slider .slick-list {
   @apply pb-14 !important;

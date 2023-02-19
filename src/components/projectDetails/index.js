@@ -27,8 +27,7 @@ export default function ProjectDetailSection() {
 
   return (
     <>
-      {" "}
-      <div className="project-detail-page hero-container  h-screen pt-[185px]">
+      <div className="project-detail-page hero-container  h-screen px-4 pt-[152px] sm:pt-[185px]">
         <Link
           href=""
           className="flex items-center w-[174px] mx-auto justify-center gap-2 mb-[30px]"
@@ -40,14 +39,14 @@ export default function ProjectDetailSection() {
           />
           <h6 className="p-sm font-medium text-white">Back to all projects</h6>
         </Link>
-        <div className="bg-white rounded-[40px] overflow-hidden max-w-[880px] relative z-[1] m-auto ">
+        <div className="bg-white rounded-3xl md:rounded-[40px] shadow-mdshadow overflow-hidden max-w-[880px] relative z-[1] m-auto ">
           <div className="project-detail-page">
             <div className="slider">
               <ProjectGallerySlider />
             </div>
           </div>
-          <div className="flex p-[32px] gap-[32px] ">
-            <div className="meta max-w-[60%]">
+          <div className="flex flex-col md:flex-row p-4 md:p-8 gap-8 ">
+            <div className="meta max-w-full md:max-w-[60%]">
               <div className="flex justify-between w-full">
                 <TabInfo
                   icon="/images/clear_day.svg"
@@ -101,8 +100,8 @@ export default function ProjectDetailSection() {
         <div className="wather-haf-white-bg" />
       </div>
       {/** project section */}
-      <div className="w-full relative pt-[533px] pb-[250px] bg-blue100">
-        <div className="popular-about text-center mx-auto mb-12 max-w-[442px]">
+      <div className="w-full relative pt-[1236px] md:pt-[533px] pb-[235px] md:pb-[250px]  bg-blue100">
+        <div className="popular-about text-center mx-auto mb-12 max-w-full sm:max-w-[442px] px-6 sm:px-0">
           <h1 className="popular-heading">Popular projects</h1>
           <p className="popular-para">
             A selection of the types of projects you can get involved in today!
@@ -128,6 +127,7 @@ export default function ProjectDetailSection() {
                     name="Project Name"
                     hideThumbnail
                     bg="bg-textcolor"
+                    shadow="mdshadow"
                   />
                 </div>
               );
