@@ -1,6 +1,8 @@
 import React from "react";
-import { Formik, Field } from "formik";
+import { Formik } from "formik";
 import Image from "next/image";
+import axios from 'axios';
+import { toast } from 'react-toastify';
 const ContactForm = () => {
   return (
     <Formik
@@ -11,6 +13,7 @@ const ContactForm = () => {
         // country: "",
         // address: "",
         email: "",
+        message: ""
       }}
       validate={(values) => {
         const errors = {};
@@ -19,6 +22,9 @@ const ContactForm = () => {
         }
         if (!values.surname) {
           errors.surname = "Required";
+        }
+        if (!values.message) {
+          errors.message = "Required";
         }
         // if (!values.birthDate) {
         //   errors.birthDate = "Required";
@@ -37,23 +43,44 @@ const ContactForm = () => {
         return errors;
       }}
       onSubmit={async (values, { setSubmitting }) => {
-        alert(JSON.stringify(values, null, 2));
+        try {
+          const sendContact = await axios.post(
+            `http://localhost:4000/api/auth/contact`,
+            values
+          );
+          setSubmitting(false)
+
+
+          if (sendContact?.data?.success) {
+            toast.success('Contact Form Submitted', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+
+          }
+
+        } catch (error) {
+          setSubmitting(false)
+          toast.error(error?.response?.data?.status || error.message, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+
+        }
       }}
-      //   onSubmit={async (values, { setSubmitting }) => {
-      //     try {
-      //       const updateUser = await axios.put(
-      //         `http://localhost:4000/api/user/updateuser`,
-      //         { ...values, email: userDetail?.email }
-      //       );
-      //       setSubmitting(false);
-      //       console.log(updateUser);
-      //       if (updateUser?.data?.userFound) {
-      //         setStep(2);
-      //       }
-      //     } catch (error) {
-      //       setSubmitting(false);
-      //     }
-      //   }}
+
     >
       {({
         values,
@@ -120,21 +147,24 @@ const ContactForm = () => {
             <div className="label-box">
               <label>Your message</label>
               <textarea
-                name="country"
-                // onChange={handleChange}
-                // onBlur={handleBlur}
-                // value={values.country}
+                name="message"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.message}
                 rows="6"
                 cols="50"
                 placeholder="Tell us what you need..."
               />
-              {/* <p className="error p-x-sm">
-                {errors.country && touched.country && errors.country}
-              </p> */}
+              <p className="error p-x-sm">
+                {errors.message && touched.message && errors.message}
+              </p>
             </div>
             <button className="send-btn" type="submit" disabled={isSubmitting}>
-              <p className="send-text">Send</p>
-              <Image src="/images/send-logo.png" alt="" width={20} height={20} />
+              {isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} /> : <>
+                <p className="send-text">Send</p>
+                <Image src="/images/send-logo.png" alt="" width={20} height={20} />
+              </>}
+
             </button>
           </form>
         </>
