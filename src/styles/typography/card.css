@@ -2,7 +2,7 @@
   @apply w-[400px] h-auto bg-white shadow-mdshadow rounded-[20px] overflow-hidden;
 }
 .card-head-img {
-  @apply w-full h-[372px] flex flex-col items-start justify-between p-4 relative;
+  @apply w-full  flex flex-col items-start justify-between p-4 relative;
 }
 
 .card-head-img .card-bg-img {

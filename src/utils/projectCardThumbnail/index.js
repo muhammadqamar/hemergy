@@ -9,6 +9,7 @@ const ProjectCardThumbnail = ({
   stockdirection,
   hemergyType,
   hemergyIcon,
+  hot,
 }) => {
   return (
     <div className={h ? "h-[162px]" : "h-[280px]"}>
@@ -36,6 +37,23 @@ const ProjectCardThumbnail = ({
             />
           </div>
         )}
+
+        {hot && (
+          <div
+            className={`absolute ${detail ? "top-[32px] left-[32px]" : "top-[16px] left-[16px]"}`}
+          >
+            <TabInfo
+              icon="/images/hot.svg"
+              text="Hot"
+              color="text-white"
+              w="20"
+              h="20"
+              bg="bg-red600"
+              bold="font-semibold"
+            />
+          </div>
+        )}
+
         {stock && (
           <div
             className={`absolute ${detail ? "top-[32px] right-[32px]" : "top-[16px] right-[16px]"}`}

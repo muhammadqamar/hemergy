@@ -5,6 +5,7 @@ import ProjectCardThumbnail from "@/utils/projectCardThumbnail";
 export default function ProjectCard(props) {
   const {
     stock,
+    w,
     bio,
     user,
     viewDetailbtn,
@@ -19,7 +20,7 @@ export default function ProjectCard(props) {
   } = props;
   return (
     <div
-      className={`hemergy-project-card rounded-[20px]  overflow-hidden text-left  `}
+      className={`hemergy-project-card rounded-[20px]  overflow-hidden text-left w-[${w}] `}
       style={{ boxShadow: Shadow }}
     >
       {!hideThumbnail && (
