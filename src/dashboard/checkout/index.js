@@ -30,8 +30,8 @@ const Index = () => {
     <section className="dashboard-container">
       <div className="project-detail bg-blue700">
         <Detail />
-        <div className="w-auto flex gap-6 p-8">
-          <div className="flex flex-col gap-6 w-[317px]">
+        <div className="w-full flex justify-between gap-6 p-8">
+          <div className="flex flex-col gap-6 max-w-[617px]">
             <h2 className="p-md">What you need to know</h2>
 
             {data.map((item, index) => (

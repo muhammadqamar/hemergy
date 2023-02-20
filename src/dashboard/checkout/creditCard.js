@@ -5,7 +5,7 @@ const CreditCard = () => {
   return (
     <div className="token-form">
       <Formik
-        initialValues={{ cardNumber: "", month: "", year: "" }}
+        initialValues={{ cardNumber: "", month: "", year: "", nameoncard: "", cvv: "" }}
         validate={(values) => {
           const errors = {};
 
@@ -18,6 +18,12 @@ const CreditCard = () => {
           }
           if (!values.year) {
             errors.year = "Required";
+          }
+          if (!values.nameoncard) {
+            errors.nameoncard = "Required";
+          }
+          if (!values.cvv) {
+            errors.cvv = "Required";
           }
           return errors;
         }}
@@ -69,8 +75,8 @@ const CreditCard = () => {
 
             <div className="input-box">
               <label className="p-sm text-weight-medium text-white">Expiry date</label>
-              <div className="flex">
-                <div>
+              <div className="w-full flex gap-4">
+                <div className="w-full">
                   <div className="input-field">
                     <input
                       className="p-sm"
@@ -84,7 +90,7 @@ const CreditCard = () => {
                   </div>
                   <p className="error p-x-sm">{errors.month && touched.month && errors.month}</p>
                 </div>
-                <div>
+                <div className="w-[155px]">
                   <div className="input-field">
                     <input
                       className="p-sm"
@@ -92,7 +98,7 @@ const CreditCard = () => {
                       type="number"
                       min="1980"
                       max="2023"
-                      name="month"
+                      name="year"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.year}
@@ -102,9 +108,48 @@ const CreditCard = () => {
                 </div>
               </div>
             </div>
+            <div className="w-full flex gap-4">
+              <div className="input-box">
+                <label className="p-sm text-weight-medium text-white">Name on card</label>
+                <div className="input-field">
+                  <input
+                    className="p-sm"
+                    placeholder=""
+                    type="text"
+                    name="nameoncard"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.nameoncard}
+                  />
+                </div>
+                <p className="error p-x-sm">
+                  {errors.nameoncard && touched.nameoncard && errors.nameoncard}
+                </p>
+              </div>
 
-            <div className="gap-4 flex-box">
-              <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
+              <div className="input-box w-[129px]">
+                <label className="p-sm text-weight-medium text-white">CVV</label>
+                <div className="input-field">
+                  <input
+                    className="p-sm"
+                    placeholder=""
+                    type="number"
+                    name="cvv"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.cvv}
+                  />
+                </div>
+                <p className="error p-x-sm">{errors.cvv && touched.cvv && errors.cvv}</p>
+              </div>
+            </div>
+
+            <div className="gap-4 flex-box ">
+              <button
+                className="p-lg text-weight-medium text-white rounded-xl px-2 py-3 w-full bg-red600"
+                type="submit"
+                disabled={isSubmitting}
+              >
                 Buy now € 143.56
               </button>
             </div>
