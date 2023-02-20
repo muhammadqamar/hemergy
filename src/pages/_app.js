@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { ToastContainer } from 'react-toastify';
 import { store } from '@/store/store'
 import { Provider } from 'react-redux'
-
+import axios from 'axios';
 import "@/styles/globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -44,14 +44,34 @@ export default function App({ Component, pageProps }) {
   const routes = useRouter();
 
   const [ready, setReady] = useState(false)
-//  const { theme, setTheme } = useWeb3ModalTheme();
-// setTheme({
-//   themeMode: "dark",
-//   themeColor: "orange",
-//   themeBackground: "gradient",
-//   color:'#fff'
+  const [checkSessionState, setcheckSessionState] = useState(true)
 
-// });
+  // useEffect(() => {
+  //   (async () => {
+  //     console.log(routes)
+
+  //     if (typeof window !== 'undefined') {
+  //       const localToken = localStorage.getItem('hemergy-token')
+  //       if (localToken) {
+  //         try {
+  //           await axios.get(
+  //             `http://localhost:4000/api/auth/me`, {
+  //             headers: {
+  //               ['x-auth-token']: localToken,
+  //             }
+  //           })
+  //           setcheckSessionState(false)
+  //         } catch (e) {
+  //           routes.push('/login')
+  //           setcheckSessionState(false)
+  //         }
+  //       } else {
+  //         routes.push('/login')
+  //         setcheckSessionState(false)
+  //       }
+  //     }
+  //   })()
+  // }, [])
 
   useEffect(() => {
     setReady(true)
@@ -70,10 +90,10 @@ export default function App({ Component, pageProps }) {
       <ToastContainer />
       {ready ? (
 
-        <Provider  store={store}>
-        {/* <WagmiConfig client={wagmiClient}> */}
-          <Component {...pageProps} />
-        {/* </WagmiConfig> */}
+        <Provider store={store}>
+          {/* <WagmiConfig client={wagmiClient}> */}
+          {checkSessionState && <Component {...pageProps} />}
+          {/* </WagmiConfig> */}
         </Provider>
       ) : null}
 

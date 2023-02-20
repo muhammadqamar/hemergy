@@ -1,15 +1,14 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
 import Link from "next/link";
-import axios from 'axios';
-import ConnectWallet from '@/components/connectWallet';
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "@/store/reducer/user";
+import { updateQuestionair } from '@/services/user'
+
 
 const InvestorProfile = ({ setStep, userDetail }) => {
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [defaultAccount, setDefaultAccount] = useState(null);
-  const [userBalance, setUserBalance] = useState(null);
-  const [connButtonText, setConnButtonText] = useState('Connect Wallet');
+  const dispatch =  useDispatch();
+  const user = useSelector(state => state.user?.user)
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -18,9 +17,9 @@ const InvestorProfile = ({ setStep, userDetail }) => {
       </div>
       <Formik
         initialValues={{
-          ['Are you an accredited investor?']: false,
-          ['Are you familiar with cryptocurrencies?']: false,
-          ['toggDo you have knowledge about finance / financial products?']: false
+          ['Are you an accredited investor?']: user?.questionnaire.filter(data=>data.question === 'Are you an accredited investor?')[0]?.selectedAnswers || false,
+          ['Are you familiar with cryptocurrencies?']: user?.questionnaire.filter(data=>data.question === 'Are you familiar with cryptocurrencies?')[0]?.selectedAnswers || false,
+          ['Do you have knowledge about finance / financial products?']:user?.questionnaire.filter(data=>data.question === 'Do you have knowledge about finance / financial products?')[0]?.selectedAnswers || false
         }}
         validate={(values) => {
           const errors = {};
@@ -35,27 +34,13 @@ const InvestorProfile = ({ setStep, userDetail }) => {
               selectedAnswers: values[data]
             })
           })
-          console.log(result)
-          try {
-            const updateUser = await axios.put(
-              `http://localhost:4000/api/user/questionair`,
-              { questions: result, email: userDetail?.email  }
-            );
-            setSubmitting(false)
 
-            if (updateUser?.data?.userFound) {
-              if(values['Are you familiar with cryptocurrencies?']) {
-                setStep(4)
-              } else {
-                setStep(3)
-              }
-
-            }
-
-          } catch (error) {
-            setSubmitting(false)
+          const updateUserData = await updateQuestionair({ questions: result, email: userDetail?.email })
+          setSubmitting(false)
+          if (updateUserData?.data?.userFound) {
+            dispatch(addUser(updateUserData?.data?.userFound))
+            setStep(3)
           }
-          // setStep(3);
         }}
       >
         {({

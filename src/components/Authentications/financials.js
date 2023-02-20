@@ -1,11 +1,15 @@
-import { Formik, Field } from "formik";
-import Image from "next/image";
-import axios from 'axios';
-import {  toast } from 'react-toastify';
+import { Formik } from "formik";
+import { useSelector, useDispatch } from "react-redux";
+import {updateFinancials} from '@/services/user'
 import { useRouter } from 'next/router'
+
+import { addUser } from "@/store/reducer/user";
+
 
 const Financials = ({ setStep, userDetail }) => {
   const router = useRouter()
+  const dispatch =  useDispatch();
+  const user = useSelector(state => state.user?.user)
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -13,7 +17,7 @@ const Financials = ({ setStep, userDetail }) => {
         <h3 className="p-xl center-text">Financials</h3>
       </div>
       <Formik
-        initialValues={{ annualTurnover: "", disposableIncome: "" }}
+        initialValues={{ annualTurnover: user?.financials?.annualturnover|| "", disposableIncome:user?.financials?.disposableIncome || "" }}
         validate={(values) => {
           const errors = {};
 
@@ -27,19 +31,18 @@ const Financials = ({ setStep, userDetail }) => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          try {
-            const updateUser = await axios.put(
-              `http://localhost:4000/api/user/financials`,
-              { ...values, email: userDetail?.email || 'muhammadqamar111@gmail.com' }
-            );
-            setSubmitting(false)
-            console.log(updateUser)
-            if (updateUser?.data?.userFound) {
-              router.push('/projects')
+          const result = await updateFinancials({ ...values, email: userDetail?.email })
+          setSubmitting(false)
+          if (result?.data?.userFound) {
+            dispatch(addUser(result?.data?.userFound))
+            if(user?.questionnaire.filter(data=>data.question === 'Are you familiar with cryptocurrencies?')[0]?.selectedAnswers){
+              setStep(4)
+            } else {
+               router.push('/projects')
             }
-          } catch (error) {
-            setSubmitting(false)
+
           }
+
         }}
       >
         {({
