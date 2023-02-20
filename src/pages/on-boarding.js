@@ -10,7 +10,7 @@ import Financials from "@/components/Authentications/financials";
 import WalletOption from "@/utils/walletConnect/connectors";
 
 const Verification = () => {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(1);
   const [loader, setLoading] = useState(true)
   const [userDetail, setUserDetail] = useState()
 
