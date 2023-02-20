@@ -22,7 +22,9 @@
 .form-cantainer {
   @apply flex flex-col gap-6;
 }
-
+.wallet-option-box{
+  @apply flex items-center justify-between gap-2
+}
 .flex-box {
   @apply flex items-center justify-between;
 }
