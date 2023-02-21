@@ -55,3 +55,7 @@
 .divider {
   @apply w-full h-[1px] bg-[#D9DBEE];
 }
+
+.ellipsis {
+  @apply text-ellipsis overflow-hidden;
+}

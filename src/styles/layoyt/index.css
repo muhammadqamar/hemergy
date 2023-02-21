@@ -14,3 +14,7 @@
 .container {
   @apply max-w-[1440px] mx-auto;
 }
+
+.white-frame {
+  @apply w-auto h-auto bg-white rounded-3xl p-8 shadow-mdshadow;
+}

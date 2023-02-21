@@ -1,3 +1,64 @@
 .card-area {
-  @apply w-fit min-h-screen pt-12 pr-6 pb-8 pl-28  rounded-tr-[60px] rounded-br-[60px] bg-cardbg;
+  @apply w-[40%] h-screen pt-12 pr-6 pb-8 pl-28 relative z-[2]  rounded-tr-[60px] rounded-br-[60px] bg-cardbg;
+}
+
+.insight-card {
+  @apply h-screen pl-[98px] pr-12 pt-12  relative  ml-[-50px] overflow-hidden;
+}
+
+.insight-card::before {
+  @apply absolute bottom-0 right-0 w-full h-[100px] z-[1];
+  content: "";
+  background: linear-gradient(180deg, rgba(78, 98, 238, 0) 42.19%, #4e62ee 100%);
+}
+
+.t-b-raidus {
+  @apply rounded-tr-[60px] rounded-br-[60px];
+}
+
+.transac-bg {
+  @apply w-full flex flex-col gap-6  h-[530px] overflow-y-scroll;
+}
+
+.gradient-bg {
+  @apply relative;
+}
+
+.gradient-bg::before {
+  @apply absolute top-0 right-0 w-full h-[50px];
+  content: "";
+  background: linear-gradient(180deg, rgba(78, 98, 238, 0) 42.19%, #4e62ee 100%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.wallet-progress {
+  @apply w-[236px] h-[236px] mx-auto;
+}
+
+.wallet-progress .progress-about {
+  @apply flex flex-col justify-center items-center gap-1;
+}
+
+.no-tran-box {
+  @apply w-full h-auto flex items-start gap-2 rounded-xl bg-blue400 p-4;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.info-bg {
+  @apply relative w-full pr-[112px] py-6 pl-6 flex items-center justify-center bg-textcolor min-h-screen;
+}
+
+.info-bg::before {
+  @apply w-full h-[93px] md:h-[233px] bg-repeat-x  bg-bottom  bg-auto absolute bottom-0 left-0;
+  content: "";
+  background-image: url("/images/Intersect2.svg");
+  -webkit-background-repeat-y: no-repeat;
+  background-repeat-y: no-repeat;
 }

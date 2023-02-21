@@ -20,7 +20,9 @@ export default function ProjectCard(props) {
   } = props;
   return (
     <div
-      className={`hemergy-project-card rounded-[20px]  overflow-hidden text-left w-[${w}] `}
+      className={`hemergy-project-card rounded-[20px]  overflow-hidden text-left ${
+        w && "w-[266px]"
+      } `}
       style={{ boxShadow: Shadow }}
     >
       {!hideThumbnail && (
