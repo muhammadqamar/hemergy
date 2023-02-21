@@ -1,10 +1,12 @@
 import Map from '@/utils/map/Map';
+import { positions } from '@/utils/map/positionData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const [upDate, setUpDate] = useState('');
+  const [positionData, setPositionData] = useState([]);
 
   console.log(upDate);
 
@@ -18,13 +20,21 @@ const Hero = () => {
     return () => clearInterval(intervil);
   }, [upDate]);
 
+  useEffect(() => {
+    setPositionData(positions);
+  }, []);
+
+  const mapCoordFilter = (type) => {
+    setPositionData(positions.filter((data) => data.type === type));
+  };
+
   return (
     <div className="hero-container ">
-      <div className=" mx-auto pt-[160px]"></div>
+      <div className=" mx-auto pt-11"></div>
       <div className="hero-investors-wrapper">
         <div className="map-box mx-auto">
           <div>
-            <Map />
+            <Map positionCoords={positionData} />
           </div>
           {/* <div className="map">
             <img src="/images/map/map.svg" alt="map" />
@@ -60,6 +70,9 @@ const Hero = () => {
                   alt="visibility"
                   width={20}
                   height={20}
+                  onClick={() => {
+                    mapCoordFilter('sun');
+                  }}
                 />
               </div>
               <div className="map-field">
@@ -68,6 +81,9 @@ const Hero = () => {
                   alt="visibility"
                   width={20}
                   height={20}
+                  onClick={() => {
+                    mapCoordFilter('wind');
+                  }}
                 />
               </div>
               <div className="map-field">
@@ -76,6 +92,9 @@ const Hero = () => {
                   alt="visibility"
                   width={20}
                   height={20}
+                  onClick={() => {
+                    mapCoordFilter('bio');
+                  }}
                 />
               </div>
               <div className="map-field">
@@ -84,6 +103,9 @@ const Hero = () => {
                   alt="visibility"
                   width={20}
                   height={20}
+                  onClick={() => {
+                    mapCoordFilter('sun_fire');
+                  }}
                 />
               </div>
               <div className="map-field">
@@ -92,6 +114,10 @@ const Hero = () => {
                   alt="visibility"
                   width={20}
                   height={20}
+                  onClick={() => {
+                    // mapCoordFilter('trending');
+                    setPositionData(positions);
+                  }}
                 />
               </div>
             </div>

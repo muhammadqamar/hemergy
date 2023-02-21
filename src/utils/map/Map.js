@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { positions } from './positionData';
 
 const mapStyle = [
   {
@@ -250,24 +251,7 @@ export class MapContainer extends Component {
 
   render() {
     const coords = { lat: 24.223592, lng: 18.984375 };
-    const positions = [
-      {
-        coords: { lat: 25.181748, lng: 3.164063 },
-        icon: '/images/map/marker_1.svg',
-      },
-      {
-        coords: { lat: 24.223592, lng: 18.984375 },
-        icon: '/images/map/marker_2.svg',
-      },
-      {
-        coords: { lat: 9.467127, lng: 9.492188 },
-        icon: '/images/map/marker_1.svg',
-      },
-      {
-        coords: { lat: 16.316628, lng: 23.554688 },
-        icon: '/images/map/marker_3.svg',
-      },
-    ];
+
     return (
       <div className="relative w-[1053px] h-[733px]">
         <Map
@@ -275,10 +259,14 @@ export class MapContainer extends Component {
           google={this.props.google}
           zoom={2}
           initialCenter={coords}
+          streetViewControl={false}
+          mapTypeControl={false}
+          fullscreenControl={false}
+          zoomControl={false}
           onReady={(mapProps, map) => this._mapLoaded(mapProps, map)}
         >
           {/* <Marker position={coords} /> */}
-          {positions?.map((data) => {
+          {this.props.positionCoords?.map((data) => {
             return (
               <Marker
                 position={data.coords}
