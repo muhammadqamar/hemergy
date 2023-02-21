@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Detail from "./detail";
 import CreditCard from "./creditCard";
+import { useState } from "react";
 
 const data = [
   {
@@ -26,6 +27,7 @@ const data = [
 ];
 
 const Index = () => {
+  const [active, setActive] = useState("card");
   return (
     <section className="dashboard-container">
       <div className="project-detail bg-blue700">
@@ -90,19 +92,36 @@ const Index = () => {
               <h3 className="p-md text-white text-center mb-6">Total to pay &nbsp; € 143.56</h3>
 
               <div className="flex items-center justify-center gap-2 mb-6">
-                <button className="secondary flex items-center justify-center rounded-xl text-white bg-textcolor">
+                <button
+                  onClick={() => setActive("card")}
+                  className={`secondary flex items-center justify-center rounded-xl text-white ${
+                    active === "card" ? "bg-textcolor" : "bg-blue700"
+                  }`}
+                >
                   Credit card
                 </button>
-                <button className="secondary flex items-center justify-center rounded-xl text-white bg-blue700">
+                <button
+                  onClick={() => setActive("back")}
+                  className={`secondary flex items-center justify-center rounded-xl text-white ${
+                    active === "back" ? "bg-textcolor" : "bg-blue700"
+                  }`}
+                >
                   Bank transfer
                 </button>
-                <button className="secondary flex items-center justify-center rounded-xl text-white bg-blue700">
+                <button
+                  onClick={() => setActive("crypto")}
+                  className={`secondary flex items-center justify-center rounded-xl text-white ${
+                    active === "crypto" ? "bg-textcolor" : "bg-blue700"
+                  }`}
+                >
                   Cryptowallet
                 </button>
               </div>
-              <div>
-                <CreditCard />
-              </div>
+              {active === "card" && (
+                <div>
+                  <CreditCard />
+                </div>
+              )}
             </div>
           </div>
         </div>

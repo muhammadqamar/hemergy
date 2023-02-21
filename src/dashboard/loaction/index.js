@@ -12,7 +12,16 @@ const Index = () => {
   };
   return (
     <div className="main-loaction">
-      <CardArea />
+      <CardArea
+        h
+        areaHeading="Featured projects"
+        areaDesc="These are hot projects lorem ipsum etc"
+        btn1="Details"
+        btn2="Invest"
+        token="200"
+        tokenLabel="Available"
+        hot
+      />
       <div className="map-box">
         <div className="map">
           <img src="/images/map/map.svg" alt="map" className="map" />
@@ -53,7 +62,7 @@ const Index = () => {
         </div>
         <div className="map-cards">
           <LocationCard
-            w="266px"
+            w
             hemergyIcon="/images/air.svg"
             user={user}
             viewDetailbtn
