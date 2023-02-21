@@ -27,12 +27,12 @@ const Verification = ({ params }) => {
           });
           setUserDetail(response?.data?.user);
           dispatch(addUser(response?.data?.user));
-          if (response?.data?.user?.platform === "custom") {
+
             setLoading(false);
             localStorage.setItem("hemergy-email", response?.data?.user?.email);
             localStorage.setItem("hemergy-token", response?.data?.token);
             router.push("/on-boarding");
-          }
+
         }
       } catch (error) {
         setLoading(false);

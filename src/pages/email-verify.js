@@ -1,17 +1,10 @@
-import RegisterSlider from "@/components/Authentications/registerSlider";
-import LogIn from "@/components/Authentications/login";
+import InBox from "@/components/Authentications/inBox";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import { ShowError } from '@/services/error'
 
-const Login = ({ query }) => {
-  useEffect(()=>{
-    console.log(query.success)
-    if(query.success==="false") {
-      ShowError('Email not Exist!')
-    }
-  },[query])
+
+const EmailVerifyBox = ({ query }) => {
+
   return (
     <div className="authentications-section">
       <Link href="/" className="auth-header">
@@ -19,8 +12,7 @@ const Login = ({ query }) => {
       </Link>
 
       <div className="auth-container">
-        <RegisterSlider />
-        <LogIn />
+        <InBox registerState={{email:query.email}} hideButtons />
       </div>
 
       <div className="wather-haf-white-bg" />
@@ -28,7 +20,7 @@ const Login = ({ query }) => {
   );
 };
 
-export default Login;
+export default EmailVerifyBox;
 
 
 
