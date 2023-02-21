@@ -9,6 +9,10 @@
   @apply font-normal !important;
 }
 
+.text-weight-semibold {
+  @apply font-semibold !important;
+}
+
 .p-2xl {
   @apply font-Poppins font-semibold text-[40px] leading-[48px] md:text-8xl text-white;
 }
@@ -50,4 +54,8 @@
 
 .divider {
   @apply w-full h-[1px] bg-[#D9DBEE];
+}
+
+.ellipsis {
+  @apply text-ellipsis overflow-hidden;
 }

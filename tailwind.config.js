@@ -12,9 +12,11 @@ module.exports = {
     colors: {
       blue100: "#D6DBFF",
       blue200: "#B0BBFF",
+      blue300: "#92A0FF",
       blue400: "#6B7EFD",
       blue600: "#3D50D9",
       blue700: "#2B3FCC",
+      blue800: "#192CB1",
       blue900: "#10219C",
       textcolor: "#4E62EE",
       white: "#ffffff",
@@ -30,13 +32,16 @@ module.exports = {
       green500: "#3CCD87",
       white500: "#D6DBFF",
     },
+
     boxShadow: {
       mainshadow: "37px 49px 0px rgba(0, 17, 141, 0.1)",
       smallshadow: "11px 12px 0px rgba(0, 17, 141, 0.1)",
       lgshadow: "0px 44px 44px rgba(35, 37, 55, 0.2)",
       mdshadow: "23px 27px 0px rgba(0, 17, 141, 0.1)",
       smshadow: "0 10px 7px -3px rgb(0, 0, 0 ,0.1), 0 4px 6px 7px rgb(0, 0, 0 , 0.1)",
+      xsmshadow: "5px 0px 0px rgba(0, 17, 141, 0.2)",
     },
+
     fontFamily: {
       Inter: "Inter, sans-serif",
       Poppins: "Poppins, sans-serif",
@@ -52,6 +57,7 @@ module.exports = {
       laptop: "1190px",
 
       xl: "1315px",
+
       // => @media (min-width: 1280px) { ... }
     },
     extend: {},

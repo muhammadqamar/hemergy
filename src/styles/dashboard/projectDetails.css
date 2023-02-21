@@ -3,7 +3,7 @@
 }
 
 .project-detail {
-  @apply w-auto h-[869px] flex rounded-[40px] bg-white shadow-mdshadow overflow-hidden;
+  @apply w-auto h-[869px] flex rounded-[40px]  shadow-mdshadow overflow-hidden;
 }
 
 .project-detail .detail-img {

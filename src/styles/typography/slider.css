@@ -57,7 +57,7 @@
 }
 
 .project-slider {
-  @apply w-[427px];
+  @apply w-auto;
 }
 
 .project-slider .slick-slider .slick-list {

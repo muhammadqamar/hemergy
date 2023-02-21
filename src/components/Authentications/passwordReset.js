@@ -115,7 +115,7 @@ const ResetPassword = ({code}) => {
                         </form>
                     )}
                 </Formik>
-            </div> : <InBox type="password-recovery-success"  />
+            </div> : <InBox type="password-recovery-success" hideButtons  />
     );
 };
 
