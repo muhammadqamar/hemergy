@@ -3,7 +3,7 @@ import Link from "next/link";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Image from "next/image";
-const InBox = ({ setRegisterState, registerState, type }) => {
+const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   return (
     <div className="registration-box">
@@ -18,7 +18,7 @@ const InBox = ({ setRegisterState, registerState, type }) => {
           <>Please follow the confirmation link sent to email address <strong> {registerState?.email} </strong>
             to complete registration</>}
       </p>
-      {type !== 'password-recovery' &&
+      {!hideButtons  &&
         <div className="flex-box d-column gap-sm">
           <button onClick={async () => {
             try {
@@ -69,7 +69,7 @@ const InBox = ({ setRegisterState, registerState, type }) => {
 
         </div>
       }
-      {type !== 'password-recovery' &&
+      {!hideButtons &&
         <p className="mb-6 center-text p-sm">
           Already a member?&nbsp;
           <Link href="/login" className="text-textcolor text-weight-medium">
