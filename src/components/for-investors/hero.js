@@ -1,15 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import Map from '@/utils/map/Map';
+import { positions } from '@/utils/map/positionData';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
-  const [upDate, setUpDate] = useState("");
+  const [upDate, setUpDate] = useState('');
+  const [positionData, setPositionData] = useState([]);
 
   console.log(upDate);
 
   useEffect(() => {
     const intervil = setInterval(() => {
-      const data = ["wind", "sun", "bio"];
+      const data = ['wind', 'sun', 'bio'];
       // i = (i + 1) % data.length;
 
       setUpDate(data);
@@ -17,13 +20,26 @@ const Hero = () => {
     return () => clearInterval(intervil);
   }, [upDate]);
 
+  useEffect(() => {
+    setPositionData(positions);
+  }, []);
+
+  const mapCoordFilter = (type) => {
+    setPositionData(positions.filter((data) => data.type === type));
+  };
+
   return (
     <div className="hero-container ">
+      <div className=" mx-auto pt-11"></div>
       <div className="hero-investors-wrapper">
         <div className="map-box mx-auto">
-          <div className="map">
-            <img src="/images/map/map.svg" alt="map" />
+          <div>
+            <Map positionCoords={positionData} />
           </div>
+          {/* <div className="map">
+            <img src="/images/map/map.svg" alt="map" />
+          </div> */}
+
           <div className="investor-project-heading">
             <h2 className="browse-projects">Browse projects</h2>
           </div>
@@ -32,7 +48,12 @@ const Hero = () => {
               <div className="input-field">
                 <input className="input p-sm" placeholder="Search..." />
                 <div className="pointer"></div>
-                <Image src="/images/map/search.svg" alt="visibility" width={20} height={20} />
+                <Image
+                  src="/images/map/search.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                />
               </div>
               <div className="input-field">
                 <select className="p-sm">
@@ -44,13 +65,37 @@ const Hero = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="map-field">
-                <Image src="/images/map/clear_day.svg" alt="visibility" width={20} height={20} />
+                <Image
+                  src="/images/map/clear_day.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                  onClick={() => {
+                    mapCoordFilter('sun');
+                  }}
+                />
               </div>
               <div className="map-field">
-                <Image src="/images/map/air.svg" alt="visibility" width={20} height={20} />
+                <Image
+                  src="/images/map/air.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                  onClick={() => {
+                    mapCoordFilter('wind');
+                  }}
+                />
               </div>
               <div className="map-field">
-                <Image src="/images/map/humidity_low.svg" alt="visibility" width={20} height={20} />
+                <Image
+                  src="/images/map/humidity_low.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                  onClick={() => {
+                    mapCoordFilter('bio');
+                  }}
+                />
               </div>
               <div className="map-field">
                 <Image
@@ -58,10 +103,22 @@ const Hero = () => {
                   alt="visibility"
                   width={20}
                   height={20}
+                  onClick={() => {
+                    mapCoordFilter('sun_fire');
+                  }}
                 />
               </div>
               <div className="map-field">
-                <Image src="/images/map/trending.svg" alt="visibility" width={20} height={20} />
+                <Image
+                  src="/images/map/trending.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                  onClick={() => {
+                    // mapCoordFilter('trending');
+                    setPositionData(positions);
+                  }}
+                />
               </div>
             </div>
           </div>
