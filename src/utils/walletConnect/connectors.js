@@ -48,10 +48,14 @@ const client = createClient({
 });
 
 // Pass client to React Context Provider
-function WalletConnects({ setviewAllWallet, viewAllWallet }) {
+function WalletConnects({ setviewAllWallet, viewAllWallet, setisMaskConnected }) {
   return (
     <WagmiConfig client={client}>
-      <Profile setviewAllWallet={setviewAllWallet} viewAllWallet={viewAllWallet} />
+      <Profile
+        setviewAllWallet={setviewAllWallet}
+        viewAllWallet={viewAllWallet}
+        setisMaskConnected={setisMaskConnected}
+      />
     </WagmiConfig>
   );
 }

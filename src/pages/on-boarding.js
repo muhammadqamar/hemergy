@@ -7,9 +7,10 @@ import VerificationBox from "@/components/Authentications/verification";
 import InvestorProfile from "@/components/Authentications/investorProfile";
 import Financials from "@/components/Authentications/financials";
 import AllWalletOption from "@/utils/walletConnect/allWalletOption";
+import KycVerification from "@/components/verifications/kycVerification";
 
 const Verification = () => {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(1);
   const [loader, setLoading] = useState(true);
   const [userDetail, setUserDetail] = useState();
 
@@ -31,6 +32,7 @@ const Verification = () => {
           {step === 3 && <Financials userDetail={userDetail} setStep={setStep} />}
           {/* {step === 4 && <WalletOption userDetail={userDetail} setStep={setStep} />} */}
           {step === 4 && <AllWalletOption userDetail={userDetail} setStep={setStep} />}
+          {step === 5 && <KycVerification userDetail={userDetail} setStep={setStep} />}
         </div>
       )}
 

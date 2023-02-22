@@ -1,21 +1,31 @@
+import { useState, useMemo } from "react";
 import { Formik, Field } from "formik";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUser } from '@/services/user'
+import { updateUser } from "@/services/user";
 import { addUser } from "@/store/reducer/user";
-
+import ReactFlagsSelect from "react-flags-select";
 const Verification = ({ userDetail, setStep }) => {
-  const dispatch = useDispatch()
-  const user = useSelector(state => state.user?.user)
-  console.log(user)
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user?.user);
+
+  const [selected, setSelected] = useState("");
+
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
         <h6 className="p-lg center-text ">Step 1 of 3</h6>
+
         <h3 className="p-xl center-text">Sign up to Hemergy</h3>
       </div>
       <Formik
-        initialValues={{ name: user?.firstName || "", surname: user?.lastName || "", birthDate: user?.dob || "", country: user?.country || "", address: user?.address || "" }}
+        initialValues={{
+          name: user?.firstName || "",
+          surname: user?.lastName || "",
+          birthDate: user?.dob || "",
+          country: user?.country || "",
+          address: user?.address || "",
+        }}
         enableReinitialize
         validate={(values) => {
           const errors = {};
@@ -28,7 +38,7 @@ const Verification = ({ userDetail, setStep }) => {
           if (!values.birthDate) {
             errors.birthDate = "Required";
           }
-          if (!values.country) {
+          if (!selected) {
             errors.country = "Required";
           }
           if (!values.address) {
@@ -38,11 +48,11 @@ const Verification = ({ userDetail, setStep }) => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          const result = await updateUser({ ...values, email: userDetail?.email })
-          setSubmitting(false)
+          const result = await updateUser({ ...values, email: userDetail?.email });
+          setSubmitting(false);
           if (result?.data?.userFound) {
-            dispatch(addUser(result?.data?.userFound))
-            setStep(2)
+            dispatch(addUser(result?.data?.userFound));
+            setStep(2);
           }
         }}
       >
@@ -113,7 +123,7 @@ const Verification = ({ userDetail, setStep }) => {
             <div className="input-box">
               <label className="p-sm text-weight-medium">Country</label>
               <div className="input-field">
-                <img src="/images/country.svg" width="20px" height="20px" alt="country" />
+                {/* <img src="/images/country.svg" width="20px" height="20px" alt="country" />
                 <Field
                   className="input p-sm"
                   as="select"
@@ -125,7 +135,14 @@ const Verification = ({ userDetail, setStep }) => {
                   <option value="red">Red</option>
                   <option value="green">Green</option>
                   <option value="blue">Blue</option>
-                </Field>
+                </Field> */}
+                <ReactFlagsSelect
+                  className="p-sm text-weight-medium w-full ml-[-16px]"
+                  selectButtonClassName="country-drop-list"
+                  selected={selected}
+                  fullWidth={true}
+                  onSelect={(code) => setSelected(code)}
+                />
               </div>
               <p className="error p-x-sm">{errors.country && touched.country && errors.country}</p>
             </div>
@@ -150,7 +167,11 @@ const Verification = ({ userDetail, setStep }) => {
             <p className="p-sm text-weight-medium text-textcolor">Enter address manually</p>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} /> : 'Next'}
+              {isSubmitting ? (
+                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
+              ) : (
+                "Next"
+              )}
             </button>
           </form>
         )}

@@ -1,22 +1,49 @@
+import { useEffect } from "react";
 import { useAccount, useConnect, useDisconnect, useEnsAvatar, useEnsName } from "wagmi";
 import Image from "next/image";
-export default function Profile({ setviewAllWallet, viewAllWallet }) {
+export default function Profile({ setviewAllWallet, viewAllWallet, setisMaskConnected }) {
   const { address, connector, isConnected } = useAccount();
   const { data: ensAvatar } = useEnsAvatar({ address });
   const { data: ensName } = useEnsName({ address });
   const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
   const { disconnect } = useDisconnect();
 
+  // useEffect(() => {
   if (isConnected) {
+    setisMaskConnected(true);
+    var walletMask;
+    if (connector?.id === "metaMask") {
+      walletMask = "/images/metamask.svg";
+    }
+    if (connector?.id === "coinbaseWallet") {
+      walletMask = "/images/zerion.svg";
+    }
+    if (connector?.id === "walletConnect") {
+      walletMask = "/images/ledger.svg";
+    }
     return (
-      <div>
-        <img src={ensAvatar} alt="ENS Avatar" />
-        <div>{ensName ? `${ensName} (${address})` : address}</div>
-        <div>Connected to {connector.name}</div>
-        <button onClick={disconnect}>Disconnect</button>
+      <div className="flex justify-between items-center">
+        <div className="flex gap-4 items-center">
+          <Image src={walletMask} alt="logo" width={64} height={64} />
+          <div className="truncate w-28">{ensName ? `${ensName} (${address})` : address}</div>
+        </div>
+
+        {/* <div>Connected to {connector?.name}</div> */}
+        <button
+          className="p-sm-semi  text-textcolor"
+          onClick={() => {
+            disconnect();
+            setisMaskConnected(false);
+          }}
+        >
+          Replace
+        </button>
       </div>
     );
+  } else {
+    setisMaskConnected(false);
   }
+  // }, [isConnected]);
 
   return (
     <div>
@@ -47,7 +74,6 @@ export default function Profile({ setviewAllWallet, viewAllWallet }) {
             walletMask = "/images/ledger.svg";
           }
 
-          console.log("conec", connector);
           return (
             <div
               className="flex items-center gap-0.5  flex-col"
