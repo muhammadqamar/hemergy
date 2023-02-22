@@ -55,7 +55,7 @@ export default function App({ Component, pageProps }) {
   //       if (localToken) {
   //         try {
   //           await axios.get(
-  //             `http://localhost:4000/api/auth/me`, {
+  //             `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/me`, {
   //             headers: {
   //               ['x-auth-token']: localToken,
   //             }

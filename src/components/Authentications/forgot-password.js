@@ -29,7 +29,7 @@ const ForgetPassword = () => {
         onSubmit={async (values, { setSubmitting }) => {
           try {
             const userFound = await axios.post(
-              `http://localhost:4000/api/auth/forgot/password`,
+              `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/forgot/password`,
               values
             );
             setSubmitting(false);

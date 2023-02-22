@@ -40,7 +40,7 @@ const WalletOption = ({ setStep, userDetail }) => {
                 }
                 try {
                 const updateWallet = await axios.post(
-                  `http://localhost:4000/api/user/wallet`,
+                  `${process.env.NEXT_PUBLIC_API_DOMAIN}/user/wallet`,
                   { wallet: resulter, email: userDetail?.email }
 
                 )

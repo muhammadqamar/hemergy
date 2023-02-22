@@ -27,7 +27,7 @@ const ResetPassword = ({ code }) => {
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            const userFound = await axios.post(`http://localhost:4000/api/auth/update/password`, {
+            const userFound = await axios.post(`${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/update/password`, {
               ...values,
               code,
             });

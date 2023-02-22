@@ -27,7 +27,7 @@ const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
             try {
               setIsSubmitting(true)
               const userFound = await axios.post(
-                `http://localhost:4000/api/auth/sendEmailAgain`,
+                `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/sendEmailAgain`,
                 registerState
               );
 

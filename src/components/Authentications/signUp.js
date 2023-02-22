@@ -32,7 +32,7 @@ const SignUp = ({ setRegisterState }) => {
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            const register = await axios.post(`http://localhost:4000/api/auth/register`, values);
+            const register = await axios.post(`${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/register`, values);
             setSubmitting(false);
             if (register?.data?.success) {
               setRegisterState(values);
@@ -166,7 +166,7 @@ const SignUp = ({ setRegisterState }) => {
             <button
               type="button"
               className="flex-box fit-width gap-x-sm btn-border secondary"
-              onClick={() => (window.location = `http://localhost:4000/api/auth/google-register`)}
+              onClick={() => (window.location = `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/google-register`)}
             >
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
               Sign up with Google

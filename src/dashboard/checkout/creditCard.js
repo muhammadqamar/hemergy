@@ -29,7 +29,7 @@ const CreditCard = () => {
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            const updateUser = await axios.put(`http://localhost:4000/api/user/financials`, {
+            const updateUser = await axios.put(`${process.env.NEXT_PUBLIC_API_DOMAIN}/user/financials`, {
               ...values,
               email: userDetail?.email || "muhammadqamar111@gmail.com",
             });

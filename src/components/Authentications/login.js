@@ -137,7 +137,7 @@ const SignIn = () => {
             <button
               type="button"
               className="flex-box fit-width gap-x-sm btn-border secondary"
-              onClick={() => (window.location = `http://localhost:4000/api/auth/google-login`)}
+              onClick={() => (window.location = `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/google-login`)}
             >
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
               Sign In with Google

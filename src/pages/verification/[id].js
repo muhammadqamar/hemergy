@@ -22,7 +22,7 @@ const Verification = ({ params }) => {
         setLoading(true);
 
         if (params?.id) {
-          let response = await axios.post(`http://localhost:4000/api/auth/verify/account`, {
+          let response = await axios.post(`${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/verify/account`, {
             code: params?.id,
           });
           setUserDetail(response?.data?.user);
