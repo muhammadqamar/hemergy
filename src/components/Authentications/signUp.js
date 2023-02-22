@@ -1,15 +1,17 @@
-import { Formik, Field } from "formik";
+import { useState } from "react";
+import { Formik } from "formik";
 import Image from "next/image";
 import Link from "next/link";
-import axios from 'axios';
-import {  toast } from 'react-toastify';
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const SignUp = ({ setRegisterState }) => {
+  const [showPass, setShowPass] = useState(false);
   return (
     <div className="registration-box">
       <h3 className="p-xl center-text">Sign up to Hemergy</h3>
       <Formik
-        initialValues={{ email: "", password:"", confirmPassword:"" }}
+        initialValues={{ email: "", password: "", confirmPassword: "" }}
         validate={(values) => {
           const errors = {};
           if (!values.email) {
@@ -23,27 +25,24 @@ const SignUp = ({ setRegisterState }) => {
           }
           if (!values.confirmPassword) {
             errors.confirmPassword = "Required";
-          } else if(values.confirmPassword !==  values.password) {
+          } else if (values.confirmPassword !== values.password) {
             errors.confirmPassword = "passowrd not matched";
           }
           return errors;
         }}
-        onSubmit={async(values, { setSubmitting }) => {
+        onSubmit={async (values, { setSubmitting }) => {
           try {
-            const register = await axios.post(
-              `http://localhost:4000/api/auth/register`,
-              values
-            );
-            setSubmitting(false)
-            if(register?.data?.success) {
-              setRegisterState(values)
+            const register = await axios.post(`http://localhost:4000/api/auth/register`, values);
+            setSubmitting(false);
+            if (register?.data?.success) {
+              setRegisterState(values);
             }
 
             // if (updateUser?.data?.userFound) {
             //   setStep(3)
             // }
           } catch (error) {
-            setSubmitting(false)
+            setSubmitting(false);
             toast.error(error?.response?.data?.status || error.message, {
               position: "bottom-right",
               autoClose: 5000,
@@ -53,7 +52,7 @@ const SignUp = ({ setRegisterState }) => {
               draggable: true,
               progress: undefined,
               theme: "light",
-              });
+            });
           }
         }}
       >
@@ -67,7 +66,7 @@ const SignUp = ({ setRegisterState }) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer" onSubmit={handleSubmit}>
+          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
             <div className="input-box">
               <label className="p-sm text-weight-medium">Email</label>
               <div className="input-field">
@@ -89,14 +88,22 @@ const SignUp = ({ setRegisterState }) => {
                 <input
                   className="input p-sm"
                   placeholder="Password"
-                  type="password"
+                  type={showPass ? "text" : "password"}
                   name="password"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
                 />
                 <div className="pointer"></div>
-                <Image src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+                <Image
+                  onClick={() => {
+                    setShowPass(!showPass);
+                  }}
+                  src="/images/visibility.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                />
               </div>
               <p className="error p-x-sm">
                 {errors.password && touched.password && errors.password}
@@ -108,14 +115,22 @@ const SignUp = ({ setRegisterState }) => {
                 <input
                   className="input p-sm"
                   placeholder="confirm password"
-                  type="password"
+                  type={showPass ? "text" : "password"}
                   name="confirmPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.confirmPassword}
                 />
                 <div className="pointer"></div>
-                <Image src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+                <Image
+                  onClick={() => {
+                    setShowPass(!showPass);
+                  }}
+                  src="/images/visibility.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                />
               </div>
               <p className="error p-x-sm">
                 {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
@@ -135,7 +150,11 @@ const SignUp = ({ setRegisterState }) => {
             </div> */}
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} /> : 'Sign up'}
+              {isSubmitting ? (
+                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
+              ) : (
+                "Sign up"
+              )}
             </button>
 
             <div className="flex-box gap-x-sm">
@@ -144,7 +163,11 @@ const SignUp = ({ setRegisterState }) => {
               <div className="divider" />
             </div>
 
-            <button type="button" className="flex-box fit-width gap-x-sm btn-border secondary" onClick={()=>window.location = `http://localhost:4000/api/auth/google-register`}>
+            <button
+              type="button"
+              className="flex-box fit-width gap-x-sm btn-border secondary"
+              onClick={() => (window.location = `http://localhost:4000/api/auth/google-register`)}
+            >
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
               Sign up with Google
             </button>

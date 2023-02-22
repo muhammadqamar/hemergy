@@ -37,7 +37,10 @@ const SideBar = () => {
         <Link href="" className="menu-item">
           <Image src="/images/medium.svg" alt="logo" width={20} height={20} />
         </Link>
-        <Link href="" className="menu-item">
+        <Link
+          href="/contact"
+          className={currentRoute === "/contact" ? "menu-item active" : "menu-item"}
+        >
           <Image src="/images/help.svg" alt="logo" width={20} height={20} />
         </Link>
         <Link

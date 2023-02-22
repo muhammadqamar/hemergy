@@ -1,25 +1,16 @@
-import { useState, useMemo } from "react";
 import { Formik, Field } from "formik";
 import Image from "next/image";
-import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "@/services/user";
 import { addUser } from "@/store/reducer/user";
-import ReactFlagsSelect from "react-flags-select";
-const Verification = ({ userDetail, setStep }) => {
+import Link from "next/link";
+
+const AccountDetails = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user?.user);
-
-  const [selected, setSelected] = useState("");
-
+  console.log(user);
   return (
-    <div className="relative z-[1] w-full md:w-[480px] h-auto flex flex-col gap-6 pt-12 px-4 md:px-8 pb-6 bg-white rounded-3xl shadow-lgshadow text-textblack">
-      <div className="flex-box d-column gap-x-sm">
-        <h6 className="p-lg center-text ">Step 1 of 3</h6>
-
-        <h3 className="p-xl center-text">Sign up to Hemergy</h3>
-      </div>
-
+    <div className=" w-full h-auto flex flex-col gap-2  text-textblack">
       <Formik
         initialValues={{
           name: user?.firstName || "",
@@ -40,7 +31,7 @@ const Verification = ({ userDetail, setStep }) => {
           if (!values.birthDate) {
             errors.birthDate = "Required";
           }
-          if (!selected) {
+          if (!values.country) {
             errors.country = "Required";
           }
           if (!values.address) {
@@ -49,13 +40,13 @@ const Verification = ({ userDetail, setStep }) => {
 
           return errors;
         }}
-        onSubmit={async (values, { setSubmitting, setFieldValue }) => {
-          const result = await updateUser({ ...values, email: userDetail?.email });
-          setFieldValue({ country: selected });
-          if (result?.data?.userFound) {
-            dispatch(addUser(result?.data?.userFound));
-            setStep(2);
-          }
+        onSubmit={async (values, { setSubmitting }) => {
+          // const result = await updateUser({ ...values, email: userDetail?.email });
+          // setSubmitting(false);
+          // if (result?.data?.userFound) {
+          //   dispatch(addUser(result?.data?.userFound));
+          //   setStep(2);
+          // }
         }}
       >
         {({
@@ -68,7 +59,7 @@ const Verification = ({ userDetail, setStep }) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
+          <form className="form-cantainer gap-2" onSubmit={handleSubmit}>
             <div className="flex-col flex-box gap-sm sm:flex-row">
               <div className="input-box">
                 <label className="p-sm text-weight-medium">First name</label>
@@ -125,7 +116,7 @@ const Verification = ({ userDetail, setStep }) => {
             <div className="input-box">
               <label className="p-sm text-weight-medium">Country</label>
               <div className="input-field">
-                {/* <img src="/images/country.svg" width="20px" height="20px" alt="country" />
+                <img src="/images/country.svg" width="20px" height="20px" alt="country" />
                 <Field
                   className="input p-sm"
                   as="select"
@@ -137,14 +128,7 @@ const Verification = ({ userDetail, setStep }) => {
                   <option value="red">Red</option>
                   <option value="green">Green</option>
                   <option value="blue">Blue</option>
-                </Field> */}
-                <ReactFlagsSelect
-                  className="p-sm text-weight-medium w-full ml-[-16px]"
-                  selectButtonClassName="country-drop-list"
-                  selected={selected}
-                  fullWidth={true}
-                  onSelect={(code) => setSelected(code)}
-                />
+                </Field>
               </div>
               <p className="error p-x-sm">{errors.country && touched.country && errors.country}</p>
             </div>
@@ -184,4 +168,4 @@ const Verification = ({ userDetail, setStep }) => {
   );
 };
 
-export default Verification;
+export default AccountDetails;

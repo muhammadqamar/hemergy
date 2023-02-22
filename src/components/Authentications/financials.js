@@ -60,7 +60,7 @@ const Financials = ({ setStep, userDetail }) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer" onSubmit={handleSubmit}>
+          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
             <div className="input-box">
               <label className="p-sm text-weight-medium">Annual turnover</label>
 

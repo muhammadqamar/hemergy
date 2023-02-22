@@ -69,8 +69,8 @@ const InvestorProfile = ({ setStep, userDetail }) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer" onSubmit={handleSubmit}>
-            <div className="form-cantainer" role="group" aria-labelledby="checkbox-group">
+          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
+            <div className="form-cantainer gap-6" role="group" aria-labelledby="checkbox-group">
               <div className="flex-box gap-lg">
                 <p className="p-sm text-weight-medium">Are you familiar with cryptocurrencies?</p>
                 <label

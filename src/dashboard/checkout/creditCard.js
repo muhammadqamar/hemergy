@@ -53,7 +53,7 @@ const CreditCard = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer" onSubmit={handleSubmit}>
+          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
             <div className="input-box">
               <label className="p-sm text-weight-medium text-white">Card number</label>
               <div className="input-field">
