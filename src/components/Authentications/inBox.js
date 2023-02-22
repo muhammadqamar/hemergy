@@ -1,24 +1,27 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Link from "next/link";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Image from "next/image";
+import { useRouter } from 'next/router'
+
 const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter()
   return (
     <div className="registration-box">
       <div className="inbox-img flex-box">
         <img src="/images/favorite.svg" alt="inbox" />
       </div>
-      <h4 className="p-xl center-text">Check your inbox!</h4>
-      <p className="p-sm center-text">
+      <h4 className="p-xl center-text">{type==='password-recovery-success'? "Password reset Successfully":"Check your inbox!"}</h4>
+      <p className="p-sm center-text" style={{display:type==='password-recovery-success'? "none":"block"}}>
         {type == 'password-recovery' ?
           <>We have sent you a recovery link to:<strong> {registerState?.email} </strong>
             to complete password-recovery</> :
           <>Please follow the confirmation link sent to email address <strong> {registerState?.email} </strong>
             to complete registration</>}
       </p>
-      {!hideButtons  &&
+      {!hideButtons &&
         <div className="flex-box d-column gap-sm">
           <button onClick={async () => {
             try {
@@ -61,7 +64,10 @@ const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
 
           }} className="btn secondary blue">{isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} /> : 'Resend email'}</button>
           <button
-            onClick={() => setRegisterState('')}
+            onClick={() => {
+              setRegisterState('')
+              router.push('/register')
+            }}
             className=" btn-border secondary"
           >
             Sign up with a different email

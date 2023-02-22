@@ -111,9 +111,7 @@ const SignIn = () => {
                     <p className="p-sm">Remember me</p>
                   </label>
                 </div>
-                <Link onClick={() => {
-
-                }} href="/forgot-password" className="p-sm text-weight-medium p-link">
+                <Link  href="/forgot-password" className="p-sm text-weight-medium p-link">
                   Forgot password?
                 </Link>
               </div>

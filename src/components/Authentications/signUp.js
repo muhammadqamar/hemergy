@@ -1,10 +1,12 @@
-import { Formik, Field } from "formik";
+import { useState } from "react";
+import { Formik } from "formik";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
 import {  toast } from 'react-toastify';
 
 const SignUp = ({ setRegisterState }) => {
+  const [showPass, setShowPass] = useState(false)
   return (
     <div className="registration-box">
       <h3 className="p-xl center-text">Sign up to Hemergy</h3>
@@ -29,6 +31,7 @@ const SignUp = ({ setRegisterState }) => {
           return errors;
         }}
         onSubmit={async(values, { setSubmitting }) => {
+
           try {
             const register = await axios.post(
               `http://localhost:4000/api/auth/register`,
@@ -89,14 +92,15 @@ const SignUp = ({ setRegisterState }) => {
                 <input
                   className="input p-sm"
                   placeholder="Password"
-                  type="password"
+                  type={showPass ? "text" : "password"}
                   name="password"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
                 />
                 <div className="pointer"></div>
-                <Image src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+                <Image onClick={() => { setShowPass(!showPass) }} src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+
               </div>
               <p className="error p-x-sm">
                 {errors.password && touched.password && errors.password}
@@ -108,14 +112,15 @@ const SignUp = ({ setRegisterState }) => {
                 <input
                   className="input p-sm"
                   placeholder="confirm password"
-                  type="password"
+                  type={showPass ? "text" : "password"}
                   name="confirmPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.confirmPassword}
                 />
                 <div className="pointer"></div>
-                <Image src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+                <Image onClick={() => { setShowPass(!showPass) }} src="/images/visibility.svg" alt="visibility" width={20} height={20} />
+
               </div>
               <p className="error p-x-sm">
                 {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}

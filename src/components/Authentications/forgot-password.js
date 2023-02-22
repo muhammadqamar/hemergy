@@ -113,7 +113,7 @@ const ForgetPassword = () => {
                         </form>
                     )}
                 </Formik>
-            </div> : <InBox type="password-recovery" registerState={registerState} />
+            </div> : <InBox type="password-recovery" registerState={registerState} hideButtons />
     );
 };
 
