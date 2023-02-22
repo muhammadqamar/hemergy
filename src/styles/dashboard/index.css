@@ -32,6 +32,10 @@
   }
 }
 
+.justify_content {
+  @apply justify-center !important;
+}
+
 .map-opction {
   @apply flex justify-start gap-2 mt-3 mb-8;
 }
