@@ -1,12 +1,8 @@
 import axios from "axios";
-import { BASE_URL } from "../../../config/baseUrl";
+const BASE_URL = process.env.NEXT_PUBLIC_API_DOMAIN;
 export const getKYCAccessToken = async (setLoading) => {
   try {
-    let response = await axios.post(`http://localhost:4000/api/investor/generate/sumsub-token`);
-    // let response = await axios.post(
-    //   `https://api.sumsub.com/resources/accessTokens?userId=JamesBond007&levelName=basic-kyc-level&ttlInSecs=600`
-    // );
-
+    let response = await axios.post(`${BASE_URL}/api/investor/generate/sumsub-token`);
     return response?.data;
   } catch (error) {
     console.log(error);

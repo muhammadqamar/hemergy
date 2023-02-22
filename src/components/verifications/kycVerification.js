@@ -56,7 +56,15 @@ const KycVerification = ({ setStep, userDetail }) => {
         <h6 className="p-lg center-text ">Step 4 of 4</h6>
         <h3 className="p-xl center-text">Identity check</h3>
       </div>
-      <Formik initialValues={{}} onSubmit={async (values, { setSubmitting }) => {}}>
+      <Formik
+        initialValues={{}}
+        onSubmit={async (values, { setSubmitting }) => {
+          // setTimeout(() => {
+          //   setSubmitting(false);
+          //   router.push("/projects");
+          // }, 3000);
+        }}
+      >
         {({
           values,
           errors,
@@ -99,7 +107,7 @@ const KycVerification = ({ setStep, userDetail }) => {
               </div> */}
             </div>
 
-            <div className="gap-4 flex-box">
+            <div className="gap-4 flex-box mb-4">
               <button
                 onClick={() => setStep(4)}
                 type="button"

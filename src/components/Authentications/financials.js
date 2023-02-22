@@ -44,7 +44,6 @@ const Financials = ({ setStep, userDetail }) => {
             ) {
               setStep(4);
             } else {
-              //  router.push('/projects')
               setStep(5);
             }
           }
@@ -69,7 +68,7 @@ const Financials = ({ setStep, userDetail }) => {
                 <input
                   className="input p-sm"
                   placeholder="0.00"
-                  type="text"
+                  type="number"
                   name="annualTurnover"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -91,7 +90,7 @@ const Financials = ({ setStep, userDetail }) => {
                 <input
                   className="input p-sm"
                   placeholder="0.00"
-                  type="text"
+                  type="number"
                   name="disposableIncome"
                   onChange={handleChange}
                   onBlur={handleBlur}

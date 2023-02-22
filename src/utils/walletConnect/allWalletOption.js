@@ -46,7 +46,7 @@ const AllWalletOption = ({ setStep, userDetail }) => {
         }) => (
           <form className="form-cantainer" onSubmit={handleSubmit}>
             <div className="form-cantainer" role="group" aria-labelledby="checkbox-group">
-              <div className="flex-box justify-center gap-2">
+              <div className="flex-box justify-center gap-2 mb-8">
                 <button className="btn secondary  text-textblack bg-white ">Bank account</button>
                 <button className="btn secondary  text-textcolor bg-cardbg ">
                   Connect cryptowallet
@@ -54,7 +54,7 @@ const AllWalletOption = ({ setStep, userDetail }) => {
               </div>
               {!isMaskConnected ? (
                 <>
-                  <div className="flex gap-36 justify-around">
+                  <div className="flex gap-36 justify-around mb-8">
                     <div
                       className="wallet-option-box"
                       onClick={() => {
@@ -70,7 +70,7 @@ const AllWalletOption = ({ setStep, userDetail }) => {
                     </div>
                   </div>
                   {!viewAllWallet && (
-                    <div className="flex flex-col justify-center items-center">
+                    <div className="flex flex-col justify-center items-center mb-8">
                       <Image src="/images/QRcode.png" alt="logo" width={176} height={176} />
                       <p className="error p-x-sm">
                         {errors.walletaddress && touched.walletaddress && errors.walletaddress}
@@ -78,7 +78,7 @@ const AllWalletOption = ({ setStep, userDetail }) => {
                     </div>
                   )}
 
-                  <div className="flex  ml-2 gap-1.5">
+                  <div className="flex  ml-2 gap-1.5 mb-8">
                     <Image src="/images/computer.svg" alt="logo" width={17} height={13} />
                     <p className="p-sm-semi  text-textcolor">Desktop</p>
                   </div>
@@ -91,7 +91,7 @@ const AllWalletOption = ({ setStep, userDetail }) => {
               />
             </div>
 
-            <div className="gap-4 flex-box">
+            <div className="gap-4 flex-box mt-4">
               <button
                 onClick={() => setStep(3)}
                 type="button"
