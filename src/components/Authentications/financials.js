@@ -44,7 +44,8 @@ const Financials = ({ setStep, userDetail }) => {
             ) {
               setStep(4);
             } else {
-              router.push("/projects");
+              //  router.push('/projects')
+              setStep(5);
             }
           }
         }}
@@ -115,7 +116,7 @@ const Financials = ({ setStep, userDetail }) => {
                 Back
               </button>
               <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "....." : "Done"}
+                {isSubmitting ? "....." : "Next"}
               </button>
             </div>
 

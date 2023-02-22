@@ -6,7 +6,8 @@ import RegisterSlider from "@/components/Authentications/registerSlider";
 import VerificationBox from "@/components/Authentications/verification";
 import InvestorProfile from "@/components/Authentications/investorProfile";
 import Financials from "@/components/Authentications/financials";
-import WalletOption from "@/utils/walletConnect/connectors";
+import AllWalletOption from "@/utils/walletConnect/allWalletOption";
+import KycVerification from "@/components/verifications/kycVerification";
 
 const Verification = () => {
   const [step, setStep] = useState(1);
@@ -26,10 +27,12 @@ const Verification = () => {
       {loader && (
         <div className="auth-container">
           <RegisterSlider />
-          {step === 1 && <VerificationBox stepHeader userDetail={userDetail} setStep={setStep} />}
+          {step === 1 && <VerificationBox userDetail={userDetail} setStep={setStep} />}
           {step === 2 && <InvestorProfile userDetail={userDetail} setStep={setStep} />}
           {step === 3 && <Financials userDetail={userDetail} setStep={setStep} />}
-          {step === 4 && <WalletOption userDetail={userDetail} setStep={setStep} />}
+          {/* {step === 4 && <WalletOption userDetail={userDetail} setStep={setStep} />} */}
+          {step === 4 && <AllWalletOption userDetail={userDetail} setStep={setStep} />}
+          {step === 5 && <KycVerification userDetail={userDetail} setStep={setStep} />}
         </div>
       )}
 

@@ -48,9 +48,14 @@ const InvestorProfile = ({ setStep, userDetail }) => {
             email: userDetail?.email,
           });
           setSubmitting(false);
+
           if (updateUserData?.data?.userFound) {
             dispatch(addUser(updateUserData?.data?.userFound));
-            setStep(3);
+            if (values["Are you familiar with cryptocurrencies?"]) {
+              setStep(3);
+            } else {
+              setStep(5);
+            }
           }
         }}
       >
@@ -218,7 +223,11 @@ const InvestorProfile = ({ setStep, userDetail }) => {
               </button>
             </div>
 
-            <Link href="" className="font-medium text-center p-sm text-textcolor">
+            <Link
+              href=""
+              onClick={() => setStep(5)}
+              className="font-medium text-center p-sm text-textcolor"
+            >
               Skip for now
             </Link>
           </form>

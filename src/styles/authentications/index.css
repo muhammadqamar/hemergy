@@ -22,7 +22,12 @@
 .form-cantainer {
   @apply flex flex-col;
 }
-
+.country-drop-list{
+  @apply border-none !important;
+}
+.wallet-option-box{
+  @apply flex items-center justify-between gap-2
+}
 .flex-box {
   @apply flex items-center justify-between;
 }
