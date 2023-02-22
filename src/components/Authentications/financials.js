@@ -119,7 +119,12 @@ const Financials = ({ setStep, userDetail }) => {
               </button>
             </div>
 
-            <p className="font-medium text-center p-sm text-textcolor">Skip for now</p>
+            <p
+              onClick={() => setStep(4)}
+              className="font-medium text-center cursor-pointer p-sm text-textcolor"
+            >
+              Skip for now
+            </p>
           </form>
         )}
       </Formik>

@@ -8,6 +8,7 @@ import InvestorProfile from "@/components/Authentications/investorProfile";
 import Financials from "@/components/Authentications/financials";
 import AllWalletOption from "@/utils/walletConnect/allWalletOption";
 import KycVerification from "@/components/verifications/kycVerification";
+// import WalletOption from "@/components/Authentications/walletOption";
 
 const Verification = () => {
   const [step, setStep] = useState(1);

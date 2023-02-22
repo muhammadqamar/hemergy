@@ -47,8 +47,7 @@ const KycVerification = ({ setStep, userDetail }) => {
     });
   }, []);
   const onSumsubVerified = (payload) => {
-    if (payload.reviewStatus && payload.reviewStatus === "completed")
-      dispatch(kycVerified(setLoading));
+    if (payload.reviewStatus && payload.reviewStatus === "completed") dispatch(kycVerified());
   };
   return (
     <div className="registration-box">
@@ -59,10 +58,10 @@ const KycVerification = ({ setStep, userDetail }) => {
       <Formik
         initialValues={{}}
         onSubmit={async (values, { setSubmitting }) => {
-          // setTimeout(() => {
-          //   setSubmitting(false);
-          //   router.push("/projects");
-          // }, 3000);
+          setTimeout(() => {
+            setSubmitting(false);
+            router.push("/projects");
+          }, 2000);
         }}
       >
         {({
@@ -86,9 +85,9 @@ const KycVerification = ({ setStep, userDetail }) => {
               </div>
 
               <div className="flex justify-center items-center">
-                {!kycToken?.token ? (
+                {kycToken?.token ? (
                   <SumsubWebSdk
-                    accessToken="_act-sbx-9ac32c23-97b8-49a8-a4c8-0b3825ca7987"
+                    accessToken={kycToken?.token}
                     updateAccessToken={() => {}}
                     expirationHandler={() => Promise.resolve(kycToken?.token)}
                     config={sumsubConfig}
@@ -119,7 +118,15 @@ const KycVerification = ({ setStep, userDetail }) => {
                 {isSubmitting ? "....." : "Done"}
               </button>
             </div>
-            <Link href="" className="font-medium text-center p-sm text-textcolor">
+            <Link
+              href=""
+              onClick={() => {
+                setTimeout(() => {
+                  router.push("/projects");
+                }, 1000);
+              }}
+              className="font-medium text-center p-sm text-textcolor"
+            >
               Skip for now
             </Link>
           </form>

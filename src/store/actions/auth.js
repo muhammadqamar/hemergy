@@ -1,25 +1,25 @@
-import axios from "axios";
+import http from "@/services/http";
 const BASE_URL = process.env.NEXT_PUBLIC_API_DOMAIN;
 export const getKYCAccessToken = async (setLoading) => {
   try {
-    let response = await axios.post(`${BASE_URL}/api/investor/generate/sumsub-token`);
+    let response = await http.post(`${BASE_URL}/investor/generate/sumsub-token`);
     return response?.data;
   } catch (error) {
     console.log(error);
   }
 };
-export const kycVerified = (setLoading) => async (dispatch) => {
-  setLoading(true);
+export const kycVerified = () => async (dispatch) => {
+  // setLoading(true);
   try {
-    let response = await axios.post(`${BASE_URL}/api/investor/verified/identity`);
+    let response = await http.post(`${BASE_URL}/investor/verified/identity`);
     dispatch({
       type: "success",
       message: response?.config?.status,
       time: 1000,
     });
-    setLoading(false);
+    // setLoading(false);
   } catch (error) {
-    setLoading(false);
+    // setLoading(false);
     if (error?.response?.data) {
       dispatch(
         setAlert({

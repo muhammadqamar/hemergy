@@ -1,16 +1,46 @@
 import { useEffect } from "react";
+import http from "@/services/http";
+import { ShowError } from "@/services/error";
 import { useAccount, useConnect, useDisconnect, useEnsAvatar, useEnsName } from "wagmi";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 export default function Profile({ setviewAllWallet, viewAllWallet, setisMaskConnected }) {
   const { address, connector, isConnected } = useAccount();
   const { data: ensAvatar } = useEnsAvatar({ address });
   const { data: ensName } = useEnsName({ address });
   const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
   const { disconnect } = useDisconnect();
+  const user = useSelector((state) => state.user?.user);
+  useEffect(() => {
+    (async () => {
+      if (isConnected) {
+        var resulter = [];
+        if (user?.walletAddresses) {
+          resulter = [...user?.walletAddresses, { provider: connector?.name, value: address }];
+        } else {
+          resulter = [{ provider: connector?.name, value: address }];
+        }
+        try {
+          const updateWallet = await http.post(
+            `${process.env.NEXT_PUBLIC_API_DOMAIN}/user/wallet`,
+            {
+              wallet: resulter,
+              email: user?.email,
+            }
+          );
+        } catch (e) {
+          ShowError(error?.response?.data?.status);
+        }
+      } else {
+        setisMaskConnected(false);
+      }
+    })();
+  }, [isConnected]);
 
   // useEffect(() => {
   if (isConnected) {
     setisMaskConnected(true);
+    // saveWalletAddress();
     var walletMask;
     if (connector?.id === "metaMask") {
       walletMask = "/images/metamask.svg";

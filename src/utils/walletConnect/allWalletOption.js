@@ -30,7 +30,7 @@ const AllWalletOption = ({ setStep, userDetail }) => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting, isSubmitting }) => {
-          setSubmitting(true);
+          setSubmitting(false);
           setStep(5);
         }}
       >
