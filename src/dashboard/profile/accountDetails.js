@@ -5,17 +5,12 @@ import { updateUser } from "@/services/user";
 import { addUser } from "@/store/reducer/user";
 import Link from "next/link";
 
-const Verification = ({ userDetail, setStep, stepHeader }) => {
+const AccountDetails = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user?.user);
   console.log(user);
   return (
-    <div className="relative z-[1] w-full md:w-[480px] h-auto flex flex-col gap-6 pt-12 px-4 md:px-8 pb-6 bg-white rounded-3xl shadow-lgshadow text-textblack">
-      <div className="flex-box d-column gap-x-sm">
-        <h6 className="p-lg center-text ">Step 1 of 3</h6>
-        <h3 className="p-xl center-text">Sign up to Hemergy</h3>
-      </div>
-
+    <div className=" w-full h-auto flex flex-col gap-2  text-textblack">
       <Formik
         initialValues={{
           name: user?.firstName || "",
@@ -46,12 +41,12 @@ const Verification = ({ userDetail, setStep, stepHeader }) => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          const result = await updateUser({ ...values, email: userDetail?.email });
-          setSubmitting(false);
-          if (result?.data?.userFound) {
-            dispatch(addUser(result?.data?.userFound));
-            setStep(2);
-          }
+          // const result = await updateUser({ ...values, email: userDetail?.email });
+          // setSubmitting(false);
+          // if (result?.data?.userFound) {
+          //   dispatch(addUser(result?.data?.userFound));
+          //   setStep(2);
+          // }
         }}
       >
         {({
@@ -64,7 +59,7 @@ const Verification = ({ userDetail, setStep, stepHeader }) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
+          <form className="form-cantainer gap-2" onSubmit={handleSubmit}>
             <div className="flex-col flex-box gap-sm sm:flex-row">
               <div className="input-box">
                 <label className="p-sm text-weight-medium">First name</label>
@@ -159,15 +154,13 @@ const Verification = ({ userDetail, setStep, stepHeader }) => {
               Enter address manually
             </Link>
 
-            {stepHeader && (
-              <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? (
-                  <Image src="/images/loader.svg" alt="google" width={20} height={20} />
-                ) : (
-                  "Next"
-                )}
-              </button>
-            )}
+            <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
+              ) : (
+                "Next"
+              )}
+            </button>
           </form>
         )}
       </Formik>
@@ -175,4 +168,4 @@ const Verification = ({ userDetail, setStep, stepHeader }) => {
   );
 };
 
-export default Verification;
+export default AccountDetails;

@@ -19,7 +19,7 @@ const Index = () => {
         </div>
       </div>
       <div className="w-full px-6  absolute bottom-[-504px] sm:bottom-[-320px] md:bottom-[-180px] z-[1]">
-        <div className="contact-card-box">
+        <div className="contact-card-box py-12 px-6 md:p-12">
           <div className="contact-left-content">
             <div className="help-box">
               <h2 className="help-heading">How can we help?</h2>
