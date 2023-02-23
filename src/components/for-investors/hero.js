@@ -1,7 +1,6 @@
 import Map from "@/utils/map/Map";
 import { positions } from "@/utils/map/positionData";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
