@@ -1,9 +1,9 @@
 .dashboard-container {
-  @apply w-auto min-h-screen py-8 pr-8  pl-24 bg-cardbg;
+  @apply w-auto min-h-screen pt-[130px] md:pt-20 px-6 lg:py-8 lg:pr-8 lg:pl-24 bg-cardbg;
 }
 
 .project-detail {
-  @apply w-auto h-auto flex rounded-[40px]  shadow-mdshadow overflow-hidden;
+  @apply w-auto h-auto flex flex-col lg:flex-row rounded-[40px]  shadow-mdshadow overflow-hidden;
 }
 
 .project-detail .detail-img {

@@ -32,7 +32,7 @@ const Index = () => {
     <section className="dashboard-container">
       <div className="project-detail bg-blue700">
         <Detail />
-        <div className="w-full flex justify-between gap-6 p-8">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-6 p-6 lg:p-8">
           <div className="flex flex-col gap-6 max-w-[617px]">
             <h2 className="p-md">What you need to know</h2>
 
@@ -48,7 +48,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="w-[538px] p-6 bg-blue600 rounded-xl">
+          <div className="w-full md:w-[538px] p-6 bg-blue600 rounded-xl">
             <div className="flex justify-center items-center gap-3 mb-4">
               <Image
                 src="/images/token.png"
@@ -91,7 +91,7 @@ const Index = () => {
             <div>
               <h3 className="p-md text-white text-center mb-6">Total to pay &nbsp; € 143.56</h3>
 
-              <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="flex items-center flex-wrap justify-center gap-2 mb-6">
                 <button
                   onClick={() => setActive("card")}
                   className={`secondary flex items-center justify-center rounded-xl text-white ${

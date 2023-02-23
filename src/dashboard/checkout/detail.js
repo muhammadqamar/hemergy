@@ -4,7 +4,7 @@ import UserCard from "@/utils/userCard";
 
 const Detail = () => {
   return (
-    <div className="w-[369px] flex-shrink-0 bg-white">
+    <div className="w-full lg:w-[369px] flex-shrink-0 bg-white">
       <ProjectCardThumbnail
         h="198px"
         bgimg={"/images/image 1.png"}

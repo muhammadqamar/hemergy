@@ -253,7 +253,7 @@ export class MapContainer extends Component {
     const coords = { lat: 24.223592, lng: 18.984375 };
 
     return (
-      <div className="relative w-full h-[547px]">
+      <div className={`relative w-full ${this.props.h ? "h-[547px]" : "h-[439px]"}`}>
         <Map
           style={this.mapStyle}
           google={this.props.google}

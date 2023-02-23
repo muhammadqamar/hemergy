@@ -2,7 +2,6 @@ import Hero from "./hero";
 import LocationCard from "@/utils/projectCard";
 import DemoCard from "@/utils/demoCard";
 import Link from "next/link";
-import MyMapComponent from '@/utils/map'
 
 const Index = () => {
   const user = {
@@ -14,15 +13,6 @@ const Index = () => {
   return (
     <div>
       <Hero />
-      {/* <div className="max-w-[1005px] m-auto mt-[100px]">
-      <MyMapComponent
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `550px` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
-      </div> */}
-
       <div className="inestor-proj-main-section">
         <section className="w-full absolute left-0 top-[-393px] md:top-[-447px]">
           <div className="investor-project-cards desktop-card">

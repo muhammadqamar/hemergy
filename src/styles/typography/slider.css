@@ -25,7 +25,7 @@
 }
 .register-slider .slick-dots,
 .project-slider .slick-dots {
-  @apply flex items-center justify-center gap-[10px] mt-6 !important;
+  @apply flex items-center justify-center bottom-[-10px] lg:bottom-[-20px] gap-[10px]  !important;
 }
 
 .register-slider .slick-dots li button::before,

@@ -29,10 +29,12 @@
 .hero-investors-wrapper .investor-project-heading .browse-projects {
   @apply text-[40px] leading-[48px] md:text-5xl font-semibold  text-white;
 }
-.hero-investors-wrapper .map-opction {
+.hero-investors-wrapper .map-opction,
+.map-location-box .map-opction {
   @apply flex-wrap justify-center;
 }
-.hero-investors-wrapper .map-opction .input-field input {
+.hero-investors-wrapper .map-opction .input-field input,
+.map-location-box .map-opction .input-field input {
   @apply w-full md:w-[361px];
 }
 
@@ -55,7 +57,7 @@
 }
 
 .sub-heading.about-w {
-  @apply  items-center flex-wrap gap-4 mt-8 mb-[82px]  lg:my-[36px];
+  @apply items-center flex-wrap gap-4 mt-8 mb-[82px]  lg:my-[36px];
 }
 
 .sub-heading.about-w span {
