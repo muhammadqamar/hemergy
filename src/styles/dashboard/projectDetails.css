@@ -1,13 +1,13 @@
 .dashboard-container {
-  @apply w-auto h-screen py-8 pr-8  pl-24 bg-cardbg;
+  @apply w-auto min-h-screen py-8 pr-8  pl-24 bg-cardbg;
 }
 
 .project-detail {
-  @apply w-auto h-[869px] flex rounded-[40px]  shadow-mdshadow overflow-hidden;
+  @apply w-auto h-auto flex rounded-[40px]  shadow-mdshadow overflow-hidden;
 }
 
 .project-detail .detail-img {
-  @apply w-[352px] flex-shrink-0 h-full p-4 relative;
+  @apply w-[352px] min-h-[896px] flex-shrink-0 h-full p-4 relative;
 }
 
 .project-detail .detail-img .detail-banner-img {

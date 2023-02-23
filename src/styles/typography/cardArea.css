@@ -1,5 +1,5 @@
 .card-area {
-  @apply w-[40%] h-screen pt-12 pr-6 pb-8 pl-28 relative z-[2]  rounded-tr-[60px] rounded-br-[60px] bg-cardbg;
+  @apply w-[40%] min-h-screen pt-12 pr-6 pb-8 pl-28 relative z-[2]  rounded-tr-[60px] rounded-br-[60px] bg-cardbg;
 }
 
 .insight-card {
@@ -7,7 +7,7 @@
 }
 
 .insight-card::before {
-  @apply absolute bottom-0 right-0 w-full h-[100px] z-[1];
+  @apply absolute bottom-0 right-0 w-full min-h-[100px] z-[1];
   content: "";
   background: linear-gradient(180deg, rgba(78, 98, 238, 0) 42.19%, #4e62ee 100%);
 }
