@@ -50,8 +50,11 @@ const Verification = ({ userDetail, setStep }) => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting, setFieldValue }) => {
-          setFieldValue({ country: selected });
-          const result = await updateUser({ ...values, email: userDetail?.email });
+          const result = await updateUser({
+            ...values,
+            country: selected,
+            email: userDetail?.email,
+          });
           if (result?.data?.userFound) {
             dispatch(addUser(result?.data?.userFound));
             setStep(2);
