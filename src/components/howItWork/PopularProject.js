@@ -38,10 +38,11 @@ const PopularProject = () => {
         <div className="hiw-pp-header-detail ">
           <h2 className="header-title ">Popular projects</h2>
           <p className="header-detail ">
-            A selection of the types of projects you can <br /> get involved in today!
+            A selection of the types of projects you can <br /> get involved in
+            today!
             <Link href="">
               {" "}
-              <strong> See all</strong>
+              <strong className="popular_strong"> See all</strong>
             </Link>
           </p>
         </div>
@@ -72,9 +73,17 @@ const PopularProject = () => {
               })}
             </Slider>
           </div>
-          <Link href="" className="btn fit-width gap-2 secondary btn-border hide">
+          <Link
+            href=""
+            className="btn fit-width gap-2 secondary btn-border hide"
+          >
             All projects
-            <Image src="/images/arrow_right.svg" alt="arrow_right" width={20} height={20} />
+            <Image
+              src="/images/arrow_right.svg"
+              alt="arrow_right"
+              width={20}
+              height={20}
+            />
           </Link>
         </div>
       </div>
