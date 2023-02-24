@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ContactForm from "./FormikContact/contactForm";
+import ContactForm from "./contactForm";
 
 const Index = () => {
   return (
@@ -12,7 +12,7 @@ const Index = () => {
             Get in touch today
           </p>
           <div className="flex items-center justify-center mt-4">
-            <div className="rounded-full bg-btncolor w-10 h-10 flex items-center justify-center">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-btncolor">
               <Image
                 src="/images/map/expand_more.svg"
                 width={24}
@@ -23,38 +23,50 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="contact-card-box">
-        <div className="contact-left-content">
-          <div className="help-box">
-            <h2 className="help-heading">How can we help?</h2>
-            <p className="help-para">
-              Drop us a line to book a demo, or ask a question
-            </p>
+      <div className="w-full px-6  absolute bottom-[-504px] sm:bottom-[-320px] md:bottom-[-180px] z-[1]">
+        <div className="contact-card-box">
+          <div className="contact-left-content">
+            <div className="help-box">
+              <h2 className="help-heading">How can we help?</h2>
+              <p className="help-para">
+                Drop us a line to book a demo, or ask a question
+              </p>
+            </div>
+            <ContactForm />
           </div>
-          <ContactForm />
-        </div>
-        <div className="contact-right-content">
-          <h3 className="find-heading">Or find us here:</h3>
-          <div className="find-flx-bx">
-            <Image src="/images/wtsup-logo.png" alt="" width={40} height={40} />
-            <p className="find-sub-heading">+12 3456 7890</p>
-          </div>
-          <div className="find-flx-bx">
-            <Image
-              src="/images/telegram-logo.png"
-              alt=""
-              width={40}
-              height={40}
-            />
-            <p className="find-sub-heading">telegram@something</p>
-          </div>
-          <div className="find-flx-bx">
-            <Image src="/images/email-logo.png" alt="" width={40} height={40} />
-            <p className="find-sub-heading">info@hemergy.co</p>
+          <div className="contact-right-content">
+            <h3 className="whitespace-pre find-heading">Or find us here:</h3>
+            <div className="find-flx-bx">
+              <Image
+                src="/images/wtsup-logo.png"
+                alt=""
+                width={40}
+                height={40}
+              />
+              <p className="find-sub-heading">+12 3456 7890</p>
+            </div>
+            <div className="find-flx-bx">
+              <Image
+                src="/images/telegram-logo.png"
+                alt=""
+                width={40}
+                height={40}
+              />
+              <p className="find-sub-heading">telegram@something</p>
+            </div>
+            <div className="find-flx-bx">
+              <Image
+                src="/images/email-logo.png"
+                alt=""
+                width={40}
+                height={40}
+              />
+              <p className="find-sub-heading">info@hemergy.co</p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="contact-wather-img" />
+      <div className="white-wather-bg" />
     </div>
   );
 };

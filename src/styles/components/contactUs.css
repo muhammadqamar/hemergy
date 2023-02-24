@@ -7,73 +7,73 @@
 }
 
 .contact-container-about {
-  @apply w-full bg-[#4E62EE] relative  flex items-center justify-center mb-[590px] sm:mb-[380px] md:mb-[280px];
+  @apply w-full bg-[#4E62EE] relative  mb-[590px] sm:mb-[380px] md:mb-[280px];
 }
-.contact-wrapper-about {
-  @apply max-w-[1440px] h-[930px]  flex  items-start justify-center text-center pt-[157px];
+.contact-container-about .contact-wrapper-about {
+  @apply max-w-[1440px] h-[930px] mx-auto  flex items-start justify-center text-center pt-[157px];
 }
-.contact-heading {
+.contact-container-about .contact-heading {
   @apply font-Poppins font-semibold text-[40px] md:text-[65px] lg:text-[96px] leading-[36px] md:leading-[90px] lg:leading-[115.2px] text-white mb-4;
 }
-.contact-wather-img {
+.contact-container-about .contact-wather-img {
   @apply w-full h-[232px] bg-repeat bg-center bg-auto absolute bottom-0;
   background-image: url("/images/white-wather.png");
 }
-.contact-card-box {
-  @apply w-full md:w-[767px] lg:w-[814px] absolute bottom-[-504px] sm:bottom-[-320px] md:bottom-[-180px] z-[1] flex gap-[30px] md:gap-0 flex-col md:flex-row items-start justify-between h-auto mx-auto py-[48px] px-[24px] md:p-[48px]  text-center bg-white rounded-3xl shadow-mdshadow;
+.contact-container-about .contact-card-box {
+  @apply w-full md:w-[767px] lg:w-[814px]  flex gap-8  flex-col md:flex-row items-start justify-between h-auto mx-auto py-12 px-6 md:p-12  text-center bg-white rounded-3xl shadow-mdshadow;
 }
-.contact-left-content {
-  @apply text-left w-full md:w-[auto];
+.contact-container-about .contact-left-content {
+  @apply text-left w-full md:w-[480px];
 }
-.help-heading {
+.contact-container-about .help-heading {
   @apply font-Poppins font-semibold text-[28px] lg:text-[32px] leading-[32px] lg:leading-[38.4px] text-textcolor mb-[8px];
 }
-.help-para {
+.contact-container-about .help-para {
   @apply font-Inter font-normal text-[16px] leading-[24px] text-gray800 mb-[32px];
 }
 /* Form style */
-.names-box {
+.contact-container-about .names-box {
   @apply flex flex-col sm:flex-row justify-between gap-0 sm:gap-[16px];
 }
 .label-box {
   @apply flex flex-col mb-[32px];
 }
-label {
+.contact-container-about label {
   @apply font-Inter font-medium text-[16px] leading-[24px] text-textblack mb-[4px];
 }
-input {
-  @apply font-Inter bg-garbg w-full md:w-[232px] h-full md:h-[40px] px-[12px] py-[8px] rounded-xl focus:outline-none !important;
+.contact-container-about input {
+  @apply font-Inter bg-garbg w-full  h-full md:h-[40px] px-[12px] py-[8px] rounded-xl focus:outline-none;
 }
-.name-input::placeholder {
+.contact-container-about .name-input::placeholder {
   color: #000;
 }
-.birth-input {
-  @apply w-full !important;
+.contact-container-about .birth-input {
+  @apply w-full;
 }
-.birth-input::placeholder {
+.contact-container-about .birth-input::placeholder {
   color: #000;
 }
-.birth-box {
+.contact-container-about .birth-box {
   @apply relative;
 }
-.mail-box {
+.contact-container-about .mail-box {
   @apply absolute right-[12px];
 }
-textarea {
-  @apply focus:outline-none bg-garbg rounded-xl px-[12px] pt-[8px] !important;
+.contact-container-about textarea {
+  @apply focus:outline-none bg-garbg rounded-xl px-[12px] pt-[8px];
 }
-.send-btn {
+.contact-container-about .send-btn {
   @apply font-Inter w-full md:w-[100px] h-[40px] flex items-center justify-center gap-[8px] px-[8px] py-[16px] bg-textcolor text-white rounded-xl opacity-50 !important;
 }
-.contact-right-content {
-  @apply flex items-start flex-col;
+.contact-container-about .contact-right-content {
+  @apply flex flex-col items-start;
 }
-.find-heading {
+.contact-container-about .find-heading {
   @apply text-textcolor text-[24px] font-Poppins leading-[28.8px] font-semibold pb-[24px];
 }
-.find-flx-bx {
+.contact-container-about .find-flx-bx {
   @apply flex items-center mb-[18px];
 }
-.find-sub-heading {
+.contact-container-about .find-sub-heading {
   @apply font-Inter text-textcolor font-normal text-[16px] leading-[24px];
 }

@@ -7,7 +7,9 @@ const SideBar = () => {
   const currentRoute = router.pathname;
   return (
     <div className="flex-box flex-col side-nav-bar">
-      <Image src="/images/logo_cue.svg" alt="logo" width={32} height={32} />
+      <Link href="/">
+        <Image src="/images/logo_cue.svg" alt="logo" width={32} height={32} />
+      </Link>
       <div className="flex-box flex-col gap-4 ">
         <Link
           href="/projects"
@@ -21,7 +23,10 @@ const SideBar = () => {
         >
           <Image src="/images/apps.svg" alt="logo" width={20} height={20} />
         </Link>
-        <Link href="" className="menu-item">
+        <Link
+          href="/portfolio"
+          className={currentRoute === "/portfolio" ? "menu-item active" : "menu-item"}
+        >
           <Image src="/images/hemergy.svg" alt="logo" width={20} height={20} />
         </Link>
       </div>
@@ -35,7 +40,10 @@ const SideBar = () => {
         <Link href="" className="menu-item">
           <Image src="/images/help.svg" alt="logo" width={20} height={20} />
         </Link>
-        <Link href="" className="dash-user-img">
+        <Link
+          href="/profile"
+          className={currentRoute === "/profile" ? "dash-user-img insite-border" : "dash-user-img"}
+        >
           <img src="/images/user.png" alt="logo" />
         </Link>
         <button className="menu-item">

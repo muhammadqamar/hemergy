@@ -1,33 +1,43 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
-import {  toast } from 'react-toastify';
+import axios from "axios";
+import { toast } from "react-toastify";
 import Image from "next/image";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 
-
-import RegisterSlider from "@/components/Authentications/registerSlider";
-import VerificationBox from "@/components/Authentications/verification";
-import InvestorProfile from "@/components/Authentications/investorProfile";
-import Financials from "@/components/Authentications/financials";
-import WalletOption from "@/components/Authentications/walletOption";
 import EmailVerify from "@/components/Authentications/emailVerify";
 
-import {addUser} from "@/store/reducer/user";
+import { addUser } from "@/store/reducer/user";
+import Link from "next/link";
 
 const Verification = ({ params }) => {
-  const [step, setStep] = useState(1);
-  const [loader, setLoading] = useState(true)
-  const [userDetail, setUserDetail] = useState()
-  const dispatch =  useDispatch()
+  const [loader, setLoading] = useState(true);
+  const [userDetail, setUserDetail] = useState();
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
+    (async () => {
+      try {
+        setLoading(true);
 
-   (async()=>{
-    try {
-     setLoading(true);
+        if (params?.id) {
+          let response = await axios.post(`http://localhost:4000/api/auth/verify/account`, {
+            code: params?.id,
+          });
+          setUserDetail(response?.data?.user);
+          dispatch(addUser(response?.data?.user));
 
-      if (params?.id) {
-        toast('Verifying', {
+            setLoading(false);
+            localStorage.setItem("hemergy-email", response?.data?.user?.email);
+            localStorage.setItem("hemergy-token", response?.data?.token);
+            router.push("/on-boarding");
+
+        }
+      } catch (error) {
+        setLoading(false);
+
+        toast.error(error?.response?.data?.status || error.message, {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -35,60 +45,20 @@ const Verification = ({ params }) => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "dark",
-          });
-        let response = await axios.post(
-          `http://localhost:4000/api/auth/verify/account`,
-          {
-            code:params?.id
-          }
-        );
-        setUserDetail(response?.data?.user)
-        dispatch(addUser(response?.data?.user))
-        if (response?.data?.user?.platform === "custom") {
-          setLoading(false);
-          router.push("/account");
-        } else {
-          setLoading(false);
-          toast.dismiss()
-          //dispatch(verifyYourAccount(response?.data, router, redirectVal));
-        }
+          theme: "light",
+        });
+
+        console.log(error);
       }
-    } catch (error) {
-    //  setLoading(false);
-      toast.dismiss()
-      // dispatch(
-      //   setAlert({ message: error?.message, type: "error", time: 1000 })
-      // );
-      // dispatch(
-      //   setAlert({
-      //     message: error?.response?.data?.status,
-      //     type: "error",
-      //     time: 1000,
-      //   })
-      // );
-      console.log(error);
-    }
-
-
-   })()
-
-
-  }, [])
+    })();
+  }, []);
   return (
     <div className="authentications-section">
-      <div className="auth-header">
+      <Link href="/" className="auth-header">
         <Image src="/images/hemergy-logo.svg" width={150} height={32} alt="logo" />
-      </div>
+      </Link>
 
-     {!loader && <div className="auth-container">
-        <RegisterSlider />
-        {step === 1 && <VerificationBox userDetail={userDetail} setStep={setStep} />}
-        {step === 2 && <InvestorProfile userDetail={userDetail} setStep={setStep}  />}
-        {step === 3 && <Financials userDetail={userDetail} setStep={setStep} />}
-        {step===4 && <WalletOption userDetail={userDetail} setStep={setStep} /> }
-      </div>}
-      {/* <EmailVerify/> */}
+      <EmailVerify loader={loader} />
 
       <div className="auth-wather" />
     </div>
@@ -96,7 +66,6 @@ const Verification = ({ params }) => {
 };
 
 export default Verification;
-
 
 export const getServerSideProps = (context) => {
   return {

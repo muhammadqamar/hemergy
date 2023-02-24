@@ -2,24 +2,26 @@ import { useState } from "react";
 import Image from "next/image";
 
 
-const EmailVerify = () => {
+const EmailVerify = ({ loader }) => {
 
   return (
-    <div className="registration-box">
-      <div className="flex-box d-column gap-x-sm">
+    <div className="flex justify-center item-center mt-[200px]">
+      <div className="registration-box">
+        <div className="flex-box d-column gap-x-sm">
 
-        <h3 className="p-xl center-text">Verifying Email Link</h3>
+          <h3 className="p-xl center-text">Verifying Email Link</h3>
 
-      </div>
+        </div>
 
-      <div className="gap-4 flex-box">
+        <div className="gap-4 flex-box">
 
-        <button  className="btn secondary blue" type="submit" onClick={async () => {
+          <button className="btn secondary blue" type="submit" onClick={async () => {
 
-        }} >
-            <Image src="/images/three-dots.gif" width="20" height="10" alt="" />
-          {'Done'}
-        </button>
+          }} >
+            {loader ? <Image src="/images/loader.svg" width="20" height="10" alt="" /> :
+              ''}
+          </button>
+        </div>
       </div>
 
 

@@ -1,11 +1,27 @@
 import Image from "next/image";
-import LocationCard from "../common/locationCard";
+// import LocationCard from "../common/locationCard";
+import LocationCard from "@/utils/projectCard";
 import CardArea from "../common/cardArea";
 
 const Index = () => {
+  const user = {
+    name: "John Wick",
+    designation: "Project Manager",
+    bio: "",
+    avatar: "/images/user.png",
+  };
   return (
     <div className="main-loaction">
-      <CardArea />
+      <CardArea
+        h
+        areaHeading="Featured projects"
+        areaDesc="These are hot projects lorem ipsum etc"
+        btn1="Details"
+        btn2="Invest"
+        token="200"
+        tokenLabel="Available"
+        hot
+      />
       <div className="map-box">
         <div className="map">
           <img src="/images/map/map.svg" alt="map" className="map" />
@@ -45,13 +61,17 @@ const Index = () => {
           </div>
         </div>
         <div className="map-cards">
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
+          <LocationCard
+            w
+            hemergyIcon="/images/air.svg"
+            user={user}
+            viewDetailbtn
+            trending
+            stockdirection="up"
+            stock="675.5"
+            hemergyType="Solar asset name"
+            name="Project Name"
+          />
         </div>
       </div>
     </div>

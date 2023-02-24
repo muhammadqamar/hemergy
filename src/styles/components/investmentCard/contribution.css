@@ -23,6 +23,6 @@
 }
 
 .invest-calcu {
-  @apply absolute z-[1]  top-[-314px] px-6;
-  width: calc(100% - 48px);
+  @apply absolute z-[1] w-full px-6 left-0 top-[-314px];
+  /* width: calc(100% - 48px); */
 }

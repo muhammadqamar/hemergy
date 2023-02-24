@@ -1,22 +1,41 @@
 import RegisterSlider from "@/components/Authentications/registerSlider";
 import LogIn from "@/components/Authentications/login";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
+import { ShowError } from '@/services/error'
 
-const Register = () => {
+const Login = ({ query }) => {
+  useEffect(()=>{
+    console.log(query.success)
+    if(query.success==="false") {
+      ShowError('Email not Exist!')
+    }
+  },[query])
   return (
     <div className="authentications-section">
-      <div className="auth-header">
+      <Link href="/" className="auth-header">
         <Image src="/images/hemergy-logo.svg" width={150} height={32} alt="logo" />
-      </div>
+      </Link>
 
       <div className="auth-container">
         <RegisterSlider />
         <LogIn />
       </div>
 
-      <div className="auth-wather" />
+      <div className="wather-haf-white-bg" />
     </div>
   );
 };
 
-export default Register;
+export default Login;
+
+
+
+export const getServerSideProps = (context) => {
+  return {
+    props: {
+      query: context?.query,
+    },
+  };
+};

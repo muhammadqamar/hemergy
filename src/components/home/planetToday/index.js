@@ -1,23 +1,21 @@
-import Link from "next/link";
-import InvestingTab from "./investingTab";
-import ApiCard from "../apiCard";
+import PartnersTab from "@/utils/parthersTabs";
+import DemoCard from "@/utils/demoCard";
 
 const Index = () => {
   return (
     <div className="planet-today-sectiion">
-      <div className="planet-about">
-        <h1 className="planet-heading">Start investing in the future of our planet today!</h1>
-        <p className="planet-para">
-          No hidden fees, just transparent projects. Contribute to the energy revolution
-        </p>
-        <Link href="" className="btn Primary">
-          Get started
-        </Link>
+      <div className="w-full z-[1] left-0 relative md:absolute pt-[14px] md:pt-0 mt-0 md:mt-[-140px] ">
+        <PartnersTab />
       </div>
-
-      <InvestingTab />
-
-      <ApiCard />
+      <div className=" w-full left-0 bottom-[-70px] absolute hidden md:block">
+        <DemoCard
+          showIcon
+          heading="Want to use our api?"
+          desc="We provide a white label solution to businesses who want to develop and market their own financial products"
+          btnText="Book a demo"
+        />
+      </div>
+      <div className="white-wather-bg" />
     </div>
   );
 };

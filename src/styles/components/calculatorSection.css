@@ -1,37 +1,45 @@
 .calculator-main-section {
-  @apply w-full h-auto bg-[#D6DBFF] relative pt-[609px] px-[24px] pb-[270px];
+  @apply w-full h-auto bg-[#D6DBFF] relative;
 }
 .inestor-proj-main-section {
-  @apply w-full h-[601px] bg-[#D6DBFF] relative  pb-[270px];
+  @apply w-full  bg-[#D6DBFF] relative  pb-[835px];
+}
+@media (min-width: 974px) and (max-width: 1305px) {
+  .inestor-proj-main-section {
+    padding-bottom: 1250px;
+  }
+}
+@media (max-width: 974px) {
+  .inestor-proj-main-section {
+    padding-bottom: 1585px;
+  }
 }
 .calculator-main-section .work-section {
-  @apply max-w-[821px] mx-auto  text-center font-Poppins;
+  @apply max-w-[821px] mx-auto relative z-[1] text-center font-Poppins;
 }
 .calculator-main-section .work-section .work-heading {
-  @apply font-semibold text-[28px] md:text-[32px] lg:text-[48px] leading-[34px] md:leading-[48px] mb-[24px] text-textcolor;
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] mb-[24px] text-textcolor;
 }
 .work-logos {
-  @apply flex gap-9 md:gap-10 items-center flex-wrap lg:flex-nowrap justify-center;
+  @apply lg:flex hidden gap-10 items-center  justify-center;
 }
 .work-logos .companys-logo {
   @apply w-auto h-auto object-contain;
 }
 
 .popular-project-section {
-  @apply w-full text-center h-[500px] md:h-auto;
+  @apply w-full text-center  pb-[49px] md:pb-[301px] h-auto relative;
 }
 .popular-project-section .popular-about {
-  @apply w-full sm:w-[442px] mx-auto mb-[48px] font-Poppins;
+  @apply w-full sm:w-[442px] px-6 md:px-0 mx-auto mb-[48px] font-Poppins;
 }
 
 .popular-heading {
-  @apply font-semibold text-[28px] md:text-[32px] lg:text-[48px] leading-[34px] md:leading-[48px] lg:leading-[72px] mb-[12px] text-textcolor;
+  @apply font-semibold text-[32px] md:text-[48px] leading-[48px] md:leading-[72px] mb-[12px] text-textcolor;
 }
 .popular-para {
   @apply font-normal text-[20px] leading-[30px] text-textcolor;
 }
-
-.white-wather-bg {
-  @apply w-full h-[233px] bg-repeat bg-center bg-auto absolute left-0 bottom-[-3px];
-  background-image: url("/images/Intersect4.svg");
+.popular-para .popular_strong {
+  @apply text-green500;
 }

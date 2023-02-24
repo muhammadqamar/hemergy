@@ -1,33 +1,59 @@
-import Image from "next/image";
 import Tokens from "./tokens";
+import TabInfo from "@/utils/tabInfo";
+import UserCard from "@/utils/userCard";
 
 const Index = () => {
   return (
     <div className="dashboard-container">
-      <div className="project-detail">
+      <div className="project-detail bg-white">
         <div className="detail-img">
           <img src="/images/dummy.png" alt="detail" className="detail-banner-img" />
           <div className="w-full flex-box">
-            <div className="labels-frame wather-labels">
-              <Image src="/images/hot.svg" alt="logo" width={20} height={20} />
-              <p className="p-sm-semi  text-white">Hot</p>
+            <div className="relative">
+              <TabInfo
+                icon="/images/hot.svg"
+                text="Hot"
+                color="text-white"
+                w="20"
+                h="20"
+                bg="bg-red600"
+                bold="font-semibold"
+              />
             </div>
-            <div className=" labels-frame ratio-labels">
-              <Image src="/images/Polygon.svg" alt="logo" width={10} height={10} />
-              <p className="p-sm-semi  text-white">657.4</p>
+            <div className="relative">
+              <TabInfo
+                icon="/images/Polygon.svg"
+                text="657.4"
+                color="text-white"
+                w="10"
+                h="10"
+                bg="bg-textcolor"
+                bold="font-semibold"
+              />
             </div>
           </div>
         </div>
+
         <div className="project-detail-about">
           <div className="flex-box gap-2">
-            <div className="solar-label">
-              <Image src="/images/clear_day.svg" alt="logo" width={20} height={20} />
-              <p className="p-sm-semi  text-textcolor">Solar Asset Name</p>
-            </div>
-            <div className="location-label">
-              <Image src="/images/location_on.svg" alt="logo" width={16} height={16} />
-              <p className="p-sm-semi font-medium text-textcolor">Location name</p>
-            </div>
+            <TabInfo
+              icon="/images/clear_day.svg"
+              text="Solar Asset Name"
+              color="text-textcolor"
+              w="20"
+              h="20"
+              py
+              bg="bg-cardbg"
+              bold="font-semibold"
+            />
+            <TabInfo
+              icon="/images/location_on.svg"
+              text="Location name"
+              color="text-textcolor"
+              w="16"
+              h="16"
+              bold="font-semibold"
+            />
           </div>
           <div>
             <h3 className="p-xl-semi mb-4">Project name</h3>
@@ -42,62 +68,39 @@ const Index = () => {
               sometimes on purpose (injected humour and the like).
             </p>
           </div>
-          <div className="project-detail-user ">
-            <img src="/images/user.png" alt="user" className="detail-user-img" />
-            <div>
-              <div className="flex-box mb-2">
-                <div>
-                  <h6 className="p-lg mb-1">Bradley Grahams</h6>
-                  <p className="p-x-sm font-medium text-gray900">Project owner</p>
-                </div>
-                <div className="user-company">
-                  <img src="/images/kg-logo.svg" alt="company" />
-                </div>
-              </div>
-              <p className="p-sm-semi font-normal text-gray800">
-                It is a long established fact that a reader will be distracted by the readable
-                content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English.{" "}
-              </p>
-            </div>
-          </div>
-          <div className="project-detail-user ">
-            <img src="/images/company.svg" alt="user" className="detail-user-img" />
-            <div>
-              <div className="flex-box mb-2">
-                <div>
-                  <h6 className="p-lg mb-1">Bradley Grahams</h6>
-                  <p className="p-x-sm font-medium text-gray900">Project owner</p>
-                </div>
-              </div>
-              <p className="p-sm-semi font-normal text-gray800">
-                It is a long established fact that a reader will be distracted by the readable
-                content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English.{" "}
-              </p>
-            </div>
-          </div>
-          <div className="project-detail-user ">
-            <img src="/images/company-2.svg" alt="user" className="detail-user-img" />
-            <div>
-              <div className="flex-box mb-2">
-                <div>
-                  <h6 className="p-lg mb-1">Bradley Grahams</h6>
-                  <p className="p-x-sm font-medium text-gray900">Project owner</p>
-                </div>
-              </div>
-              <p className="p-sm-semi font-normal text-gray800">
-                It is a long established fact that a reader will be distracted by the readable
-                content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English.{" "}
-              </p>
-            </div>
-          </div>
+          <UserCard
+            company
+            avatar="/images/user.png"
+            detail
+            name="Bradley Grahams"
+            designation="Project owner"
+            bio="  It is a long established fact that a reader will be distracted by the readable
+            content of a page when looking at its layout. The point of using Lorem Ipsum is that
+            it has a more-or-less normal distribution of letters, as opposed to using 
+            "
+          />
+          <UserCard
+            avatar="/images/user.png"
+            detail
+            name="Bradley Grahams"
+            designation="Project owner"
+            bio="  It is a long established fact that a reader will be distracted by the readable
+            content of a page when looking at its layout. The point of using Lorem Ipsum is that
+            it has a more-or-less normal distribution of letters, as opposed to using 
+            "
+          />
+          <UserCard
+            avatar="/images/user.png"
+            detail
+            name="Bradley Grahams"
+            designation="Project owner"
+            bio="  It is a long established fact that a reader will be distracted by the readable
+            content of a page when looking at its layout. The point of using Lorem Ipsum is that
+            it has a more-or-less normal distribution of letters, as opposed to using 
+            "
+          />
         </div>
-        <Tokens />
+        <Tokens showTokenInfo />
       </div>
     </div>
   );

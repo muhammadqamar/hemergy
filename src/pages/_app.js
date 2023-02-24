@@ -1,10 +1,10 @@
 import Head from "next/head";
-
+import { hotjar } from 'react-hotjar'
 import { useRouter } from "next/router";
 import { ToastContainer } from 'react-toastify';
 import { store } from '@/store/store'
 import { Provider } from 'react-redux'
-
+import axios from 'axios';
 import "@/styles/globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,12 +12,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-import { EthereumClient, modalConnectors, walletConnectProvider } from '@web3modal/ethereum'
-import { Web3Modal, useWeb3ModalTheme  } from '@web3modal/react'
+//import { EthereumClient, modalConnectors, walletConnectProvider } from '@web3modal/ethereum'
+//import { Web3Modal, useWeb3ModalTheme  } from '@web3modal/react'
 
 import { useEffect, useState } from 'react'
-import { configureChains, createClient, WagmiConfig } from 'wagmi'
-import { arbitrum, avalanche, mainnet, polygon } from 'wagmi/chains'
+//import { configureChains, createClient, WagmiConfig } from 'wagmi'
+//import { arbitrum, avalanche, mainnet, polygon } from 'wagmi/chains'
 
 
 if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
@@ -27,34 +27,55 @@ const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
 
 
 // 2. Configure wagmi client
-const chains = [mainnet, polygon, avalanche, arbitrum]
+//const chains = [mainnet, polygon, avalanche, arbitrum]
 
 
-const { provider } = configureChains(chains, [walletConnectProvider({ projectId })])
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors: modalConnectors({ version: '1', appName: 'web3Modal', chains, projectId }),
-  provider
-})
+//const { provider } = configureChains(chains, [walletConnectProvider({ projectId })])
+// const wagmiClient = createClient({
+//   autoConnect: true,
+//   connectors: modalConnectors({ version: '1', appName: 'web3Modal', chains, projectId }),
+//   provider
+// })
 
 // 3. Configure modal ethereum client
-const ethereumClient = new EthereumClient(wagmiClient, chains)
+//const ethereumClient = new EthereumClient(wagmiClient, chains)
 
 export default function App({ Component, pageProps }) {
   const routes = useRouter();
 
   const [ready, setReady] = useState(false)
-  const { theme, setTheme } = useWeb3ModalTheme();
-// setTheme({
-//   themeMode: "dark",
-//   themeColor: "orange",
-//   themeBackground: "gradient",
-//   color:'#fff'
+  const [checkSessionState, setcheckSessionState] = useState(true)
 
-// });
+  // useEffect(() => {
+  //   (async () => {
+  //     console.log(routes)
+
+  //     if (typeof window !== 'undefined') {
+  //       const localToken = localStorage.getItem('hemergy-token')
+  //       if (localToken) {
+  //         try {
+  //           await axios.get(
+  //             `http://localhost:4000/api/auth/me`, {
+  //             headers: {
+  //               ['x-auth-token']: localToken,
+  //             }
+  //           })
+  //           setcheckSessionState(false)
+  //         } catch (e) {
+  //           routes.push('/login')
+  //           setcheckSessionState(false)
+  //         }
+  //       } else {
+  //         routes.push('/login')
+  //         setcheckSessionState(false)
+  //       }
+  //     }
+  //   })()
+  // }, [])
 
   useEffect(() => {
     setReady(true)
+    hotjar.initialize(3369122, 6)
   }, [])
 
   return (
@@ -69,14 +90,14 @@ export default function App({ Component, pageProps }) {
       <ToastContainer />
       {ready ? (
 
-        <Provider  store={store}>
-        <WagmiConfig client={wagmiClient}>
-          <Component {...pageProps} />
-        </WagmiConfig>
+        <Provider store={store}>
+          {/* <WagmiConfig client={wagmiClient}> */}
+          {checkSessionState && <Component {...pageProps} />}
+          {/* </WagmiConfig> */}
         </Provider>
       ) : null}
 
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+      {/* <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> */}
 
 
 

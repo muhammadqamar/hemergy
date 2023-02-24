@@ -1,10 +1,13 @@
 import { Formik, Field } from "formik";
 import Image from "next/image";
-import axios from 'axios';
+import { useDispatch, useSelector } from "react-redux";
+import { updateUser } from '@/services/user'
+import { addUser } from "@/store/reducer/user";
 
 const Verification = ({ userDetail, setStep }) => {
-
-
+  const dispatch = useDispatch()
+  const user = useSelector(state => state.user?.user)
+  console.log(user)
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -12,7 +15,8 @@ const Verification = ({ userDetail, setStep }) => {
         <h3 className="p-xl center-text">Sign up to Hemergy</h3>
       </div>
       <Formik
-        initialValues={{ name: "", surname: "", birthDate: "", country: "", address: "" }}
+        initialValues={{ name: user?.firstName || "", surname: user?.lastName || "", birthDate: user?.dob || "", country: user?.country || "", address: user?.address || "" }}
+        enableReinitialize
         validate={(values) => {
           const errors = {};
           if (!values.name) {
@@ -30,23 +34,17 @@ const Verification = ({ userDetail, setStep }) => {
           if (!values.address) {
             errors.address = "Required";
           }
+
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          try {
-            const updateUser = await axios.put(
-              `http://localhost:4000/api/user/updateuser`,
-              { ...values, email: userDetail?.email  }
-            );
-            setSubmitting(false)
-            console.log(updateUser)
-            if (updateUser?.data?.userFound) {
-              setStep(2)
-            }
-          } catch (error) {
-            setSubmitting(false)
+          const result = await updateUser({ ...values, email: userDetail?.email })
+          setSubmitting(false)
+          if (result?.data?.userFound) {
+            dispatch(addUser(result?.data?.userFound))
+            setStep(2)
           }
-       }}
+        }}
       >
         {({
           values,
@@ -152,7 +150,7 @@ const Verification = ({ userDetail, setStep }) => {
             <p className="p-sm text-weight-medium text-textcolor">Enter address manually</p>
 
             <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? '.....' : 'Next'}
+              {isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} /> : 'Next'}
             </button>
           </form>
         )}

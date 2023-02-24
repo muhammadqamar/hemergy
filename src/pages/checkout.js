@@ -1,11 +1,11 @@
 import SideBar from "@/dashboard/sideBar";
-import CheckoutPage from "@/dashboard/chexkout";
+import CheckoutPage from "@/dashboard/checkout";
 
 const Checkout = () => {
   return (
     <div>
       <SideBar />
-      Checkout <CheckoutPage />
+      <CheckoutPage />
     </div>
   );
 };

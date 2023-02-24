@@ -1,5 +1,5 @@
 .side-nav-bar {
-  @apply w-16 min-h-screen bg-blue700 rounded-tr-[40px] rounded-br-[40px] pt-10 px-[10px] pb-6 absolute left-0 top-0;
+  @apply w-16 min-h-screen bg-blue700 rounded-tr-[40px] rounded-br-[40px] pt-10 px-[10px] pb-6 absolute z-10 left-0 top-0;
 }
 
 .menu-item {
@@ -11,9 +11,13 @@
 }
 
 .dash-user-img {
-  @apply rounded-[50%] overflow-hidden;
+  @apply rounded-[50%] w-8 h-8 overflow-hidden;
 }
 
 .dash-user-img img {
   @apply w-auto h-auto object-contain;
+}
+
+.insite-border {
+  @apply w-8 h-8 border-green400 border-4 border-solid;
 }
