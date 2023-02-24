@@ -19,61 +19,73 @@
   @apply w-full h-[232px] bg-repeat bg-center bg-auto absolute bottom-0;
   background-image: url("/images/white-wather.png");
 }
-.contact-container-about .contact-card-box {
-  @apply w-full md:w-[767px] lg:w-[814px]  flex gap-8  flex-col md:flex-row items-start justify-between h-auto mx-auto py-12 px-6 md:p-12  text-center bg-white rounded-3xl shadow-mdshadow;
+.contact-card-box {
+  @apply w-full md:w-[767px] lg:w-[814px]  flex gap-8  flex-col md:flex-row items-start  h-auto mx-auto   text-center bg-white rounded-3xl shadow-mdshadow;
 }
-.contact-container-about .contact-left-content {
+.contact-card-box .contact-left-content {
   @apply text-left w-full md:w-[480px];
 }
-.contact-container-about .help-heading {
-  @apply font-Poppins font-semibold text-[28px] lg:text-[32px] leading-[32px] lg:leading-[38.4px] text-textcolor mb-[8px];
+.contact-card-box .help-heading {
+  @apply font-Poppins font-semibold text-[28px] lg:text-[32px] leading-[32px] lg:leading-[38.4px] text-textblack mb-[8px];
 }
-.contact-container-about .help-para {
+.contact-card-box .help-para {
   @apply font-Inter font-normal text-[16px] leading-[24px] text-gray800 mb-[32px];
 }
 /* Form style */
-.contact-container-about .names-box {
+.contact-card-box .names-box {
   @apply flex flex-col sm:flex-row justify-between gap-0 sm:gap-[16px];
 }
 .label-box {
   @apply flex flex-col mb-[32px];
 }
-.contact-container-about label {
+.contact-card-box label {
   @apply font-Inter font-medium text-[16px] leading-[24px] text-textblack mb-[4px];
 }
-.contact-container-about input {
+.contact-card-box input,
+.contact-card-box select {
   @apply font-Inter bg-garbg w-full  h-full md:h-[40px] px-[12px] py-[8px] rounded-xl focus:outline-none;
 }
-.contact-container-about .name-input::placeholder {
+
+.contact-card-box select {
+  @apply bg-no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("/images/b_expand_more.svg");
+  background-position: 98% 10px;
+  background-size: 25px;
+}
+
+.contact-card-box .name-input::placeholder {
   color: #000;
 }
-.contact-container-about .birth-input {
+.contact-card-box .birth-input {
   @apply w-full;
 }
-.contact-container-about .birth-input::placeholder {
+.contact-card-box .birth-input::placeholder {
   color: #000;
 }
-.contact-container-about .birth-box {
+.contact-card-box .birth-box {
   @apply relative;
 }
-.contact-container-about .mail-box {
+.contact-card-box .mail-box {
   @apply absolute right-[12px];
 }
-.contact-container-about textarea {
+.contact-card-box textarea {
   @apply focus:outline-none bg-garbg rounded-xl px-[12px] pt-[8px];
 }
-.contact-container-about .send-btn {
+.contact-card-box .send-btn {
   @apply font-Inter w-full md:w-[100px] h-[40px] flex items-center justify-center gap-[8px] px-[8px] py-[16px] bg-textcolor text-white rounded-xl opacity-50 !important;
 }
-.contact-container-about .contact-right-content {
+.contact-right-content {
   @apply flex flex-col items-start;
 }
-.contact-container-about .find-heading {
+.find-heading {
   @apply text-textcolor text-[24px] font-Poppins leading-[28.8px] font-semibold pb-[24px];
 }
-.contact-container-about .find-flx-bx {
+.find-flx-bx {
   @apply flex items-center mb-[18px];
 }
-.contact-container-about .find-sub-heading {
+.find-sub-heading {
   @apply font-Inter text-textcolor font-normal text-[16px] leading-[24px];
 }

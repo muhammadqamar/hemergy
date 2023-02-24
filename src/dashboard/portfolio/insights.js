@@ -4,7 +4,7 @@ import NoTransaction from "../common/noTransaction";
 
 const Insights = () => {
   return (
-    <div className="insight-card w-[38%] t-b-raidus bg-textcolor z-[1]">
+    <div className="insight-card w-full lg:w-[38%] t-b-raidus bg-textcolor z-[1]">
       <div className="mb-8">
         <h2 className="p-xl text-white mb-3">Insights</h2>
         <p className="p-sm text-white">The impact of your investment</p>

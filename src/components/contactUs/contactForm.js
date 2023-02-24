@@ -45,7 +45,7 @@ const ContactForm = () => {
       onSubmit={async (values, { setSubmitting }) => {
         try {
           const sendContact = await axios.post(
-            `http://localhost:4000/api/auth/contact`,
+            `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/contact`,
             values
           );
           setSubmitting(false)

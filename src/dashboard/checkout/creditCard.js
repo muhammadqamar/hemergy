@@ -29,7 +29,7 @@ const CreditCard = () => {
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            const updateUser = await axios.put(`http://localhost:4000/api/user/financials`, {
+            const updateUser = await axios.put(`${process.env.NEXT_PUBLIC_API_DOMAIN}/user/financials`, {
               ...values,
               email: userDetail?.email || "muhammadqamar111@gmail.com",
             });
@@ -53,7 +53,7 @@ const CreditCard = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer" onSubmit={handleSubmit}>
+          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
             <div className="input-box">
               <label className="p-sm text-weight-medium text-white">Card number</label>
               <div className="input-field">

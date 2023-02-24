@@ -3,7 +3,7 @@ import TrasactionCard from "@/utils/TransactionCard";
 
 const Wallet = () => {
   return (
-    <div className="insight-card w-[32%] bg-blue800 ">
+    <div className="insight-card w-full lg:w-[32%] bg-blue800 ">
       <div className="mb-8">
         <h2 className="p-xl text-white mb-3">Wallet</h2>
         <p className="p-sm text-white">Your earnings are automatically saved.</p>

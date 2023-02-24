@@ -1,19 +1,19 @@
 .card-area {
-  @apply w-[40%] h-screen pt-12 pr-6 pb-8 pl-28 relative z-[2]  rounded-tr-[60px] rounded-br-[60px] bg-cardbg;
+  @apply w-full lg:w-[40%] min-h-max lg:min-h-screen pt-[130px] md:pt-20 pb-[70px] md:pb-8 px-6 md:px-20 lg:pt-12 lg:pr-6 lg:pb-8 lg:pl-28 relative z-[2] rounded-br-[40px] lg:rounded-br-[60px] lg:rounded-bl-none rounded-bl-[40px]  rounded-tr-none lg:rounded-tr-[60px] bg-cardbg;
 }
 
 .insight-card {
-  @apply h-screen pl-[98px] pr-12 pt-12  relative  ml-[-50px] overflow-hidden;
+  @apply h-screen pt-20 px-6 lg:pl-[98px] lg:pr-12 lg:pt-12  relative ml-0 mt-[-35px] lg:mt-0 lg:ml-[-50px] overflow-hidden;
 }
 
 .insight-card::before {
-  @apply absolute bottom-0 right-0 w-full h-[100px] z-[1];
+  @apply absolute bottom-0 right-0 w-full min-h-[100px] z-[1];
   content: "";
   background: linear-gradient(180deg, rgba(78, 98, 238, 0) 42.19%, #4e62ee 100%);
 }
 
 .t-b-raidus {
-  @apply rounded-tr-[60px] rounded-br-[60px];
+  @apply rounded-bl-[40px] lg:rounded-bl-none rounded-tr-none lg:rounded-tr-[60px]  rounded-br-[40px] lg:rounded-br-[60px];
 }
 
 .transac-bg {

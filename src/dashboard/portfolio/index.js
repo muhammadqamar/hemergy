@@ -4,7 +4,7 @@ import Wallet from "./wallet";
 
 const Index = () => {
   return (
-    <div className="flex">
+    <div className="flex flex-col lg:flex-row">
       <CardArea
         areaHeading="Your portfolio"
         areaDesc="These are the projects you’ve invested in"

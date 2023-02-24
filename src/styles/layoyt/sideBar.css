@@ -1,9 +1,13 @@
 .side-nav-bar {
-  @apply w-16 min-h-screen bg-blue700 rounded-tr-[40px] rounded-br-[40px] pt-10 px-[10px] pb-6 absolute z-10 left-0 top-0;
+  @apply w-screen lg:w-16 min-h-max lg:min-h-screen bg-blue700 rounded-bl-[24px] rounded-br-[24px] lg:rounded-bl-none  lg:rounded-tr-[40px] lg:rounded-br-[40px] rounded-tr-none pt-12 pb-2 md:py-2  pl-4 pr-5 md:pr-3 lg:pt-10 lg:px-[10px] lg:pb-6 fixed z-10 left-0 top-0;
 }
 
 .menu-item {
   @apply w-11 h-10 rounded-xl flex items-center justify-center hover:bg-blue600;
+}
+
+.hide-links {
+  @apply hidden lg:flex !important;
 }
 
 .active {
@@ -20,4 +24,12 @@
 
 .insite-border {
   @apply w-8 h-8 border-green400 border-4 border-solid;
+}
+
+.mobile-side-box {
+  @apply w-[152px] rounded-3xl bg-blue700 shadow-mdshadow p-4 absolute z-10 top-16 right-7;
+}
+
+.mobile-side-box .mobile-dash-links {
+  @apply flex items-center gap-3 p-3;
 }

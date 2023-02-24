@@ -1,15 +1,14 @@
 import { Formik } from "formik";
 import { useSelector, useDispatch } from "react-redux";
-import {updateFinancials} from '@/services/user'
-import { useRouter } from 'next/router'
+import { updateFinancials } from "@/services/user";
+import { useRouter } from "next/router";
 
 import { addUser } from "@/store/reducer/user";
 
-
 const Financials = ({ setStep, userDetail }) => {
-  const router = useRouter()
-  const dispatch =  useDispatch();
-  const user = useSelector(state => state.user?.user)
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user?.user);
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
@@ -17,7 +16,10 @@ const Financials = ({ setStep, userDetail }) => {
         <h3 className="p-xl center-text">Financials</h3>
       </div>
       <Formik
-        initialValues={{ annualTurnover: user?.financials?.annualturnover|| "", disposableIncome:user?.financials?.disposableIncome || "" }}
+        initialValues={{
+          annualTurnover: user?.financials?.annualturnover || "",
+          disposableIncome: user?.financials?.disposableIncome || "",
+        }}
         validate={(values) => {
           const errors = {};
 
@@ -31,18 +33,20 @@ const Financials = ({ setStep, userDetail }) => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          const result = await updateFinancials({ ...values, email: userDetail?.email })
-          setSubmitting(false)
+          const result = await updateFinancials({ ...values, email: userDetail?.email });
+          setSubmitting(false);
           if (result?.data?.userFound) {
-            dispatch(addUser(result?.data?.userFound))
-            if(user?.questionnaire.filter(data=>data.question === 'Are you familiar with cryptocurrencies?')[0]?.selectedAnswers){
-              setStep(4)
+            dispatch(addUser(result?.data?.userFound));
+            if (
+              user?.questionnaire.filter(
+                (data) => data.question === "Are you familiar with cryptocurrencies?"
+              )[0]?.selectedAnswers
+            ) {
+              setStep(4);
             } else {
-               router.push('/projects')
+              setStep(5);
             }
-
           }
-
         }}
       >
         {({
@@ -55,7 +59,7 @@ const Financials = ({ setStep, userDetail }) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="form-cantainer" onSubmit={handleSubmit}>
+          <form className="form-cantainer gap-6" onSubmit={handleSubmit}>
             <div className="input-box">
               <label className="p-sm text-weight-medium">Annual turnover</label>
 
@@ -64,7 +68,7 @@ const Financials = ({ setStep, userDetail }) => {
                 <input
                   className="input p-sm"
                   placeholder="0.00"
-                  type="text"
+                  type="number"
                   name="annualTurnover"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -86,7 +90,7 @@ const Financials = ({ setStep, userDetail }) => {
                 <input
                   className="input p-sm"
                   placeholder="0.00"
-                  type="text"
+                  type="number"
                   name="disposableIncome"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -111,11 +115,16 @@ const Financials = ({ setStep, userDetail }) => {
                 Back
               </button>
               <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? '.....' : 'Done'}
+                {isSubmitting ? "....." : "Next"}
               </button>
             </div>
 
-            <p className="font-medium text-center p-sm text-textcolor">Skip for now</p>
+            <p
+              onClick={() => setStep(4)}
+              className="font-medium text-center cursor-pointer p-sm text-textcolor"
+            >
+              Skip for now
+            </p>
           </form>
         )}
       </Formik>

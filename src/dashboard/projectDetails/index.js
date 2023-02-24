@@ -7,7 +7,15 @@ const Index = () => {
     <div className="dashboard-container">
       <div className="project-detail bg-white">
         <div className="detail-img">
-          <img src="/images/dummy.png" alt="detail" className="detail-banner-img" />
+          <div
+            className="detail-banner-img"
+            style={{
+              background: `url('/images/dummy.png')`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
           <div className="w-full flex-box">
             <div className="relative">
               <TabInfo
