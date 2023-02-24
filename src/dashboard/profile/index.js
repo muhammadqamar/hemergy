@@ -7,11 +7,11 @@ const Index = () => {
     <div className="info-bg">
       <div className="white-frame h-[848px]">
         <h1 className="p-xl-semi text-textblack mb-8">Hi, Steven!</h1>
-        <div className="flex items-start gap-8">
-          <div className="w-[276px] flex flex-col gap-2">
+        <div className="flex flex-col md:flex-row items-start gap-8 ">
+          <div className=" w-full md:w-[276px] flex flex-row flex-wrap md:flex-col gap-2 ">
             <button
               onClick={() => setActive("account")}
-              className={`tab-btn w-full text-left px-3 py-[10px] rounded-xl p-sm text-weight-medium ${
+              className={`tab-btn w-fit whitespace-nowrap md:w-full text-left px-3 py-[10px] rounded-xl p-sm text-weight-medium ${
                 active === "account" ? "text-textcolor bg-cardbg" : "text-textblack bg-white"
               } `}
             >
@@ -19,7 +19,7 @@ const Index = () => {
             </button>
             <button
               onClick={() => setActive("profile")}
-              className={`tab-btn w-full text-left px-3 py-[10px] rounded-xl p-sm text-weight-medium ${
+              className={`tab-btn w-fit md:w-full whitespace-nowrap text-left p- px-3 py-[10px] rounded-xl p-sm text-weight-medium ${
                 active === "profile" ? "text-textcolor bg-cardbg" : "text-textblack bg-white"
               } `}
             >
@@ -27,7 +27,7 @@ const Index = () => {
             </button>
             <button
               onClick={() => setActive("email&password")}
-              className={`tab-btn w-full text-left px-3 py-[10px] rounded-xl p-sm text-weight-medium ${
+              className={`tab-btn w-fit md:w-full text-left whitespace-nowrap px-3 py-[10px] rounded-xl p-sm text-weight-medium ${
                 active === "email&password" ? "text-textcolor bg-cardbg" : "text-textblack bg-white"
               } `}
             >

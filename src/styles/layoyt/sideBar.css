@@ -1,5 +1,5 @@
 .side-nav-bar {
-  @apply w-screen lg:w-16 min-h-max lg:min-h-screen bg-blue700 rounded-bl-[24px] rounded-br-[24px] lg:rounded-bl-none  lg:rounded-tr-[40px] lg:rounded-br-[40px] rounded-tr-none pt-12 pb-2 md:py-2  pl-4 pr-5 md:pr-3 lg:pt-10 lg:px-[10px] lg:pb-6 fixed z-10 left-0 top-0;
+  @apply w-screen laptop:w-16 min-h-max laptop:min-h-screen bg-blue700 rounded-bl-[24px] rounded-br-[24px] laptop:rounded-bl-none  laptop:rounded-tr-[40px] laptop:rounded-br-[40px] rounded-tr-none pt-12 pb-2 md:py-2  pl-4 pr-5 md:pr-3 laptop:pt-10 laptop:px-[10px] laptop:pb-6 fixed z-10 left-0 top-0;
 }
 
 .menu-item {
@@ -7,7 +7,7 @@
 }
 
 .hide-links {
-  @apply hidden lg:flex !important;
+  @apply hidden laptop:flex !important;
 }
 
 .active {
@@ -27,7 +27,7 @@
 }
 
 .mobile-side-box {
-  @apply w-[152px] rounded-3xl bg-blue700 shadow-mdshadow p-4 absolute z-10 top-16 right-7;
+  @apply w-[152px] rounded-3xl bg-blue700 shadow-mdshadow p-4 absolute z-10 top-[105px] md:top-16 right-7;
 }
 
 .mobile-side-box .mobile-dash-links {

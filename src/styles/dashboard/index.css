@@ -1,11 +1,11 @@
 @import "./projectDetails.css";
 
 .main-loaction {
-  @apply flex flex-col lg:flex-row items-start bg-[#E5E5E5];
+  @apply flex flex-col laptop:flex-row items-start bg-[#E5E5E5];
 }
 
 .main-loaction .map-location-box {
-  @apply h-screen w-full flex flex-col items-center pt-6 lg:pt-12 p-6 overflow-y-auto;
+  @apply min-h-screen w-full flex flex-col items-center pt-6 laptop:pt-12 p-6 overflow-y-auto;
 }
 
 .main-loaction .map-box .map {
