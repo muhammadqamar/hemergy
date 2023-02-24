@@ -1,8 +1,8 @@
 import { createClient, Entry } from "contentful";
 
 const client = createClient({
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 export async function fetchEntries(
   { contentType, locale, limit = 1000 },
