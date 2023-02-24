@@ -9,7 +9,11 @@
 .insight-card::before {
   @apply absolute bottom-0 right-0 w-full min-h-[100px] z-[1];
   content: "";
-  background: linear-gradient(180deg, rgba(78, 98, 238, 0) 42.19%, #4e62ee 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(78, 98, 238, 0) 42.19%,
+    #4e62ee 100%
+  );
 }
 
 .t-b-raidus {
@@ -17,17 +21,21 @@
 }
 
 .transac-bg {
-  @apply w-full flex flex-col gap-6   overflow-y-scroll;
+  @apply w-full flex flex-col gap-6;
 }
 
 .gradient-bg {
-  @apply relative;
+  @apply relative overflow-y-scroll;
 }
 
 .gradient-bg::before {
   @apply absolute top-0 right-0 w-full h-[50px];
   content: "";
-  background: linear-gradient(180deg, rgba(78, 98, 238, 0) 42.19%, #4e62ee 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(78, 98, 238, 0) 42.19%,
+    #4e62ee 100%
+  );
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 

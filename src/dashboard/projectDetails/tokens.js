@@ -5,7 +5,9 @@ const Tokens = ({ showTokenInfo }) => {
   return (
     <div className="tokens-wrapper">
       {showTokenInfo && (
-        <h6 className="text-center mb-6 sm:mb-[57px] p-md ">1,234 Tokens issued</h6>
+        <h6 className="text-center mb-6 sm:mb-[57px] p-md ">
+          1,234 Tokens issued
+        </h6>
       )}
       <div className="available-token mb-6 sm:mb-[57px]">
         <Image src="/images/token.png" alt="token" width={32} height={32} />
@@ -14,7 +16,9 @@ const Tokens = ({ showTokenInfo }) => {
           <p className="text-white p-sm-semi">Equity tokens available</p>
         </div>
       </div>
-      <button className="w-full mb-4 sm:mb-6 btn secondary">Invest now</button>
+      <button className="w-full md:w-[280px] mx-auto mb-4 sm:mb-6 btn secondary">
+        Invest now
+      </button>
 
       <div className=" mb-2 sm:mb-4 ">
         <PowerCarbon />
@@ -52,8 +56,8 @@ const Tokens = ({ showTokenInfo }) => {
           </div>
 
           <p className="font-normal p-sm-semi text-blue200">
-            Tokens represent part of the physical asset asset name. When you buy tokens, you are
-            investing in these.
+            Tokens represent part of the physical asset asset name. When you buy
+            tokens, you are investing in these.
           </p>
         </div>
       )}

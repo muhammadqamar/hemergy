@@ -9,7 +9,7 @@ const Index = ({ faqPage }) => {
     <div>
       <HeroBanner
         pageName="How it works:"
-        heroTitle2="for contributors"
+        heroTitle2="For Contributors"
         btnLabel="Check it out"
         btnIcon="/images/w_expand_more.svg"
       />

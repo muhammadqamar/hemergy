@@ -4,7 +4,7 @@ import UserCard from "@/utils/userCard";
 
 const Detail = () => {
   return (
-    <div className="w-full lg:w-[369px] flex-shrink-0 bg-white">
+    <div className="w-full laptop:w-[369px] flex-shrink-0 bg-white">
       <ProjectCardThumbnail
         h="198px"
         bgimg={"/images/image 1.png"}
@@ -28,8 +28,9 @@ const Detail = () => {
         <div>
           <h1 className="mb-4 p-xl-semi text-textblack">Project name</h1>
           <p className="text-gray800 p-sm">
-            It is a long established fact that a reader will be distracted by the readable content
-            of a page when looking at its layout. The point of using Lorem Ipsum i...
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum i...
           </p>
         </div>
         <div>

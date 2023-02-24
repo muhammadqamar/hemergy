@@ -37,6 +37,7 @@ const HeroBanner = ({
       <div
         className={`home-hero-wrapper pt-[208px] md:pt-[131px] pb-0 md:pb-[165px] ${
           heroTitle2 &&
+          btnIcon &&
           `justify-center text-center px-6 pt-[176px] pb-[193px] md:pb-[379px]`
         }  ${paddingBottom && `pb-4 md:pb-[245px]`}`}
       >
@@ -128,11 +129,7 @@ const HeroBanner = ({
                 btnIcon && `icon-btn`
               }`}
             >
-              {/* {btnText} */}
               {homePage?.bannerButton}
-              {btnIcon && (
-                <Image src={btnIcon} alt="expand" width={24} height={24} />
-              )}
             </Link>
           )) ||
             (btnText && (
@@ -143,6 +140,18 @@ const HeroBanner = ({
                 }`}
               >
                 {btnText}
+                {btnIcon && (
+                  <Image src={btnIcon} alt="expand" width={24} height={24} />
+                )}
+              </Link>
+            )) ||
+            (btnIcon && (
+              <Link
+                href=""
+                className={`btn Primary w-max bg-btncolor ${
+                  btnIcon && `icon-btn`
+                }`}
+              >
                 {btnIcon && (
                   <Image src={btnIcon} alt="expand" width={24} height={24} />
                 )}

@@ -32,7 +32,7 @@ const Index = () => {
     <section className="dashboard-container">
       <div className="project-detail bg-blue700">
         <Detail />
-        <div className="w-full flex flex-col md:flex-row justify-between gap-6 p-6 lg:p-8">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-6 p-6 laptop:p-8">
           <div className="flex flex-col gap-6 max-w-[617px]">
             <h2 className="p-md">What you need to know</h2>
 
@@ -42,7 +42,9 @@ const Index = () => {
                   <div className="w-8 h-8 flex items-center justify-center bg-textcolor rounded-[50%]">
                     <img src={item.icon} alt="logo" className="w-auto h-auto" />
                   </div>
-                  <h4 className="p-sm text-weight-semibold text-white">{item.title}</h4>
+                  <h4 className="p-sm text-weight-semibold text-white">
+                    {item.title}
+                  </h4>
                 </div>
                 <p className="p-sm text-blue100">{item.desc}</p>
               </div>
@@ -65,13 +67,17 @@ const Index = () => {
                 <h1 className="font-Poppins text-[64px] leading-[64px] font-semibold text-white mb-1">
                   150
                 </h1>
-                <p className="p-sm-semi text-weight-medium text-blue100">Tokens to buy</p>
+                <p className="p-sm-semi text-weight-medium text-blue100">
+                  Tokens to buy
+                </p>
               </div>
               <div className="w-full p-4 rounded-lg text-right bg-textcolor">
                 <h1 className="font-Poppins text-[64px] leading-[64px] font-semibold text-blue300 mb-1">
                   200
                 </h1>
-                <p className="p-sm-semi text-weight-medium text-blue100">Equity tokens available</p>
+                <p className="p-sm-semi text-weight-medium text-blue100">
+                  Equity tokens available
+                </p>
               </div>
             </div>
             <div className="mb-8">
@@ -89,7 +95,9 @@ const Index = () => {
               />
             </div>
             <div>
-              <h3 className="p-md text-white text-center mb-6">Total to pay &nbsp; € 143.56</h3>
+              <h3 className="p-md text-white text-center mb-6">
+                Total to pay &nbsp; € 143.56
+              </h3>
 
               <div className="flex items-center flex-wrap justify-center gap-2 mb-6">
                 <button
