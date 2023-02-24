@@ -12,7 +12,7 @@ const Financials = ({ setStep, userDetail }) => {
   return (
     <div className="registration-box">
       <div className="flex-box d-column gap-x-sm">
-        <h6 className="p-lg center-text ">Step 3 of 3</h6>
+        <h6 className="p-lg center-text ">Step 3 of 5</h6>
         <h3 className="p-xl center-text">Financials</h3>
       </div>
       <Formik

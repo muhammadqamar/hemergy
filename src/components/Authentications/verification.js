@@ -15,9 +15,9 @@ const Verification = ({ userDetail, setStep }) => {
   return (
     <div className="relative z-[1] w-full md:w-[480px] h-auto flex flex-col gap-6 pt-12 px-4 md:px-8 pb-6 bg-white rounded-3xl shadow-lgshadow text-textblack">
       <div className="flex-box d-column gap-x-sm">
-        <h6 className="p-lg center-text ">Step 1 of 3</h6>
+        <h6 className="p-lg center-text ">Step 1 of 5</h6>
 
-        <h3 className="p-xl center-text">Sign up to Hemergy</h3>
+        <h3 className="p-xl center-text">Let’s get to know you</h3>
       </div>
 
       <Formik
