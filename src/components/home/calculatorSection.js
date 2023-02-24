@@ -3,7 +3,7 @@ import ProjectCard from "@/utils/projectCard";
 import Slider from "react-slick";
 import InvestmentCard from "./InvestmentCard";
 
-const CalculatorSection = () => {
+const CalculatorSection = ({ homePage }) => {
   const settings = {
     arrows: false,
     dots: false,
@@ -25,30 +25,62 @@ const CalculatorSection = () => {
     <>
       <div className="calculator-main-section pt-[609px] px-0 md:px-6 pb-8 md:pb-[270px]">
         <div className="invest-calcu">
-          <InvestmentCard />
+          <InvestmentCard homePage={homePage} />
         </div>
         {/** we works */}
         <div className="work-section">
           <h2 className="work-heading">We work with</h2>
           <div className="work-logos ">
-            <img src="/images/work_1.png" alt="logo" className="companys-logo" />
-            <img src="/images/work_2.png" alt="logo" className="companys-logo" />
-            <img src="/images/work_3.png" alt="logo" className="companys-logo" />
-            <img src="/images/work_4.png" alt="logo" className="companys-logo" />
+            <img
+              src="/images/work_1.png"
+              alt="logo"
+              className="companys-logo"
+            />
+            <img
+              src="/images/work_2.png"
+              alt="logo"
+              className="companys-logo"
+            />
+            {/* <img
+              src="/images/work_3.png"
+              alt="logo"
+              className="companys-logo"
+            /> */}
+            <img
+              src="/images/work_4.png"
+              alt="logo"
+              className="companys-logo"
+            />
           </div>
           <div className="lg:hidden block">
             <Slider {...settings}>
               <div className="px-5">
-                <img src="/images/work_1.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_1.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_2.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_2.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_3.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_3.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_4.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_4.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
             </Slider>
           </div>
@@ -61,17 +93,18 @@ const CalculatorSection = () => {
           <div className="popular-about">
             <h1 className="popular-heading">Popular projects</h1>
             <p className="popular-para">
-              A selection of the types of projects you can get involved in today!{" "}
-              <strong>
+              A selection of the types of projects you can get involved in
+              today!{" "}
+              <strong className="popular_strong">
                 <Link href="">See all</Link>
               </strong>
             </p>
           </div>
           <div className="popular-project-slider mb-[95px] md:mb-[104px]">
             <Slider {...settings}>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team) => {
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team, index) => {
                 return (
-                  <div className="px-[15px]">
+                  <div className="px-[15px]" key={index}>
                     <ProjectCard
                       Shadow="37px 49px 0px rgba(0, 17, 141, 0.1)"
                       hemergyIcon="/images/air.svg"
@@ -92,9 +125,15 @@ const CalculatorSection = () => {
             </Slider>
           </div>
           <div className="planet-about">
-            <h1 className="planet-heading">Start investing in the future of our planet today!</h1>
+            <h1 className="planet-heading">
+              {/* Start investing in the future of our planet today! */}
+              Contribute to high transparency and low pollution future
+            </h1>
             <p className="planet-para">
-              No hidden fees, just transparent projects. Contribute to the energy revolution
+              {/* No hidden fees, just transparent projects. Contribute to the
+              energy revolution */}
+              No hidden fees, just transparent projects.
+              <br /> Delete the rest.
             </p>
             <Link href="" className="btn Primary">
               Get started

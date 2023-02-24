@@ -3,10 +3,11 @@ import Contribute from "./contribute";
 import CalculatorSection from "./calculatorSection";
 import PlanetToday from "./planetToday";
 
-const Index = () => {
+const Index = ({ homePage }) => {
   return (
     <div>
       <HeroBanner
+        homePage={homePage}
         home
         heroTitle="Invest in the future of our planet"
         btnText="Get started"
@@ -17,8 +18,8 @@ const Index = () => {
         weather
         bannerImg1="/images/home-banner.png"
       />
-      <Contribute />
-      <CalculatorSection />
+      <Contribute homePage={homePage} />
+      <CalculatorSection homePage={homePage} />
       <PlanetToday />
     </div>
   );

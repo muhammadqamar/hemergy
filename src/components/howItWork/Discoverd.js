@@ -5,22 +5,22 @@ const discoverd = [
   {
     img: "/images/Home-1.png",
     heading: "Discover",
-    desc: "Browse projects and profiles of project holders",
+    desc: "high impact projects and profiles of project holders",
   },
   {
     img: "/images/Home-2.png",
     heading: "Contribute",
-    desc: "To projects or existing facilities using crypto or fiat",
+    desc: "to projects or buy shares in existing facilities using crypto and fiat …",
   },
   {
     img: "/images/Home-3.png",
     heading: "Collect",
-    desc: "returns on contributions (you decide when, pay out can be done in fiat to bank account or in crypto to wallet).",
+    desc: "returns on contributions in your bank account or your crypto wallet.",
   },
   {
     img: "/images/Home-4.png",
     heading: "See your impact",
-    desc: "and prove it to the whole world using certificates / avoided carbon / shared wealth",
+    desc: "and prove it to the whole world using verifiable certificates.",
   },
 ];
 
@@ -49,10 +49,19 @@ const Discoverd = () => {
                     : `flex-col lg:flex-row gap-[106px]`
                 } `}
               >
-                <Image className="object-contain" width={520} height={346} src={items.img} />
+                <Image
+                  className="object-contain"
+                  width={520}
+                  height={346}
+                  src={items.img}
+                />
                 <div className="text-center w-[296px] ">
-                  <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">{items.heading}</h2>
-                  <p className="p-lg text-weight-normal text-textcolor">{items.desc}</p>
+                  <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">
+                    {items.heading}
+                  </h2>
+                  <p className="p-lg text-weight-normal text-textcolor">
+                    {items.desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -63,11 +72,20 @@ const Discoverd = () => {
               {discoverd.map((items, index) => (
                 <div key={index} className="">
                   <div className="w-[274px] h-auto sm:w-auto mx-auto ">
-                    <Image className="mx-auto" width={520} height={346} src={items.img} />
+                    <Image
+                      className="mx-auto"
+                      width={520}
+                      height={346}
+                      src={items.img}
+                    />
                   </div>
                   <div className="text-center w-[296px] mx-auto mt-8">
-                    <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">{items.heading}</h2>
-                    <p className="p-lg text-weight-normal text-textcolor">{items.desc}</p>
+                    <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">
+                      {items.heading}
+                    </h2>
+                    <p className="p-lg text-weight-normal text-textcolor">
+                      {items.desc}
+                    </p>
                   </div>
                 </div>
               ))}

@@ -24,6 +24,9 @@
 .contribute-cards {
   @apply flex items-center justify-center flex-wrap gap-10 md:gap-16;
 }
+.contribute-cards .home_contribute_img {
+  @apply h-[52px];
+}
 .contribute-cards .contribute-card {
   @apply w-[296px] flex flex-col items-center gap-6 text-center;
 }

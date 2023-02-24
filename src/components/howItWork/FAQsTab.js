@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-const FAQsTab = ({ title, description }) => {
+const FAQsTab = ({ question, answer }) => {
   const [showDetail, setShowDetail] = useState(false);
   return (
     <div className="faqs-tabs-section ">
@@ -12,17 +12,19 @@ const FAQsTab = ({ title, description }) => {
           setShowDetail(!showDetail);
         }}
       >
-        <h3 className="faqs-tabs-heading ">{title}</h3>
+        <h3 className="faqs-tabs-heading ">{question}</h3>
         {/* fa_un_expand_more.svg */}
         <Image
-          src={`/images/${showDetail ? "fa_expand_less" : "fa_un_expand_more"}.svg`}
+          src={`/images/${
+            showDetail ? "fa_expand_less" : "fa_un_expand_more"
+          }.svg`}
           width={20}
           height={20}
         />
       </div>
       {showDetail && (
         <div className="faqs-tabs-detail ">
-          <p className=" faqs-tabs-prep ">{description}</p>
+          <p className=" faqs-tabs-prep ">{answer}</p>
         </div>
       )}
     </div>

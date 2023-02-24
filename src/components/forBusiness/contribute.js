@@ -10,12 +10,12 @@ const contribute = [
   {
     img: "/images/verified_user.svg",
     heading: "Certified",
-    para: "Access to real renewable assets, proving revenue origin and ESG impact of your financial products.",
+    para: "Access renewable assets data, proving revenue origin and ESG impact of your financial products.",
   },
   {
     img: "/images/thumb_up_off.svg",
     heading: "Compliant",
-    para: "Screening procedures & flexible investment rules. Choose custodians and payment gateways",
+    para: "Screening procedures & flexible investment rules. Choose your custodians and payment gateways",
   },
   {
     img: "/images/gesture_black_24dp1.svg",
@@ -43,8 +43,8 @@ const Contribute = () => {
             All energies, <br /> all connected
           </h2>
           <p className=" max-w-[456px] text-[20px] md:p-md font-normal leading-[30px] md:leading-[36px] text-textcolor">
-            Cutting edge integrations ensuring compliant & transparent investments in your own
-            platform
+            Cutting edge integrations ensuring compliant & transparent
+            investments in your own platform
           </p>
         </div>
         <div className="contribute-cards">

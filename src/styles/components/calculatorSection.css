@@ -40,3 +40,6 @@
 .popular-para {
   @apply font-normal text-[20px] leading-[30px] text-textcolor;
 }
+.popular-para .popular_strong {
+  @apply text-green500;
+}

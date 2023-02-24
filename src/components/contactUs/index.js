@@ -13,7 +13,12 @@ const Index = () => {
           </p>
           <div className="flex items-center justify-center mt-4">
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-btncolor">
-              <Image src="/images/map/expand_more.svg" width={24} height={24} alt="show more" />
+              <Image
+                src="/images/map/expand_more.svg"
+                width={24}
+                height={24}
+                alt="show more"
+              />
             </div>
           </div>
         </div>
@@ -23,22 +28,39 @@ const Index = () => {
           <div className="contact-left-content">
             <div className="help-box">
               <h2 className="help-heading">How can we help?</h2>
-              <p className="help-para">Drop us a line to book a demo, or ask a question</p>
+              <p className="help-para">
+                Drop us a line to book a demo, or ask a question
+              </p>
             </div>
             <ContactForm />
           </div>
           <div className="contact-right-content">
             <h3 className="whitespace-pre find-heading">Or find us here:</h3>
             <div className="find-flx-bx">
-              <Image src="/images/wtsup-logo.png" alt="" width={40} height={40} />
+              <Image
+                src="/images/wtsup-logo.png"
+                alt=""
+                width={40}
+                height={40}
+              />
               <p className="find-sub-heading">+12 3456 7890</p>
             </div>
             <div className="find-flx-bx">
-              <Image src="/images/telegram-logo.png" alt="" width={40} height={40} />
+              <Image
+                src="/images/telegram-logo.png"
+                alt=""
+                width={40}
+                height={40}
+              />
               <p className="find-sub-heading">telegram@something</p>
             </div>
             <div className="find-flx-bx">
-              <Image src="/images/email-logo.png" alt="" width={40} height={40} />
+              <Image
+                src="/images/email-logo.png"
+                alt=""
+                width={40}
+                height={40}
+              />
               <p className="find-sub-heading">info@hemergy.co</p>
             </div>
           </div>

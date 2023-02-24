@@ -2,17 +2,18 @@ import HeroBanner from "@/utils/heroBanner";
 import PartnersTab from "@/utils/parthersTabs";
 import Contribute from "./contribute";
 
-const Index = () => {
+const Index = ({ homePage }) => {
   return (
     <div>
       <HeroBanner
+        homePage={homePage}
         heroTitle="Integrate with connected finance for sustainability"
         btnText="Book a demo"
         para1="Build your sustainable digital"
         boldPara="crowdfunding platform"
         para2="in days"
         para3="Reach your ESG goals by issuing and distributing connected financial products on-chain"
-        bannerImg1="/images/business-banner.png"
+        bannerImg1="/images/business-banner-img.png"
         paddingBottom
       />
       <Contribute />
