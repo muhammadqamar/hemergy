@@ -31,56 +31,28 @@ const CalculatorSection = ({ homePage }) => {
         <div className="work-section">
           <h2 className="work-heading">We work with</h2>
           <div className="work-logos ">
-            <img
-              src="/images/work_1.png"
-              alt="logo"
-              className="companys-logo"
-            />
-            <img
-              src="/images/work_2.png"
-              alt="logo"
-              className="companys-logo"
-            />
+            <img src="/images/work_1.png" alt="logo" className="companys-logo" />
+            <img src="/images/work_2.png" alt="logo" className="companys-logo" />
             {/* <img
               src="/images/work_3.png"
               alt="logo"
               className="companys-logo"
             /> */}
-            <img
-              src="/images/work_4.png"
-              alt="logo"
-              className="companys-logo"
-            />
+            <img src="/images/work_4.png" alt="logo" className="companys-logo" />
           </div>
           <div className="lg:hidden block">
             <Slider {...settings}>
               <div className="px-5">
-                <img
-                  src="/images/work_1.png"
-                  alt="logo"
-                  className="companys-logo"
-                />
+                <img src="/images/work_1.png" alt="logo" className="companys-logo" />
               </div>
               <div className="px-5">
-                <img
-                  src="/images/work_2.png"
-                  alt="logo"
-                  className="companys-logo"
-                />
+                <img src="/images/work_2.png" alt="logo" className="companys-logo" />
               </div>
               <div className="px-5">
-                <img
-                  src="/images/work_3.png"
-                  alt="logo"
-                  className="companys-logo"
-                />
+                <img src="/images/work_3.png" alt="logo" className="companys-logo" />
               </div>
               <div className="px-5">
-                <img
-                  src="/images/work_4.png"
-                  alt="logo"
-                  className="companys-logo"
-                />
+                <img src="/images/work_4.png" alt="logo" className="companys-logo" />
               </div>
             </Slider>
           </div>
@@ -93,8 +65,7 @@ const CalculatorSection = ({ homePage }) => {
           <div className="popular-about">
             <h1 className="popular-heading">Popular projects</h1>
             <p className="popular-para">
-              A selection of the types of projects you can get involved in
-              today!{" "}
+              A selection of the types of projects you can get involved in today!{" "}
               <strong className="popular_strong">
                 <Link href="">See all</Link>
               </strong>
@@ -133,7 +104,6 @@ const CalculatorSection = ({ homePage }) => {
               {/* No hidden fees, just transparent projects. Contribute to the
               energy revolution */}
               No hidden fees, just transparent projects.
-              <br /> Delete the rest.
             </p>
             <Link href="" className="btn Primary">
               Get started

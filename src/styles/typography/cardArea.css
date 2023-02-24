@@ -1,9 +1,9 @@
 .card-area {
-  @apply w-full lg:w-[40%] min-h-max lg:min-h-screen pt-[130px] md:pt-20 pb-[70px] md:pb-8 px-6 md:px-20 lg:pt-12 lg:pr-6 lg:pb-8 lg:pl-28 relative z-[2] rounded-br-[40px] lg:rounded-br-[60px] lg:rounded-bl-none rounded-bl-[40px]  rounded-tr-none lg:rounded-tr-[60px] bg-cardbg;
+  @apply w-full laptop:w-[40%] min-h-max laptop:min-h-screen pt-[130px] md:pt-20 pb-[70px] md:pb-8 px-6 md:px-20 laptop:pt-12 laptop:pr-6 laptop:pb-8 laptop:pl-28 relative z-[2] rounded-br-[40px] laptop:rounded-br-[60px] laptop:rounded-bl-none rounded-bl-[40px]  rounded-tr-none laptop:rounded-tr-[60px] bg-cardbg;
 }
 
 .insight-card {
-  @apply h-screen pt-20 px-6 lg:pl-[98px] lg:pr-12 lg:pt-12  relative ml-0 mt-[-35px] lg:mt-0 lg:ml-[-50px] overflow-hidden;
+  @apply min-h-screen pt-20 px-6 laptop:pl-[98px] laptop:pr-12 laptop:pt-12  relative ml-0 mt-[-35px] laptop:mt-0 laptop:ml-[-50px] overflow-hidden;
 }
 
 .insight-card::before {
@@ -13,11 +13,11 @@
 }
 
 .t-b-raidus {
-  @apply rounded-bl-[40px] lg:rounded-bl-none rounded-tr-none lg:rounded-tr-[60px]  rounded-br-[40px] lg:rounded-br-[60px];
+  @apply rounded-bl-[40px] laptop:rounded-bl-none rounded-tr-none laptop:rounded-tr-[60px]  rounded-br-[40px] laptop:rounded-br-[60px];
 }
 
 .transac-bg {
-  @apply w-full flex flex-col gap-6  h-[530px] overflow-y-scroll;
+  @apply w-full flex flex-col gap-6   overflow-y-scroll;
 }
 
 .gradient-bg {
@@ -52,7 +52,7 @@
 }
 
 .info-bg {
-  @apply relative w-full pr-[112px] py-6 pl-6 flex items-center justify-center bg-textcolor min-h-screen;
+  @apply relative w-full pl-6 laptop:pl-[112px] pb-12 pt-[130px] md:pt-20 laptop:py-6 pr-6 flex items-center justify-center bg-textcolor min-h-screen;
 }
 
 .info-bg::before {

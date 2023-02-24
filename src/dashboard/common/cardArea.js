@@ -31,8 +31,8 @@ const CardArea = ({
 
   return (
     <div className="card-area">
-      <div className="mb-8">
-        <h2 className="p-xl mb-3">{areaHeading}</h2>
+      <div className="mb-8 text-center lg:text-left">
+        <h2 className="p-xl-semi lg:p-xl mb-3">{areaHeading}</h2>
         <p className="p-sm text-gray900">{areaDesc}</p>
       </div>
 

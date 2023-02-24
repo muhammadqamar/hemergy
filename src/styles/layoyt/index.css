@@ -16,5 +16,5 @@
 }
 
 .white-frame {
-  @apply w-auto h-auto relative bg-white rounded-3xl p-8 shadow-mdshadow;
+  @apply w-auto h-auto relative bg-white rounded-3xl p-6 lg:p-8 shadow-mdshadow;
 }

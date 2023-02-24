@@ -18,7 +18,7 @@ const Index = ({
 }) => {
   return (
     <div className="project-card-box">
-      <div className={`card-head-img ${h === true ? "h-[372px]" : "h-[129px]"}`}>
+      <div className={`card-head-img ${h ? "h-[106px] md:h-[372px]" : "h-[106px] md:h-[129px]"}`}>
         <img src={banner} alt="img" className="card-bg-img" />
         <div className="w-full flex-box">
           <div className="relative">

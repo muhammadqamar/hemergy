@@ -15,9 +15,9 @@ const Verification = ({ userDetail, setStep }) => {
   return (
     <div className="relative z-[1] w-full md:w-[480px] h-auto flex flex-col gap-6 pt-12 px-4 md:px-8 pb-6 bg-white rounded-3xl shadow-lgshadow text-textblack">
       <div className="flex-box d-column gap-x-sm">
-        <h6 className="p-lg center-text ">Step 1 of 3</h6>
+        <h6 className="p-lg center-text ">Step 1 of 5</h6>
 
-        <h3 className="p-xl center-text">Sign up to Hemergy</h3>
+        <h3 className="p-xl center-text">Let’s get to know you</h3>
       </div>
 
       <Formik
@@ -128,21 +128,8 @@ const Verification = ({ userDetail, setStep }) => {
             <div className="input-box">
               <label className="p-sm text-weight-medium">Country</label>
               <div className="input-field">
-                {/* <img src="/images/country.svg" width="20px" height="20px" alt="country" />
-                <Field
-                  className="input p-sm"
-                  as="select"
-                  name="country"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.country}
-                >
-                  <option value="red">Red</option>
-                  <option value="green">Green</option>
-                  <option value="blue">Blue</option>
-                </Field> */}
                 <ReactFlagsSelect
-                  className="p-sm text-weight-medium w-full ml-[-16px]"
+                  className="p-sm text-weight-medium w-full country-drop-main "
                   selectButtonClassName="country-drop-list"
                   selected={selected}
                   fullWidth={true}

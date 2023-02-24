@@ -22,11 +22,19 @@
 .form-cantainer {
   @apply flex flex-col;
 }
-.country-drop-list{
-  @apply border-none !important;
+.country-drop-list {
+  @apply border-none p-0 !important;
 }
-.wallet-option-box{
-  @apply flex items-center justify-between gap-2
+
+.country-drop-list span {
+  @apply p-0 m-0 !important;
+}
+
+.country-drop-main {
+  @apply p-0  !important;
+}
+.wallet-option-box {
+  @apply flex items-center justify-between gap-2;
 }
 .flex-box {
   @apply flex items-center justify-between;

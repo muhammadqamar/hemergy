@@ -18,7 +18,7 @@ const Insights = () => {
           See how your investment is being spent
         </p>
       </div>
-      <div className="gradient-bg">
+      <div className="gradient-bg h-[530px]">
         <div className="transac-bg scrollbar-hide">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((item, index) => (
             <div key={index}>

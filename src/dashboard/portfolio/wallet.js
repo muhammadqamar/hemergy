@@ -21,7 +21,7 @@ const Wallet = () => {
       <div className="mb-6">
         <h3 className="p-lg text-white mb-2">Latest returns</h3>
       </div>
-      <div className="gradient-bg">
+      <div className="gradient-bg h-[354px]">
         <div className="transac-bg scrollbar-hide">
           {[1, 2, 3, 4, 5].map((item, index) => (
             <div key={index}>

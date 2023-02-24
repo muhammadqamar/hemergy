@@ -6,7 +6,7 @@ const Contact = () => {
     <div>
       <SideBar />
       <div className="info-bg">
-        <div className="w-[842px] relative">
+        <div className="w-full lg:w-[842px] relative">
           <ContactPage />
         </div>
       </div>
