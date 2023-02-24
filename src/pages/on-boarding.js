@@ -8,6 +8,7 @@ import InvestorProfile from "@/components/Authentications/investorProfile";
 import Financials from "@/components/Authentications/financials";
 import AllWalletOption from "@/utils/walletConnect/allWalletOption";
 import KycVerification from "@/components/verifications/kycVerification";
+import Link from "next/link";
 // import WalletOption from "@/components/Authentications/walletOption";
 
 const Verification = () => {
@@ -21,9 +22,9 @@ const Verification = () => {
 
   return (
     <div className="authentications-section">
-      <div className="auth-header">
+      <Link href="/" className="auth-header">
         <Image src="/images/hemergy-logo.svg" width={150} height={32} alt="logo" />
-      </div>
+      </Link>
 
       {loader && (
         <div className="auth-container">
