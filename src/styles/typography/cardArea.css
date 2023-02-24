@@ -3,7 +3,7 @@
 }
 
 .insight-card {
-  @apply h-screen pt-20 px-6 laptop:pl-[98px] laptop:pr-12 laptop:pt-12  relative ml-0 mt-[-35px] laptop:mt-0 laptop:ml-[-50px] overflow-hidden;
+  @apply min-h-screen pt-20 px-6 laptop:pl-[98px] laptop:pr-12 laptop:pt-12  relative ml-0 mt-[-35px] laptop:mt-0 laptop:ml-[-50px] overflow-hidden;
 }
 
 .insight-card::before {
