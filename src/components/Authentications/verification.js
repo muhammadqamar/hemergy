@@ -128,21 +128,8 @@ const Verification = ({ userDetail, setStep }) => {
             <div className="input-box">
               <label className="p-sm text-weight-medium">Country</label>
               <div className="input-field">
-                {/* <img src="/images/country.svg" width="20px" height="20px" alt="country" />
-                <Field
-                  className="input p-sm"
-                  as="select"
-                  name="country"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.country}
-                >
-                  <option value="red">Red</option>
-                  <option value="green">Green</option>
-                  <option value="blue">Blue</option>
-                </Field> */}
                 <ReactFlagsSelect
-                  className="p-sm text-weight-medium w-full ml-[-16px]"
+                  className="p-sm text-weight-medium w-full country-drop-main "
                   selectButtonClassName="country-drop-list"
                   selected={selected}
                   fullWidth={true}
