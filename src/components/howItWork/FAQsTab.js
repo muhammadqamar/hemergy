@@ -20,6 +20,7 @@ const FAQsTab = ({ question, answer }) => {
           }.svg`}
           width={20}
           height={20}
+          alt="image"
         />
       </div>
       {showDetail && (

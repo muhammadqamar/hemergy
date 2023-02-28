@@ -4,16 +4,17 @@ import HeroBanner from "@/utils/heroBanner";
 import PopularProject from "./PopularProject";
 import DemoCard from "@/utils/demoCard";
 
-const Index = ({ faqPage }) => {
+const Index = ({ faqPage, howItWorkPage }) => {
   return (
     <div>
       <HeroBanner
+        howItWorkPage={howItWorkPage}
         pageName="How it works:"
         heroTitle2="For Contributors"
         btnLabel="Check it out"
         btnIcon="/images/w_expand_more.svg"
       />
-      <Discoverd />
+      <Discoverd howItWorkPage={howItWorkPage} />
       <PopularProject />
       <div className="pt-0 px-6 z-[2] lg:px-0 lg:pt-[480px] w-full relative  mt-[-290px] lg:mt-0">
         <div className="mb-[160px] hidden lg:block">

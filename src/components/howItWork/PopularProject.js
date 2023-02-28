@@ -51,9 +51,9 @@ const PopularProject = () => {
         <div className="hiw-pp-list ">
           <div className="hiw-pp-list-options ">
             <Slider {...settings}>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team) => {
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team, i) => {
                 return (
-                  <div className="px-[12px]">
+                  <div key={i} className="px-[12px]">
                     <ProjectCard
                       Shadow="37px 49px 0px rgba(0, 17, 141, 0.1)"
                       hemergyIcon="/images/air.svg"

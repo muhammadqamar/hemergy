@@ -39,7 +39,7 @@ const Index = () => {
             <div className="find-flx-bx">
               <Image
                 src="/images/wtsup-logo.png"
-                alt=""
+                alt="wtsup"
                 width={40}
                 height={40}
               />
@@ -48,7 +48,7 @@ const Index = () => {
             <div className="find-flx-bx">
               <Image
                 src="/images/telegram-logo.png"
-                alt=""
+                alt="telegram"
                 width={40}
                 height={40}
               />
@@ -57,7 +57,7 @@ const Index = () => {
             <div className="find-flx-bx">
               <Image
                 src="/images/email-logo.png"
-                alt=""
+                alt="email"
                 width={40}
                 height={40}
               />

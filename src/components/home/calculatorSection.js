@@ -29,30 +29,41 @@ const CalculatorSection = ({ homePage }) => {
         </div>
         {/** we works */}
         <div className="work-section">
-          <h2 className="work-heading">We work with</h2>
+          <h2 className="work-heading">{homePage.workHeading}</h2>
           <div className="work-logos ">
-            <img src="/images/work_1.png" alt="logo" className="companys-logo" />
-            <img src="/images/work_2.png" alt="logo" className="companys-logo" />
-            {/* <img
-              src="/images/work_3.png"
-              alt="logo"
-              className="companys-logo"
-            /> */}
-            <img src="/images/work_4.png" alt="logo" className="companys-logo" />
+            {homePage?.cardLogos.map((item, i) => (
+              <img key={i} src={item.fields.logo.fields.file.url} />
+            ))}
           </div>
           <div className="lg:hidden block">
             <Slider {...settings}>
               <div className="px-5">
-                <img src="/images/work_1.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_1.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_2.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_2.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_3.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_3.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_4.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_4.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
             </Slider>
           </div>
@@ -65,7 +76,8 @@ const CalculatorSection = ({ homePage }) => {
           <div className="popular-about">
             <h1 className="popular-heading">Popular projects</h1>
             <p className="popular-para">
-              A selection of the types of projects you can get involved in today!{" "}
+              A selection of the types of projects you can get involved in
+              today!{" "}
               <strong className="popular_strong">
                 <Link href="">See all</Link>
               </strong>
@@ -98,15 +110,15 @@ const CalculatorSection = ({ homePage }) => {
           <div className="planet-about">
             <h1 className="planet-heading">
               {/* Start investing in the future of our planet today! */}
-              Contribute to high transparency and low pollution future
+              {homePage?.planetHeading}
             </h1>
             <p className="planet-para">
               {/* No hidden fees, just transparent projects. Contribute to the
               energy revolution */}
-              No hidden fees, just transparent projects.
+              {homePage?.planetText}
             </p>
             <Link href="" className="btn Primary">
-              Get started
+              {homePage?.buttonText}
             </Link>
           </div>
           <div className="wather-haf-white-bg" />

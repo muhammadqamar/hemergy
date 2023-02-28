@@ -5,35 +5,27 @@ const impactdata = [
   {
     id: 1,
     title: "Community conservation",
-    detail: `We create opportunities to protect biodiversity and make local
-    communities participate as much as possible in local projects.
+    detail: ` We create opportunities to make local communities participate as much as possible in local projects. This generates work and shared trust in the future.
     `,
-    // image: 'about_2.png',
-    image: "testing/test (1).jpg",
+    image: "community-logo.jpg",
   },
   {
     id: 2,
-    title: "Community ",
-    detail: `
-    This generates work and shared trust in the future.`,
-    // image: 'about_3.png',
-    image: "testing/test (2).jpg",
+    title: "Local expertise empowerment",
+    detail: `We support local expertise with bright ideas and international influence. We believe in local teams who bring value to their local communities and go beyond the limitations.`,
+    image: "local-expertise-logo.jpg",
   },
   {
     id: 3,
-    title: "Community conservation",
-    detail: `We create opportunities to protect biodiversity and make local
-    communities participate as much as possible in local projects.
-   `,
-    image: "testing/test (3).jpg",
+    title: "Wise technologies support",
+    detail: `We support state of the art renewable energy generators and pollution-control technologies when they are used wisely with a minimal carbon footprint and low social cost.`,
+    image: "wise-logo.jpg",
   },
   {
     id: 4,
-    title: "Community ",
-    detail: `
-    This generates work and shared trust in the future.`,
-    // image: 'about_5.png',
-    image: "testing/test (4).jpg",
+    title: "Trees plantation",
+    detail: `Reforestation projects bring life and biodiversity. They help the environment and in some cases people living in the forests. Planting trees is doing more than carbon capture. We can help.`,
+    image: "trees-plantation-logo.jpg",
   },
 ];
 const Impact = () => {
@@ -42,27 +34,40 @@ const Impact = () => {
     <section className="about-impact-section">
       <div className="about-impact-div ">
         <h2 className="about-impact-header ">Your impact</h2>
+        <p className="about-impact-text">
+          Beyond your expected earnings, your contribution is bringing much more
+          to people and communities.
+        </p>
         {/* Dynamic */}
         <div className="about-impact-body-div ">
           <div className="about-impact-left">
             <img
               className=""
-              src={`/images/${impactdata?.filter((data) => data.id === impactDetail)[0].image}`}
+              src={`/images/${
+                impactdata?.filter((data) => data.id === impactDetail)[0].image
+              }`}
             />
             <div className="about-impact-right">
               <h3 className="about-impact-right-header ">
-                {impactdata?.filter((data) => data.id === impactDetail)[0].title}
+                {
+                  impactdata?.filter((data) => data.id === impactDetail)[0]
+                    .title
+                }
               </h3>
               <p className="about-impact-right-prep ">
-                {impactdata?.filter((data) => data.id === impactDetail)[0].detail}
+                {
+                  impactdata?.filter((data) => data.id === impactDetail)[0]
+                    .detail
+                }
               </p>
             </div>
           </div>
           <div className="image-list mt-6">
-            {impactdata?.map((img) => {
+            {impactdata?.map((img, i) => {
               return (
                 <>
                   <img
+                    key={i}
                     src={`/images/${img.image}`}
                     className={`cursor-pointer  ${
                       img.id === impactDetail && "border-8 border-[#4E62EE] "
@@ -70,6 +75,7 @@ const Impact = () => {
                     onClick={() => {
                       setImpactDetail(img.id);
                     }}
+                    alt="image"
                   />
                 </>
               );

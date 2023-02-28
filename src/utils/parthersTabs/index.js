@@ -34,34 +34,44 @@ const user = [
   },
 ];
 
-const Index = () => {
+const Index = ({ homePage }) => {
   const [openTab, setOpenTab] = useState(0);
 
   return (
     <div className="investing-tab-section">
       <div className="user-tabs">
-        {user.map((item, index) => (
+        {homePage?.partners.map((item, index) => (
           <div
             key={index}
             onClick={() => setOpenTab(index)}
-            className={openTab === index ? "user-tab-card active" : "user-tab-card"}
+            className={
+              openTab === index ? "user-tab-card active" : "user-tab-card"
+            }
           >
-            <img src="/images/user.png" alt="user" className="user-img" />
+            <img
+              src={item.fields.logo[0].fields.file.url}
+              alt="user"
+              className="user-img"
+            />
             <div className="user-detail">
-              <h4 className="user-tab-name">{item.userName}</h4>
-              <h5 className="user-tab-cate">{item.userCat}</h5>
+              <h4 className="user-tab-name">{item.fields.userName}</h4>
+              <h5 className="user-tab-cate">{item.fields.userCate}</h5>
             </div>
           </div>
         ))}
       </div>
-      {user.map((item, index) => {
+      {homePage?.partners.map((item, index) => {
         return (
           openTab === index && (
             <div key={index} className="user-tab-about">
-              <h2 className="tab-about-heading">{item.aboutHeading}</h2>
-              <Image src="/images/star.svg" alt="" width={80} height={16} />
+              <h2 className="tab-about-heading">{item.fields.aboutHeading}</h2>
+              <Image src="/images/star.svg" alt="star" width={80} height={16} />
               <p className="user-tab-about-para">
-                {item.aboutPara1} <br /> <br /> {item.aboutPara2}
+                {/* {item.aboutPara1} <br /> <br /> {item.aboutPara2} */}
+                {item.fields.aboutText.slice(0, 124)}
+              </p>
+              <p className="user-tab-about-para">
+                {item.fields.aboutText.slice(124)}
               </p>
             </div>
           )

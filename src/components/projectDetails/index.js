@@ -114,9 +114,9 @@ export default function ProjectDetailSection() {
         </div>
         <div className="popular-project-slider ">
           <Slider {...settings}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team) => {
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((team, i) => {
               return (
-                <div className="px-[12px]">
+                <div key={i} className="px-[12px]">
                   <ProjectCard
                     hemergyIcon="/images/air.svg"
                     bio="It is a long established fact that a reader will be distracted."

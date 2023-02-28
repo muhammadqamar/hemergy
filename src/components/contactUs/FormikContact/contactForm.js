@@ -119,7 +119,7 @@ const ContactForm = () => {
                     : "mail-box bottom-[10px]"
                 }
                 src="/images/mail-logo.png"
-                alt=""
+                alt="mail"
                 width={20}
                 height={20}
               />
@@ -150,7 +150,7 @@ const ContactForm = () => {
               <p className="send-text">Send</p>
               <Image
                 src="/images/send-logo.png"
-                alt=""
+                alt="send"
                 width={20}
                 height={20}
               />

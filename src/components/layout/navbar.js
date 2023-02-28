@@ -14,38 +14,59 @@ const Navbar = () => {
       <div className="nav-container">
         <div className="main-nav-wrapper">
           <Link href="/" className="nav-logo">
-            <Image src="/images/hemergy-logo.svg" alt="hemergy logo" width={150} height={32} />
+            <Image
+              src="/images/hemergy-logo.svg"
+              alt="hemergy logo"
+              width={150}
+              height={32}
+            />
           </Link>
           <div className="nav-links-box">
             <Link
               href="/how-it-work"
-              className={currentRoute === `/how-it-work` ? `nav-link active-link` : `nav-link`}
+              className={
+                currentRoute === `/how-it-work`
+                  ? `nav-link active-link`
+                  : `nav-link`
+              }
             >
               How it works
             </Link>
             <Link
               href="/about"
-              className={currentRoute === `/about` ? `nav-link active-link` : `nav-link`}
+              className={
+                currentRoute === `/about` ? `nav-link active-link` : `nav-link`
+              }
             >
               About
             </Link>
             <Link
               href="/for-investors-projects"
               className={
-                currentRoute === `/for-investors-projects` ? `nav-link active-link` : `nav-link`
+                currentRoute === `/for-investors-projects`
+                  ? `nav-link active-link`
+                  : `nav-link`
               }
             >
               Projects
             </Link>
             <Link
               href="/for-business"
-              className={currentRoute === `/for-business` ? `nav-link active-link` : `nav-link`}
+              className={
+                currentRoute === `/for-business`
+                  ? `nav-link active-link`
+                  : `nav-link`
+              }
             >
               For Businesses
             </Link>
             <Link
               href="/contact-us"
-              className={currentRoute === `/contact-us` ? `nav-link active-link` : `nav-link`}
+              className={
+                currentRoute === `/contact-us`
+                  ? `nav-link active-link`
+                  : `nav-link`
+              }
             >
               Get in touch
             </Link>
@@ -62,7 +83,10 @@ const Navbar = () => {
               Sign in
             </Link>
 
-            <Link href="/register" className={menu === true ? "hidden" : "btn secondary"}>
+            <Link
+              href="/register"
+              className={menu === true ? "hidden" : "btn secondary"}
+            >
               Get started
             </Link>
 
@@ -78,7 +102,7 @@ const Navbar = () => {
             >
               <Image
                 src={menu === true ? "/images/close.svg" : "/images/menu.svg"}
-                alt=""
+                alt="close"
                 width={20}
                 height={20}
               />

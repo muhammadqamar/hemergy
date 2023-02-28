@@ -11,7 +11,8 @@ const data = [
   {
     title: "Ahmed Belabdia",
     desg: "Founder",
-    detail: "It is a long established fact that a reader will be distracted by...",
+    detail:
+      "It is a long established fact that a reader will be distracted by...",
     image: "/images/about_team (1).svg",
   },
   {
@@ -54,9 +55,9 @@ const AboutTeam = () => {
         <h3 className="about-team-title ">The team</h3>
         <div className="team-slider pb-0 md:pb-[140px]">
           <Slider {...settings}>
-            {data?.map((team) => {
+            {data?.map((team, index) => {
               return (
-                <div className="pb-[60px]">
+                <div key={index} className="pb-[60px]">
                   <TeamCard team={team} />
                 </div>
               );

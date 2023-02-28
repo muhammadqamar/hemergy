@@ -23,7 +23,7 @@ const Index = ({ homePage }) => {
           Hear from our partners
         </h1>
         <div className="relative">
-          <PartnersTab />
+          <PartnersTab homePage={homePage} />
         </div>
         <div className="white-wather-bg" />
       </div>

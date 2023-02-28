@@ -3,9 +3,9 @@
 }
 
 .api-heading {
-  @apply font-semibold text-[32px] lg:text-[40px] leading-[48px] text-textcolor mb-6;
+  @apply font-semibold text-[32px] lg:text-[40px] leading-[48px] text-textcolor mb-6 font-Poppins;
 }
 
 .api-about {
-  @apply w-full md:w-[499px] font-normal text-[20px] leading-[30px] text-textcolor mb-[32px];
+  @apply w-full md:w-[499px] font-normal text-[20px] leading-[30px] text-textcolor mb-[32px] font-Poppins;
 }

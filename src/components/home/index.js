@@ -20,7 +20,7 @@ const Index = ({ homePage }) => {
       />
       <Contribute homePage={homePage} />
       <CalculatorSection homePage={homePage} />
-      <PlanetToday />
+      <PlanetToday homePage={homePage} />
     </div>
   );
 };

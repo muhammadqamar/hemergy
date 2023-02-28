@@ -54,6 +54,7 @@ const Discoverd = () => {
                   width={520}
                   height={346}
                   src={items.img}
+                  alt="image"
                 />
                 <div className="text-center w-[296px] ">
                   <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">
@@ -77,6 +78,7 @@ const Discoverd = () => {
                       width={520}
                       height={346}
                       src={items.img}
+                      alt="image"
                     />
                   </div>
                   <div className="text-center w-[296px] mx-auto mt-8">

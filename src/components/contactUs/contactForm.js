@@ -1,8 +1,8 @@
 import React from "react";
 import { Formik } from "formik";
 import Image from "next/image";
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import axios from "axios";
+import { toast } from "react-toastify";
 const ContactForm = () => {
   return (
     <Formik
@@ -13,7 +13,7 @@ const ContactForm = () => {
         // country: "",
         // address: "",
         email: "",
-        message: ""
+        message: "",
       }}
       validate={(values) => {
         const errors = {};
@@ -37,7 +37,9 @@ const ContactForm = () => {
         // }
         if (!values.email) {
           errors.email = "Required";
-        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
           errors.email = "Invalid email address";
         }
         return errors;
@@ -48,11 +50,10 @@ const ContactForm = () => {
             `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/contact`,
             values
           );
-          setSubmitting(false)
-
+          setSubmitting(false);
 
           if (sendContact?.data?.success) {
-            toast.success('Contact Form Submitted', {
+            toast.success("Contact Form Submitted", {
               position: "bottom-right",
               autoClose: 5000,
               hideProgressBar: false,
@@ -62,11 +63,9 @@ const ContactForm = () => {
               progress: undefined,
               theme: "light",
             });
-
           }
-
         } catch (error) {
-          setSubmitting(false)
+          setSubmitting(false);
           toast.error(error?.response?.data?.status || error.message, {
             position: "bottom-right",
             autoClose: 5000,
@@ -77,10 +76,8 @@ const ContactForm = () => {
             progress: undefined,
             theme: "light",
           });
-
         }
       }}
-
     >
       {({
         values,
@@ -106,7 +103,9 @@ const ContactForm = () => {
                   onBlur={handleBlur}
                   value={values.name}
                 />
-                <p className="error p-x-sm">{errors.name && touched.name && errors.name}</p>
+                <p className="error p-x-sm">
+                  {errors.name && touched.name && errors.name}
+                </p>
               </div>
               <div className="label-box">
                 <label>Last name</label>
@@ -136,13 +135,19 @@ const ContactForm = () => {
                 placeholder="name@address.com"
               />
               <Image
-                className={errors.email ? "mail-box bottom-[23px]" : "mail-box bottom-[10px]"}
+                className={
+                  errors.email
+                    ? "mail-box bottom-[23px]"
+                    : "mail-box bottom-[10px]"
+                }
                 src="/images/mail-logo.png"
-                alt=""
+                alt="mail"
                 width={20}
                 height={20}
               />
-              <p className="error p-x-sm">{errors.email && touched.email && errors.email}</p>
+              <p className="error p-x-sm">
+                {errors.email && touched.email && errors.email}
+              </p>
             </div>
             <div className="label-box">
               <label>Your message</label>
@@ -160,11 +165,24 @@ const ContactForm = () => {
               </p>
             </div>
             <button className="send-btn" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? <Image src="/images/loader.svg" alt="google" width={20} height={20} /> : <>
-                <p className="send-text">Send</p>
-                <Image src="/images/send-logo.png" alt="" width={20} height={20} />
-              </>}
-
+              {isSubmitting ? (
+                <Image
+                  src="/images/loader.svg"
+                  alt="google"
+                  width={20}
+                  height={20}
+                />
+              ) : (
+                <>
+                  <p className="send-text">Send</p>
+                  <Image
+                    src="/images/send-logo.png"
+                    alt="send"
+                    width={20}
+                    height={20}
+                  />
+                </>
+              )}
             </button>
           </form>
         </>

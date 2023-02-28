@@ -29,7 +29,7 @@ export async function fetchHomePage(locale, query) {
       contentType: "homepage",
       locale,
     },
-    { ...query, include: 2 }
+    { ...query }
   );
   const docs =
     entries?.map((entry) => ({
@@ -37,6 +37,37 @@ export async function fetchHomePage(locale, query) {
       locale: entry.sys.locale,
       id: entry.sys.id,
     })) || [];
+
+  return docs[0];
+}
+// export async function fetchHowItWorkPage(locale, query) {
+//   const entries = await fetchEntries(
+//     {
+//       contentType: "howItWorkPage",
+//       locale,
+//     },
+//     { ...query, include: 2 }
+//   );
+//   const docs =
+//     entries?.map((entry) => ({
+//       ...entry.fields,
+//       locale: entry.sys.locale,
+//       id: entry.sys.id,
+//     })) || [];
+
+//   return docs[0];
+// }
+export async function fetchHowItWorkPage(locale, query) {
+  const entries = await fetchEntries(
+    {
+      contentType: "howItWorkPage",
+      locale,
+    },
+    { ...query }
+  );
+
+  const docs =
+    entries?.map((entry) => ({ ...entry.fields, id: entry.sys.id })) || [];
 
   return docs[0];
 }
