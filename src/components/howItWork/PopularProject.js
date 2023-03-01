@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import ProjectCard from "@/utils/projectCard";
 import Link from "next/link";
 import Image from "next/image";
-const PopularProject = () => {
+const PopularProject = ({ howItWorkPage }) => {
   const settings = {
     arrows: false,
     dots: false,
@@ -26,6 +26,7 @@ const PopularProject = () => {
     <div className=" hiw-pp-section ">
       <div className="hiw-pp-div">
         <DemoCard
+          howItWorkPage={howItWorkPage}
           heading="Start investing in the 
           future of our planet today!"
           desc="No hidden fees, just transparent projects.

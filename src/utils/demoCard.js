@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import CalendlyModal from "@/utils/calendly";
-const DemoCard = ({ showIcon, heading, desc, btnText }) => {
+const DemoCard = ({ showIcon, heading, desc, btnText, howItWorkPage }) => {
   return (
     <div
       className={`api-card-box  ${

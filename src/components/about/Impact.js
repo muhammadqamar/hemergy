@@ -7,7 +7,7 @@ const impactdata = [
     title: "Community conservation",
     detail: ` We create opportunities to make local communities participate as much as possible in local projects. This generates work and shared trust in the future.
     `,
-    image: "community-logo.jpg",
+    image: "community-conservation.jpeg",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const impactdata = [
     id: 4,
     title: "Trees plantation",
     detail: `Reforestation projects bring life and biodiversity. They help the environment and in some cases people living in the forests. Planting trees is doing more than carbon capture. We can help.`,
-    image: "trees-plantation-logo.jpg",
+    image: "trees-plantation.jpeg",
   },
 ];
 const Impact = () => {

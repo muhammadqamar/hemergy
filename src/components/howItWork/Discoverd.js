@@ -24,7 +24,7 @@ const discoverd = [
   },
 ];
 
-const Discoverd = () => {
+const Discoverd = ({ howItWorkPage }) => {
   const settings = {
     arrows: true,
     dots: false,
@@ -33,6 +33,11 @@ const Discoverd = () => {
     slidesToScroll: 1,
   };
 
+  // {
+  //   const logo = howItWorkPage?.discover.map(
+  //     (item) => item.fields.logo[0].fields.file.url
+  //   );
+  // }
   return (
     // h-auto
     <div className=" hiw-discoverd-section ">
@@ -40,7 +45,7 @@ const Discoverd = () => {
         {/* Start */}
         <section className=" relative lg:absolute z-[1] w-full left-0 mb-[104px] lg:mb-0">
           <div className="mt-[76px] mb-40 hidden  lg:flex flex-col gap-20 relative ">
-            {discoverd.map((items, index) => (
+            {howItWorkPage?.discover.map((item, index) => (
               <div
                 key={index}
                 className={`flex items-center justify-center ${
@@ -49,19 +54,19 @@ const Discoverd = () => {
                     : `flex-col lg:flex-row gap-[106px]`
                 } `}
               >
-                <Image
+                <img
                   className="object-contain"
                   width={520}
                   height={346}
-                  src={items.img}
+                  src={item.fields.logo[0].fields.file.url}
                   alt="image"
                 />
                 <div className="text-center w-[296px] ">
                   <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">
-                    {items.heading}
+                    {item.fields.heading}
                   </h2>
                   <p className="p-lg text-weight-normal text-textcolor">
-                    {items.desc}
+                    {item.fields.description}
                   </p>
                 </div>
               </div>
@@ -70,23 +75,23 @@ const Discoverd = () => {
 
           <div className="discover__slider block lg:hidden">
             <Slider {...settings}>
-              {discoverd.map((items, index) => (
+              {howItWorkPage?.discover.map((item, index) => (
                 <div key={index} className="">
                   <div className="w-[274px] h-auto sm:w-auto mx-auto ">
-                    <Image
+                    <img
                       className="mx-auto"
                       width={520}
                       height={346}
-                      src={items.img}
+                      src={item.fields.logo[0].fields.file.url}
                       alt="image"
                     />
                   </div>
                   <div className="text-center w-[296px] mx-auto mt-8">
                     <h2 className="text-textcolor p-xl-semi mb-2 font-semibold">
-                      {items.heading}
+                      {item.fields.heading}
                     </h2>
                     <p className="p-lg text-weight-normal text-textcolor">
-                      {items.desc}
+                      {item.fields.description}
                     </p>
                   </div>
                 </div>
