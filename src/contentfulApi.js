@@ -71,6 +71,23 @@ export async function fetchHowItWorkPage(locale, query) {
 
   return docs[0];
 }
+export async function fetchAboutPage(locale, query) {
+  const entries = await fetchEntries(
+    {
+      contentType: "aboutPage",
+      locale,
+    },
+    { ...query }
+  );
+  const docs =
+    entries?.map((entry) => ({
+      ...entry.fields,
+      locale: entry.sys.locale,
+      id: entry.sys.id,
+    })) || [];
+
+  return docs[0];
+}
 // export async function fetchContribute(locale, query) {
 //   const entries = await fetchEntries(
 //     {

@@ -19,6 +19,8 @@ const HeroBanner = ({
   home,
   weather,
   homePage,
+  howItWorkPage,
+  aboutPage,
 }) => {
   const [activeHemergy, setActiveHemergy] = useState("sun");
   useEffect(() => {
@@ -54,16 +56,20 @@ const HeroBanner = ({
               heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
           {heroTitle2 && (
             <div className="mb-4 mx-auto max-w-[592px] ">
-              {pageName && (
+              {howItWorkPage && (
                 // how it works : heading
                 <h3 className="font-medium text-white p-xl-semi ">
-                  {pageName}
+                  {howItWorkPage.heroHeading}
                 </h3>
               )}
-              {/* for contributors heading*/}
-              <h1 className="my-4 p-2xl">{heroTitle2}</h1>
+              {/* howitworkpage & aboutpage heading , subheading */}
+              <h1 className="my-4 p-2xl">
+                {(howItWorkPage && howItWorkPage.heroSubHeading) ||
+                  aboutPage.aboutHeading}
+              </h1>
               <span className="font-normal text-white p-lg opacity-80">
-                {btnLabel}
+                {(howItWorkPage && howItWorkPage.heroLabelText) ||
+                  aboutPage.aboutText}
               </span>
             </div>
           )}
@@ -80,10 +86,9 @@ const HeroBanner = ({
                 {documentToReactComponents(homePage?.subheading)}
               </h3>
             ))}
-          {(homePage && (
+          {homePage && (
             <h3 className="block sub-heading about-w sm:flex">
-              {/* {para3} */}
-              {homePage?.bannerSubText}
+              {homePage && homePage?.bannerSubText}
               {weather && (
                 <div>
                   {activeHemergy == "wind" && (
@@ -122,10 +127,10 @@ const HeroBanner = ({
                 </div>
               )}
             </h3>
-          )) ||
-            (para3 && (
-              <h3 className="block sub-heading about-w sm:flex">{para3}</h3>
-            ))}
+          )}
+          {para3 && (
+            <h3 className="block sub-heading about-w sm:flex">{para3}</h3>
+          )}
           {(homePage && (
             <Link
               href=""

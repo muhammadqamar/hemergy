@@ -14,7 +14,7 @@ const Index = ({ homePage }) => {
         para1="Hemergy is a cutting-edge"
         boldPara="renewable energies"
         para2="investment platform"
-        para3="See what you earn from"
+        // para3="See what you earn from"
         weather
         bannerImg1="/images/home-banner.png"
       />

@@ -28,7 +28,7 @@ const impactdata = [
     image: "trees-plantation.jpeg",
   },
 ];
-const Impact = () => {
+const Impact = ({ aboutPage }) => {
   const [impactDetail, setImpactDetail] = useState(1);
   return (
     <section className="about-impact-section">

@@ -2,10 +2,10 @@ import React from "react";
 import Layout from "@/components/layout";
 import ForBusi from "@/components/forBusiness";
 import { fetchHomePage } from "../contentfulApi";
-const Forbusiness = ({ homePage }) => {
+const Forbusiness = () => {
   return (
     <Layout>
-      <ForBusi homePage={homePage} />
+      <ForBusi />
     </Layout>
   );
 };
