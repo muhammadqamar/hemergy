@@ -2,7 +2,7 @@ import HeroBanner from "@/utils/heroBanner";
 import PartnersTab from "@/utils/parthersTabs";
 import Contribute from "./contribute";
 
-const Index = ({ homePage }) => {
+const Index = ({ homePage, busninessPage }) => {
   return (
     <div>
       <HeroBanner
@@ -23,7 +23,7 @@ const Index = ({ homePage }) => {
           Hear from our partners
         </h1>
         <div className="relative">
-          <PartnersTab homePage={homePage} />
+          <PartnersTab homePage={homePage} busninessPage={busninessPage} />
         </div>
         <div className="white-wather-bg" />
       </div>

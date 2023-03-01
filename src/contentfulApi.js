@@ -88,6 +88,23 @@ export async function fetchAboutPage(locale, query) {
 
   return docs[0];
 }
+export async function fetchForBusinessPage(locale, query) {
+  const entries = await fetchEntries(
+    {
+      contentType: "forBusinessPage",
+      locale,
+    },
+    { ...query }
+  );
+  const docs =
+    entries?.map((entry) => ({
+      ...entry.fields,
+      locale: entry.sys.locale,
+      id: entry.sys.id,
+    })) || [];
+
+  return docs[0];
+}
 // export async function fetchContribute(locale, query) {
 //   const entries = await fetchEntries(
 //     {

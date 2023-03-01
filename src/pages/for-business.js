@@ -1,22 +1,22 @@
 import React from "react";
 import Layout from "@/components/layout";
 import ForBusi from "@/components/forBusiness";
-import { fetchHomePage } from "../contentfulApi";
-const Forbusiness = () => {
+import { fetchForBusinessPage } from "../contentfulApi";
+const Forbusiness = ({ busninessPage }) => {
   return (
     <Layout>
-      <ForBusi />
+      <ForBusi busninessPage={busninessPage} />
     </Layout>
   );
 };
 
 export default Forbusiness;
 export async function getStaticProps() {
-  const homePage = await fetchHomePage();
+  const busninessPage = await fetchForBusinessPage();
 
   return {
     props: {
-      homePage,
+      busninessPage,
     },
   };
 }
