@@ -37,26 +37,30 @@ const HeroBanner = ({
       <div
         className={`home-hero-wrapper pt-[208px] md:pt-[131px] pb-0 md:pb-[165px] ${
           heroTitle2 &&
-          btnIcon &&
+          // btnIcon &&
           `justify-center text-center px-6 pt-[176px] pb-[193px] md:pb-[379px]`
         }  ${paddingBottom && `pb-4 md:pb-[245px]`}`}
       >
         <div className={`hero-content ${heroTitle2 && `mx-auto`}`}>
           {home
-            ? heroTitle && (
+            ? // homepage banner heading
+              heroTitle && (
                 <h1 className="main-heading">
                   {homePage.heading.slice(0, 14)} <br />
                   {homePage.heading.slice(14)}
                 </h1>
               )
-            : heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
+            : // For businesses banner heading
+              heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
           {heroTitle2 && (
             <div className="mb-4 mx-auto max-w-[592px] ">
               {pageName && (
+                // how it works : heading
                 <h3 className="font-medium text-white p-xl-semi ">
                   {pageName}
                 </h3>
               )}
+              {/* for contributors heading*/}
               <h1 className="my-4 p-2xl">{heroTitle2}</h1>
               <span className="font-normal text-white p-lg opacity-80">
                 {btnLabel}
