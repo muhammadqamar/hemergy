@@ -5,11 +5,7 @@ const OurMission = ({ aboutPage }) => {
   return (
     <section className="about-our-mission-div">
       <div className="flex-shrink-0">
-        <img
-          src={aboutPage.leftLogo.fields.file.url}
-          alt="heart-1"
-          className="heart-1"
-        />
+        <img src={aboutPage.leftLogo.fields.file.url} alt="heart-1" className="heart-1" />
       </div>
       <div className="about-our-mission-detail">
         <h2 className="detail-header ">{aboutPage.missionHeading}</h2>
@@ -18,17 +14,13 @@ const OurMission = ({ aboutPage }) => {
         <p className="detail-prep">{aboutPage.missionText.slice(207, 339)}</p>
         <p className="detail-prep">{aboutPage.missionText.slice(339)}</p>
         <div className="mt-12 flex justify-center">
-          <Link href="" className="btn Primary">
+          <Link href="/register" className="btn Primary">
             Get started
           </Link>
         </div>
       </div>
       <div className="flex-shrink-0">
-        <img
-          src={aboutPage.rightLogo.fields.file.url}
-          alt="heart-2"
-          className="heart-2"
-        />
+        <img src={aboutPage.rightLogo.fields.file.url} alt="heart-2" className="heart-2" />
       </div>
     </section>
   );

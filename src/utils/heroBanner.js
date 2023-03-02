@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import CalendlyModal from "@/utils/calendly";
+import Forbusiness from "@/pages/for-business";
 
 const HeroBanner = ({
   heroTitle,
@@ -21,6 +23,8 @@ const HeroBanner = ({
   homePage,
   howItWorkPage,
   aboutPage,
+  btnLInk,
+  forBusiness,
 }) => {
   const [activeHemergy, setActiveHemergy] = useState("sun");
   useEffect(() => {
@@ -58,18 +62,14 @@ const HeroBanner = ({
             <div className="mb-4 mx-auto max-w-[592px] ">
               {howItWorkPage && (
                 // how it works : heading
-                <h3 className="font-medium text-white p-xl-semi ">
-                  {howItWorkPage.heroHeading}
-                </h3>
+                <h3 className="font-medium text-white p-xl-semi ">{howItWorkPage.heroHeading}</h3>
               )}
               {/* howitworkpage & aboutpage heading , subheading */}
               <h1 className="my-4 p-2xl">
-                {(howItWorkPage && howItWorkPage.heroSubHeading) ||
-                  aboutPage.aboutHeading}
+                {(howItWorkPage && howItWorkPage.heroSubHeading) || aboutPage.aboutHeading}
               </h1>
               <span className="font-normal text-white p-lg opacity-80">
-                {(howItWorkPage && howItWorkPage.heroLabelText) ||
-                  aboutPage.aboutText}
+                {(howItWorkPage && howItWorkPage.heroLabelText) || aboutPage.aboutText}
               </span>
             </div>
           )}
@@ -82,9 +82,7 @@ const HeroBanner = ({
             </>
           )) ||
             (homePage && (
-              <h3 className="sub-heading ">
-                {documentToReactComponents(homePage?.subheading)}
-              </h3>
+              <h3 className="sub-heading ">{documentToReactComponents(homePage?.subheading)}</h3>
             ))}
           {homePage && (
             <h3 className="block sub-heading about-w sm:flex">
@@ -93,34 +91,17 @@ const HeroBanner = ({
                 <div>
                   {activeHemergy == "wind" && (
                     <span className="wind ">
-                      <Image
-                        src="/images/air.svg"
-                        width={32}
-                        height={32}
-                        alt="wind"
-                      />{" "}
-                      Wind
+                      <Image src="/images/air.svg" width={32} height={32} alt="wind" /> Wind
                     </span>
                   )}
                   {activeHemergy == "sun" && (
                     <span className="sun">
-                      <Image
-                        src="/images/clear_day_w.svg"
-                        width={32}
-                        height={32}
-                        alt="wind"
-                      />{" "}
-                      Sun
+                      <Image src="/images/clear_day_w.svg" width={32} height={32} alt="wind" /> Sun
                     </span>
                   )}
                   {activeHemergy == "biomass" && (
                     <span className="bio">
-                      <Image
-                        src="/images/humidity_low.svg"
-                        width={32}
-                        height={32}
-                        alt="wind"
-                      />{" "}
+                      <Image src="/images/humidity_low.svg" width={32} height={32} alt="wind" />{" "}
                       Biomass
                     </span>
                   )}
@@ -128,54 +109,28 @@ const HeroBanner = ({
               )}
             </h3>
           )}
-          {para3 && (
-            <h3 className="block sub-heading about-w sm:flex">{para3}</h3>
+          {para3 && <h3 className="block sub-heading about-w sm:flex">{para3}</h3>}
+
+          {forBusiness && (
+            <CalendlyModal btnText={btnText} url={"https://calendly.com/ahmed-belabdia"} />
           )}
           {(homePage && (
             <Link
-              href=""
-              className={`btn Primary w-max bg-btncolor ${
-                btnIcon && `icon-btn`
-              }`}
+              href={btnLInk}
+              className={`btn Primary w-max bg-btncolor ${btnIcon && `icon-btn`}`}
             >
               {homePage?.bannerButton}
             </Link>
           )) ||
-            (btnText && (
-              <Link
-                href=""
-                className={`btn Primary w-max bg-btncolor ${
-                  btnIcon && `icon-btn`
-                }`}
-              >
-                {btnText}
-                {btnIcon && (
-                  <Image src={btnIcon} alt="expand" width={24} height={24} />
-                )}
-              </Link>
-            )) ||
             (btnIcon && (
-              <Link
-                href=""
-                className={`btn Primary w-max bg-btncolor ${
-                  btnIcon && `icon-btn`
-                }`}
-              >
-                {btnIcon && (
-                  <Image src={btnIcon} alt="expand" width={24} height={24} />
-                )}
+              <Link href="" className={`btn Primary w-max bg-btncolor ${btnIcon && `icon-btn`}`}>
+                {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
               </Link>
             ))}
         </div>
-        {(bannerImg1 && (
-          <img src={bannerImg1} className="hero-banners" alt="banner" />
-        )) ||
+        {(bannerImg1 && <img src={bannerImg1} className="hero-banners" alt="banner" />) ||
           (homePage && (
-            <img
-              src={homePage?.bannerLogo.fields.file.url}
-              className="hero-banners"
-              alt="banner"
-            />
+            <img src={homePage?.bannerLogo.fields.file.url} className="hero-banners" alt="banner" />
           ))}
         {/* <div className="hero-banner-img">
             {bannerStar && <img src={bannerStar} className="hero-start" alt="banner" />}

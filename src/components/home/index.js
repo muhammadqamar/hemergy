@@ -8,6 +8,7 @@ const Index = ({ homePage }) => {
     <div>
       <HeroBanner
         homePage={homePage}
+        btnLInk="/register"
         home
         heroTitle="Invest in the future of our planet"
         btnText="Get started"

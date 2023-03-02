@@ -6,7 +6,7 @@ const Index = ({ homePage, busninessPage }) => {
   return (
     <div>
       <HeroBanner
-        homePage={homePage}
+        forBusiness
         heroTitle="Integrate with connected finance for sustainability"
         btnText="Book a demo"
         para1="Build your sustainable digital"

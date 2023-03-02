@@ -33,3 +33,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   @apply border-none bg-[transparent] shadow-[none];
   -webkit-appearance: none;
 }
+
+.paybtn {
+  @apply w-fit h-auto  px-3 py-[6px] rounded-xl;
+}
