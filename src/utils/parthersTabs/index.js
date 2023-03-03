@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const Index = ({ homePage }) => {
+const Index = ({ partners }) => {
   const [openTab, setOpenTab] = useState(0);
 
   return (
     <div className="investing-tab-section">
       <div className="user-tabs">
-        {homePage &&
-          homePage?.partners.map((item, index) => (
+        {partners &&
+          partners?.map((item, index) => (
             <div
               key={index}
               onClick={() => setOpenTab(index)}
@@ -22,8 +22,8 @@ const Index = ({ homePage }) => {
             </div>
           ))}
       </div>
-      {homePage &&
-        homePage?.partners.map((item, index) => {
+      {partners &&
+        partners?.map((item, index) => {
           return (
             openTab === index && (
               <div key={index} className="user-tab-about">

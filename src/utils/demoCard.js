@@ -2,7 +2,7 @@ import Image from "next/image";
 import CalendlyModal from "@/utils/calendly";
 import Link from "next/link";
 
-const DemoCard = ({ showIcon, heading, desc, btnText, howItWorkPage }) => {
+const DemoCard = ({ showIcon, heading, desc, btnText }) => {
   return (
     <div className={`api-card-box  ${showIcon ? `py-8 md:pt-14 md:pb-12` : `py-8 md:py-20`}`}>
       {showIcon && <Image src="/images/code.svg" alt="code" width={51} height={51} />}

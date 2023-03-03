@@ -37,6 +37,9 @@
 .about-our-mission-detail .detail-prep {
   @apply mt-4 font-normal text-xl   m-0 text-textcolor;
 }
+.about-our-mission-detail .detail-prep p:not(:last-child) {
+  @apply mb-8;
+}
 
 /*Impact  */
 .about-impact-section {

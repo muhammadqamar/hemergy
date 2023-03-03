@@ -40,6 +40,7 @@ module.exports = {
       mdshadow: "23px 27px 0px rgba(0, 17, 141, 0.1)",
       smshadow: "0 10px 7px -3px rgb(0, 0, 0 ,0.1), 0 4px 6px 7px rgb(0, 0, 0 , 0.1)",
       xsmshadow: "5px 0px 0px rgba(0, 17, 141, 0.2)",
+      xsshadow: "6px 9px 0px rgba(0, 17, 141, 0.1)",
     },
 
     fontFamily: {

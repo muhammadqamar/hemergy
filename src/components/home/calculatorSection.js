@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import InvestmentCard from "./InvestmentCard";
 
 const CalculatorSection = ({ homePage }) => {
+  const { demoCard } = homePage;
   const settings = {
     arrows: false,
     dots: false,
@@ -91,17 +92,10 @@ const CalculatorSection = ({ homePage }) => {
             </Slider>
           </div>
           <div className="planet-about">
-            <h1 className="planet-heading">
-              {/* Start investing in the future of our planet today! */}
-              {homePage?.planetHeading}
-            </h1>
-            <p className="planet-para">
-              {/* No hidden fees, just transparent projects. Contribute to the
-              energy revolution */}
-              {homePage?.planetText}
-            </p>
+            <h1 className="planet-heading">{demoCard[0].fields.boxHeading}</h1>
+            <p className="planet-para">{demoCard[0].fields.boxText}</p>
             <Link href="/register" className="btn Primary">
-              {homePage?.buttonText}
+              {demoCard[0].fields.demoButton}
             </Link>
           </div>
           <div className="wather-haf-white-bg" />
