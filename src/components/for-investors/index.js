@@ -3,7 +3,7 @@ import LocationCard from "@/utils/projectCard";
 import DemoCard from "@/utils/demoCard";
 import Link from "next/link";
 
-const Index = () => {
+const Index = ({ demoCard }) => {
   const user = {
     name: "John Wick",
     designation: "Project Manager",
@@ -57,9 +57,9 @@ const Index = () => {
       </div>
       <div className="w-full relative mt-[-137px] pb-[160px] hidden lg:block">
         <DemoCard
-          heading="Host your own projects on our platform!"
-          desc="We offer the ability for project holders to create projects on our platform and make use of our asset-backed securities API"
-          btnText="Find out more"
+          heading={demoCard[0].fields.boxHeading}
+          desc={demoCard[0].fields.boxText}
+          btnText={demoCard[0].fields.demoButton}
         />
       </div>
     </div>

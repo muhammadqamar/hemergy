@@ -1,30 +1,7 @@
 import Image from "next/image";
 import Slider from "react-slick";
 
-const discoverd = [
-  {
-    img: "/images/Home-1.png",
-    heading: "Discover",
-    desc: "high impact projects and profiles of project holders",
-  },
-  {
-    img: "/images/Home-2.png",
-    heading: "Contribute",
-    desc: "to projects or buy shares in existing facilities using crypto and fiat …",
-  },
-  {
-    img: "/images/Home-3.png",
-    heading: "Collect",
-    desc: "returns on contributions in your bank account or your crypto wallet.",
-  },
-  {
-    img: "/images/Home-4.png",
-    heading: "See your impact",
-    desc: "and prove it to the whole world using verifiable certificates.",
-  },
-];
-
-const Discoverd = ({ howItWorkPage }) => {
+const Discoverd = ({ discover }) => {
   const settings = {
     arrows: true,
     dots: false,
@@ -45,7 +22,7 @@ const Discoverd = ({ howItWorkPage }) => {
         {/* Start */}
         <section className=" relative lg:absolute z-[1] w-full left-0 mb-[104px] lg:mb-0">
           <div className="mt-[76px] mb-40 hidden  lg:flex flex-col gap-20 relative ">
-            {howItWorkPage?.discover.map((item, index) => (
+            {discover?.map((item, index) => (
               <div
                 key={index}
                 className={`flex items-center justify-center ${
@@ -75,7 +52,7 @@ const Discoverd = ({ howItWorkPage }) => {
 
           <div className="discover__slider block lg:hidden">
             <Slider {...settings}>
-              {howItWorkPage?.discover.map((item, index) => (
+              {discover?.map((item, index) => (
                 <div key={index} className="">
                   <div className="w-[274px] h-auto sm:w-auto mx-auto ">
                     <img

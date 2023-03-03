@@ -3,19 +3,25 @@ import PartnersTab from "@/utils/parthersTabs";
 import Contribute from "./contribute";
 
 const Index = ({ homePage, busninessPage }) => {
+  console.log("busninessPage", busninessPage);
+  const { banner, demoCard, cards } = busninessPage;
   return (
     <div>
       <HeroBanner
         forBusiness
-        heroTitle={busninessPage?.banner.fields.mainHeading}
-        subHeading={busninessPage?.banner.fields.subHeading}
-        mainText={busninessPage?.banner.fields.mainText}
+        heroTitle={banner?.fields.mainHeading}
+        subHeading={banner?.fields.subHeading}
+        mainText={banner?.fields.mainText}
         btnText="Book a demo"
-        bannerImg1={busninessPage?.banner.fields.bannerImage.fields?.file?.url}
+        bannerImg1={banner?.fields.bannerImage.fields?.file?.url}
         paddingBottom
       />
 
-      <Contribute />
+      <Contribute
+        demoCard={demoCard}
+        cards={cards}
+        busninessPage={busninessPage}
+      />
 
       <div className="calculator-main-section pt-[180px] md:pt-[251px] pb-0 md:pb-[170px] lg:pb-[220px] ">
         <h1 className="text-[32px] md:text-5xl font-semibold leading-[48px] md:leading-[62px] text-textcolor text-center mb-6 md:mb-20">

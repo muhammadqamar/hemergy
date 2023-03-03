@@ -36,8 +36,9 @@ const HeroBanner = ({
     <div className="hero-container ">
       <div
         className={`home-hero-wrapper pt-[208px] md:pt-[131px] pb-0 md:pb-[165px] ${
-          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[193px] md:pb-[379px]`
-        }  ${paddingBottom && `pb-4 md:pb-[220px]`}`}
+          heroTitle2 &&
+          `justify-center text-center px-6 pt-[176px] pb-[193px] md:pb-[379px]`
+        }  ${paddingBottom && `pb-4 md:pb-[245px]`}`}
       >
         <div className={`hero-content ${heroTitle2 && `mx-auto`}`}>
           {home
@@ -49,12 +50,22 @@ const HeroBanner = ({
             : heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
           {heroTitle2 && (
             <div className="mb-4 mx-auto max-w-[592px] ">
-              {pageName && <h3 className="font-medium text-white p-xl-semi ">{pageName}</h3>}
+              {pageName && (
+                <h3 className="font-medium text-white p-xl-semi ">
+                  {pageName}
+                </h3>
+              )}
               <h1 className="my-4 p-2xl">{heroTitle2}</h1>
-              <span className="font-normal text-white p-lg opacity-80">{btnLabel}</span>
+              <span className="font-normal text-white p-lg opacity-80">
+                {btnLabel}
+              </span>
             </div>
           )}
-          {subHeading && <h3 className="sub-heading ">{documentToReactComponents(subHeading)}</h3>}
+          {subHeading && (
+            <h3 className="sub-heading ">
+              {documentToReactComponents(subHeading)}
+            </h3>
+          )}
           {mainText && (
             <h3 className="block sub-heading about-w sm:flex">
               {mainText}
@@ -62,17 +73,34 @@ const HeroBanner = ({
                 <div>
                   {activeHemergy == "wind" && (
                     <span className="wind ">
-                      <Image src="/images/air.svg" width={32} height={32} alt="wind" /> Wind
+                      <Image
+                        src="/images/air.svg"
+                        width={32}
+                        height={32}
+                        alt="wind"
+                      />{" "}
+                      Wind
                     </span>
                   )}
                   {activeHemergy == "sun" && (
                     <span className="sun">
-                      <Image src="/images/clear_day_w.svg" width={32} height={32} alt="wind" /> Sun
+                      <Image
+                        src="/images/clear_day_w.svg"
+                        width={32}
+                        height={32}
+                        alt="wind"
+                      />{" "}
+                      Sun
                     </span>
                   )}
                   {activeHemergy == "biomass" && (
                     <span className="bio">
-                      <Image src="/images/humidity_low.svg" width={32} height={32} alt="wind" />{" "}
+                      <Image
+                        src="/images/humidity_low.svg"
+                        width={32}
+                        height={32}
+                        alt="wind"
+                      />{" "}
                       Biomass
                     </span>
                   )}
@@ -81,19 +109,28 @@ const HeroBanner = ({
             </h3>
           )}
           {forBusiness && (
-            <CalendlyModal btnText={btnText} url={"https://calendly.com/ahmed-belabdia"} />
+            <CalendlyModal
+              btnText={btnText}
+              url={"https://calendly.com/ahmed-belabdia"}
+            />
           )}
           {!forBusiness && (
             <Link
               href={btnText ? btnLInk : ""}
-              className={`btn Primary w-max bg-btncolor ${btnIcon && `icon-btn`}`}
+              className={`btn Primary w-max bg-btncolor ${
+                btnIcon && `icon-btn`
+              }`}
             >
               {btnText}
-              {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
+              {btnIcon && (
+                <Image src={btnIcon} alt="expand" width={24} height={24} />
+              )}
             </Link>
           )}
         </div>
-        {bannerImg1 && <img src={bannerImg1} className="hero-banners" alt="banner" />}
+        {bannerImg1 && (
+          <img src={bannerImg1} className="hero-banners" alt="banner" />
+        )}
         {/* <div className="hero-banner-img">
             {bannerStar && <img src={bannerStar} className="hero-start" alt="banner" />}
             <img src={bannerImg1} className="hero-wather" alt="banner" />

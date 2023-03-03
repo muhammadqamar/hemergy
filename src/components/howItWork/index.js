@@ -4,27 +4,28 @@ import HeroBanner from "@/utils/heroBanner";
 import PopularProject from "./PopularProject";
 import DemoCard from "@/utils/demoCard";
 
-const Index = ({ faqPage, howItWorkPage }) => {
+const Index = ({ howItWorkPage }) => {
+  const { banner, allFaqs, discover, demoCard } = howItWorkPage;
   return (
     <div>
       <HeroBanner
-        pageName={howItWorkPage?.banner.fields.mainText}
-        heroTitle2={howItWorkPage?.banner.fields.mainHeading}
-        btnLabel={howItWorkPage?.banner.fields.buttonLabel}
+        pageName={banner.fields.mainText}
+        heroTitle2={banner.fields.mainHeading}
+        btnLabel={banner.fields.buttonLabel}
         btnIcon="/images/w_expand_more.svg"
       />
-      <Discoverd howItWorkPage={howItWorkPage} />
-      <PopularProject howItWorkPage={howItWorkPage} />
+      <Discoverd discover={discover} />
+      <PopularProject demoCard={demoCard} />
       <div className="pt-0 px-6 z-[2] lg:px-0 lg:pt-[480px] w-full relative  mt-[-290px] lg:mt-0">
         <div className="mb-[160px] hidden lg:block">
           <DemoCard
             showIcon
-            heading="Want to use our api?"
-            desc="We provide a white label solution to businesses who want to develop and market their own financial products"
-            btnText="Book a demo"
+            heading={demoCard[1]?.fields.boxHeading}
+            desc={demoCard[1]?.fields.boxText}
+            btnText={demoCard[1]?.fields.demoButton}
           />
         </div>
-        <FAQs faqPage={faqPage} />
+        <FAQs allFaqs={allFaqs} />
       </div>
     </div>
   );
