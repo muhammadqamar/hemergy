@@ -3,8 +3,8 @@ import PartnersTab from "@/utils/parthersTabs";
 import Contribute from "./contribute";
 
 const Index = ({ homePage, busninessPage }) => {
-  console.log("busninessPage", busninessPage);
   const { banner, demoCard, cards } = busninessPage;
+  const { partners } = homePage;
   return (
     <div>
       <HeroBanner
@@ -17,18 +17,14 @@ const Index = ({ homePage, busninessPage }) => {
         paddingBottom
       />
 
-      <Contribute
-        demoCard={demoCard}
-        cards={cards}
-        busninessPage={busninessPage}
-      />
+      <Contribute demoCard={demoCard} cards={cards} busninessPage={busninessPage} />
 
       <div className="calculator-main-section pt-[180px] md:pt-[251px] pb-0 md:pb-[170px] lg:pb-[220px] ">
         <h1 className="text-[32px] md:text-5xl font-semibold leading-[48px] md:leading-[62px] text-textcolor text-center mb-6 md:mb-20">
           Hear from our partners
         </h1>
         <div className="relative">
-          <PartnersTab homePage={homePage} />
+          <PartnersTab partners={partners} />
         </div>
         <div className="white-wather-bg" />
       </div>
