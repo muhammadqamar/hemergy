@@ -7,15 +7,14 @@ const Index = ({ homePage, busninessPage }) => {
     <div>
       <HeroBanner
         forBusiness
-        heroTitle="Integrate with connected finance for sustainability"
+        heroTitle={busninessPage?.banner.fields.mainHeading}
+        subHeading={busninessPage?.banner.fields.subHeading}
+        mainText={busninessPage?.banner.fields.mainText}
         btnText="Book a demo"
-        para1="Build your sustainable digital"
-        boldPara="crowdfunding platform"
-        para2="in days"
-        para3="Reach your ESG goals by issuing and distributing connected financial products on-chain"
-        bannerImg1="/images/business-banner-img.png"
+        bannerImg1={busninessPage?.banner.fields.bannerImage.fields?.file?.url}
         paddingBottom
       />
+
       <Contribute />
 
       <div className="calculator-main-section pt-[180px] md:pt-[251px] pb-0 md:pb-[170px] lg:pb-[220px] ">
@@ -23,7 +22,7 @@ const Index = ({ homePage, busninessPage }) => {
           Hear from our partners
         </h1>
         <div className="relative">
-          <PartnersTab homePage={homePage} busninessPage={busninessPage} />
+          <PartnersTab homePage={homePage} />
         </div>
         <div className="white-wather-bg" />
       </div>

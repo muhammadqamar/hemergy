@@ -3,15 +3,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import CalendlyModal from "@/utils/calendly";
-import Forbusiness from "@/pages/for-business";
 
 const HeroBanner = ({
   heroTitle,
-  para1,
-  para3,
-  boldPara,
-  para2,
+  subHeading,
+  mainText,
+  btnLInk,
   btnText,
+  forBusiness,
   bannerImg1,
   pageName,
   heroTitle2,
@@ -20,11 +19,6 @@ const HeroBanner = ({
   paddingBottom,
   home,
   weather,
-  homePage,
-  howItWorkPage,
-  aboutPage,
-  btnLInk,
-  forBusiness,
 }) => {
   const [activeHemergy, setActiveHemergy] = useState("sun");
   useEffect(() => {
@@ -42,51 +36,28 @@ const HeroBanner = ({
     <div className="hero-container ">
       <div
         className={`home-hero-wrapper pt-[208px] md:pt-[131px] pb-0 md:pb-[165px] ${
-          heroTitle2 &&
-          // btnIcon &&
-          `justify-center text-center px-6 pt-[176px] pb-[193px] md:pb-[379px]`
-        }  ${paddingBottom && `pb-4 md:pb-[245px]`}`}
+          heroTitle2 && `justify-center text-center px-6 pt-[176px] pb-[193px] md:pb-[379px]`
+        }  ${paddingBottom && `pb-4 md:pb-[220px]`}`}
       >
         <div className={`hero-content ${heroTitle2 && `mx-auto`}`}>
           {home
-            ? // homepage banner heading
-              heroTitle && (
+            ? heroTitle && (
                 <h1 className="main-heading">
-                  {homePage.heading.slice(0, 14)} <br />
-                  {homePage.heading.slice(14)}
+                  {heroTitle.slice(0, 14)} <br /> {heroTitle.slice(14)}
                 </h1>
               )
-            : // For businesses banner heading
-              heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
+            : heroTitle && <h1 className="main-heading">{heroTitle}</h1>}
           {heroTitle2 && (
             <div className="mb-4 mx-auto max-w-[592px] ">
-              {howItWorkPage && (
-                // how it works : heading
-                <h3 className="font-medium text-white p-xl-semi ">{howItWorkPage.heroHeading}</h3>
-              )}
-              {/* howitworkpage & aboutpage heading , subheading */}
-              <h1 className="my-4 p-2xl">
-                {(howItWorkPage && howItWorkPage.heroSubHeading) || aboutPage.aboutHeading}
-              </h1>
-              <span className="font-normal text-white p-lg opacity-80">
-                {(howItWorkPage && howItWorkPage.heroLabelText) || aboutPage.aboutText}
-              </span>
+              {pageName && <h3 className="font-medium text-white p-xl-semi ">{pageName}</h3>}
+              <h1 className="my-4 p-2xl">{heroTitle2}</h1>
+              <span className="font-normal text-white p-lg opacity-80">{btnLabel}</span>
             </div>
           )}
-          {(para1 && (
-            <>
-              <h3 className="sub-heading ">
-                {para1} <br />
-                <strong> {boldPara}</strong> {para2}
-              </h3>
-            </>
-          )) ||
-            (homePage && (
-              <h3 className="sub-heading ">{documentToReactComponents(homePage?.subheading)}</h3>
-            ))}
-          {homePage && (
+          {subHeading && <h3 className="sub-heading ">{documentToReactComponents(subHeading)}</h3>}
+          {mainText && (
             <h3 className="block sub-heading about-w sm:flex">
-              {homePage && homePage?.bannerSubText}
+              {mainText}
               {weather && (
                 <div>
                   {activeHemergy == "wind" && (
@@ -109,29 +80,20 @@ const HeroBanner = ({
               )}
             </h3>
           )}
-          {para3 && <h3 className="block sub-heading about-w sm:flex">{para3}</h3>}
-
           {forBusiness && (
             <CalendlyModal btnText={btnText} url={"https://calendly.com/ahmed-belabdia"} />
           )}
-          {(homePage && (
+          {!forBusiness && (
             <Link
-              href={btnLInk}
+              href={btnText ? btnLInk : ""}
               className={`btn Primary w-max bg-btncolor ${btnIcon && `icon-btn`}`}
             >
-              {homePage?.bannerButton}
+              {btnText}
+              {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
             </Link>
-          )) ||
-            (btnIcon && (
-              <Link href="" className={`btn Primary w-max bg-btncolor ${btnIcon && `icon-btn`}`}>
-                {btnIcon && <Image src={btnIcon} alt="expand" width={24} height={24} />}
-              </Link>
-            ))}
+          )}
         </div>
-        {(bannerImg1 && <img src={bannerImg1} className="hero-banners" alt="banner" />) ||
-          (homePage && (
-            <img src={homePage?.bannerLogo.fields.file.url} className="hero-banners" alt="banner" />
-          ))}
+        {bannerImg1 && <img src={bannerImg1} className="hero-banners" alt="banner" />}
         {/* <div className="hero-banner-img">
             {bannerStar && <img src={bannerStar} className="hero-start" alt="banner" />}
             <img src={bannerImg1} className="hero-wather" alt="banner" />

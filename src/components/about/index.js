@@ -6,9 +6,8 @@ const Index = ({ aboutPage }) => {
   return (
     <div>
       <HeroBanner
-        aboutPage={aboutPage}
-        heroTitle2="About Hemergy"
-        btnLabel="All about us"
+        heroTitle2={aboutPage?.banner.fields.mainHeading}
+        btnLabel={aboutPage?.banner.fields.buttonLabel}
         btnIcon="/images/w_expand_more.svg"
       />
       <OurMission aboutPage={aboutPage} />

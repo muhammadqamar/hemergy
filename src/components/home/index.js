@@ -7,17 +7,14 @@ const Index = ({ homePage }) => {
   return (
     <div>
       <HeroBanner
-        homePage={homePage}
         btnLInk="/register"
         home
-        heroTitle="Invest in the future of our planet"
+        heroTitle={homePage?.banner.fields.mainHeading}
+        subHeading={homePage?.banner.fields.subHeading}
+        mainText={homePage?.banner.fields.mainText}
         btnText="Get started"
-        para1="Hemergy is a cutting-edge"
-        boldPara="renewable energies"
-        para2="investment platform"
-        // para3="See what you earn from"
         weather
-        bannerImg1="/images/home-banner.png"
+        bannerImg1={homePage?.banner.fields.bannerImage.fields?.file?.url}
       />
       <Contribute homePage={homePage} />
       <CalculatorSection homePage={homePage} />

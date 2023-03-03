@@ -8,10 +8,9 @@ const Index = ({ faqPage, howItWorkPage }) => {
   return (
     <div>
       <HeroBanner
-        howItWorkPage={howItWorkPage}
-        pageName="How it works:"
-        heroTitle2="For Contributors"
-        btnLabel="Check it out"
+        pageName={howItWorkPage?.banner.fields.mainText}
+        heroTitle2={howItWorkPage?.banner.fields.mainHeading}
+        btnLabel={howItWorkPage?.banner.fields.buttonLabel}
         btnIcon="/images/w_expand_more.svg"
       />
       <Discoverd howItWorkPage={howItWorkPage} />
