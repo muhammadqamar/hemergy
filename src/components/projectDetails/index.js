@@ -108,7 +108,7 @@ export default function ProjectDetailSection() {
           <p className="popular-para">
             A selection of the types of projects you can get involved in today!
             <strong className="popular_strong">
-              <Link href=""> See all</Link>
+              <Link href="/for-investors-projects"> See all</Link>
             </strong>
           </p>
         </div>

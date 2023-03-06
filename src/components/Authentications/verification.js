@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Formik, Field } from "formik";
+import { usePlacesWidget } from "react-google-autocomplete";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,9 +10,16 @@ import ReactFlagsSelect from "react-flags-select";
 const Verification = ({ userDetail, setStep }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user?.user);
-
   const [selected, setSelected] = useState("");
+  const [addressManually, setAddressManually] = useState(true);
 
+  const [addressFinder, setAddressFinder] = useState("");
+
+  const { ref } = usePlacesWidget({
+    apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+    onPlaceSelected: (place) => setAddressFinder(place.formatted_address),
+  });
+  console.log("addressFinder", addressFinder);
   return (
     <div className="relative z-[1] w-full md:w-[480px] h-auto flex flex-col gap-6 pt-12 px-4 md:px-8 pb-6 bg-white rounded-3xl shadow-lgshadow text-textblack">
       <div className="flex-box d-column gap-x-sm">
@@ -26,7 +34,8 @@ const Verification = ({ userDetail, setStep }) => {
           surname: user?.lastName || "",
           birthDate: user?.dob || "",
           country: user?.country || "",
-          address: user?.address || "",
+          address: user?.address || addressFinder,
+          manuallyAddress: user?.manuallyAddress || "",
         }}
         enableReinitialize
         validate={(values) => {
@@ -45,6 +54,9 @@ const Verification = ({ userDetail, setStep }) => {
           }
           if (!values.address) {
             errors.address = "Required";
+          }
+          if (!values.manuallyAddress) {
+            errors.manuallyAddress = "Required";
           }
 
           return errors;
@@ -86,7 +98,10 @@ const Verification = ({ userDetail, setStep }) => {
                     value={values.name}
                   />
                 </div>
-                <p className="error p-x-sm"> {errors.name && touched.name && errors.name}</p>
+                <p className="error p-x-sm">
+                  {" "}
+                  {errors.name && touched.name && errors.name}
+                </p>
               </div>
 
               <div className="input-box">
@@ -136,33 +151,95 @@ const Verification = ({ userDetail, setStep }) => {
                   onSelect={(code) => setSelected(code)}
                 />
               </div>
-              <p className="error p-x-sm">{errors.country && touched.country && errors.country}</p>
+              <p className="error p-x-sm">
+                {errors.country && touched.country && errors.country}
+              </p>
             </div>
 
             <div className="input-box">
-              <label className="p-sm text-weight-medium">Address finder</label>
-              <div className="input-field">
-                <Image src="/images/search.svg" alt="google" width={20} height={20} />
-                <input
-                  className="input p-sm"
-                  placeholder="Start typing the address"
-                  type="address"
-                  name="address"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.address}
-                />
-              </div>
-              <p className="error p-x-sm">{errors.address && touched.address && errors.address}</p>
+              <label className="p-sm text-weight-medium">
+                {(addressManually && "Address finder") ||
+                  "Enter address manually"}
+              </label>
+              <>
+                <div className="input-field">
+                  <Image
+                    src="/images/search.svg"
+                    alt="google"
+                    width={20}
+                    height={20}
+                  />
+                  {ref && (
+                    <input
+                      className={`input p-sm ${
+                        addressManually === false ? "hidden" : "block"
+                      } `}
+                      ref={ref}
+                      placeholder={
+                        addressManually
+                          ? "Start typing the address"
+                          : "Start typing the manually address"
+                      }
+                      type="address"
+                      autocomplete
+                      name={addressManually ? "address" : "manuallyAddress"}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.address}
+                    />
+                  )}
+                  {addressManually === false && (
+                    <input
+                      className="input p-sm"
+                      placeholder="Start typing the manually address"
+                      type="address"
+                      name="manuallyAddress"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.manuallyAddress}
+                    />
+                  )}
+                </div>
+                <p className="error p-x-sm">
+                  {(addressManually &&
+                    errors.address &&
+                    touched.address &&
+                    errors.address) ||
+                    (errors.manuallyAddress &&
+                      touched.manuallyAddress &&
+                      errors.manuallyAddress)}
+                </p>
+              </>
             </div>
-
-            <Link href="" className="p-sm text-weight-medium text-textcolor">
-              Enter address manually
-            </Link>
-
-            <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
+            {(addressManually && (
+              <Link
+                href="javascript: void(0)"
+                onClick={() => setAddressManually(false)}
+                className="p-sm text-weight-medium text-textcolor"
+              >
+                Enter address manually
+              </Link>
+            )) || (
+              <Link
+                href="javascript: void(0)"
+                onClick={() => setAddressManually(true)}
+                className="p-sm text-weight-medium text-textcolor"
+              >
+                Address finder
+              </Link>
+            )}
+            <button
+              className="btn secondary blue"
+              type="submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? (
-                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
+                <Image
+                  src="/images/loader.svg"
+                  alt="google"
+                  width={20}
+                  height={20}
+                />
               ) : (
                 "Next"
               )}

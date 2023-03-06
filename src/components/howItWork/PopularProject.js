@@ -38,7 +38,7 @@ const PopularProject = ({ demoCard }) => {
           <p className="header-detail ">
             A selection of the types of projects you can <br /> get involved in
             today!
-            <Link href="">
+            <Link href="/for-investors-projects">
               {" "}
               <strong className="popular_strong"> See all</strong>
             </Link>

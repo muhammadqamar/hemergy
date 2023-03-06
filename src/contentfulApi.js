@@ -40,7 +40,6 @@ export async function fetchHomePage(locale, query) {
 
   return docs[0];
 }
-
 export async function fetchHowItWorkPage(locale, query) {
   const entries = await fetchEntries(
     {

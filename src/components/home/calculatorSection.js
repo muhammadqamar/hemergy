@@ -39,16 +39,32 @@ const CalculatorSection = ({ homePage }) => {
           <div className="lg:hidden block">
             <Slider {...settings}>
               <div className="px-5">
-                <img src="/images/work_1.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_1.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_2.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_2.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_3.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_3.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
               <div className="px-5">
-                <img src="/images/work_4.png" alt="logo" className="companys-logo" />
+                <img
+                  src="/images/work_4.png"
+                  alt="logo"
+                  className="companys-logo"
+                />
               </div>
             </Slider>
           </div>
@@ -61,9 +77,10 @@ const CalculatorSection = ({ homePage }) => {
           <div className="popular-about">
             <h1 className="popular-heading">Popular projects</h1>
             <p className="popular-para">
-              A selection of the types of projects you can get involved in today!{" "}
+              A selection of the types of projects you can get involved in
+              today!{" "}
               <strong className="popular_strong">
-                <Link href="">See all</Link>
+                <Link href="/for-investors-projects">See all</Link>
               </strong>
             </p>
           </div>
