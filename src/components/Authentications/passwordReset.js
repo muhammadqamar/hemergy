@@ -10,27 +10,41 @@ const ResetPassword = ({ code }) => {
   const [startCheckingState, setStartCheckingState] = useState(false);
 
   const [showPass, setShowPass] = useState(false);
+  const [showConfirm, setshowConfirm] = useState(false);
 
   return !startCheckingState ? (
     <div className="registration-box">
       <h3 className="p-xl center-text">Set a new password</h3>
 
       <Formik
-        initialValues={{ password: "" }}
+        initialValues={{ password: "", confirmPassword: "" }}
         validate={(values) => {
+          var regularExp = new RegExp(
+            "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})"
+          );
           const errors = {};
           if (!values.password) {
             errors.password = "Required";
+          } else if (!values.confirmPassword) {
+            errors.confirmPassword = "Required";
+          } else if (values.password !== values.confirmPassword) {
+            errors.confirmPassword = "Password didn't match, Try again..!!";
+          } else if (!regularExp.test(values.confirmPassword)) {
+            errors.confirmPassword =
+              "Minimum eight characters, at least one Upper letter, one number and one special character";
           }
 
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            const userFound = await axios.post(`${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/update/password`, {
-              ...values,
-              code,
-            });
+            const userFound = await axios.post(
+              `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/update/password`,
+              {
+                ...values,
+                code,
+              }
+            );
             setSubmitting(false);
 
             if (userFound?.data?.success) {
@@ -88,6 +102,33 @@ const ResetPassword = ({ code }) => {
               </div>
               <p className="error p-x-sm">
                 {errors.password && touched.password && errors.password}
+              </p>
+            </div>
+            <div className="input-box">
+              <label className="p-sm text-weight-medium">Confirm Password</label>
+              <div className="input-field">
+                <input
+                  className="input p-sm"
+                  placeholder="Confirm  Password"
+                  type={showConfirm ? "text" : "password"}
+                  name="confirmPassword"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.confirmPassword}
+                />
+                <div className="pointer"></div>
+                <Image
+                  onClick={() => {
+                    setshowConfirm(!showConfirm);
+                  }}
+                  src="/images/visibility.svg"
+                  alt="visibility"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <p className="error p-x-sm">
+                {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
               </p>
             </div>
 

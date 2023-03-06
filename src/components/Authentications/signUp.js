@@ -13,6 +13,9 @@ const SignUp = ({ setRegisterState }) => {
       <Formik
         initialValues={{ email: "", password: "", confirmPassword: "" }}
         validate={(values) => {
+          var regularExp = new RegExp(
+            "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})"
+          );
           const errors = {};
           if (!values.email) {
             errors.email = "Required";
@@ -26,13 +29,19 @@ const SignUp = ({ setRegisterState }) => {
           if (!values.confirmPassword) {
             errors.confirmPassword = "Required";
           } else if (values.confirmPassword !== values.password) {
-            errors.confirmPassword = "passowrd not matched";
+            errors.confirmPassword = "passowrd didn't match";
+          } else if (!regularExp.test(values.confirmPassword)) {
+            errors.confirmPassword =
+              "Minimum eight characters, at least one Upper letter, one number and one special character";
           }
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            const register = await axios.post(`${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/register`, values);
+            const register = await axios.post(
+              `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/register`,
+              values
+            );
             setSubmitting(false);
             if (register?.data?.success) {
               setRegisterState(values);
@@ -166,7 +175,9 @@ const SignUp = ({ setRegisterState }) => {
             <button
               type="button"
               className="flex-box fit-width gap-x-sm btn-border secondary"
-              onClick={() => (window.location = `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/google-register`)}
+              onClick={() =>
+                (window.location = `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/google-register`)
+              }
             >
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
               Sign up with Google

@@ -14,8 +14,10 @@ const SignIn = () => {
   const [startCheckingState, setStartCheckingState] = useState(false);
   const user = useSelector((state) => state.user);
   const [showPass, setShowPass] = useState(false);
+  const [registerState, setRegisterState] = useState("");
   const dispatch = useDispatch();
   const router = useRouter();
+  console.log("user", user);
   return user?.isVerified || !startCheckingState ? (
     <div className="registration-box">
       <h3 className="p-xl center-text">Sign In to Hemergy</h3>
@@ -40,6 +42,10 @@ const SignIn = () => {
           if (userFound?.data) {
             localStorage.setItem("hemergy-email", userFound?.data?.user?.email);
             localStorage.setItem("hemergy-token", userFound?.data?.token);
+            setRegisterState({
+              email: userFound?.data?.user?.email,
+              passowrd: userFound?.data?.user?.password,
+            });
             dispatch(addUser(userFound?.data?.user));
             if (userFound?.data?.user?.isVerified) {
               if (userFound?.data?.user?.firstName) {
@@ -137,7 +143,9 @@ const SignIn = () => {
             <button
               type="button"
               className="flex-box fit-width gap-x-sm btn-border secondary"
-              onClick={() => (window.location = `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/google-login`)}
+              onClick={() =>
+                (window.location = `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/google-login`)
+              }
             >
               <Image src="/images/Google.svg" alt="google" width={20} height={20} />
               Sign In with Google
@@ -154,7 +162,7 @@ const SignIn = () => {
       </Formik>
     </div>
   ) : (
-    <InBox />
+    <InBox registerState={registerState} setRegisterState={setRegisterState} />
   );
 };
 
