@@ -52,10 +52,10 @@ const Verification = ({ userDetail, setStep }) => {
           if (!selected) {
             errors.country = "Required";
           }
-          if (!values.address && addressManually) {
+          if (!values.address && !addressManually) {
             errors.address = "Required";
           }
-          if (!values.manuallyAddress && !addressManually) {
+          if (!values.manuallyAddress && addressManually) {
             errors.manuallyAddress = "Required";
           }
 
@@ -98,7 +98,10 @@ const Verification = ({ userDetail, setStep }) => {
                     value={values.name}
                   />
                 </div>
-                <p className="error p-x-sm"> {errors.name && touched.name && errors.name}</p>
+                <p className="error p-x-sm">
+                  {" "}
+                  {errors.name && touched.name && errors.name}
+                </p>
               </div>
 
               <div className="input-box">
@@ -148,7 +151,9 @@ const Verification = ({ userDetail, setStep }) => {
                   onSelect={(code) => setSelected(code)}
                 />
               </div>
-              <p className="error p-x-sm">{errors.country && touched.country && errors.country}</p>
+              <p className="error p-x-sm">
+                {errors.country && touched.country && errors.country}
+              </p>
             </div>
 
             <div className="input-box">
@@ -157,7 +162,12 @@ const Verification = ({ userDetail, setStep }) => {
               </label>
               <>
                 <div className="input-field">
-                  <Image src="/images/search.svg" alt="google" width={20} height={20} />
+                  <Image
+                    src="/images/search.svg"
+                    alt="google"
+                    width={20}
+                    height={20}
+                  />
                   {ref && !addressManually && (
                     <input
                       className={`input p-sm`}
@@ -186,7 +196,9 @@ const Verification = ({ userDetail, setStep }) => {
                 <p className="error p-x-sm">
                   {!addressManually
                     ? errors.address && touched.address && errors.address
-                    : errors.manuallyAddress && touched.manuallyAddress && errors.manuallyAddress}
+                    : errors.manuallyAddress &&
+                      touched.manuallyAddress &&
+                      errors.manuallyAddress}
                 </p>
               </>
             </div>
@@ -207,9 +219,18 @@ const Verification = ({ userDetail, setStep }) => {
                 Address finder
               </Link>
             )}
-            <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
+            <button
+              className="btn secondary blue"
+              type="submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? (
-                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
+                <Image
+                  src="/images/loader.svg"
+                  alt="google"
+                  width={20}
+                  height={20}
+                />
               ) : (
                 "Next"
               )}
