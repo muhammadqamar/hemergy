@@ -37,7 +37,7 @@ const Register = ({ query }) => {
 
       <div className="auth-container">
         <RegisterSlider />
-        {query?.success || !!registerState ? (
+        {query?.success || !!registerState?.email ? (
           <InBox setRegisterState={setRegisterState} registerState={registerState} />
         ) : (
           <SignUp setRegisterState={setRegisterState} />
