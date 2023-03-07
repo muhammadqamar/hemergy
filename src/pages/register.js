@@ -11,8 +11,6 @@ const Register = ({ query }) => {
     console.log(query);
     if (query?.email) {
       setRegisterState({ email: query?.email });
-    } else {
-      setRegisterState({ success: query?.success });
     }
   }, [query]);
 

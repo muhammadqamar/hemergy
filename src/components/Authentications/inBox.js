@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -8,21 +8,6 @@ import { useRouter } from "next/router";
 const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
-  console.log("registerState", registerState);
-  useEffect(() => {
-    if (!registerState?.success) {
-      toast.error("Email Already exist, Server error, Try again...!!", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
-  }, [registerState]);
   return (
     <div className="registration-box">
       <div className="inbox-img flex-box">
@@ -55,32 +40,18 @@ const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
       </p>
       {!hideButtons && (
         <div className="flex-box d-column gap-sm">
-          {!registerState?.success && (
-            <button
-              onClick={async () => {
-                try {
-                  setIsSubmitting(true);
-                  const userFound = await axios.post(
-                    `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/sendEmailAgain`,
-                    { email: registerState?.email, passowrd: registerState?.password }
-                  );
+          <button
+            onClick={async () => {
+              try {
+                setIsSubmitting(true);
+                const userFound = await axios.post(
+                  `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/sendEmailAgain`,
+                  { email: registerState?.email, passowrd: registerState?.password }
+                );
 
-                  if (userFound?.data?.success) {
-                    setIsSubmitting(false);
-                    toast.success(userFound?.data?.status, {
-                      position: "bottom-right",
-                      autoClose: 5000,
-                      hideProgressBar: false,
-                      closeOnClick: true,
-                      pauseOnHover: true,
-                      draggable: true,
-                      progress: undefined,
-                      theme: "light",
-                    });
-                  }
-                } catch (error) {
+                if (userFound?.data?.success) {
                   setIsSubmitting(false);
-                  toast.error(error?.response?.data?.status || error.message, {
+                  toast.success(userFound?.data?.status, {
                     position: "bottom-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -91,17 +62,28 @@ const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
                     theme: "light",
                   });
                 }
-              }}
-              className="btn secondary blue"
-            >
-              {isSubmitting ? (
-                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
-              ) : (
-                "Resend email"
-              )}
-            </button>
-          )}
-
+              } catch (error) {
+                setIsSubmitting(false);
+                toast.error(error?.response?.data?.status || error.message, {
+                  position: "bottom-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                });
+              }
+            }}
+            className="btn secondary blue"
+          >
+            {isSubmitting ? (
+              <Image src="/images/loader.svg" alt="google" width={20} height={20} />
+            ) : (
+              "Resend email"
+            )}
+          </button>
           <button
             onClick={() => {
               setRegisterState("");
