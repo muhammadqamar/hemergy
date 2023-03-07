@@ -12,7 +12,7 @@ const Register = ({ query }) => {
     if (query?.email) {
       setRegisterState({ email: query?.email });
     } else {
-      if (query?.status === 400) {
+      if (query?.status === "400") {
         toast.error("Email Already Exist", {
           position: "bottom-right",
           autoClose: 5000,
