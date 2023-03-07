@@ -10,7 +10,9 @@ const Register = ({ query }) => {
   useEffect(() => {
     console.log(query);
     if (query?.email) {
-      setRegisterState({ email: query?.email, success: query?.success });
+      setRegisterState({ email: query?.email });
+    } else {
+      setRegisterState({ success: query?.success });
     }
   }, [query]);
 
