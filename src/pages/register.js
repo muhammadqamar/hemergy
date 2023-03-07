@@ -25,6 +25,7 @@ const Register = ({ query }) => {
           theme: "light",
         });
       }
+      setRegisterState({ status: query?.status });
     }
   }, [query]);
 

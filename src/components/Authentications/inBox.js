@@ -40,18 +40,32 @@ const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
       </p>
       {!hideButtons && (
         <div className="flex-box d-column gap-sm">
-          <button
-            onClick={async () => {
-              try {
-                setIsSubmitting(true);
-                const userFound = await axios.post(
-                  `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/sendEmailAgain`,
-                  { email: registerState?.email, passowrd: registerState?.password }
-                );
+          {registerState?.status !== "400" && (
+            <button
+              onClick={async () => {
+                try {
+                  setIsSubmitting(true);
+                  const userFound = await axios.post(
+                    `${process.env.NEXT_PUBLIC_API_DOMAIN}/auth/sendEmailAgain`,
+                    { email: registerState?.email, passowrd: registerState?.password }
+                  );
 
-                if (userFound?.data?.success) {
+                  if (userFound?.data?.success) {
+                    setIsSubmitting(false);
+                    toast.success(userFound?.data?.status, {
+                      position: "bottom-right",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                    });
+                  }
+                } catch (error) {
                   setIsSubmitting(false);
-                  toast.success(userFound?.data?.status, {
+                  toast.error(error?.response?.data?.status || error.message, {
                     position: "bottom-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -62,28 +76,17 @@ const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
                     theme: "light",
                   });
                 }
-              } catch (error) {
-                setIsSubmitting(false);
-                toast.error(error?.response?.data?.status || error.message, {
-                  position: "bottom-right",
-                  autoClose: 5000,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: "light",
-                });
-              }
-            }}
-            className="btn secondary blue"
-          >
-            {isSubmitting ? (
-              <Image src="/images/loader.svg" alt="google" width={20} height={20} />
-            ) : (
-              "Resend email"
-            )}
-          </button>
+              }}
+              className="btn secondary blue"
+            >
+              {isSubmitting ? (
+                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
+              ) : (
+                "Resend email"
+              )}
+            </button>
+          )}
+
           <button
             onClick={() => {
               setRegisterState("");
