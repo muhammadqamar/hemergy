@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 const InBox = ({ setRegisterState, registerState, type, hideButtons }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
+  console.log("registerState", registerState);
   return (
     <div className="registration-box">
       <div className="inbox-img flex-box">

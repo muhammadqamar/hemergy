@@ -7,13 +7,12 @@ import Link from "next/link";
 
 const Register = ({ query }) => {
   const [registerState, setRegisterState] = useState("");
-  useEffect(()=>{
-    console.log(query)
-    if(query?.email) {
-      setRegisterState({email:query?.email})
+  useEffect(() => {
+    console.log(query);
+    if (query?.email) {
+      setRegisterState({ email: query?.email, success: query?.success });
     }
-
-  },[query])
+  }, [query]);
 
   return (
     <div className="authentications-section">

@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 const SignUp = ({ setRegisterState }) => {
   const [showPass, setShowPass] = useState(false);
+  const [showConfirm, setshowConfirm] = useState(false);
   return (
     <div className="registration-box">
       <h3 className="p-xl center-text">Sign up to Hemergy</h3>
@@ -124,7 +125,7 @@ const SignUp = ({ setRegisterState }) => {
                 <input
                   className="input p-sm"
                   placeholder="confirm password"
-                  type={showPass ? "text" : "password"}
+                  type={showConfirm ? "text" : "password"}
                   name="confirmPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -133,7 +134,7 @@ const SignUp = ({ setRegisterState }) => {
                 <div className="pointer"></div>
                 <Image
                   onClick={() => {
-                    setShowPass(!showPass);
+                    setshowConfirm(!showConfirm);
                   }}
                   src="/images/visibility.svg"
                   alt="visibility"
