@@ -11,7 +11,7 @@ const Verification = ({ userDetail, setStep }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user?.user);
   const [selected, setSelected] = useState("");
-  const [addressManually, setAddressManually] = useState(true);
+  const [addressManually, setAddressManually] = useState(false);
 
   const [addressFinder, setAddressFinder] = useState("");
 
@@ -52,10 +52,10 @@ const Verification = ({ userDetail, setStep }) => {
           if (!selected) {
             errors.country = "Required";
           }
-          if (!values.address) {
+          if (!values.address && addressManually) {
             errors.address = "Required";
           }
-          if (!values.manuallyAddress) {
+          if (!values.manuallyAddress && !addressManually) {
             errors.manuallyAddress = "Required";
           }
 
@@ -98,10 +98,7 @@ const Verification = ({ userDetail, setStep }) => {
                     value={values.name}
                   />
                 </div>
-                <p className="error p-x-sm">
-                  {" "}
-                  {errors.name && touched.name && errors.name}
-                </p>
+                <p className="error p-x-sm"> {errors.name && touched.name && errors.name}</p>
               </div>
 
               <div className="input-box">
@@ -151,48 +148,34 @@ const Verification = ({ userDetail, setStep }) => {
                   onSelect={(code) => setSelected(code)}
                 />
               </div>
-              <p className="error p-x-sm">
-                {errors.country && touched.country && errors.country}
-              </p>
+              <p className="error p-x-sm">{errors.country && touched.country && errors.country}</p>
             </div>
 
             <div className="input-box">
               <label className="p-sm text-weight-medium">
-                {(addressManually && "Address finder") ||
-                  "Enter address manually"}
+                {addressManually ? "Enter address manually" : "Address finder"}
               </label>
               <>
                 <div className="input-field">
-                  <Image
-                    src="/images/search.svg"
-                    alt="google"
-                    width={20}
-                    height={20}
-                  />
-                  {ref && (
+                  <Image src="/images/search.svg" alt="google" width={20} height={20} />
+                  {ref && !addressManually && (
                     <input
-                      className={`input p-sm ${
-                        addressManually === false ? "hidden" : "block"
-                      } `}
+                      className={`input p-sm`}
                       ref={ref}
-                      placeholder={
-                        addressManually
-                          ? "Start typing the address"
-                          : "Start typing the manually address"
-                      }
-                      type="address"
+                      placeholder="Start typing the address"
+                      type="text"
                       autocomplete
-                      name={addressManually ? "address" : "manuallyAddress"}
+                      name="address"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.address}
                     />
                   )}
-                  {addressManually === false && (
+                  {addressManually && (
                     <input
                       className="input p-sm"
                       placeholder="Start typing the manually address"
-                      type="address"
+                      type="text"
                       name="manuallyAddress"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -201,45 +184,32 @@ const Verification = ({ userDetail, setStep }) => {
                   )}
                 </div>
                 <p className="error p-x-sm">
-                  {(addressManually &&
-                    errors.address &&
-                    touched.address &&
-                    errors.address) ||
-                    (errors.manuallyAddress &&
-                      touched.manuallyAddress &&
-                      errors.manuallyAddress)}
+                  {!addressManually
+                    ? errors.address && touched.address && errors.address
+                    : errors.manuallyAddress && touched.manuallyAddress && errors.manuallyAddress}
                 </p>
               </>
             </div>
-            {(addressManually && (
-              <Link
-                href="javascript: void(0)"
-                onClick={() => setAddressManually(false)}
-                className="p-sm text-weight-medium text-textcolor"
-              >
-                Enter address manually
-              </Link>
-            )) || (
+            {!addressManually ? (
               <Link
                 href="javascript: void(0)"
                 onClick={() => setAddressManually(true)}
                 className="p-sm text-weight-medium text-textcolor"
               >
+                Enter address manually
+              </Link>
+            ) : (
+              <Link
+                href="javascript: void(0)"
+                onClick={() => setAddressManually(false)}
+                className="p-sm text-weight-medium text-textcolor"
+              >
                 Address finder
               </Link>
             )}
-            <button
-              className="btn secondary blue"
-              type="submit"
-              disabled={isSubmitting}
-            >
+            <button className="btn secondary blue" type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
-                <Image
-                  src="/images/loader.svg"
-                  alt="google"
-                  width={20}
-                  height={20}
-                />
+                <Image src="/images/loader.svg" alt="google" width={20} height={20} />
               ) : (
                 "Next"
               )}
