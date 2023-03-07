@@ -4,6 +4,7 @@ import SignUp from "@/components/Authentications/signUp";
 import InBox from "@/components/Authentications/inBox";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const Register = ({ query }) => {
   const [registerState, setRegisterState] = useState("");
